@@ -9,38 +9,357 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as AppRouteImport } from './routes/_app'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AppYieldSimulatorRouteImport } from './routes/_app.yield-simulator'
+import { Route as AppWeatherRouteImport } from './routes/_app.weather'
+import { Route as AppSoilTypeRouteImport } from './routes/_app.soil-type'
+import { Route as AppSoilMapsRouteImport } from './routes/_app.soil-maps'
+import { Route as AppSoilHealthIndexRouteImport } from './routes/_app.soil-health-index'
+import { Route as AppSmsAdvisoryRouteImport } from './routes/_app.sms-advisory'
+import { Route as AppSettingsRouteImport } from './routes/_app.settings'
+import { Route as AppSeasonalIntelligenceRouteImport } from './routes/_app.seasonal-intelligence'
+import { Route as AppRskDashboardRouteImport } from './routes/_app.rsk-dashboard'
+import { Route as AppReportsRouteImport } from './routes/_app.reports'
+import { Route as AppParcelIntelligenceRouteImport } from './routes/_app.parcel-intelligence'
+import { Route as AppNutrientPredictionRouteImport } from './routes/_app.nutrient-prediction'
+import { Route as AppNutrientAvailabilityRouteImport } from './routes/_app.nutrient-availability'
+import { Route as AppGroundwaterRouteImport } from './routes/_app.groundwater'
+import { Route as AppFertilizerEconomicsRouteImport } from './routes/_app.fertilizer-economics'
+import { Route as AppFertilizerRouteImport } from './routes/_app.fertilizer'
+import { Route as AppFarmerAdvisoryRouteImport } from './routes/_app.farmer-advisory'
+import { Route as AppDistrictIntelligenceRouteImport } from './routes/_app.district-intelligence'
+import { Route as AppDigitalTwinRouteImport } from './routes/_app.digital-twin'
+import { Route as AppDeficiencyAnalyticsRouteImport } from './routes/_app.deficiency-analytics'
+import { Route as AppDashboardRouteImport } from './routes/_app.dashboard'
+import { Route as AppCropSuitabilityRouteImport } from './routes/_app.crop-suitability'
+import { Route as AppCropIntelligenceRouteImport } from './routes/_app.crop-intelligence'
+import { Route as AppAprtgsDashboardRouteImport } from './routes/_app.aprtgs-dashboard'
+import { Route as AppAiCopilotRouteImport } from './routes/_app.ai-copilot'
 
+const AppRoute = AppRouteImport.update({
+  id: '/_app',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppYieldSimulatorRoute = AppYieldSimulatorRouteImport.update({
+  id: '/yield-simulator',
+  path: '/yield-simulator',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppWeatherRoute = AppWeatherRouteImport.update({
+  id: '/weather',
+  path: '/weather',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSoilTypeRoute = AppSoilTypeRouteImport.update({
+  id: '/soil-type',
+  path: '/soil-type',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSoilMapsRoute = AppSoilMapsRouteImport.update({
+  id: '/soil-maps',
+  path: '/soil-maps',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSoilHealthIndexRoute = AppSoilHealthIndexRouteImport.update({
+  id: '/soil-health-index',
+  path: '/soil-health-index',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSmsAdvisoryRoute = AppSmsAdvisoryRouteImport.update({
+  id: '/sms-advisory',
+  path: '/sms-advisory',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSettingsRoute = AppSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSeasonalIntelligenceRoute = AppSeasonalIntelligenceRouteImport.update({
+  id: '/seasonal-intelligence',
+  path: '/seasonal-intelligence',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppRskDashboardRoute = AppRskDashboardRouteImport.update({
+  id: '/rsk-dashboard',
+  path: '/rsk-dashboard',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppReportsRoute = AppReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppParcelIntelligenceRoute = AppParcelIntelligenceRouteImport.update({
+  id: '/parcel-intelligence',
+  path: '/parcel-intelligence',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppNutrientPredictionRoute = AppNutrientPredictionRouteImport.update({
+  id: '/nutrient-prediction',
+  path: '/nutrient-prediction',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppNutrientAvailabilityRoute = AppNutrientAvailabilityRouteImport.update({
+  id: '/nutrient-availability',
+  path: '/nutrient-availability',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppGroundwaterRoute = AppGroundwaterRouteImport.update({
+  id: '/groundwater',
+  path: '/groundwater',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppFertilizerEconomicsRoute = AppFertilizerEconomicsRouteImport.update({
+  id: '/fertilizer-economics',
+  path: '/fertilizer-economics',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppFertilizerRoute = AppFertilizerRouteImport.update({
+  id: '/fertilizer',
+  path: '/fertilizer',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppFarmerAdvisoryRoute = AppFarmerAdvisoryRouteImport.update({
+  id: '/farmer-advisory',
+  path: '/farmer-advisory',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppDistrictIntelligenceRoute = AppDistrictIntelligenceRouteImport.update({
+  id: '/district-intelligence',
+  path: '/district-intelligence',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppDigitalTwinRoute = AppDigitalTwinRouteImport.update({
+  id: '/digital-twin',
+  path: '/digital-twin',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppDeficiencyAnalyticsRoute = AppDeficiencyAnalyticsRouteImport.update({
+  id: '/deficiency-analytics',
+  path: '/deficiency-analytics',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppDashboardRoute = AppDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppCropSuitabilityRoute = AppCropSuitabilityRouteImport.update({
+  id: '/crop-suitability',
+  path: '/crop-suitability',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppCropIntelligenceRoute = AppCropIntelligenceRouteImport.update({
+  id: '/crop-intelligence',
+  path: '/crop-intelligence',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAprtgsDashboardRoute = AppAprtgsDashboardRouteImport.update({
+  id: '/aprtgs-dashboard',
+  path: '/aprtgs-dashboard',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAiCopilotRoute = AppAiCopilotRouteImport.update({
+  id: '/ai-copilot',
+  path: '/ai-copilot',
+  getParentRoute: () => AppRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ai-copilot': typeof AppAiCopilotRoute
+  '/aprtgs-dashboard': typeof AppAprtgsDashboardRoute
+  '/crop-intelligence': typeof AppCropIntelligenceRoute
+  '/crop-suitability': typeof AppCropSuitabilityRoute
+  '/dashboard': typeof AppDashboardRoute
+  '/deficiency-analytics': typeof AppDeficiencyAnalyticsRoute
+  '/digital-twin': typeof AppDigitalTwinRoute
+  '/district-intelligence': typeof AppDistrictIntelligenceRoute
+  '/farmer-advisory': typeof AppFarmerAdvisoryRoute
+  '/fertilizer': typeof AppFertilizerRoute
+  '/fertilizer-economics': typeof AppFertilizerEconomicsRoute
+  '/groundwater': typeof AppGroundwaterRoute
+  '/nutrient-availability': typeof AppNutrientAvailabilityRoute
+  '/nutrient-prediction': typeof AppNutrientPredictionRoute
+  '/parcel-intelligence': typeof AppParcelIntelligenceRoute
+  '/reports': typeof AppReportsRoute
+  '/rsk-dashboard': typeof AppRskDashboardRoute
+  '/seasonal-intelligence': typeof AppSeasonalIntelligenceRoute
+  '/settings': typeof AppSettingsRoute
+  '/sms-advisory': typeof AppSmsAdvisoryRoute
+  '/soil-health-index': typeof AppSoilHealthIndexRoute
+  '/soil-maps': typeof AppSoilMapsRoute
+  '/soil-type': typeof AppSoilTypeRoute
+  '/weather': typeof AppWeatherRoute
+  '/yield-simulator': typeof AppYieldSimulatorRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ai-copilot': typeof AppAiCopilotRoute
+  '/aprtgs-dashboard': typeof AppAprtgsDashboardRoute
+  '/crop-intelligence': typeof AppCropIntelligenceRoute
+  '/crop-suitability': typeof AppCropSuitabilityRoute
+  '/dashboard': typeof AppDashboardRoute
+  '/deficiency-analytics': typeof AppDeficiencyAnalyticsRoute
+  '/digital-twin': typeof AppDigitalTwinRoute
+  '/district-intelligence': typeof AppDistrictIntelligenceRoute
+  '/farmer-advisory': typeof AppFarmerAdvisoryRoute
+  '/fertilizer': typeof AppFertilizerRoute
+  '/fertilizer-economics': typeof AppFertilizerEconomicsRoute
+  '/groundwater': typeof AppGroundwaterRoute
+  '/nutrient-availability': typeof AppNutrientAvailabilityRoute
+  '/nutrient-prediction': typeof AppNutrientPredictionRoute
+  '/parcel-intelligence': typeof AppParcelIntelligenceRoute
+  '/reports': typeof AppReportsRoute
+  '/rsk-dashboard': typeof AppRskDashboardRoute
+  '/seasonal-intelligence': typeof AppSeasonalIntelligenceRoute
+  '/settings': typeof AppSettingsRoute
+  '/sms-advisory': typeof AppSmsAdvisoryRoute
+  '/soil-health-index': typeof AppSoilHealthIndexRoute
+  '/soil-maps': typeof AppSoilMapsRoute
+  '/soil-type': typeof AppSoilTypeRoute
+  '/weather': typeof AppWeatherRoute
+  '/yield-simulator': typeof AppYieldSimulatorRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_app': typeof AppRouteWithChildren
+  '/_app/ai-copilot': typeof AppAiCopilotRoute
+  '/_app/aprtgs-dashboard': typeof AppAprtgsDashboardRoute
+  '/_app/crop-intelligence': typeof AppCropIntelligenceRoute
+  '/_app/crop-suitability': typeof AppCropSuitabilityRoute
+  '/_app/dashboard': typeof AppDashboardRoute
+  '/_app/deficiency-analytics': typeof AppDeficiencyAnalyticsRoute
+  '/_app/digital-twin': typeof AppDigitalTwinRoute
+  '/_app/district-intelligence': typeof AppDistrictIntelligenceRoute
+  '/_app/farmer-advisory': typeof AppFarmerAdvisoryRoute
+  '/_app/fertilizer': typeof AppFertilizerRoute
+  '/_app/fertilizer-economics': typeof AppFertilizerEconomicsRoute
+  '/_app/groundwater': typeof AppGroundwaterRoute
+  '/_app/nutrient-availability': typeof AppNutrientAvailabilityRoute
+  '/_app/nutrient-prediction': typeof AppNutrientPredictionRoute
+  '/_app/parcel-intelligence': typeof AppParcelIntelligenceRoute
+  '/_app/reports': typeof AppReportsRoute
+  '/_app/rsk-dashboard': typeof AppRskDashboardRoute
+  '/_app/seasonal-intelligence': typeof AppSeasonalIntelligenceRoute
+  '/_app/settings': typeof AppSettingsRoute
+  '/_app/sms-advisory': typeof AppSmsAdvisoryRoute
+  '/_app/soil-health-index': typeof AppSoilHealthIndexRoute
+  '/_app/soil-maps': typeof AppSoilMapsRoute
+  '/_app/soil-type': typeof AppSoilTypeRoute
+  '/_app/weather': typeof AppWeatherRoute
+  '/_app/yield-simulator': typeof AppYieldSimulatorRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/ai-copilot'
+    | '/aprtgs-dashboard'
+    | '/crop-intelligence'
+    | '/crop-suitability'
+    | '/dashboard'
+    | '/deficiency-analytics'
+    | '/digital-twin'
+    | '/district-intelligence'
+    | '/farmer-advisory'
+    | '/fertilizer'
+    | '/fertilizer-economics'
+    | '/groundwater'
+    | '/nutrient-availability'
+    | '/nutrient-prediction'
+    | '/parcel-intelligence'
+    | '/reports'
+    | '/rsk-dashboard'
+    | '/seasonal-intelligence'
+    | '/settings'
+    | '/sms-advisory'
+    | '/soil-health-index'
+    | '/soil-maps'
+    | '/soil-type'
+    | '/weather'
+    | '/yield-simulator'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/ai-copilot'
+    | '/aprtgs-dashboard'
+    | '/crop-intelligence'
+    | '/crop-suitability'
+    | '/dashboard'
+    | '/deficiency-analytics'
+    | '/digital-twin'
+    | '/district-intelligence'
+    | '/farmer-advisory'
+    | '/fertilizer'
+    | '/fertilizer-economics'
+    | '/groundwater'
+    | '/nutrient-availability'
+    | '/nutrient-prediction'
+    | '/parcel-intelligence'
+    | '/reports'
+    | '/rsk-dashboard'
+    | '/seasonal-intelligence'
+    | '/settings'
+    | '/sms-advisory'
+    | '/soil-health-index'
+    | '/soil-maps'
+    | '/soil-type'
+    | '/weather'
+    | '/yield-simulator'
+  id:
+    | '__root__'
+    | '/'
+    | '/_app'
+    | '/_app/ai-copilot'
+    | '/_app/aprtgs-dashboard'
+    | '/_app/crop-intelligence'
+    | '/_app/crop-suitability'
+    | '/_app/dashboard'
+    | '/_app/deficiency-analytics'
+    | '/_app/digital-twin'
+    | '/_app/district-intelligence'
+    | '/_app/farmer-advisory'
+    | '/_app/fertilizer'
+    | '/_app/fertilizer-economics'
+    | '/_app/groundwater'
+    | '/_app/nutrient-availability'
+    | '/_app/nutrient-prediction'
+    | '/_app/parcel-intelligence'
+    | '/_app/reports'
+    | '/_app/rsk-dashboard'
+    | '/_app/seasonal-intelligence'
+    | '/_app/settings'
+    | '/_app/sms-advisory'
+    | '/_app/soil-health-index'
+    | '/_app/soil-maps'
+    | '/_app/soil-type'
+    | '/_app/weather'
+    | '/_app/yield-simulator'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AppRoute: typeof AppRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/_app': {
+      id: '/_app'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +367,245 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_app/yield-simulator': {
+      id: '/_app/yield-simulator'
+      path: '/yield-simulator'
+      fullPath: '/yield-simulator'
+      preLoaderRoute: typeof AppYieldSimulatorRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/weather': {
+      id: '/_app/weather'
+      path: '/weather'
+      fullPath: '/weather'
+      preLoaderRoute: typeof AppWeatherRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/soil-type': {
+      id: '/_app/soil-type'
+      path: '/soil-type'
+      fullPath: '/soil-type'
+      preLoaderRoute: typeof AppSoilTypeRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/soil-maps': {
+      id: '/_app/soil-maps'
+      path: '/soil-maps'
+      fullPath: '/soil-maps'
+      preLoaderRoute: typeof AppSoilMapsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/soil-health-index': {
+      id: '/_app/soil-health-index'
+      path: '/soil-health-index'
+      fullPath: '/soil-health-index'
+      preLoaderRoute: typeof AppSoilHealthIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/sms-advisory': {
+      id: '/_app/sms-advisory'
+      path: '/sms-advisory'
+      fullPath: '/sms-advisory'
+      preLoaderRoute: typeof AppSmsAdvisoryRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/settings': {
+      id: '/_app/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof AppSettingsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/seasonal-intelligence': {
+      id: '/_app/seasonal-intelligence'
+      path: '/seasonal-intelligence'
+      fullPath: '/seasonal-intelligence'
+      preLoaderRoute: typeof AppSeasonalIntelligenceRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/rsk-dashboard': {
+      id: '/_app/rsk-dashboard'
+      path: '/rsk-dashboard'
+      fullPath: '/rsk-dashboard'
+      preLoaderRoute: typeof AppRskDashboardRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/reports': {
+      id: '/_app/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof AppReportsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/parcel-intelligence': {
+      id: '/_app/parcel-intelligence'
+      path: '/parcel-intelligence'
+      fullPath: '/parcel-intelligence'
+      preLoaderRoute: typeof AppParcelIntelligenceRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/nutrient-prediction': {
+      id: '/_app/nutrient-prediction'
+      path: '/nutrient-prediction'
+      fullPath: '/nutrient-prediction'
+      preLoaderRoute: typeof AppNutrientPredictionRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/nutrient-availability': {
+      id: '/_app/nutrient-availability'
+      path: '/nutrient-availability'
+      fullPath: '/nutrient-availability'
+      preLoaderRoute: typeof AppNutrientAvailabilityRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/groundwater': {
+      id: '/_app/groundwater'
+      path: '/groundwater'
+      fullPath: '/groundwater'
+      preLoaderRoute: typeof AppGroundwaterRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/fertilizer-economics': {
+      id: '/_app/fertilizer-economics'
+      path: '/fertilizer-economics'
+      fullPath: '/fertilizer-economics'
+      preLoaderRoute: typeof AppFertilizerEconomicsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/fertilizer': {
+      id: '/_app/fertilizer'
+      path: '/fertilizer'
+      fullPath: '/fertilizer'
+      preLoaderRoute: typeof AppFertilizerRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/farmer-advisory': {
+      id: '/_app/farmer-advisory'
+      path: '/farmer-advisory'
+      fullPath: '/farmer-advisory'
+      preLoaderRoute: typeof AppFarmerAdvisoryRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/district-intelligence': {
+      id: '/_app/district-intelligence'
+      path: '/district-intelligence'
+      fullPath: '/district-intelligence'
+      preLoaderRoute: typeof AppDistrictIntelligenceRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/digital-twin': {
+      id: '/_app/digital-twin'
+      path: '/digital-twin'
+      fullPath: '/digital-twin'
+      preLoaderRoute: typeof AppDigitalTwinRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/deficiency-analytics': {
+      id: '/_app/deficiency-analytics'
+      path: '/deficiency-analytics'
+      fullPath: '/deficiency-analytics'
+      preLoaderRoute: typeof AppDeficiencyAnalyticsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/dashboard': {
+      id: '/_app/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof AppDashboardRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/crop-suitability': {
+      id: '/_app/crop-suitability'
+      path: '/crop-suitability'
+      fullPath: '/crop-suitability'
+      preLoaderRoute: typeof AppCropSuitabilityRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/crop-intelligence': {
+      id: '/_app/crop-intelligence'
+      path: '/crop-intelligence'
+      fullPath: '/crop-intelligence'
+      preLoaderRoute: typeof AppCropIntelligenceRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/aprtgs-dashboard': {
+      id: '/_app/aprtgs-dashboard'
+      path: '/aprtgs-dashboard'
+      fullPath: '/aprtgs-dashboard'
+      preLoaderRoute: typeof AppAprtgsDashboardRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/ai-copilot': {
+      id: '/_app/ai-copilot'
+      path: '/ai-copilot'
+      fullPath: '/ai-copilot'
+      preLoaderRoute: typeof AppAiCopilotRouteImport
+      parentRoute: typeof AppRoute
+    }
   }
 }
 
+interface AppRouteChildren {
+  AppAiCopilotRoute: typeof AppAiCopilotRoute
+  AppAprtgsDashboardRoute: typeof AppAprtgsDashboardRoute
+  AppCropIntelligenceRoute: typeof AppCropIntelligenceRoute
+  AppCropSuitabilityRoute: typeof AppCropSuitabilityRoute
+  AppDashboardRoute: typeof AppDashboardRoute
+  AppDeficiencyAnalyticsRoute: typeof AppDeficiencyAnalyticsRoute
+  AppDigitalTwinRoute: typeof AppDigitalTwinRoute
+  AppDistrictIntelligenceRoute: typeof AppDistrictIntelligenceRoute
+  AppFarmerAdvisoryRoute: typeof AppFarmerAdvisoryRoute
+  AppFertilizerRoute: typeof AppFertilizerRoute
+  AppFertilizerEconomicsRoute: typeof AppFertilizerEconomicsRoute
+  AppGroundwaterRoute: typeof AppGroundwaterRoute
+  AppNutrientAvailabilityRoute: typeof AppNutrientAvailabilityRoute
+  AppNutrientPredictionRoute: typeof AppNutrientPredictionRoute
+  AppParcelIntelligenceRoute: typeof AppParcelIntelligenceRoute
+  AppReportsRoute: typeof AppReportsRoute
+  AppRskDashboardRoute: typeof AppRskDashboardRoute
+  AppSeasonalIntelligenceRoute: typeof AppSeasonalIntelligenceRoute
+  AppSettingsRoute: typeof AppSettingsRoute
+  AppSmsAdvisoryRoute: typeof AppSmsAdvisoryRoute
+  AppSoilHealthIndexRoute: typeof AppSoilHealthIndexRoute
+  AppSoilMapsRoute: typeof AppSoilMapsRoute
+  AppSoilTypeRoute: typeof AppSoilTypeRoute
+  AppWeatherRoute: typeof AppWeatherRoute
+  AppYieldSimulatorRoute: typeof AppYieldSimulatorRoute
+}
+
+const AppRouteChildren: AppRouteChildren = {
+  AppAiCopilotRoute: AppAiCopilotRoute,
+  AppAprtgsDashboardRoute: AppAprtgsDashboardRoute,
+  AppCropIntelligenceRoute: AppCropIntelligenceRoute,
+  AppCropSuitabilityRoute: AppCropSuitabilityRoute,
+  AppDashboardRoute: AppDashboardRoute,
+  AppDeficiencyAnalyticsRoute: AppDeficiencyAnalyticsRoute,
+  AppDigitalTwinRoute: AppDigitalTwinRoute,
+  AppDistrictIntelligenceRoute: AppDistrictIntelligenceRoute,
+  AppFarmerAdvisoryRoute: AppFarmerAdvisoryRoute,
+  AppFertilizerRoute: AppFertilizerRoute,
+  AppFertilizerEconomicsRoute: AppFertilizerEconomicsRoute,
+  AppGroundwaterRoute: AppGroundwaterRoute,
+  AppNutrientAvailabilityRoute: AppNutrientAvailabilityRoute,
+  AppNutrientPredictionRoute: AppNutrientPredictionRoute,
+  AppParcelIntelligenceRoute: AppParcelIntelligenceRoute,
+  AppReportsRoute: AppReportsRoute,
+  AppRskDashboardRoute: AppRskDashboardRoute,
+  AppSeasonalIntelligenceRoute: AppSeasonalIntelligenceRoute,
+  AppSettingsRoute: AppSettingsRoute,
+  AppSmsAdvisoryRoute: AppSmsAdvisoryRoute,
+  AppSoilHealthIndexRoute: AppSoilHealthIndexRoute,
+  AppSoilMapsRoute: AppSoilMapsRoute,
+  AppSoilTypeRoute: AppSoilTypeRoute,
+  AppWeatherRoute: AppWeatherRoute,
+  AppYieldSimulatorRoute: AppYieldSimulatorRoute,
+}
+
+const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AppRoute: AppRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
