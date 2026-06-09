@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useQuery } from "@tanstack/react-query";
 import { PageHeader, Pill } from "@/components/ui-kit/PageHeader";
 import { Kpi } from "@/components/ui-kit/Kpi";
 import { Panel } from "@/components/ui-kit/Panel";
@@ -38,6 +39,15 @@ function Dashboard() {
   const district = useAppStore((s) => s.district);
   const ranking = districtRanking();
 
+  const { data: kpiData } = useQuery({
+    queryKey: ["dashboard-kpis"],
+    queryFn: () => fetch("http://localhost:8000/dashboard/kpis").then(r => r.json()),
+  });
+
+  // Use backend data if available, fallback to mock data
+  const parcelsCount = kpiData?.parcels_monitored || STATE_KPIS.parcels;
+  const avgHealth = kpiData?.healthy_crop_percent || STATE_KPIS.soilHealth;
+
   return (
     <div className="space-y-6">
       <PageHeader
@@ -56,8 +66,8 @@ function Dashboard() {
 
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
         <Kpi index={0} label="Total Farmers" value={fmt(STATE_KPIS.farmers)} icon={Users} delta={4.2} sub="enrolled" />
-        <Kpi index={1} label="Total Parcels" value={fmt(STATE_KPIS.parcels)} icon={MapPinned} delta={2.8} sub="geo-tagged" />
-        <Kpi index={2} label="Avg Soil Health" value={`${STATE_KPIS.soilHealth}/100`} icon={HeartPulse} tone="success" delta={3.1} />
+        <Kpi index={1} label="Total Parcels" value={fmt(parcelsCount)} icon={MapPinned} delta={2.8} sub="geo-tagged" />
+        <Kpi index={2} label="Avg Soil Health" value={`${avgHealth}/100`} icon={HeartPulse} tone="success" delta={3.1} />
         <Kpi index={3} label="Deficiency Rate" value={`${STATE_KPIS.deficiencyRate}%`} icon={AlertTriangle} tone="warning" delta={-1.6} />
         <Kpi index={4} label="Advisory Adoption" value={`${STATE_KPIS.adoption}%`} icon={CheckCircle2} tone="info" delta={6.4} />
         <Kpi index={5} label="Est. Yield Gain" value={`+${STATE_KPIS.yieldGain}%`} icon={TrendingUp} tone="success" delta={1.9} />
