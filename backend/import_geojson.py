@@ -57,7 +57,7 @@ async def insert_data():
                 props = json.dumps(props_dict)
                 dname = get_prop(props_dict, ['DISTRICT', 'NAME_2', 'dtname', 'District'])
                 mname = get_prop(props_dict, ['SUB_DIST', 'NAME_3', 'sdtname', 'Mandal'])
-                vname = get_prop(props_dict, ['NAME', 'NAME_4', 'vname', 'Village'])
+                vname = get_prop(props_dict, ['NAME', 'NAME_4', 'vname', 'Village', 'vilname11', 'vilnam_soi'])
                 await conn.execute(
                     text("INSERT INTO village_boundaries (id, district_name, mandal_name, village_name, properties, geometry) VALUES (:id, :dname, :mname, :vname, :props, ST_SetSRID(ST_GeomFromGeoJSON(:geom), 4326))"),
                     {"id": str(uuid.uuid4()), "dname": dname, "mname": mname, "vname": vname, "props": props, "geom": geom_json}

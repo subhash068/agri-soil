@@ -16,7 +16,7 @@ function CropSuitability() {
   return (
     <div className="space-y-6">
       <PageHeader icon={<Target className="h-5 w-5" />} title="Crop Suitability Engine"
-        description="AI suitability scoring by soil, season, water & nutrient profile" actions={<Pill tone="info">Guntur</Pill>} />
+        description="AI suitability scoring by soil, season, water & nutrient profile" actions={<Pill tone="info">NTR</Pill>} />
       <div className="grid gap-5 lg:grid-cols-3">
         <div className="space-y-3 lg:col-span-2">
           {CROPS.map((c) => (

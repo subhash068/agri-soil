@@ -41,7 +41,7 @@ export const useAppStore = create<AppState>()(
   persist(
     (set) => ({
       role: "State Admin",
-      district: "Guntur",
+      district: "NTR",
       mandal: "All Mandals",
       village: "All Villages",
       lang: "en",

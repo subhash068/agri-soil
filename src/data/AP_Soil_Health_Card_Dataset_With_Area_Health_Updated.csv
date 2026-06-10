@@ -1,413 +1,413 @@
 State,District,Mandal,Village,Parcel_ID,Parcel_Area_Acres,Survey_Number,Soil_Type,Crop_Season,Crop_Name,Irrigation_Type,pH,EC,Organic_Carbon,Nitrogen,Phosphorus,Potassium,Zinc,Iron,Copper,Boron,Sample_Date,Soil_Healthy_%,Soil_Unhealthy_%,Farmer_Name
-Andhra Pradesh,Guntur,Tadikonda,RAVELA,AND-GUN-000006,2.76,AP-000006,Sandy,Kharif,Onion,Sprinkler,7.95,0.76,0.24,261,56,354,0.42,13.87,1.18,1.82,2025-07-24,59.2,40.8,Satyanarayana Bandi
-Andhra Pradesh,Guntur,Phirangipuram,TALLURU,AND-GUN-000022,2.52,AP-000022,Sandy Loam,Zaid,Red Gram (Pigeon Pea),Canal,6.67,1.68,0.59,434,72,88,2.4,9.21,1.87,0.35,2024-03-11,58.4,41.6,Ramesh Rao
-Andhra Pradesh,Guntur,Kakumanu,PANDRAPADU,AND-GUN-000042,7.68,AP-000042,Clay,Zaid,Onion,Rainfed,8.64,0.22,0.24,226,30,100,2.25,5.1,1.0,0.37,2024-12-24,75.6,24.4,Suresh Raju
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-000069,1.58,AP-000069,Sandy Loam,Kharif,Sweet Orange,Borewell,7.59,0.62,0.43,412,53,326,1.84,9.58,0.54,1.63,2024-05-29,55.27,44.73,Kiran Bandi
-Andhra Pradesh,Guntur,Tadikonda,PAMULAPADU,AND-GUN-000096,7.66,AP-000096,Clay Loam,Kharif,Bengal Gram (Chickpea),Canal,5.75,1.85,1.19,435,14,261,3.34,10.16,0.98,1.45,2024-05-31,75.53,24.47,Srinu Reddy
-Andhra Pradesh,Guntur,Kollipara,DANTALURU,AND-GUN-000119,13.44,AP-000119,Loamy,Rabi,Sesame (Til),Borewell,6.38,2.85,0.24,178,62,459,1.43,11.92,1.19,1.37,2024-03-09,94.8,5.2,Venkata Varma
-Andhra Pradesh,Guntur,Thullur,Anantavaram,AND-GUN-000130,7.91,AP-000130,Loamy,Kharif,Sweet Orange,Drip,7.74,0.65,0.41,363,64,590,3.1,8.47,0.27,1.04,2025-03-04,76.37,23.63,Babu Yarlagadda
-Andhra Pradesh,Guntur,Prathipadu,GANIKAPUDI,AND-GUN-000131,6.55,AP-000131,Sandy Loam,Rabi,Sesame (Til),Borewell,5.18,0.92,0.98,434,65,372,1.97,13.01,0.92,2.22,2025-04-13,71.83,28.17,Ramu Chowdary
-Andhra Pradesh,Guntur,Guntur,ZONNALAGADDA,AND-GUN-000144,4.86,AP-000144,Clay,Kharif,Tomato,Drip,8.23,0.21,1.4,313,27,117,3.49,7.16,1.04,2.35,2025-08-10,66.2,33.8,Narasimha Reddy
-Andhra Pradesh,Guntur,Medikonduru,MANDAPADU,AND-GUN-000170,9.07,AP-000170,Sandy,Kharif,Jowar (Sorghum),Rainfed,7.48,2.59,1.19,147,56,468,1.44,8.19,1.31,1.79,2025-12-14,80.23,19.77,Prasad Kaza
-Andhra Pradesh,Guntur,Ponnur,MAMILLAPALLI,AND-GUN-000207,1.97,AP-000207,Silty Loam,Kharif,Jowar (Sorghum),Canal,5.94,1.84,1.14,245,8,388,0.88,9.89,0.46,1.04,2024-05-23,56.57,43.43,Babu Mekapati
-Andhra Pradesh,Guntur,Prathipadu,GANIKAPUDI,AND-GUN-000218,11.32,AP-000218,Loamy,Kharif,Sweet Orange,Rainfed,8.69,2.99,1.21,379,36,234,0.22,7.33,0.54,0.93,2025-09-29,87.73,12.27,Lakshmi Mekapati
-Andhra Pradesh,Guntur,Mangalagiri,R F,AND-GUN-000228,6.2,AP-000228,Loamy,Rabi,Paddy (Rice),Drip,8.76,2.37,0.67,378,67,432,3.21,8.53,0.84,0.53,2025-06-22,70.67,29.33,Prasad Nimmagadda
-Andhra Pradesh,Guntur,Medikonduru,SIRIPURAM,AND-GUN-000238,0.85,AP-000238,Sandy,Rabi,Jowar (Sorghum),Canal,8.04,0.2,0.23,233,18,155,1.33,13.54,0.41,0.28,2025-12-04,52.83,47.17,Lakshmi Chowdary
-Andhra Pradesh,Guntur,Duggirala,IMMANI,AND-GUN-000264,8.02,AP-000264,Silty Loam,Rabi,Horse Gram,Rainfed,5.49,1.21,0.97,185,13,126,1.18,5.78,1.48,1.53,2024-09-11,76.73,23.27,Sai Daggubati
-Andhra Pradesh,Guntur,Chebrolu,GODAYARRU,AND-GUN-000279,10.68,AP-000279,Clay Loam,Rabi,Banana,Drip,7.92,1.84,1.13,286,62,196,0.52,10.57,0.1,0.95,2024-02-25,85.6,14.4,Babu Nimmagadda
-Andhra Pradesh,Guntur,Guntur,PEDA PALAKALURU,AND-GUN-000289,4.65,AP-000289,Clay Loam,Kharif,Turmeric,Sprinkler,7.46,2.29,0.91,408,30,278,1.17,4.31,1.4,0.55,2025-03-29,65.5,34.5,Sai Kodali
-Andhra Pradesh,Guntur,Vatticherukuru,YAMARRU,AND-GUN-000325,14.35,AP-000325,Loamy,Kharif,Sugarcane,Canal,8.53,1.77,0.54,308,69,189,2.04,8.54,0.75,0.38,2024-10-10,97.83,2.17,Ravi Dasari
-Andhra Pradesh,Guntur,Phirangipuram,SIRANGIPURAM,AND-GUN-000356,9.82,AP-000356,Silty Loam,Rabi,Jowar (Sorghum),Drip,7.5,1.66,0.7,368,68,237,2.22,6.19,1.32,0.37,2025-09-27,82.73,17.27,Subba Rao Dasari
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-000409,13.63,AP-000409,Sandy Loam,Rabi,Tobacco,Sprinkler,6.46,1.09,1.26,402,60,525,2.07,6.45,1.42,0.52,2025-09-27,95.43,4.57,Ramesh Yarlagadda
-Andhra Pradesh,Guntur,Vatticherukuru,KAREMPUDIPADU,AND-GUN-000442,14.81,AP-000442,Sandy Loam,Kharif,Turmeric,Drip,5.14,0.62,0.85,145,43,436,1.58,9.25,0.46,2.47,2025-02-25,99.37,0.63,Rambabu Bandi
-Andhra Pradesh,Guntur,Medikonduru,VISADALA,AND-GUN-000588,2.37,AP-000588,Loamy,Zaid,Green Gram (Moong),Drip,6.5,0.99,1.36,392,25,463,1.04,3.1,1.53,0.81,2024-07-31,57.9,42.1,Srinu Bandi
-Andhra Pradesh,Guntur,Thullur,PEDA PARIMI,AND-GUN-000590,2.7,AP-000590,Loamy,Rabi,Jowar (Sorghum),Sprinkler,6.36,0.34,1.3,362,74,160,2.79,14.05,0.29,0.27,2025-03-28,59.0,41.0,Ramu Golla
-Andhra Pradesh,Guntur,Chebrolu,NARAKODURU,AND-GUN-000593,3.14,AP-000593,Clay Loam,Kharif,Tomato,Canal,5.8,0.78,0.96,382,64,552,1.32,3.12,1.71,1.13,2025-02-11,60.47,39.53,Prasad Dasari
-Andhra Pradesh,Guntur,Pedakakani,SANGAMJAGARIAMUDI,AND-GUN-000608,5.78,AP-000608,Silty Loam,Zaid,Black Gram (Urad),Canal,5.35,1.32,1.49,272,29,144,0.93,13.47,1.61,2.09,2024-07-25,69.27,30.73,Prakash Akkineni
-Andhra Pradesh,Guntur,Tadepalle,IPPATAM,AND-GUN-000639,4.4,AP-000639,Sandy Loam,Zaid,Sugarcane,Canal,5.56,0.92,1.17,117,45,396,1.86,10.95,0.62,2.13,2024-10-30,64.67,35.33,Appa Rao Kothapalli
-Andhra Pradesh,Guntur,Kakumanu,VALLURU,AND-GUN-000647,9.11,AP-000647,Loamy,Kharif,Sweet Orange,Canal,8.75,1.49,1.1,148,80,265,1.47,15.0,1.44,0.82,2025-06-05,80.37,19.63,Babu Allu
-Andhra Pradesh,Guntur,Vatticherukuru,LAMALLEPADU,AND-GUN-000651,1.76,AP-000651,Silty Loam,Kharif,Mango,Rainfed,8.44,0.95,0.89,171,78,582,2.49,8.79,1.97,0.95,2024-01-01,55.87,44.13,Nageswara Rao Daggubati
-Andhra Pradesh,Guntur,Kollipara,VALLABHAPURAM,AND-GUN-000676,14.74,AP-000676,Sandy,Zaid,Black Gram (Urad),Canal,7.22,0.35,0.34,422,20,122,2.14,13.86,1.34,0.56,2025-01-15,99.13,0.87,Venkata Rao
-Andhra Pradesh,Guntur,Pedakakani,KOLAKALARU,AND-GUN-000697,4.69,AP-000697,Sandy,Zaid,Ragi (Finger Millet),Drip,5.45,2.12,0.39,113,59,460,0.38,3.38,1.21,1.24,2024-08-03,65.63,34.37,Venkata Kothapalli
-Andhra Pradesh,Guntur,Thullur,Abbarajupalem,AND-GUN-000737,6.19,AP-000737,Clay,Kharif,Chilli,Canal,6.41,0.52,0.61,104,45,91,2.57,4.78,1.18,0.87,2025-01-01,70.63,29.37,Suresh Nandamuri
-Andhra Pradesh,Guntur,Prathipadu,NADIMPALEM,AND-GUN-000751,2.2,AP-000751,Sandy Loam,Zaid,Maize,Drip,7.19,0.79,0.89,241,33,494,1.49,3.32,1.49,2.21,2024-04-23,57.33,42.67,Kiran Golla
-Andhra Pradesh,Guntur,Duggirala,SRINGARAPURAM,AND-GUN-000753,9.6,AP-000753,Clay,Rabi,Chilli,Borewell,5.26,0.64,1.37,172,6,565,1.61,2.27,1.95,2.22,2025-12-05,82.0,18.0,Prakash Uppalapati
-Andhra Pradesh,Guntur,Tadikonda,LAM,AND-GUN-000757,9.49,AP-000757,Loamy,Rabi,Sesame (Til),Rainfed,6.89,0.81,1.16,320,51,291,2.66,4.52,1.91,1.63,2025-02-24,81.63,18.37,Lakshmi Chowdary
-Andhra Pradesh,Guntur,Thullur,Abbarajupalem,AND-GUN-000771,2.1,AP-000771,Clay Loam,Rabi,Tomato,Canal,7.66,0.68,0.82,248,17,584,1.41,5.58,0.83,2.02,2025-11-04,57.0,43.0,Mahesh Goud
-Andhra Pradesh,Guntur,Duggirala,GODAVARRU,AND-GUN-000776,2.67,AP-000776,Sandy Loam,Kharif,Bajra (Pearl Millet),Sprinkler,6.9,2.07,0.62,218,35,187,3.17,4.26,1.8,1.91,2024-06-11,58.9,41.1,Venkatesh Kothapalli
-Andhra Pradesh,Guntur,Kakumanu,APPAPURAM,AND-GUN-000861,11.75,AP-000861,Loamy,Rabi,Sunflower,Canal,5.49,2.31,0.37,267,41,514,2.17,8.94,0.76,1.71,2025-12-24,89.17,10.83,Saraswathi Nandamuri
-Andhra Pradesh,Guntur,Kollipara,DAVULURU,AND-GUN-000877,10.88,AP-000877,Clay Loam,Zaid,Ragi (Finger Millet),Canal,6.44,2.85,0.36,302,32,296,3.47,9.42,0.44,0.48,2025-05-17,86.27,13.73,Sai Vemula
-Andhra Pradesh,Guntur,Kollipara,ANNAVARAM,AND-GUN-000893,12.54,AP-000893,Silty Loam,Kharif,Sugarcane,Canal,5.67,2.94,0.55,242,16,274,2.62,13.93,1.82,0.42,2024-09-07,91.8,8.2,Suresh Mekapati
-Andhra Pradesh,Guntur,Kollipara,MUNNANGI,AND-GUN-000897,4.75,AP-000897,Silty Loam,Zaid,Chilli,Canal,7.13,1.0,0.77,193,67,86,1.25,14.67,0.99,0.49,2025-06-28,65.83,34.17,Saraswathi Kaza
-Andhra Pradesh,Guntur,Medikonduru,MEDIKONDURU,AND-GUN-000911,9.06,AP-000911,Sandy,Rabi,Ragi (Finger Millet),Borewell,5.98,0.75,1.08,267,73,548,2.36,4.6,1.66,2.32,2024-01-09,80.2,19.8,Rambabu Nimmagadda
-Andhra Pradesh,Guntur,Guntur,ETUKURU,AND-GUN-000917,4.77,AP-000917,Clay Loam,Rabi,Oil Palm,Rainfed,7.45,1.23,0.81,240,46,126,0.66,5.24,1.17,0.41,2024-11-03,65.9,34.1,Narasimha Bandi
-Andhra Pradesh,Guntur,Pedakakani,KOPPURUNARRU,AND-GUN-000921,13.09,AP-000921,Loamy,Zaid,Jowar (Sorghum),Sprinkler,5.43,1.48,1.48,374,61,217,3.03,12.52,0.1,1.24,2024-12-23,93.63,6.37,Babu Mekapati
-Andhra Pradesh,Guntur,Tadikonda,DAMARAPALLE,AND-GUN-000933,14.77,AP-000933,Sandy,Zaid,Sunflower,Drip,5.47,2.24,1.43,177,31,534,0.67,5.58,0.72,1.63,2024-03-13,99.23,0.77,Lakshmi Dasari
-Andhra Pradesh,Guntur,Tadikonda,NIDUMUKKALA,AND-GUN-000936,4.45,AP-000936,Sandy Loam,Rabi,Turmeric,Sprinkler,8.66,1.32,1.03,243,40,337,2.31,6.27,1.37,0.7,2025-01-06,64.83,35.17,Prasad Kambhampati
-Andhra Pradesh,Guntur,Tadepalle,CHIRRAVURU,AND-GUN-000949,13.17,AP-000949,Sandy,Zaid,Ragi (Finger Millet),Canal,5.37,2.76,1.48,343,73,401,0.55,12.74,0.53,0.94,2025-12-20,93.9,6.1,Appa Rao Nandamuri
-Andhra Pradesh,Guntur,Medikonduru,PERECHERLA,AND-GUN-000966,5.66,AP-000966,Sandy,Kharif,Red Gram (Pigeon Pea),Drip,8.75,2.5,0.68,305,10,239,0.67,5.2,1.37,2.22,2024-01-05,68.87,31.13,Kiran Goud
-Andhra Pradesh,Guntur,Pedakakani,PEDDARAVURU,AND-GUN-000971,10.12,AP-000971,Clay Loam,Rabi,Sesame (Til),Borewell,6.66,0.51,0.98,121,69,273,2.74,11.42,0.18,0.13,2024-03-10,83.73,16.27,Anand Kaza
-Andhra Pradesh,Guntur,Pedakakani,NELAPADU,AND-GUN-001014,1.07,AP-001014,Sandy Loam,Kharif,Sesame (Til),Drip,8.69,1.08,0.74,135,68,490,2.0,8.82,1.32,1.05,2025-12-31,53.57,46.43,Prakash Dasari
-Andhra Pradesh,Guntur,Guntur,POTTURU,AND-GUN-001021,10.61,AP-001021,Sandy Loam,Kharif,Black Gram (Urad),Borewell,6.94,1.0,0.48,192,47,291,1.85,11.36,1.47,1.2,2025-10-03,85.37,14.63,Venkata Goud
-Andhra Pradesh,Guntur,Tadepalle,IPPATAM,AND-GUN-001093,9.31,AP-001093,Clay,Zaid,Cotton,Drip,6.56,2.8,1.07,443,75,389,3.29,4.73,1.0,0.18,2025-08-16,81.03,18.97,Srinu Bandi
-Andhra Pradesh,Guntur,Thullur,VELGAPUDI,AND-GUN-001102,14.55,AP-001102,Sandy Loam,Kharif,Tomato,Canal,6.25,1.68,0.46,450,59,161,1.28,5.19,1.01,0.34,2024-04-28,98.5,1.5,Anand Kodali
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-001118,13.22,AP-001118,Clay,Zaid,Turmeric,Drip,6.6,1.98,0.85,158,56,275,2.66,10.99,1.2,2.05,2024-10-02,94.07,5.93,Venkatesh Daggubati
-Andhra Pradesh,Guntur,Ponnur,DOPPALAPUDI,AND-GUN-001206,11.67,AP-001206,Clay Loam,Rabi,Horse Gram,Canal,7.39,0.45,1.08,362,78,156,3.26,3.47,1.01,1.26,2024-09-24,88.9,11.1,Appa Rao Daggubati
-Andhra Pradesh,Guntur,Phirangipuram,Betapudi,AND-GUN-001235,9.95,AP-001235,Sandy,Kharif,Tomato,Canal,7.77,0.21,0.94,320,53,425,0.89,2.17,0.44,1.66,2025-03-24,83.17,16.83,Nageswara Rao Mekapati
-Andhra Pradesh,Guntur,Guntur,POTTURU,AND-GUN-001252,7.48,AP-001252,Clay,Kharif,Banana,Rainfed,5.26,2.17,1.18,423,39,83,1.24,10.68,1.44,0.86,2025-08-22,74.93,25.07,Venkata Varma
-Andhra Pradesh,Guntur,Prathipadu,PRATTIPADU,AND-GUN-001258,7.63,AP-001258,Loamy,Kharif,Turmeric,Canal,7.85,1.76,0.97,399,62,230,3.16,3.09,0.94,0.15,2024-03-26,75.43,24.57,Ramakrishna Allu
-Andhra Pradesh,Guntur,Kakumanu,KONDAPATURU,AND-GUN-001321,4.08,AP-001321,Clay Loam,Zaid,Jowar (Sorghum),Sprinkler,6.78,0.96,1.46,284,61,342,1.93,13.46,0.56,2.19,2025-02-16,63.6,36.4,Lakshmi Kothapalli
-Andhra Pradesh,Guntur,Mangalagiri,CHINNAVADLAPUDI,AND-GUN-001335,14.63,AP-001335,Silty Loam,Zaid,Bengal Gram (Chickpea),Sprinkler,7.64,0.46,1.36,211,29,375,1.21,11.09,1.97,2.17,2025-12-13,98.77,1.23,Saraswathi Bandi
-Andhra Pradesh,Guntur,Tadepalle,GUNDIMEDA,AND-GUN-001352,8.89,AP-001352,Loamy,Rabi,Jowar (Sorghum),Canal,7.6,1.99,1.49,145,58,155,1.75,6.92,1.26,2.17,2025-07-04,79.63,20.37,Ravi Kothapalli
-Andhra Pradesh,Guntur,Kakumanu,VALLURU,AND-GUN-001367,10.88,AP-001367,Clay Loam,Kharif,Sugarcane,Drip,5.86,2.89,1.08,109,8,204,1.84,8.9,0.78,0.5,2025-02-26,86.27,13.73,Ravi Golla
-Andhra Pradesh,Guntur,Phirangipuram,SIRANGIPURAM,AND-GUN-001400,10.75,AP-001400,Silty Loam,Rabi,Groundnut,Canal,6.9,0.47,1.14,211,78,356,0.53,4.05,1.94,2.49,2024-05-29,85.83,14.17,Parvathi Mekapati
-Andhra Pradesh,Guntur,Tadepalle,TADEPALLE,AND-GUN-001418,2.27,AP-001418,Sandy Loam,Rabi,Oil Palm,Borewell,5.71,1.76,1.42,195,17,213,0.48,14.73,0.33,1.2,2024-05-30,57.57,42.43,Venkatesh Kambhampati
-Andhra Pradesh,Guntur,Prathipadu,PRATTIPADU,AND-GUN-001428,14.3,AP-001428,Loamy,Kharif,Sugarcane,Sprinkler,7.54,2.46,1.04,188,42,264,0.34,6.9,0.74,0.72,2025-02-15,97.67,2.33,Ravi Uppalapati
-Andhra Pradesh,Guntur,Tadikonda,NIDUMUKKALA,AND-GUN-001505,6.01,AP-001505,Silty Loam,Rabi,Horse Gram,Borewell,8.26,2.8,0.37,284,23,175,2.34,2.2,0.75,0.62,2024-05-28,70.03,29.97,Babu Daggubati
-Andhra Pradesh,Guntur,Kollipara,KOLLIPARA,AND-GUN-001573,11.18,AP-001573,Sandy Loam,Zaid,Maize,Canal,6.13,2.34,1.26,130,21,520,2.57,7.88,1.33,2.08,2025-01-31,87.27,12.73,Nageswara Rao Rao
-Andhra Pradesh,Guntur,Tadepalle,TADEPALLE,AND-GUN-001603,3.79,AP-001603,Silty Loam,Kharif,Bengal Gram (Chickpea),Sprinkler,7.93,0.33,0.85,212,39,433,1.61,6.36,0.47,2.08,2025-07-27,62.63,37.37,Prakash Dasari
-Andhra Pradesh,Guntur,Ponnur,MULUKUDURU,AND-GUN-001669,2.19,AP-001669,Silty Loam,Rabi,Cotton,Borewell,8.19,1.0,0.75,329,6,383,1.68,10.32,1.54,2.26,2024-01-13,57.3,42.7,Siva Yarlagadda
-Andhra Pradesh,Guntur,Chebrolu,VADLAMUDI,AND-GUN-001678,6.34,AP-001678,Sandy Loam,Rabi,Red Gram (Pigeon Pea),Rainfed,5.85,1.65,0.64,172,10,219,0.99,4.37,1.19,0.7,2025-04-29,71.13,28.87,Appa Rao Varma
-Andhra Pradesh,Guntur,Thullur,UDDANDRAYANIPALEM,AND-GUN-001690,11.59,AP-001690,Sandy,Rabi,Paddy (Rice),Canal,7.66,0.63,0.79,183,22,277,2.89,14.64,1.44,0.83,2024-12-13,88.63,11.37,Ramakrishna Chowdary
-Andhra Pradesh,Guntur,Tadikonda,RAVELA,AND-GUN-001711,2.7,AP-001711,Sandy,Rabi,Tomato,Drip,5.55,2.0,0.35,419,69,107,3.44,13.49,0.53,1.73,2024-06-05,59.0,41.0,Krishna Goud
-Andhra Pradesh,Guntur,Chebrolu,MANCHALA,AND-GUN-001742,11.14,AP-001742,Sandy,Zaid,Sesame (Til),Rainfed,6.05,2.22,1.1,291,66,379,2.11,4.57,0.78,0.37,2024-09-03,87.13,12.87,Ramu Golla
-Andhra Pradesh,Guntur,Thullur,MANDADAM,AND-GUN-001777,10.48,AP-001777,Clay,Kharif,Bajra (Pearl Millet),Sprinkler,6.32,2.64,0.3,221,15,423,0.92,2.67,1.23,1.14,2024-06-22,84.93,15.07,Lakshmi Daggubati
-Andhra Pradesh,Guntur,Kakumanu,KONDAPATURU,AND-GUN-001780,12.69,AP-001780,Loamy,Kharif,Sesame (Til),Rainfed,5.4,2.97,1.11,274,60,542,1.35,10.62,0.86,0.98,2025-09-04,92.3,7.7,Gopi Pothineni
-Andhra Pradesh,Guntur,Kollipara,SIRIPURAM,AND-GUN-001797,10.89,AP-001797,Sandy,Kharif,Bengal Gram (Chickpea),Borewell,5.66,0.97,0.21,116,40,161,1.7,3.64,0.31,0.89,2024-07-07,86.3,13.7,Narasimha Daggubati
-Andhra Pradesh,Guntur,Prathipadu,GOTTIPADU,AND-GUN-001803,5.62,AP-001803,Clay,Rabi,Mango,Borewell,5.17,1.64,1.42,283,5,269,0.7,7.43,1.38,0.22,2024-05-04,68.73,31.27,Siva Kambhampati
-Andhra Pradesh,Guntur,Thullur,KONDARAJUPALEM,AND-GUN-001804,4.8,AP-001804,Clay,Rabi,Black Gram (Urad),Rainfed,6.42,0.75,0.99,143,12,82,0.39,2.28,1.45,1.66,2025-08-13,66.0,34.0,Suresh Golla
-Andhra Pradesh,Guntur,Medikonduru,VELAVARTHIPADU,AND-GUN-001810,1.93,AP-001810,Loamy,Rabi,Bajra (Pearl Millet),Borewell,6.49,1.92,1.08,326,8,475,2.28,8.21,0.91,0.9,2024-05-15,56.43,43.57,Suresh Vemula
-Andhra Pradesh,Guntur,Tadepalle,GUNDIMEDA,AND-GUN-001882,13.16,AP-001882,Sandy,Rabi,Banana,Drip,7.72,1.12,0.58,141,38,521,3.42,12.38,1.67,1.6,2025-05-22,93.87,6.13,Suresh Ghattamaneni
-Andhra Pradesh,Guntur,Guntur,ANKIREDDYPALEM,AND-GUN-001883,9.73,AP-001883,Clay Loam,Rabi,Jowar (Sorghum),Canal,6.81,2.72,0.6,283,45,305,2.47,11.08,1.86,1.1,2025-08-21,82.43,17.57,Suresh Kodali
-Andhra Pradesh,Guntur,Medikonduru,MANGALAGIRI PADU,AND-GUN-001886,7.19,AP-001886,Loamy,Zaid,Cotton,Rainfed,5.91,2.39,0.51,416,48,155,1.64,8.42,0.21,0.91,2025-08-07,73.97,26.03,Anand Nandamuri
-Andhra Pradesh,Guntur,Vatticherukuru,GARLAPADU,AND-GUN-001912,13.21,AP-001912,Sandy,Zaid,Maize,Sprinkler,8.45,0.24,1.17,174,79,176,0.47,7.87,0.34,0.48,2025-09-04,94.03,5.97,Narasimha Uppalapati
-Andhra Pradesh,Guntur,Kollipara,KUNCHAVARAM,AND-GUN-001948,2.64,AP-001948,Loamy,Rabi,Turmeric,Sprinkler,8.8,1.34,0.42,292,43,153,2.28,11.89,0.57,1.65,2025-11-29,58.8,41.2,Ramu Allu
-Andhra Pradesh,Guntur,Kakumanu,PANDRAPADU,AND-GUN-001949,5.26,AP-001949,Loamy,Rabi,Cotton,Drip,8.27,2.62,1.07,200,46,439,0.93,11.36,0.26,1.95,2025-08-09,67.53,32.47,Saraswathi Nandamuri
-Andhra Pradesh,Guntur,Pedakakani,NANDIVELUGU,AND-GUN-002001,4.29,AP-002001,Sandy,Rabi,Green Gram (Moong),Canal,6.42,2.66,0.72,348,18,434,1.28,5.54,1.77,0.93,2024-12-07,64.3,35.7,Murali Allu
-Andhra Pradesh,Guntur,Medikonduru,MANDAPADU,AND-GUN-002014,2.52,AP-002014,Sandy,Zaid,Sesame (Til),Rainfed,8.67,1.11,0.22,445,79,432,1.8,9.77,1.68,0.97,2024-06-04,58.4,41.6,Sai Dasari
-Andhra Pradesh,Guntur,Chebrolu,VEJENDLA,AND-GUN-002017,5.54,AP-002017,Sandy,Kharif,Banana,Sprinkler,6.33,1.03,0.64,121,71,301,1.85,5.68,1.46,1.07,2025-12-11,68.47,31.53,Krishna Bandi
-Andhra Pradesh,Guntur,Mangalagiri,CHINNAVADLAPUDI,AND-GUN-002023,14.08,AP-002023,Loamy,Zaid,Turmeric,Drip,7.93,1.75,0.77,132,39,102,0.85,11.98,1.95,1.7,2025-11-19,96.93,3.07,Ramakrishna Vemula
-Andhra Pradesh,Guntur,Duggirala,CHINNAPALEM,AND-GUN-002040,4.14,AP-002040,Clay,Kharif,Sesame (Til),Canal,7.07,2.29,1.28,198,15,84,1.55,7.83,1.78,0.88,2025-09-09,63.8,36.2,Srinu Konidela
-Andhra Pradesh,Guntur,Pedanandipadu,GORIJAVOLUGUNTAPALEM,AND-GUN-002131,2.85,AP-002131,Loamy,Kharif,Maize,Sprinkler,6.18,2.11,0.96,192,54,493,3.43,4.79,0.83,0.37,2025-01-03,59.5,40.5,Sai Goud
-Andhra Pradesh,Guntur,Tadikonda,RAVELA,AND-GUN-002140,12.94,AP-002140,Sandy Loam,Zaid,Chilli,Sprinkler,7.81,1.58,1.05,198,72,390,2.4,6.88,1.19,0.22,2024-03-30,93.13,6.87,Siva Mekapati
-Andhra Pradesh,Guntur,Kakumanu,GARIKAPADU,AND-GUN-002148,5.69,AP-002148,Loamy,Rabi,Bengal Gram (Chickpea),Rainfed,5.09,2.15,0.23,387,68,570,0.48,6.34,1.43,1.53,2024-08-15,68.97,31.03,Gopi Reddy
-Andhra Pradesh,Guntur,Guntur,GORANTLA,AND-GUN-002255,13.25,AP-002255,Loamy,Kharif,Paddy (Rice),Drip,7.19,0.36,1.24,145,75,119,1.39,12.8,0.41,1.25,2025-03-22,94.17,5.83,Rambabu Akkineni
-Andhra Pradesh,Guntur,Medikonduru,PALADUGU,AND-GUN-002286,4.51,AP-002286,Clay Loam,Kharif,Bajra (Pearl Millet),Canal,8.1,2.16,0.92,183,59,365,3.2,8.69,1.02,0.32,2024-07-07,65.03,34.97,Ramakrishna Chowdary
-Andhra Pradesh,Guntur,Vatticherukuru,PALLAPADU,AND-GUN-002324,4.99,AP-002324,Loamy,Zaid,Cotton,Rainfed,6.65,1.77,0.59,352,32,319,1.98,11.99,1.78,1.89,2025-05-17,66.63,33.37,Murali Daggubati
-Andhra Pradesh,Guntur,Thullur,SAKHAMARU,AND-GUN-002356,2.25,AP-002356,Sandy,Zaid,Ragi (Finger Millet),Canal,5.92,0.47,1.13,163,5,167,3.11,13.98,1.2,2.3,2025-09-30,57.5,42.5,Parvathi Kothapalli
-Andhra Pradesh,Guntur,Duggirala,PEDDAKONDURU,AND-GUN-002407,5.79,AP-002407,Clay,Kharif,Onion,Rainfed,6.33,0.72,1.41,268,41,87,3.06,13.41,1.28,1.25,2024-01-11,69.3,30.7,Kiran Kodali
-Andhra Pradesh,Guntur,Phirangipuram,TAKKELAPADU,AND-GUN-002490,5.94,AP-002490,Clay Loam,Kharif,Green Gram (Moong),Rainfed,6.05,1.21,0.28,419,48,345,1.76,2.64,1.36,1.1,2025-03-31,69.8,30.2,Venkata Kodali
-Andhra Pradesh,Guntur,Duggirala,TUMMAPUDI,AND-GUN-002509,12.78,AP-002509,Clay Loam,Kharif,Coconut,Sprinkler,7.29,1.78,0.29,141,59,271,2.43,10.46,0.71,0.85,2025-10-28,92.6,7.4,Prakash Ghattamaneni
-Andhra Pradesh,Guntur,Duggirala,CHIRUVURU,AND-GUN-002520,10.98,AP-002520,Sandy,Kharif,Horse Gram,Borewell,7.08,1.18,0.32,119,10,212,0.42,3.99,0.24,0.71,2024-01-20,86.6,13.4,Siva Pothineni
-Andhra Pradesh,Guntur,Prathipadu,INDULAPALEM,AND-GUN-002551,5.56,AP-002551,Sandy,Kharif,Cotton,Canal,6.07,0.25,0.77,297,77,218,1.49,9.1,0.34,1.88,2025-08-24,68.53,31.47,Appa Rao Yarlagadda
-Andhra Pradesh,Guntur,Chebrolu,VEJENDLA,AND-GUN-002566,4.78,AP-002566,Sandy,Kharif,Green Gram (Moong),Borewell,5.4,0.48,0.82,198,40,167,2.65,8.72,0.2,2.45,2024-08-02,65.93,34.07,Mahesh Akkineni
-Andhra Pradesh,Guntur,Kollipara,PIDAPARRUPALEM,AND-GUN-002586,9.56,AP-002586,Loamy,Zaid,Sugarcane,Rainfed,6.66,2.64,1.38,344,67,388,2.95,11.61,0.58,1.0,2025-01-25,81.87,18.13,Sai Konidela
-Andhra Pradesh,Guntur,Kollipara,ATTATO,AND-GUN-002597,4.44,AP-002597,Clay Loam,Zaid,Bajra (Pearl Millet),Sprinkler,8.5,2.42,0.86,442,7,490,1.37,8.52,0.71,1.36,2024-09-01,64.8,35.2,Kiran Konidela
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-002607,1.18,AP-002607,Sandy,Rabi,Jowar (Sorghum),Rainfed,8.63,0.14,0.27,353,45,400,3.32,9.74,1.1,0.78,2024-11-26,53.93,46.07,Ravi Uppalapati
-Andhra Pradesh,Guntur,Ponnur,VALLABHARAOPALEM,AND-GUN-002636,10.16,AP-002636,Clay,Rabi,Bengal Gram (Chickpea),Drip,5.18,1.73,0.9,435,35,183,2.0,9.08,0.33,1.49,2024-03-29,83.87,16.13,Nageswara Rao Naidu
-Andhra Pradesh,Guntur,Duggirala,CHINNAPALEM,AND-GUN-002665,9.31,AP-002665,Clay Loam,Kharif,Sunflower,Drip,7.4,0.26,0.34,317,29,331,1.09,2.77,0.6,2.21,2024-08-19,81.03,18.97,Parvathi Golla
-Andhra Pradesh,Guntur,Pedanandipadu,ANNAVARAM,AND-GUN-002746,11.83,AP-002746,Silty Loam,Zaid,Ragi (Finger Millet),Drip,5.94,1.67,0.78,314,64,478,3.01,2.47,1.3,2.1,2025-11-30,89.43,10.57,Bhavani Nimmagadda
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-002783,14.73,AP-002783,Silty Loam,Zaid,Sunflower,Drip,6.35,0.71,0.96,236,24,444,2.63,2.25,0.53,0.16,2025-11-26,99.1,0.9,Narasimha Uppalapati
-Andhra Pradesh,Guntur,Chebrolu,SEKURU,AND-GUN-002815,8.69,AP-002815,Silty Loam,Kharif,Ragi (Finger Millet),Canal,8.01,2.05,1.26,321,54,529,1.64,14.61,0.64,0.11,2025-04-27,78.97,21.03,Prasad Allu
-Andhra Pradesh,Guntur,Duggirala,DUGGIRALA,AND-GUN-002865,6.83,AP-002865,Loamy,Kharif,Sweet Orange,Sprinkler,6.5,2.6,1.39,270,55,385,1.04,9.54,1.55,1.5,2025-11-17,72.77,27.23,Kiran Kambhampati
-Andhra Pradesh,Guntur,Tadikonda,LAM,AND-GUN-002871,13.46,AP-002871,Clay,Kharif,Turmeric,Borewell,8.14,0.72,0.37,360,78,279,1.75,5.4,0.14,0.25,2025-08-10,94.87,5.13,Gopi Rao
-Andhra Pradesh,Guntur,Kollipara,KUNCHAVARAM,AND-GUN-002880,3.2,AP-002880,Loamy,Rabi,Sugarcane,Sprinkler,6.05,1.76,1.47,201,66,231,0.72,13.25,1.42,2.31,2024-08-12,60.67,39.33,Nageswara Rao Nandamuri
-Andhra Pradesh,Guntur,Phirangipuram,REPUDI,AND-GUN-002889,12.26,AP-002889,Sandy Loam,Rabi,Red Gram (Pigeon Pea),Drip,6.1,0.46,1.06,340,18,217,0.82,5.05,1.88,2.28,2025-08-08,90.87,9.13,Lakshmi Nandamuri
-Andhra Pradesh,Guntur,Duggirala,TUMMAPUDI,AND-GUN-002950,14.03,AP-002950,Loamy,Rabi,Ragi (Finger Millet),Canal,7.68,2.44,1.46,292,66,180,0.38,7.38,1.51,0.15,2024-04-22,96.77,3.23,Satyanarayana Dasari
-Andhra Pradesh,Guntur,Vatticherukuru,KURNUTALA,AND-GUN-002979,10.7,AP-002979,Sandy Loam,Zaid,Maize,Canal,5.41,1.48,0.44,446,10,262,3.07,7.27,1.2,2.39,2024-03-16,85.67,14.33,Appa Rao Bandi
-Andhra Pradesh,Guntur,Medikonduru,VISADALA,AND-GUN-003034,1.97,AP-003034,Clay,Rabi,Red Gram (Pigeon Pea),Rainfed,6.6,1.37,1.4,249,55,307,2.84,6.13,0.25,0.6,2025-12-05,56.57,43.43,Murali Raju
-Andhra Pradesh,Guntur,Ponnur,MAMILLAPALLI,AND-GUN-003037,6.76,AP-003037,Silty Loam,Rabi,Bajra (Pearl Millet),Borewell,7.68,2.13,1.5,327,32,544,0.9,12.84,1.01,1.62,2025-05-26,72.53,27.47,Siva Kodali
-Andhra Pradesh,Guntur,Phirangipuram,HOUSE GANESH,AND-GUN-003040,8.02,AP-003040,Sandy,Zaid,Tomato,Sprinkler,5.16,0.9,0.81,132,76,111,3.48,2.42,0.68,0.23,2024-10-04,76.73,23.27,Prakash Kambhampati
-Andhra Pradesh,Guntur,Guntur,BUDAMPADU,AND-GUN-003061,4.81,AP-003061,Loamy,Kharif,Sweet Orange,Sprinkler,5.88,0.18,0.21,320,12,310,2.52,6.07,1.34,1.09,2024-10-21,66.03,33.97,Siva Chowdary
-Andhra Pradesh,Guntur,Prathipadu,KONDEPADU,AND-GUN-003089,8.95,AP-003089,Silty Loam,Rabi,Sesame (Til),Drip,7.47,1.89,0.73,169,9,396,2.92,13.98,0.94,0.76,2025-04-05,79.83,20.17,Bhavani Dasari
-Andhra Pradesh,Guntur,Vatticherukuru,KAREMPUDIPADU,AND-GUN-003130,12.66,AP-003130,Clay,Rabi,Onion,Rainfed,5.31,2.96,0.71,290,48,544,1.45,5.95,0.8,2.13,2024-10-03,92.2,7.8,Ramesh Akkineni
-Andhra Pradesh,Guntur,Duggirala,CHINTALAPUDI,AND-GUN-003132,12.43,AP-003132,Silty Loam,Zaid,Coconut,Sprinkler,7.98,2.68,0.75,195,20,398,2.52,10.27,1.74,2.11,2024-06-04,91.43,8.57,Ramakrishna Kaza
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-003137,11.27,AP-003137,Clay,Zaid,Chilli,Rainfed,7.85,1.67,0.6,340,62,600,3.19,3.99,1.58,1.19,2025-06-07,87.57,12.43,Parvathi Kodali
-Andhra Pradesh,Guntur,Mangalagiri,CHINNAKAKANI,AND-GUN-003161,6.94,AP-003161,Sandy,Rabi,Banana,Borewell,8.55,1.7,1.5,190,24,308,3.45,13.3,0.84,2.09,2024-12-06,73.13,26.87,Gopi Mekapati
-Andhra Pradesh,Guntur,Thullur,LINGAYAPALEM,AND-GUN-003171,10.0,AP-003171,Clay Loam,Rabi,Turmeric,Rainfed,5.91,2.34,1.48,391,67,417,3.36,6.89,1.46,0.73,2024-11-07,83.33,16.67,Krishna Rao
-Andhra Pradesh,Guntur,Prathipadu,GANIKAPUDI,AND-GUN-003189,12.51,AP-003189,Loamy,Rabi,Sunflower,Drip,7.86,0.36,0.58,173,65,197,2.46,9.57,0.93,0.81,2024-12-13,91.7,8.3,Ravi Dasari
-Andhra Pradesh,Guntur,Mangalagiri,NIDAMARRU,AND-GUN-003198,13.21,AP-003198,Clay,Zaid,Sweet Orange,Rainfed,5.59,1.46,0.22,397,79,254,1.9,3.56,0.37,0.93,2024-11-09,94.03,5.97,Venkata Akkineni
-Andhra Pradesh,Guntur,Pedakakani,ANGALAKUDURU,AND-GUN-003219,10.92,AP-003219,Loamy,Kharif,Jowar (Sorghum),Canal,8.47,1.47,0.88,306,6,238,1.89,6.03,1.99,1.23,2024-09-01,86.4,13.6,Nageswara Rao Kothapalli
-Andhra Pradesh,Guntur,Thullur,Tulluru,AND-GUN-003248,6.47,AP-003248,Sandy Loam,Rabi,Sunflower,Rainfed,6.85,2.32,0.88,359,79,480,2.19,2.11,1.56,1.34,2024-05-03,71.57,28.43,Suresh Kothapalli
-Andhra Pradesh,Guntur,Medikonduru,SIRIPURAM,AND-GUN-003296,1.47,AP-003296,Clay Loam,Zaid,Jowar (Sorghum),Rainfed,6.27,2.8,0.83,434,62,197,0.44,7.88,0.11,1.05,2025-03-15,54.9,45.1,Ramakrishna Pothineni
-Andhra Pradesh,Guntur,Thullur,SAKHAMARU,AND-GUN-003312,10.02,AP-003312,Loamy,Kharif,Sugarcane,Rainfed,6.66,1.54,1.2,200,49,373,1.98,10.28,1.76,0.41,2025-11-13,83.4,16.6,Venkata Kaza
-Andhra Pradesh,Guntur,Phirangipuram,ERRAGUNTLAPADU,AND-GUN-003376,11.78,AP-003376,Sandy,Zaid,Green Gram (Moong),Drip,8.44,2.12,0.65,243,58,240,2.49,9.98,0.46,1.64,2025-08-03,89.27,10.73,Venkatesh Naidu
-Andhra Pradesh,Guntur,Guntur,PEDA PALAKALURU,AND-GUN-003404,5.24,AP-003404,Silty Loam,Kharif,Onion,Sprinkler,5.37,1.13,0.95,128,76,264,2.42,12.29,0.83,2.09,2025-12-12,67.47,32.53,Narasimha Vemula
-Andhra Pradesh,Guntur,Thullur,Abbarajupalem,AND-GUN-003449,9.1,AP-003449,Clay Loam,Rabi,Tomato,Rainfed,6.88,0.28,0.23,427,32,157,2.08,12.97,0.86,1.1,2024-03-28,80.33,19.67,Satyanarayana Daggubati
-Andhra Pradesh,Guntur,Tadepalle,CHIRRAVURU,AND-GUN-003471,0.78,AP-003471,Loamy,Kharif,Sesame (Til),Rainfed,8.67,2.26,1.41,446,76,97,3.05,5.91,1.23,0.2,2025-01-02,52.6,47.4,Sai Chowdary
-Andhra Pradesh,Guntur,Duggirala,DUGGIRALA,AND-GUN-003492,9.3,AP-003492,Sandy,Rabi,Maize,Drip,8.36,0.91,0.28,108,6,198,0.57,2.86,0.91,2.1,2025-01-16,81.0,19.0,Srinivas Bandi
-Andhra Pradesh,Guntur,Duggirala,PENUMULI,AND-GUN-003537,4.22,AP-003537,Sandy,Zaid,Maize,Borewell,7.95,1.24,1.32,196,28,533,1.04,3.26,1.44,1.05,2024-12-22,64.07,35.93,Prasad Reddy
-Andhra Pradesh,Guntur,Mangalagiri,CHINNAVADLAPUDI,AND-GUN-003543,2.63,AP-003543,Silty Loam,Rabi,Paddy (Rice),Canal,7.8,0.67,1.08,179,42,186,3.01,4.02,0.48,1.29,2024-10-23,58.77,41.23,Nageswara Rao Uppalapati
-Andhra Pradesh,Guntur,Mangalagiri,NIDAMARRU,AND-GUN-003548,7.53,AP-003548,Loamy,Kharif,Sesame (Til),Drip,5.99,1.92,1.11,233,32,328,3.29,10.24,1.9,0.5,2025-01-24,75.1,24.9,Parvathi Daggubati
-Andhra Pradesh,Guntur,Duggirala,DUGGIRALA,AND-GUN-003553,8.92,AP-003553,Clay Loam,Rabi,Jowar (Sorghum),Rainfed,5.48,2.13,0.83,313,52,325,2.86,4.26,0.96,1.37,2025-12-11,79.73,20.27,Srinu Ghattamaneni
-Andhra Pradesh,Guntur,Pedakakani,DEVARAVADELAPALEM,AND-GUN-003601,2.55,AP-003601,Loamy,Kharif,Bajra (Pearl Millet),Sprinkler,5.3,2.69,0.75,207,59,106,2.06,9.93,0.28,2.19,2025-04-13,58.5,41.5,Ramesh Kothapalli
-Andhra Pradesh,Guntur,Prathipadu,INDULAPALEM,AND-GUN-003642,13.67,AP-003642,Silty Loam,Kharif,Sugarcane,Rainfed,8.69,2.47,0.32,379,39,454,1.86,13.26,0.53,0.21,2025-10-20,95.57,4.43,Subba Rao Kothapalli
-Andhra Pradesh,Guntur,Guntur,NALLAPADU,AND-GUN-003650,14.99,AP-003650,Silty Loam,Zaid,Sesame (Til),Borewell,5.7,0.37,1.2,427,45,366,2.88,5.32,0.28,0.15,2024-12-17,99.97,0.03,Srinivas Reddy
-Andhra Pradesh,Guntur,Pedanandipadu,PEDDA NANDIPADU,AND-GUN-003693,11.74,AP-003693,Clay Loam,Kharif,Green Gram (Moong),Borewell,8.52,2.22,0.21,443,21,434,2.64,14.25,1.23,2.17,2024-08-08,89.13,10.87,Nageswara Rao Yarlagadda
-Andhra Pradesh,Guntur,Kollipara,KOLLIPARA,AND-GUN-003697,14.44,AP-003697,Sandy Loam,Rabi,Coconut,Canal,5.82,2.7,1.07,448,79,165,3.21,13.88,1.59,0.77,2024-03-11,98.13,1.87,Prakash Kaza
-Andhra Pradesh,Guntur,Chebrolu,MANCHALA,AND-GUN-003703,5.1,AP-003703,Loamy,Kharif,Chilli,Sprinkler,6.4,0.45,0.62,187,23,171,1.61,6.6,0.28,1.77,2025-02-22,67.0,33.0,Narasimha Bandi
-Andhra Pradesh,Guntur,Chebrolu,SUDDAPALLE,AND-GUN-003718,1.64,AP-003718,Clay,Zaid,Black Gram (Urad),Canal,5.77,1.27,1.13,259,80,505,2.99,14.5,0.94,1.17,2024-05-04,55.47,44.53,Srinivas Dasari
-Andhra Pradesh,Guntur,Kakumanu,BHALLAKHANUDIPALEM,AND-GUN-003724,3.19,AP-003724,Clay,Rabi,Sugarcane,Rainfed,8.25,1.51,0.53,148,9,337,0.87,8.1,0.33,1.95,2025-09-13,60.63,39.37,Gopi Goud
-Andhra Pradesh,Guntur,Kakumanu,BHALLAKHANUDIPALEM,AND-GUN-003750,13.33,AP-003750,Silty Loam,Zaid,Onion,Sprinkler,7.17,2.01,0.75,190,23,339,1.82,7.57,0.48,1.43,2025-03-30,94.43,5.57,Saraswathi Chowdary
-Andhra Pradesh,Guntur,Ponnur,PONNURU,AND-GUN-003773,5.49,AP-003773,Clay,Zaid,Jowar (Sorghum),Rainfed,6.05,0.48,0.77,365,79,486,0.65,9.49,1.88,0.12,2025-09-07,68.3,31.7,Lakshmi Pothineni
-Andhra Pradesh,Guntur,Phirangipuram,GUNDALAPADU,AND-GUN-003784,12.48,AP-003784,Clay Loam,Rabi,Sesame (Til),Rainfed,8.72,0.82,0.89,106,31,396,1.47,12.4,1.5,0.53,2025-07-04,91.6,8.4,Siva Kothapalli
-Andhra Pradesh,Guntur,Tadikonda,KANTERU,AND-GUN-003795,0.97,AP-003795,Clay Loam,Zaid,Tomato,Canal,5.42,2.31,0.3,308,76,244,3.11,6.5,1.14,1.7,2024-06-28,53.23,46.77,Venkata Vemula
-Andhra Pradesh,Guntur,Phirangipuram,TALLURU,AND-GUN-003860,12.59,AP-003860,Sandy Loam,Zaid,Sesame (Til),Sprinkler,7.43,2.51,1.11,149,22,237,3.44,2.46,0.39,0.57,2024-05-22,91.97,8.03,Subba Rao Kodali
-Andhra Pradesh,Guntur,Kakumanu,KAKUMANU,AND-GUN-003861,12.31,AP-003861,Silty Loam,Rabi,Banana,Drip,5.57,0.75,0.9,445,50,149,0.55,3.56,0.56,1.93,2024-07-28,91.03,8.97,Krishna Kothapalli
-Andhra Pradesh,Guntur,Tadikonda,BANDARUPALLI,AND-GUN-003926,0.87,AP-003926,Loamy,Zaid,Sweet Orange,Rainfed,8.08,2.98,1.01,227,50,90,1.93,7.07,1.08,1.91,2025-10-11,52.9,47.1,Babu Kaza
-Andhra Pradesh,Guntur,Medikonduru,VISADALA,AND-GUN-003992,3.56,AP-003992,Sandy Loam,Kharif,Sesame (Til),Canal,7.23,1.3,1.48,254,16,437,2.36,7.28,0.14,0.57,2024-07-06,61.87,38.13,Venkata Nandamuri
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-003993,11.41,AP-003993,Sandy,Kharif,Turmeric,Borewell,6.17,1.26,0.22,328,42,348,0.89,4.33,1.63,2.13,2024-07-23,88.03,11.97,Bhavani Chowdary
-Andhra Pradesh,Guntur,Ponnur,MANNAVA,AND-GUN-004025,10.26,AP-004025,Clay,Kharif,Sesame (Til),Canal,7.37,0.43,1.41,191,30,352,0.24,6.4,1.3,0.99,2024-07-12,84.2,15.8,Ramesh Nandamuri
-Andhra Pradesh,Guntur,Mangalagiri,KRISHNARAYA,AND-GUN-004122,8.12,AP-004122,Clay Loam,Zaid,Banana,Rainfed,6.82,2.92,1.21,260,7,280,2.24,4.52,1.58,0.65,2024-08-07,77.07,22.93,Lakshmi Akkineni
-Andhra Pradesh,Guntur,Kollipara,DANTALURU,AND-GUN-004192,13.16,AP-004192,Sandy Loam,Kharif,Sugarcane,Sprinkler,8.35,1.4,0.49,190,37,131,1.16,5.19,0.83,2.42,2025-12-18,93.87,6.13,Bhavani Nimmagadda
-Andhra Pradesh,Guntur,Guntur,PEDA PALAKALURU,AND-GUN-004230,3.25,AP-004230,Clay,Zaid,Banana,Drip,7.56,0.88,1.26,279,39,159,2.11,9.58,1.73,1.51,2024-12-17,60.83,39.17,Saraswathi Kothapalli
-Andhra Pradesh,Guntur,Phirangipuram,TAKKELAPADU,AND-GUN-004252,1.4,AP-004252,Sandy,Rabi,Green Gram (Moong),Sprinkler,8.49,2.27,1.17,201,56,151,1.19,14.25,0.64,1.72,2024-08-11,54.67,45.33,Ramesh Nandamuri
-Andhra Pradesh,Guntur,Phirangipuram,HOUSE GANESH,AND-GUN-004285,8.51,AP-004285,Silty Loam,Kharif,Banana,Canal,5.4,2.09,0.21,410,16,151,0.58,5.9,1.03,1.0,2024-01-22,78.37,21.63,Srinivas Pothineni
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-004305,12.51,AP-004305,Sandy,Kharif,Bajra (Pearl Millet),Borewell,7.67,1.96,1.04,329,49,363,2.88,5.88,1.02,1.87,2025-03-25,91.7,8.3,Krishna Nandamuri
-Andhra Pradesh,Guntur,Kollipara,PIDAPARRUPALEM,AND-GUN-004307,7.41,AP-004307,Loamy,Zaid,Chilli,Sprinkler,8.44,2.28,0.49,119,64,257,0.89,4.81,1.57,1.85,2024-10-06,74.7,25.3,Prasad Mekapati
-Andhra Pradesh,Guntur,Medikonduru,MANGALAGIRI PADU,AND-GUN-004314,13.19,AP-004314,Clay,Zaid,Sweet Orange,Sprinkler,5.19,0.29,0.61,176,74,214,0.21,14.81,1.32,1.53,2025-06-06,93.97,6.03,Murali Dasari
-Andhra Pradesh,Guntur,Tadikonda,RF,AND-GUN-004382,1.53,AP-004382,Sandy Loam,Kharif,Ragi (Finger Millet),Borewell,6.63,2.83,0.91,237,48,485,1.63,14.58,0.22,1.94,2024-02-23,55.1,44.9,Lakshmi Pothineni
-Andhra Pradesh,Guntur,Pedakakani,NELAPADU,AND-GUN-004406,10.42,AP-004406,Loamy,Zaid,Sweet Orange,Borewell,8.56,1.9,0.21,445,80,574,2.87,3.07,1.55,0.42,2024-03-30,84.73,15.27,Prakash Akkineni
-Andhra Pradesh,Guntur,Tadepalle,UNDAVALLI,AND-GUN-004409,6.04,AP-004409,Clay,Rabi,Ragi (Finger Millet),Canal,7.96,0.2,1.45,287,79,142,2.75,4.08,0.53,0.29,2025-09-07,70.13,29.87,Parvathi Nimmagadda
-Andhra Pradesh,Guntur,Chebrolu,GODAYARRU,AND-GUN-004441,13.18,AP-004441,Silty Loam,Rabi,Onion,Rainfed,8.63,2.56,1.08,130,57,420,3.32,2.42,1.93,1.89,2024-04-20,93.93,6.07,Prasad Kodali
-Andhra Pradesh,Guntur,Duggirala,PERIKALAPUDI,AND-GUN-004444,6.29,AP-004444,Sandy,Kharif,Tomato,Sprinkler,7.99,1.54,0.95,168,18,200,3.02,4.27,1.12,0.27,2024-07-07,70.97,29.03,Venkata Allu
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-004461,6.34,AP-004461,Clay,Zaid,Mango,Sprinkler,6.12,2.29,1.15,318,38,201,3.26,5.88,1.5,0.97,2024-10-20,71.13,28.87,Satyanarayana Raju
-Andhra Pradesh,Guntur,Prathipadu,KONDAJAGARLAMUDI,AND-GUN-004563,13.26,AP-004563,Silty Loam,Zaid,Bajra (Pearl Millet),Rainfed,7.97,2.92,1.41,422,61,418,0.47,12.32,1.99,1.74,2024-01-08,94.2,5.8,Ramesh Mekapati
-Andhra Pradesh,Guntur,Duggirala,GODAVARRU,AND-GUN-004588,2.4,AP-004588,Loamy,Rabi,Ragi (Finger Millet),Drip,6.33,1.46,0.32,132,77,419,0.45,13.45,0.11,0.75,2024-11-19,58.0,42.0,Prasad Allu
-Andhra Pradesh,Guntur,Ponnur,MAMILLAPALLI,AND-GUN-004641,14.21,AP-004641,Clay Loam,Zaid,Mango,Canal,6.35,2.26,0.23,174,55,207,2.93,2.63,0.73,1.35,2025-12-13,97.37,2.63,Gopi Yarlagadda
-Andhra Pradesh,Guntur,Kollipara,KUNCHAVARAM,AND-GUN-004658,8.46,AP-004658,Silty Loam,Kharif,Chilli,Rainfed,6.72,2.93,1.46,189,41,277,2.43,10.57,0.21,0.39,2024-06-01,78.2,21.8,Mahesh Raju
-Andhra Pradesh,Guntur,Medikonduru,PONUGUPADU,AND-GUN-004660,10.95,AP-004660,Clay,Zaid,Groundnut,Sprinkler,8.2,0.42,1.42,106,67,220,0.48,13.12,1.61,1.73,2024-12-10,86.5,13.5,Bhavani Rao
-Andhra Pradesh,Guntur,Ponnur,MAMILLAPALLI,AND-GUN-004675,6.41,AP-004675,Sandy Loam,Zaid,Red Gram (Pigeon Pea),Borewell,6.18,1.93,0.79,122,63,282,0.25,9.23,1.75,1.32,2024-07-25,71.37,28.63,Siva Varma
-Andhra Pradesh,Guntur,Prathipadu,NADIMPALEM,AND-GUN-004680,9.65,AP-004680,Sandy Loam,Zaid,Horse Gram,Canal,8.11,0.16,1.03,313,63,597,1.88,4.56,0.32,2.46,2025-01-02,82.17,17.83,Ramu Varma
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-004715,7.94,AP-004715,Silty Loam,Rabi,Jowar (Sorghum),Rainfed,7.94,0.6,1.36,265,67,397,2.24,12.66,0.52,1.38,2024-07-18,76.47,23.53,Narasimha Mekapati
-Andhra Pradesh,Guntur,Pedakakani,NANDIVELUGU,AND-GUN-004760,14.84,AP-004760,Silty Loam,Zaid,Bajra (Pearl Millet),Borewell,5.96,1.58,0.85,217,8,230,2.53,8.51,2.0,2.49,2024-04-06,99.47,0.53,Krishna Goud
-Andhra Pradesh,Guntur,Ponnur,PONNURU,AND-GUN-004860,13.37,AP-004860,Loamy,Kharif,Bajra (Pearl Millet),Drip,6.64,2.32,0.23,418,67,231,2.66,12.93,1.29,2.38,2024-05-28,94.57,5.43,Venkatesh Chowdary
-Andhra Pradesh,Guntur,Pedanandipadu,KOPPARRU,AND-GUN-004867,5.66,AP-004867,Sandy Loam,Zaid,Tobacco,Canal,5.76,0.57,1.29,436,45,572,1.43,5.4,0.56,0.6,2025-01-27,68.87,31.13,Kiran Mekapati
-Andhra Pradesh,Guntur,Kollipara,PIDAPARRUPALEM,AND-GUN-004869,9.15,AP-004869,Loamy,Kharif,Mango,Drip,6.63,0.72,1.48,172,21,313,2.92,13.81,0.35,1.1,2024-08-01,80.5,19.5,Prasad Mekapati
-Andhra Pradesh,Guntur,Pedakakani,GUDIVADA,AND-GUN-004906,2.84,AP-004906,Clay,Kharif,Red Gram (Pigeon Pea),Rainfed,8.44,0.9,1.29,139,21,294,1.97,11.05,1.85,0.75,2024-11-13,59.47,40.53,Ramakrishna Nimmagadda
-Andhra Pradesh,Guntur,Kakumanu,KAKUMANU,AND-GUN-004912,8.53,AP-004912,Sandy Loam,Rabi,Sweet Orange,Rainfed,8.53,0.85,0.47,147,59,176,2.96,9.02,1.22,0.37,2024-11-21,78.43,21.57,Appa Rao Pothineni
-Andhra Pradesh,Guntur,Duggirala,PENUMULI,AND-GUN-004981,14.67,AP-004981,Silty Loam,Rabi,Green Gram (Moong),Borewell,5.1,1.46,0.24,216,5,246,1.11,8.29,1.01,1.69,2024-02-26,98.9,1.1,Murali Raju
-Andhra Pradesh,Guntur,Ponnur,UPPARAPALEM,AND-GUN-004989,11.1,AP-004989,Loamy,Zaid,Sweet Orange,Borewell,8.07,0.53,1.09,242,14,173,1.76,3.54,0.77,0.56,2025-10-01,87.0,13.0,Subba Rao Kambhampati
-Andhra Pradesh,Guntur,Phirangipuram,Nudurupadu,AND-GUN-004990,11.66,AP-004990,Sandy Loam,Rabi,Tobacco,Sprinkler,8.02,2.84,1.22,153,48,215,0.54,11.03,1.73,2.31,2025-05-17,88.87,11.13,Mahesh Yarlagadda
-Andhra Pradesh,Guntur,Vatticherukuru,YAMARRU,AND-GUN-005057,6.85,AP-005057,Silty Loam,Rabi,Coconut,Rainfed,5.41,2.14,1.14,327,29,474,1.52,2.67,1.94,1.65,2025-01-14,72.83,27.17,Parvathi Golla
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-005071,8.52,AP-005071,Sandy Loam,Zaid,Sugarcane,Drip,6.63,0.13,0.55,155,80,180,2.63,9.73,0.99,1.99,2024-04-26,78.4,21.6,Appa Rao Akkineni
-Andhra Pradesh,Guntur,Pedanandipadu,KATRAPADU,AND-GUN-005083,12.64,AP-005083,Sandy,Rabi,Red Gram (Pigeon Pea),Borewell,5.62,2.16,1.01,156,6,557,1.21,6.56,1.88,1.07,2024-11-06,92.13,7.87,Siva Reddy
-Andhra Pradesh,Guntur,Tadepalle,TADEPALLE,AND-GUN-005142,2.33,AP-005142,Clay,Kharif,Black Gram (Urad),Drip,6.64,2.11,0.51,274,37,128,0.47,9.32,1.49,0.61,2024-07-04,57.77,42.23,Murali Yarlagadda
-Andhra Pradesh,Guntur,Mangalagiri,PEDDAVADLAPUDI,AND-GUN-005151,4.99,AP-005151,Sandy Loam,Zaid,Turmeric,Sprinkler,5.32,2.06,0.49,395,47,309,2.97,14.16,1.42,2.05,2024-10-25,66.63,33.37,Suresh Goud
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-005185,11.4,AP-005185,Loamy,Rabi,Cotton,Borewell,5.35,1.27,0.3,231,78,307,2.31,9.93,0.76,0.49,2025-11-26,88.0,12.0,Siva Goud
-Andhra Pradesh,Guntur,Prathipadu,ENAMADALA,AND-GUN-005189,14.1,AP-005189,Sandy Loam,Rabi,Tomato,Borewell,7.16,2.29,0.79,188,52,386,0.35,8.41,1.5,1.39,2025-02-24,97.0,3.0,Saraswathi Kambhampati
-Andhra Pradesh,Guntur,Chebrolu,CHEBROLU,AND-GUN-005207,12.13,AP-005207,Loamy,Kharif,Sunflower,Rainfed,6.24,1.57,1.18,233,6,453,2.46,3.25,1.44,0.54,2025-01-03,90.43,9.57,Lakshmi Nandamuri
-Andhra Pradesh,Guntur,Medikonduru,MANGALAGIRI PADU,AND-GUN-005224,5.64,AP-005224,Sandy,Rabi,Horse Gram,Borewell,8.37,1.4,0.65,329,55,526,2.76,13.97,0.57,2.16,2024-03-06,68.8,31.2,Nageswara Rao Kambhampati
-Andhra Pradesh,Guntur,Mangalagiri,KRISHNARAYA,AND-GUN-005292,3.17,AP-005292,Clay,Zaid,Maize,Drip,8.76,1.21,0.33,345,70,125,1.13,11.89,1.12,0.31,2024-07-29,60.57,39.43,Srinivas Rao
-Andhra Pradesh,Guntur,Medikonduru,SIRIPURAM,AND-GUN-005297,7.28,AP-005297,Clay Loam,Kharif,Tomato,Rainfed,5.59,2.34,0.39,207,75,249,0.8,6.86,0.97,0.88,2024-02-06,74.27,25.73,Ramakrishna Raju
-Andhra Pradesh,Guntur,Mangalagiri,RAMACHANDRAPURAM,AND-GUN-005366,14.86,AP-005366,Sandy,Rabi,Banana,Rainfed,8.76,2.27,0.61,188,58,417,3.12,8.42,0.89,2.38,2024-12-28,99.53,0.47,Appa Rao Kambhampati
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-005367,9.36,AP-005367,Silty Loam,Zaid,Sesame (Til),Borewell,5.65,2.53,0.32,338,74,297,3.2,3.15,0.39,2.39,2025-03-31,81.2,18.8,Gopi Ghattamaneni
-Andhra Pradesh,Guntur,Thullur,INAVALU,AND-GUN-005374,11.84,AP-005374,Sandy Loam,Rabi,Red Gram (Pigeon Pea),Drip,5.91,2.61,1.02,448,52,523,0.98,9.26,1.94,1.67,2024-07-17,89.47,10.53,Suresh Rao
-Andhra Pradesh,Guntur,Chebrolu,NARAKODURU,AND-GUN-005380,3.96,AP-005380,Sandy,Rabi,Mango,Canal,8.71,1.62,0.79,275,24,357,3.12,4.1,0.32,0.8,2025-04-30,63.2,36.8,Srinivas Rao
-Andhra Pradesh,Guntur,Kollipara,DAVULURU,AND-GUN-005384,0.63,AP-005384,Sandy,Zaid,Maize,Borewell,7.6,1.84,0.51,216,71,496,2.62,13.95,1.8,1.64,2024-12-03,52.1,47.9,Ramesh Mekapati
-Andhra Pradesh,Guntur,Medikonduru,MEDIKONDURU,AND-GUN-005394,8.96,AP-005394,Sandy Loam,Zaid,Bajra (Pearl Millet),Rainfed,7.38,0.12,0.63,239,27,115,2.75,2.03,1.29,1.81,2025-01-21,79.87,20.13,Ramakrishna Rao
-Andhra Pradesh,Guntur,Mangalagiri,CHINNAKAKANI,AND-GUN-005407,14.52,AP-005407,Clay Loam,Rabi,Tomato,Rainfed,8.69,0.81,0.48,320,30,375,2.1,4.8,0.71,1.72,2024-04-01,98.4,1.6,Prasad Nimmagadda
-Andhra Pradesh,Guntur,Thullur,Tulluru,AND-GUN-005430,10.88,AP-005430,Clay Loam,Kharif,Ragi (Finger Millet),Drip,5.7,2.14,0.72,118,16,544,3.18,5.72,0.85,2.4,2025-04-08,86.27,13.73,Rambabu Kodali
-Andhra Pradesh,Guntur,Pedakakani,KOLAKALARU,AND-GUN-005441,7.17,AP-005441,Clay Loam,Zaid,Tobacco,Rainfed,7.74,0.85,0.47,320,47,488,0.32,3.79,1.0,0.85,2024-11-08,73.9,26.1,Venkatesh Vemula
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-005457,5.82,AP-005457,Loamy,Rabi,Cotton,Drip,5.53,0.8,1.18,264,22,591,1.11,14.2,0.15,1.47,2025-06-27,69.4,30.6,Srinu Golla
-Andhra Pradesh,Guntur,Chebrolu,NARAKODURU,AND-GUN-005477,5.28,AP-005477,Silty Loam,Rabi,Bengal Gram (Chickpea),Borewell,5.32,0.64,0.48,308,43,496,2.49,10.41,1.13,0.22,2024-12-19,67.6,32.4,Saraswathi Reddy
-Andhra Pradesh,Guntur,Tadikonda,LACHCHANNAGUDIPUDI,AND-GUN-005483,6.97,AP-005483,Sandy,Rabi,Onion,Borewell,5.4,0.24,1.07,341,9,537,2.27,2.32,1.82,1.75,2025-07-02,73.23,26.77,Saraswathi Kambhampati
-Andhra Pradesh,Guntur,Kakumanu,BODIPALEM,AND-GUN-005484,11.04,AP-005484,Clay Loam,Zaid,Oil Palm,Drip,8.07,1.43,0.45,144,51,238,1.78,11.84,0.39,0.3,2025-01-10,86.8,13.2,Saraswathi Chowdary
-Andhra Pradesh,Guntur,Duggirala,CHIRUVURU,AND-GUN-005518,11.63,AP-005518,Clay,Zaid,Ragi (Finger Millet),Rainfed,8.74,0.27,1.36,416,53,216,1.06,2.97,1.64,1.63,2024-12-15,88.77,11.23,Gopi Dasari
-Andhra Pradesh,Guntur,Pedakakani,KOPPURUNARRU,AND-GUN-005542,9.92,AP-005542,Loamy,Zaid,Paddy (Rice),Drip,7.02,1.42,1.37,384,25,404,1.93,13.25,0.45,1.33,2025-11-14,83.07,16.93,Prasad Golla
-Andhra Pradesh,Guntur,Chebrolu,GODAYARRU,AND-GUN-005563,4.32,AP-005563,Clay,Zaid,Groundnut,Borewell,7.98,0.18,1.27,234,36,431,2.07,3.98,0.9,0.39,2024-03-05,64.4,35.6,Saraswathi Golla
-Andhra Pradesh,Guntur,Duggirala,KOTAMARAJUKONDRU,AND-GUN-005577,9.93,AP-005577,Clay,Zaid,Cotton,Borewell,7.21,0.56,1.28,212,31,592,1.44,10.76,0.6,1.31,2025-12-10,83.1,16.9,Srinivas Kaza
-Andhra Pradesh,Guntur,Prathipadu,NADIMPALEM,AND-GUN-005578,14.75,AP-005578,Sandy Loam,Kharif,Oil Palm,Canal,6.43,1.62,1.17,357,41,155,0.55,10.32,1.7,1.27,2024-06-22,99.17,0.83,Mahesh Konidela
-Andhra Pradesh,Guntur,Mangalagiri,NAVULURU,AND-GUN-005602,5.08,AP-005602,Sandy,Zaid,Cotton,Drip,6.67,0.24,1.26,103,38,84,1.94,4.24,1.02,2.41,2025-08-21,66.93,33.07,Siva Raju
-Andhra Pradesh,Guntur,Kollipara,ATTATO,AND-GUN-005611,1.62,AP-005611,Clay Loam,Zaid,Turmeric,Rainfed,6.54,2.96,0.82,134,10,448,3.42,12.58,0.43,1.74,2025-11-29,55.4,44.6,Anand Nandamuri
-Andhra Pradesh,Guntur,Ponnur,MANNAVA,AND-GUN-005636,1.33,AP-005636,Clay Loam,Kharif,Black Gram (Urad),Canal,8.75,1.35,1.01,244,61,378,2.29,13.82,1.62,0.12,2024-06-12,54.43,45.57,Appa Rao Golla
-Andhra Pradesh,Guntur,Chebrolu,NARAKODURU,AND-GUN-005654,5.61,AP-005654,Sandy,Rabi,Bengal Gram (Chickpea),Borewell,6.97,2.31,0.89,190,62,130,1.49,14.22,1.95,2.12,2025-09-29,68.7,31.3,Sai Pothineni
-Andhra Pradesh,Guntur,Phirangipuram,Nudurupadu,AND-GUN-005696,4.99,AP-005696,Sandy,Zaid,Banana,Borewell,5.5,0.66,0.56,238,35,101,2.49,8.17,0.69,1.26,2024-03-23,66.63,33.37,Suresh Naidu
-Andhra Pradesh,Guntur,Chebrolu,SUDDAPALLE,AND-GUN-005715,10.31,AP-005715,Sandy Loam,Rabi,Jowar (Sorghum),Sprinkler,5.45,1.51,1.16,397,42,478,1.44,7.07,1.95,0.72,2024-04-02,84.37,15.63,Prakash Golla
-Andhra Pradesh,Guntur,Mangalagiri,RAMACHANDRAPURAM,AND-GUN-005724,2.55,AP-005724,Sandy Loam,Zaid,Turmeric,Sprinkler,8.71,1.21,0.53,359,58,456,1.55,11.53,0.16,0.5,2025-08-12,58.5,41.5,Srinivas Golla
-Andhra Pradesh,Guntur,Thullur,Anantavaram,AND-GUN-005743,12.57,AP-005743,Clay,Rabi,Maize,Canal,8.53,0.45,0.24,248,50,555,1.37,3.35,0.16,0.5,2024-06-01,91.9,8.1,Bhavani Mekapati
-Andhra Pradesh,Guntur,Mangalagiri,R F,AND-GUN-005744,14.88,AP-005744,Sandy,Rabi,Jowar (Sorghum),Canal,6.43,2.91,0.85,142,7,427,0.27,12.03,1.55,2.38,2025-05-26,99.6,0.4,Bhavani Uppalapati
-Andhra Pradesh,Guntur,Thullur,Vaddamanu,AND-GUN-005763,14.14,AP-005763,Silty Loam,Rabi,Banana,Drip,6.56,0.97,0.73,313,72,494,1.79,14.56,0.62,1.33,2024-09-04,97.13,2.87,Ramesh Bandi
-Andhra Pradesh,Guntur,Ponnur,JUPUDI,AND-GUN-005768,1.48,AP-005768,Sandy Loam,Zaid,Banana,Drip,7.2,0.51,0.6,133,44,342,2.64,10.01,1.98,1.47,2025-02-14,54.93,45.07,Mahesh Akkineni
-Andhra Pradesh,Guntur,Thullur,PICHIKALAPALEM,AND-GUN-005933,4.1,AP-005933,Silty Loam,Kharif,Red Gram (Pigeon Pea),Drip,5.68,0.52,1.03,103,22,200,3.04,6.55,0.39,0.75,2025-07-29,63.67,36.33,Subba Rao Daggubati
-Andhra Pradesh,Guntur,Kakumanu,GARIKAPADU,AND-GUN-005969,14.08,AP-005969,Sandy Loam,Rabi,Bajra (Pearl Millet),Sprinkler,6.99,0.22,1.21,278,68,470,2.32,5.74,0.49,0.51,2025-03-04,96.93,3.07,Subba Rao Nandamuri
-Andhra Pradesh,Guntur,Prathipadu,GANIKAPUDI,AND-GUN-005978,2.67,AP-005978,Sandy Loam,Kharif,Sugarcane,Drip,6.0,0.98,0.9,281,57,264,3.35,6.64,1.0,1.18,2024-07-21,58.9,41.1,Lakshmi Kodali
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-005984,1.15,AP-005984,Loamy,Rabi,Banana,Canal,7.43,0.89,1.35,242,12,427,0.54,10.61,0.95,0.78,2024-06-05,53.83,46.17,Saraswathi Pothineni
-Andhra Pradesh,Guntur,Ponnur,BRAHMANAKODURU,AND-GUN-006001,9.9,AP-006001,Loamy,Rabi,Sugarcane,Rainfed,7.65,0.55,1.39,228,18,339,0.69,4.8,1.96,1.57,2024-11-13,83.0,17.0,Ravi Dasari
-Andhra Pradesh,Guntur,Pedakakani,NANDIVELUGU,AND-GUN-006008,1.56,AP-006008,Clay,Kharif,Horse Gram,Rainfed,8.14,0.5,0.26,134,29,272,2.36,4.66,1.9,0.46,2024-01-02,55.2,44.8,Appa Rao Chowdary
-Andhra Pradesh,Guntur,Duggirala,MORAMPUDI,AND-GUN-006054,6.22,AP-006054,Clay,Kharif,Turmeric,Drip,5.59,3.0,1.27,203,59,106,0.61,4.43,1.33,1.37,2024-04-19,70.73,29.27,Ravi Uppalapati
-Andhra Pradesh,Guntur,Chebrolu,SRIRANGAPURAM,AND-GUN-006068,5.34,AP-006068,Clay,Rabi,Black Gram (Urad),Canal,5.79,2.7,0.28,105,43,475,0.75,2.66,1.02,1.55,2025-05-06,67.8,32.2,Gopi Kaza
-Andhra Pradesh,Guntur,Vatticherukuru,KURNUTALA,AND-GUN-006099,3.37,AP-006099,Silty Loam,Kharif,Onion,Canal,7.51,2.81,0.43,411,17,519,2.58,8.23,1.51,1.21,2025-05-09,61.23,38.77,Sai Mekapati
-Andhra Pradesh,Guntur,Kollipara,VALLABHAPURAM,AND-GUN-006146,2.94,AP-006146,Loamy,Zaid,Turmeric,Drip,8.39,1.99,1.38,442,18,123,1.71,7.65,0.55,2.25,2025-01-26,59.8,40.2,Ramu Akkineni
-Andhra Pradesh,Guntur,Tadepalle,UNDAVALLI,AND-GUN-006149,9.56,AP-006149,Loamy,Kharif,Turmeric,Sprinkler,6.43,2.1,0.74,163,21,478,1.59,2.36,1.22,1.31,2025-06-09,81.87,18.13,Appa Rao Rao
-Andhra Pradesh,Guntur,Pedanandipadu,UPPALAPADU,AND-GUN-006159,2.47,AP-006159,Sandy Loam,Rabi,Bengal Gram (Chickpea),Sprinkler,5.09,2.15,1.16,368,76,262,1.22,10.67,1.61,0.42,2025-03-12,58.23,41.77,Prasad Yarlagadda
-Andhra Pradesh,Guntur,Prathipadu,GOTTIPADU,AND-GUN-006250,1.75,AP-006250,Silty Loam,Zaid,Sweet Orange,Rainfed,8.07,0.42,1.21,422,50,579,0.94,2.13,0.78,0.55,2025-10-23,55.83,44.17,Kiran Bandi
-Andhra Pradesh,Guntur,Tadepalle,CHIRRAVURU,AND-GUN-006374,13.73,AP-006374,Loamy,Kharif,Banana,Sprinkler,6.05,0.46,1.31,108,73,573,0.4,5.38,0.12,1.08,2025-06-17,95.77,4.23,Siva Pothineni
-Andhra Pradesh,Guntur,Thullur,MANDADAM,AND-GUN-006410,14.14,AP-006410,Silty Loam,Zaid,Red Gram (Pigeon Pea),Drip,6.31,1.22,1.2,328,42,185,3.17,3.1,0.3,2.27,2025-07-30,97.13,2.87,Ramakrishna Bandi
-Andhra Pradesh,Guntur,Chebrolu,SRIRANGAPURAM,AND-GUN-006411,1.19,AP-006411,Sandy,Zaid,Bajra (Pearl Millet),Drip,5.41,1.47,0.77,441,68,521,3.08,4.29,1.3,0.51,2024-04-21,53.97,46.03,Ravi Pothineni
-Andhra Pradesh,Guntur,Phirangipuram,PHIRANGIPURAM,AND-GUN-006483,9.53,AP-006483,Sandy,Rabi,Sweet Orange,Canal,5.8,0.21,0.48,385,53,186,1.62,4.01,0.38,1.97,2025-07-18,81.77,18.23,Prakash Naidu
-Andhra Pradesh,Guntur,Tadepalle,UNDAVALLI,AND-GUN-006510,10.41,AP-006510,Sandy Loam,Rabi,Tobacco,Borewell,5.8,1.72,1.22,314,66,419,1.97,14.79,1.34,1.53,2025-09-25,84.7,15.3,Subba Rao Goud
-Andhra Pradesh,Guntur,Guntur,BUDAMPADU,AND-GUN-006517,12.76,AP-006517,Loamy,Zaid,Black Gram (Urad),Borewell,6.75,0.15,0.33,210,70,242,2.59,11.34,1.64,1.07,2025-02-13,92.53,7.47,Saraswathi Vemula
-Andhra Pradesh,Guntur,Guntur,CHOWDAVARAM,AND-GUN-006544,4.39,AP-006544,Silty Loam,Rabi,Coconut,Canal,7.17,0.64,1.38,344,76,118,1.78,3.75,0.62,0.36,2024-10-25,64.63,35.37,Suresh Kodali
-Andhra Pradesh,Guntur,Tadikonda,LAM,AND-GUN-006552,8.07,AP-006552,Sandy,Zaid,Horse Gram,Drip,7.17,1.08,0.72,393,14,585,0.32,9.14,0.13,2.22,2024-05-17,76.9,23.1,Siva Dasari
-Andhra Pradesh,Guntur,Ponnur,BRAHMANAKODURU,AND-GUN-006585,10.2,AP-006585,Loamy,Rabi,Banana,Canal,5.73,0.42,0.88,257,28,96,2.44,2.7,1.14,1.68,2025-10-30,84.0,16.0,Siva Allu
-Andhra Pradesh,Guntur,Guntur,POTTURU,AND-GUN-006628,10.55,AP-006628,Silty Loam,Zaid,Horse Gram,Borewell,7.1,2.51,1.25,369,17,131,3.38,12.26,0.35,2.35,2024-12-10,85.17,14.83,Kiran Nandamuri
-Andhra Pradesh,Guntur,Medikonduru,MANGALAGIRI PADU,AND-GUN-006635,9.77,AP-006635,Clay Loam,Rabi,Tomato,Drip,7.57,1.73,0.7,143,6,280,1.42,5.71,1.86,2.12,2025-01-29,82.57,17.43,Siva Varma
-Andhra Pradesh,Guntur,Thullur,Borupalem,AND-GUN-006658,5.15,AP-006658,Loamy,Rabi,Maize,Canal,6.8,0.68,0.83,140,48,128,1.48,5.15,1.1,1.97,2024-01-01,67.17,32.83,Narasimha Kaza
-Andhra Pradesh,Guntur,Phirangipuram,HOUSE GANESH,AND-GUN-006661,8.8,AP-006661,Sandy Loam,Zaid,Tobacco,Canal,6.21,1.4,0.53,250,52,245,1.36,10.39,1.78,0.51,2024-07-17,79.33,20.67,Sai Golla
-Andhra Pradesh,Guntur,Tadikonda,TADIKONDA,AND-GUN-006676,12.95,AP-006676,Sandy,Rabi,Banana,Borewell,7.09,2.91,1.02,286,51,505,1.87,14.6,0.46,1.46,2025-12-27,93.17,6.83,Saraswathi Kothapalli
-Andhra Pradesh,Guntur,Tadepalle,PENURAKA,AND-GUN-006714,12.44,AP-006714,Sandy Loam,Kharif,Mango,Rainfed,6.09,0.29,1.18,201,72,346,1.23,3.15,1.93,2.23,2025-03-02,91.47,8.53,Satyanarayana Kambhampati
-Andhra Pradesh,Guntur,Chebrolu,GODAYARRU,AND-GUN-006717,1.8,AP-006717,Sandy Loam,Zaid,Maize,Borewell,8.49,1.46,1.2,108,60,379,0.64,11.0,0.39,2.2,2025-03-15,56.0,44.0,Ravi Nandamuri
-Andhra Pradesh,Guntur,Chebrolu,SEKURU,AND-GUN-006720,4.72,AP-006720,Clay,Zaid,Chilli,Canal,5.32,1.84,1.16,431,37,251,0.83,7.18,0.33,2.03,2024-01-05,65.73,34.27,Bhavani Rao
-Andhra Pradesh,Guntur,Thullur,INAVALU,AND-GUN-006733,14.04,AP-006733,Sandy,Kharif,Tobacco,Canal,7.71,2.64,0.36,179,25,576,3.11,3.53,0.29,0.43,2024-06-13,96.8,3.2,Prakash Vemula
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-006734,5.5,AP-006734,Clay Loam,Rabi,Sugarcane,Drip,5.9,2.0,1.15,207,34,271,1.42,10.84,0.24,2.09,2025-10-15,68.33,31.67,Babu Dasari
-Andhra Pradesh,Guntur,Tadepalle,PENURAKA,AND-GUN-006788,12.17,AP-006788,Clay Loam,Kharif,Banana,Drip,7.59,0.93,1.06,118,70,469,2.65,8.21,1.77,2.47,2024-03-30,90.57,9.43,Krishna Nandamuri
-Andhra Pradesh,Guntur,Kakumanu,RETURU,AND-GUN-006794,5.1,AP-006794,Loamy,Rabi,Ragi (Finger Millet),Canal,7.03,2.88,0.68,152,38,526,1.93,7.94,1.75,0.94,2025-09-29,67.0,33.0,Ramu Mekapati
-Andhra Pradesh,Guntur,Chebrolu,MANCHALA,AND-GUN-006845,13.69,AP-006845,Loamy,Zaid,Tomato,Borewell,5.5,1.25,0.36,406,78,427,1.91,8.73,1.93,0.49,2025-11-18,95.63,4.37,Gopi Bandi
-Andhra Pradesh,Guntur,Guntur,ANKIREDDYPALEM,AND-GUN-006857,9.61,AP-006857,Silty Loam,Zaid,Black Gram (Urad),Borewell,6.49,2.83,0.61,307,75,404,2.53,10.65,1.39,1.4,2025-12-19,82.03,17.97,Narasimha Varma
-Andhra Pradesh,Guntur,Tadepalle,PENURAKA,AND-GUN-006895,7.63,AP-006895,Sandy,Kharif,Tomato,Canal,6.5,2.02,0.88,246,61,478,0.57,4.15,0.16,1.74,2024-09-20,75.43,24.57,Srinu Rao
-Andhra Pradesh,Guntur,Prathipadu,KONDAJAGARLAMUDI,AND-GUN-006964,9.81,AP-006964,Silty Loam,Rabi,Sunflower,Sprinkler,5.3,1.59,1.31,232,11,570,2.48,9.95,1.4,1.93,2025-03-29,82.7,17.3,Prakash Kothapalli
-Andhra Pradesh,Guntur,Kollipara,DAVULURU,AND-GUN-006979,11.68,AP-006979,Sandy Loam,Kharif,Sunflower,Canal,6.11,1.07,1.07,159,74,522,1.27,8.8,0.26,1.88,2025-09-08,88.93,11.07,Venkatesh Rao
-Andhra Pradesh,Guntur,Tadikonda,PAMULAPADU,AND-GUN-006996,8.91,AP-006996,Sandy Loam,Kharif,Sugarcane,Rainfed,7.18,2.43,0.21,196,30,179,1.51,7.88,1.57,2.25,2024-05-19,79.7,20.3,Nageswara Rao Naidu
-Andhra Pradesh,Guntur,Pedanandipadu,GORIJAVOLUGUNTAPALEM,AND-GUN-007034,9.01,AP-007034,Sandy,Rabi,Horse Gram,Drip,5.72,1.12,1.45,169,20,324,2.28,13.84,1.32,0.29,2025-11-12,80.03,19.97,Mahesh Reddy
-Andhra Pradesh,Guntur,Duggirala,PEDDAKONDURU,AND-GUN-007053,13.98,AP-007053,Clay,Rabi,Sunflower,Borewell,7.15,2.23,0.6,181,26,309,0.51,12.45,0.43,2.25,2024-07-25,96.6,3.4,Bhavani Konidela
-Andhra Pradesh,Guntur,Tadikonda,NIDUMUKKALA,AND-GUN-007060,13.71,AP-007060,Sandy Loam,Zaid,Jowar (Sorghum),Drip,5.64,0.17,0.36,242,38,365,0.63,13.58,1.14,1.0,2024-07-31,95.7,4.3,Ravi Mekapati
-Andhra Pradesh,Guntur,Kollipara,DAVULURU,AND-GUN-007065,2.4,AP-007065,Silty Loam,Zaid,Ragi (Finger Millet),Canal,8.14,1.41,1.43,214,58,231,2.93,3.77,1.82,1.36,2024-04-14,58.0,42.0,Parvathi Goud
-Andhra Pradesh,Guntur,Mangalagiri,KAZZA,AND-GUN-007076,3.15,AP-007076,Loamy,Kharif,Maize,Canal,7.69,1.29,0.54,241,35,237,2.04,8.51,0.73,1.56,2025-12-02,60.5,39.5,Suresh Vemula
-Andhra Pradesh,Guntur,Medikonduru,VISADALA,AND-GUN-007110,6.53,AP-007110,Sandy,Zaid,Mango,Canal,6.6,2.09,1.09,290,45,532,2.93,14.81,1.87,1.28,2025-05-28,71.77,28.23,Ravi Nandamuri
-Andhra Pradesh,Guntur,Guntur,NALLAPADU,AND-GUN-007134,2.85,AP-007134,Sandy Loam,Rabi,Sunflower,Rainfed,5.47,0.36,0.73,222,37,244,0.91,14.75,0.31,1.48,2024-03-29,59.5,40.5,Srinivas Golla
-Andhra Pradesh,Guntur,Ponnur,PONNURU,AND-GUN-007165,10.81,AP-007165,Clay,Zaid,Sesame (Til),Sprinkler,5.3,1.13,0.43,280,80,222,0.93,3.03,1.27,0.78,2024-06-01,86.03,13.97,Appa Rao Uppalapati
-Andhra Pradesh,Guntur,Mangalagiri,NUTAKKI,AND-GUN-007180,7.77,AP-007180,Clay Loam,Rabi,Sugarcane,Sprinkler,7.21,1.56,0.82,114,69,345,1.79,13.68,1.18,1.18,2025-10-15,75.9,24.1,Gopi Kambhampati
-Andhra Pradesh,Guntur,Prathipadu,MALLAYAPALEM,AND-GUN-007192,7.55,AP-007192,Silty Loam,Kharif,Groundnut,Canal,5.84,0.81,0.78,217,29,548,2.18,8.9,1.95,0.92,2024-11-07,75.17,24.83,Babu Kaza
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-007207,4.17,AP-007207,Sandy Loam,Zaid,Ragi (Finger Millet),Sprinkler,5.56,0.21,0.23,202,37,258,0.22,11.03,1.95,2.01,2025-05-17,63.9,36.1,Parvathi Yarlagadda
-Andhra Pradesh,Guntur,Kollipara,ANNAVARAM,AND-GUN-007218,10.86,AP-007218,Sandy,Kharif,Onion,Canal,5.8,1.66,1.13,237,73,81,1.68,12.32,1.23,2.06,2024-11-09,86.2,13.8,Satyanarayana Kodali
-Andhra Pradesh,Guntur,Ponnur,VELLALURU,AND-GUN-007284,9.53,AP-007284,Loamy,Zaid,Jowar (Sorghum),Drip,7.33,0.65,1.46,445,37,107,3.19,5.97,1.45,1.84,2024-12-05,81.77,18.23,Srinivas Chowdary
-Andhra Pradesh,Guntur,Pedakakani,CHINNA RAVURU,AND-GUN-007291,10.97,AP-007291,Silty Loam,Zaid,Green Gram (Moong),Drip,6.42,0.33,1.12,184,60,553,2.03,12.93,1.72,1.54,2025-08-17,86.57,13.43,Subba Rao Golla
-Andhra Pradesh,Guntur,Tadepalle,R F,AND-GUN-007349,10.75,AP-007349,Sandy,Kharif,Green Gram (Moong),Sprinkler,5.77,2.43,0.76,264,77,127,3.34,7.98,0.93,1.12,2025-08-23,85.83,14.17,Ramesh Dasari
-Andhra Pradesh,Guntur,Medikonduru,POTLAPADU,AND-GUN-007368,8.9,AP-007368,Clay,Rabi,Ragi (Finger Millet),Borewell,8.8,1.77,1.4,448,48,417,1.78,2.03,1.1,1.71,2025-03-02,79.67,20.33,Nageswara Rao Allu
-Andhra Pradesh,Guntur,Pedanandipadu,KOPPARRU,AND-GUN-007381,6.75,AP-007381,Loamy,Kharif,Turmeric,Drip,7.74,0.59,0.91,262,31,365,0.58,7.71,0.33,1.09,2025-11-05,72.5,27.5,Mahesh Goud
-Andhra Pradesh,Guntur,Kollipara,SIRIPURAM,AND-GUN-007390,6.65,AP-007390,Sandy,Rabi,Black Gram (Urad),Rainfed,5.33,0.4,0.34,121,49,556,1.95,11.36,1.72,1.89,2024-09-28,72.17,27.83,Anand Golla
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-007408,14.57,AP-007408,Loamy,Rabi,Paddy (Rice),Drip,8.07,1.14,1.48,218,58,403,2.68,13.82,0.11,1.78,2025-05-13,98.57,1.43,Prasad Kothapalli
-Andhra Pradesh,Guntur,Ponnur,PONNURU,AND-GUN-007416,8.38,AP-007416,Sandy,Rabi,Paddy (Rice),Sprinkler,7.68,2.96,0.26,302,80,231,2.14,14.57,0.37,1.63,2025-11-01,77.93,22.07,Ravi Kaza
-Andhra Pradesh,Guntur,Vatticherukuru,VATTI CHERUKURU,AND-GUN-007422,10.51,AP-007422,Clay,Kharif,Sunflower,Rainfed,8.22,0.2,1.21,286,77,364,1.14,4.04,1.64,2.1,2025-11-23,85.03,14.97,Gopi Vemula
-Andhra Pradesh,Guntur,Tadepalle,PENURAKA,AND-GUN-007464,5.84,AP-007464,Silty Loam,Kharif,Oil Palm,Canal,8.73,1.42,0.7,412,50,125,0.26,9.29,0.43,0.67,2024-01-19,69.47,30.53,Prasad Pothineni
-Andhra Pradesh,Guntur,Duggirala,IMMANI,AND-GUN-007478,0.69,AP-007478,Sandy,Rabi,Coconut,Rainfed,7.11,1.4,0.54,187,20,252,0.97,12.44,1.71,2.04,2025-12-27,52.3,47.7,Krishna Raju
-Andhra Pradesh,Guntur,Phirangipuram,GUNDALAPADU,AND-GUN-007488,14.44,AP-007488,Loamy,Zaid,Tobacco,Rainfed,8.23,2.05,0.92,371,15,128,2.46,7.71,1.19,0.15,2024-08-13,98.13,1.87,Appa Rao Pothineni
-Andhra Pradesh,Guntur,Tadikonda,RAVELA,AND-GUN-007515,9.34,AP-007515,Clay,Zaid,Black Gram (Urad),Drip,8.41,1.93,0.91,127,69,513,0.88,11.55,1.43,1.53,2024-02-11,81.13,18.87,Srinivas Reddy
-Andhra Pradesh,Guntur,Mangalagiri,NIDAMARRU,AND-GUN-007599,14.96,AP-007599,Loamy,Rabi,Oil Palm,Borewell,6.56,2.69,1.35,251,63,96,2.02,5.53,1.96,0.19,2025-04-28,99.87,0.13,Subba Rao Kothapalli
-Andhra Pradesh,Guntur,Pedanandipadu,KATRAPADU,AND-GUN-007621,12.98,AP-007621,Sandy,Zaid,Ragi (Finger Millet),Sprinkler,6.7,1.1,0.6,113,71,256,3.44,5.54,0.62,1.99,2025-12-08,93.27,6.73,Prakash Reddy
-Andhra Pradesh,Guntur,Thullur,NELAPADU,AND-GUN-007622,8.71,AP-007622,Clay,Rabi,Sweet Orange,Rainfed,6.93,1.41,0.24,231,51,393,1.61,12.6,1.04,0.69,2024-04-16,79.03,20.97,Prasad Nimmagadda
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-007649,5.13,AP-007649,Silty Loam,Zaid,Jowar (Sorghum),Drip,8.11,2.15,0.41,192,46,499,2.69,8.72,1.44,1.06,2024-09-25,67.1,32.9,Rambabu Mekapati
-Andhra Pradesh,Guntur,Chebrolu,PATAREDDIPALEM,AND-GUN-007671,11.66,AP-007671,Clay Loam,Rabi,Jowar (Sorghum),Canal,7.6,0.28,0.38,243,62,539,2.86,9.49,1.1,2.4,2024-12-04,88.87,11.13,Siva Yarlagadda
-Andhra Pradesh,Guntur,Kollipara,DANTALURU,AND-GUN-007680,1.27,AP-007680,Sandy Loam,Rabi,Sunflower,Sprinkler,8.11,0.42,0.74,390,49,458,1.25,7.13,1.18,0.14,2024-05-03,54.23,45.77,Ramesh Kaza
-Andhra Pradesh,Guntur,Medikonduru,PERECHERLA,AND-GUN-007727,1.89,AP-007727,Loamy,Zaid,Onion,Sprinkler,5.56,0.74,1.3,219,31,158,0.51,3.89,1.64,0.7,2025-10-18,56.3,43.7,Nageswara Rao Yarlagadda
-Andhra Pradesh,Guntur,Ponnur,KONDAMUDI,AND-GUN-007775,5.35,AP-007775,Silty Loam,Rabi,Tobacco,Rainfed,8.76,0.36,0.49,263,56,412,1.97,12.81,0.16,1.34,2024-02-02,67.83,32.17,Murali Rao
-Andhra Pradesh,Guntur,Kollipara,ATTATO,AND-GUN-007855,7.69,AP-007855,Sandy Loam,Kharif,Black Gram (Urad),Canal,5.82,2.33,1.25,357,30,281,3.49,10.94,1.37,1.94,2024-04-05,75.63,24.37,Suresh Reddy
-Andhra Pradesh,Guntur,Tadikonda,RAVELA,AND-GUN-007878,6.11,AP-007878,Clay,Rabi,Sunflower,Drip,6.95,0.88,0.99,306,22,446,0.48,4.41,1.09,2.27,2025-04-11,70.37,29.63,Kiran Dasari
-Andhra Pradesh,Guntur,Thullur,INAVALU,AND-GUN-007900,13.33,AP-007900,Clay,Kharif,Paddy (Rice),Borewell,6.02,2.64,0.24,205,43,393,1.81,5.33,0.93,1.56,2025-06-22,94.43,5.57,Subba Rao Reddy
-Andhra Pradesh,Guntur,Ponnur,DANDAMUDI,AND-GUN-007905,1.14,AP-007905,Sandy Loam,Rabi,Paddy (Rice),Borewell,5.82,0.95,1.35,173,12,182,2.73,8.39,1.57,1.43,2025-03-05,53.8,46.2,Prakash Kodali
-Andhra Pradesh,Guntur,Vatticherukuru,GARLAPADU,AND-GUN-007936,2.27,AP-007936,Loamy,Rabi,Mango,Canal,7.44,2.94,0.68,184,39,308,0.35,6.77,1.91,1.31,2025-03-27,57.57,42.43,Krishna Vemula
-Andhra Pradesh,Guntur,Thullur,SAKHAMARU,AND-GUN-007946,2.54,AP-007946,Loamy,Rabi,Jowar (Sorghum),Rainfed,6.02,2.7,0.74,109,59,128,3.31,12.16,0.6,2.27,2025-04-17,58.47,41.53,Krishna Kothapalli
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-007951,14.28,AP-007951,Sandy Loam,Zaid,Sweet Orange,Sprinkler,5.39,1.11,0.86,224,25,284,2.78,4.96,0.72,0.29,2025-10-25,97.6,2.4,Narasimha Daggubati
-Andhra Pradesh,Guntur,Mangalagiri,KURAGALLU,AND-GUN-008012,7.0,AP-008012,Silty Loam,Kharif,Chilli,Drip,8.45,1.34,0.63,272,20,94,3.33,3.24,0.92,1.45,2024-11-21,73.33,26.67,Subba Rao Allu
-Andhra Pradesh,Guntur,Tadepalle,IPPATAM,AND-GUN-008029,8.1,AP-008029,Clay Loam,Rabi,Ragi (Finger Millet),Canal,6.27,3.0,0.85,279,16,302,1.92,14.87,1.46,2.09,2024-11-12,77.0,23.0,Narasimha Vemula
-Andhra Pradesh,Guntur,Tadepalle,CHIRRAVURU,AND-GUN-008085,10.4,AP-008085,Clay Loam,Zaid,Horse Gram,Sprinkler,5.27,2.28,1.35,216,35,563,1.64,7.52,1.17,1.79,2025-07-12,84.67,15.33,Parvathi Golla
-Andhra Pradesh,Guntur,Guntur,NALLAPADU,AND-GUN-008123,2.21,AP-008123,Clay,Kharif,Bajra (Pearl Millet),Sprinkler,5.92,0.24,0.93,121,52,184,0.29,14.91,0.94,1.53,2025-08-22,57.37,42.63,Kiran Kodali
-Andhra Pradesh,Guntur,Medikonduru,PALADUGU,AND-GUN-008136,1.42,AP-008136,Sandy Loam,Zaid,Banana,Rainfed,6.69,0.33,1.41,193,51,322,2.88,11.77,0.5,1.71,2025-05-25,54.73,45.27,Nageswara Rao Akkineni
-Andhra Pradesh,Guntur,Ponnur,MUNIPALLE,AND-GUN-008138,14.48,AP-008138,Clay,Zaid,Ragi (Finger Millet),Sprinkler,6.12,1.87,0.95,211,7,457,2.7,14.0,1.71,1.16,2025-07-17,98.27,1.73,Lakshmi Pothineni
-Andhra Pradesh,Guntur,Vatticherukuru,KURNUTALA,AND-GUN-008157,10.82,AP-008157,Clay,Kharif,Sugarcane,Borewell,8.78,2.64,1.5,240,36,189,0.31,8.61,1.6,0.46,2024-06-11,86.07,13.93,Rambabu Chowdary
-Andhra Pradesh,Guntur,Pedanandipadu,VARAGANI,AND-GUN-008160,11.86,AP-008160,Sandy Loam,Kharif,Ragi (Finger Millet),Borewell,6.96,1.06,0.67,188,56,269,1.73,6.38,1.16,2.01,2024-10-20,89.53,10.47,Lakshmi Vemula
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-008176,4.68,AP-008176,Sandy Loam,Zaid,Red Gram (Pigeon Pea),Rainfed,5.37,1.8,0.33,213,12,192,3.29,9.93,0.2,1.27,2024-11-14,65.6,34.4,Murali Varma
-Andhra Pradesh,Guntur,Medikonduru,MEDIKONDURU,AND-GUN-008186,2.66,AP-008186,Sandy,Kharif,Paddy (Rice),Drip,5.07,2.66,0.82,390,30,402,2.49,2.41,1.37,1.17,2024-02-04,58.87,41.13,Sai Mekapati
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-008193,5.36,AP-008193,Sandy,Kharif,Coconut,Canal,5.9,2.91,0.64,158,15,339,0.54,10.42,1.81,0.36,2025-02-04,67.87,32.13,Saraswathi Kambhampati
-Andhra Pradesh,Guntur,Tadikonda,BEJATPURAM,AND-GUN-008226,8.49,AP-008226,Silty Loam,Rabi,Sweet Orange,Rainfed,6.74,2.13,0.54,313,26,552,2.63,9.17,1.13,1.21,2025-09-02,78.3,21.7,Appa Rao Varma
-Andhra Pradesh,Guntur,Chebrolu,PATAREDDIPALEM,AND-GUN-008228,2.32,AP-008228,Sandy,Zaid,Paddy (Rice),Canal,5.35,1.99,1.5,318,51,529,0.79,13.11,0.9,2.08,2025-02-14,57.73,42.27,Satyanarayana Daggubati
-Andhra Pradesh,Guntur,Mangalagiri,RAMACHANDRAPURAM,AND-GUN-008240,2.71,AP-008240,Sandy,Kharif,Green Gram (Moong),Drip,6.84,0.14,1.4,237,53,92,2.13,13.53,0.55,1.1,2024-08-20,59.03,40.97,Ramu Goud
-Andhra Pradesh,Guntur,Phirangipuram,PONUGUPADU,AND-GUN-008255,6.49,AP-008255,Silty Loam,Kharif,Oil Palm,Rainfed,7.29,2.88,0.48,380,29,346,3.01,4.59,1.01,2.46,2025-11-10,71.63,28.37,Anand Raju
-Andhra Pradesh,Guntur,Ponnur,KONDAMUDI,AND-GUN-008266,0.7,AP-008266,Sandy,Kharif,Sugarcane,Sprinkler,7.18,2.42,0.58,304,79,92,3.26,12.3,0.6,1.42,2024-07-04,52.33,47.67,Sai Nandamuri
-Andhra Pradesh,Guntur,Mangalagiri,NIDAMARRU,AND-GUN-008276,11.26,AP-008276,Clay Loam,Kharif,Tomato,Sprinkler,7.67,0.91,1.12,391,52,486,2.88,8.23,1.49,1.12,2024-10-23,87.53,12.47,Siva Golla
-Andhra Pradesh,Guntur,Pedakakani,PEDDARAVURU,AND-GUN-008325,1.44,AP-008325,Silty Loam,Kharif,Bajra (Pearl Millet),Sprinkler,5.52,0.67,0.34,140,19,295,1.62,10.41,1.19,1.45,2025-05-30,54.8,45.2,Narasimha Naidu
-Andhra Pradesh,Guntur,Ponnur,VADDIMUKKALA,AND-GUN-008330,7.24,AP-008330,Clay,Rabi,Onion,Drip,6.87,1.31,0.51,130,63,205,2.41,7.13,0.47,1.31,2025-11-29,74.13,25.87,Babu Ghattamaneni
-Andhra Pradesh,Guntur,Tadepalle,R F,AND-GUN-008343,3.11,AP-008343,Sandy,Rabi,Bengal Gram (Chickpea),Canal,7.97,1.65,1.34,237,16,495,2.69,7.57,0.78,0.21,2025-02-11,60.37,39.63,Srinivas Reddy
-Andhra Pradesh,Guntur,Prathipadu,PRATTIPADU,AND-GUN-008359,1.25,AP-008359,Sandy Loam,Zaid,Tomato,Rainfed,7.46,2.96,0.64,257,45,256,3.28,3.38,0.62,1.93,2025-01-28,54.17,45.83,Anand Chowdary
-Andhra Pradesh,Guntur,Pedanandipadu,KATRAPADU,AND-GUN-008371,2.77,AP-008371,Sandy Loam,Rabi,Red Gram (Pigeon Pea),Drip,8.11,2.21,1.01,240,21,367,3.29,11.74,0.44,1.63,2024-03-25,59.23,40.77,Satyanarayana Chowdary
-Andhra Pradesh,Guntur,Thullur,MALKAPURAM,AND-GUN-008373,6.25,AP-008373,Sandy,Zaid,Oil Palm,Rainfed,5.25,2.84,0.84,310,42,302,1.19,8.1,0.97,2.38,2024-04-23,70.83,29.17,Saraswathi Kothapalli
-Andhra Pradesh,Guntur,Vatticherukuru,KAREMPUDIPADU,AND-GUN-008376,6.13,AP-008376,Loamy,Kharif,Black Gram (Urad),Drip,6.51,1.0,0.58,114,14,161,1.02,3.73,0.57,2.11,2024-12-31,70.43,29.57,Bhavani Kodali
-Andhra Pradesh,Guntur,Prathipadu,NADIMPALEM,AND-GUN-008388,5.33,AP-008388,Clay,Kharif,Chilli,Borewell,6.8,0.56,0.48,373,31,250,3.34,2.7,1.18,0.39,2024-07-16,67.77,32.23,Lakshmi Ghattamaneni
-Andhra Pradesh,Guntur,Kollipara,PIDAPARRUPALEM,AND-GUN-008392,1.8,AP-008392,Clay Loam,Kharif,Jowar (Sorghum),Drip,8.67,0.32,0.78,362,78,348,1.46,4.23,1.77,0.15,2025-02-27,56.0,44.0,Satyanarayana Kaza
-Andhra Pradesh,Guntur,Tadikonda,BEJATPURAM,AND-GUN-008401,7.74,AP-008401,Loamy,Kharif,Cotton,Drip,7.97,0.33,0.76,266,9,134,1.32,12.57,0.12,0.91,2024-11-19,75.8,24.2,Prakash Kothapalli
-Andhra Pradesh,Guntur,Medikonduru,PERECHERLA,AND-GUN-008491,12.25,AP-008491,Sandy Loam,Rabi,Sugarcane,Borewell,8.6,0.59,0.32,394,39,485,2.14,13.59,1.0,1.42,2025-07-01,90.83,9.17,Venkata Allu
-Andhra Pradesh,Guntur,Mangalagiri,NIDAMARRU,AND-GUN-008497,14.92,AP-008497,Silty Loam,Zaid,Tomato,Sprinkler,6.91,0.52,0.47,309,32,128,3.35,3.28,1.19,0.7,2024-05-06,99.73,0.27,Siva Rao
-Andhra Pradesh,Guntur,Chebrolu,SEKURU,AND-GUN-008499,2.97,AP-008499,Sandy,Zaid,Horse Gram,Sprinkler,6.19,1.02,1.31,253,60,226,2.19,9.13,0.73,2.29,2025-03-04,59.9,40.1,Venkatesh Akkineni
-Andhra Pradesh,Guntur,Guntur,GUNTUR,AND-GUN-008558,9.11,AP-008558,Loamy,Rabi,Green Gram (Moong),Rainfed,7.05,1.53,0.87,338,28,534,2.28,5.71,1.04,2.36,2024-10-09,80.37,19.63,Siva Rao
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-008582,11.64,AP-008582,Loamy,Zaid,Sunflower,Canal,8.15,1.43,0.6,223,78,93,1.29,6.06,1.29,0.93,2025-03-03,88.8,11.2,Nageswara Rao Nandamuri
-Andhra Pradesh,Guntur,Pedanandipadu,KATRAPADU,AND-GUN-008590,10.23,AP-008590,Clay,Zaid,Groundnut,Borewell,7.78,1.64,0.94,294,57,235,0.57,2.4,1.85,0.4,2024-12-14,84.1,15.9,Srinivas Golla
-Andhra Pradesh,Guntur,Vatticherukuru,CHAMALLAMUDI,AND-GUN-008604,2.74,AP-008604,Clay,Rabi,Sweet Orange,Canal,7.19,0.39,1.31,118,57,446,0.93,14.99,0.27,1.21,2025-02-20,59.13,40.87,Narasimha Naidu
-Andhra Pradesh,Guntur,Pedakakani,NANDIVELUGU,AND-GUN-008608,4.12,AP-008608,Sandy,Zaid,Paddy (Rice),Rainfed,7.33,0.38,0.49,148,73,555,1.31,6.29,0.12,0.48,2024-07-27,63.73,36.27,Rambabu Naidu
-Andhra Pradesh,Guntur,Kollipara,ANNAVARAM,AND-GUN-008617,14.4,AP-008617,Clay,Kharif,Bengal Gram (Chickpea),Canal,5.39,0.41,1.03,323,48,105,1.52,3.93,0.95,2.48,2024-09-23,98.0,2.0,Mahesh Konidela
-Andhra Pradesh,Guntur,Guntur,GORANTLA,AND-GUN-008620,2.84,AP-008620,Sandy Loam,Zaid,Banana,Drip,5.67,1.07,1.35,429,19,397,0.46,7.43,1.41,2.35,2024-04-12,59.47,40.53,Appa Rao Allu
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-008692,10.05,AP-008692,Loamy,Zaid,Tobacco,Sprinkler,5.42,2.64,0.99,277,15,382,0.45,13.84,0.63,2.44,2024-11-06,83.5,16.5,Gopi Dasari
-Andhra Pradesh,Guntur,Tadepalle,GUNDIMEDA,AND-GUN-008728,3.61,AP-008728,Sandy Loam,Zaid,Sugarcane,Borewell,7.52,2.41,0.69,204,12,274,2.27,5.02,1.72,2.21,2024-08-02,62.03,37.97,Murali Konidela
-Andhra Pradesh,Guntur,Thullur,MALKAPURAM,AND-GUN-008731,3.05,AP-008731,Silty Loam,Kharif,Banana,Drip,7.16,2.67,0.35,345,38,411,2.25,11.44,0.33,0.97,2025-03-07,60.17,39.83,Babu Ghattamaneni
-Andhra Pradesh,Guntur,Vatticherukuru,CHAMALLAMUDI,AND-GUN-008754,3.02,AP-008754,Loamy,Kharif,Ragi (Finger Millet),Sprinkler,6.81,0.16,0.26,122,73,528,0.61,2.88,1.35,1.09,2024-08-25,60.07,39.93,Ravi Raju
-Andhra Pradesh,Guntur,Pedanandipadu,GORIJAVOLUGUNTAPALEM,AND-GUN-008783,4.98,AP-008783,Clay,Rabi,Maize,Sprinkler,7.96,0.67,0.64,241,37,287,1.82,12.99,0.75,2.08,2025-05-20,66.6,33.4,Suresh Daggubati
-Andhra Pradesh,Guntur,Kollipara,ANNAVARAM,AND-GUN-008793,2.54,AP-008793,Clay,Zaid,Sweet Orange,Canal,6.15,2.26,0.94,392,20,266,1.62,3.12,1.88,0.45,2024-01-10,58.47,41.53,Ravi Nimmagadda
-Andhra Pradesh,Guntur,Pedakakani,NAMBURU,AND-GUN-008815,9.99,AP-008815,Sandy,Kharif,Black Gram (Urad),Borewell,5.87,2.33,0.8,289,72,348,2.27,2.61,0.25,1.38,2025-07-18,83.3,16.7,Krishna Konidela
-Andhra Pradesh,Guntur,Vatticherukuru,KORNEPADU,AND-GUN-008835,14.18,AP-008835,Clay Loam,Zaid,Chilli,Drip,6.71,2.29,0.72,422,27,256,1.76,14.96,0.23,1.96,2024-10-09,97.27,2.73,Bhavani Chowdary
-Andhra Pradesh,Guntur,Tadikonda,RF,AND-GUN-008842,12.88,AP-008842,Sandy Loam,Rabi,Sugarcane,Rainfed,5.25,1.64,1.39,141,55,359,0.32,8.34,1.65,0.82,2025-11-06,92.93,7.07,Lakshmi Goud
-Andhra Pradesh,Guntur,Kollipara,DANTALURU,AND-GUN-008844,13.21,AP-008844,Clay Loam,Kharif,Oil Palm,Rainfed,8.33,1.99,0.25,281,13,504,2.67,13.87,1.7,2.41,2024-04-18,94.03,5.97,Sai Chowdary
-Andhra Pradesh,Guntur,Pedakakani,DEVARAPALLI,AND-GUN-008858,1.44,AP-008858,Silty Loam,Rabi,Green Gram (Moong),Sprinkler,6.19,0.88,0.47,386,49,392,2.42,11.07,1.17,0.69,2025-03-16,54.8,45.2,Ramu Kaza
-Andhra Pradesh,Guntur,Tadikonda,BANDARUPALLI,AND-GUN-008880,3.61,AP-008880,Loamy,Rabi,Horse Gram,Sprinkler,6.47,0.24,0.75,317,41,160,2.23,3.03,1.01,1.02,2025-11-05,62.03,37.97,Ravi Nimmagadda
-Andhra Pradesh,Guntur,Ponnur,MULUKUDURU,AND-GUN-008913,13.15,AP-008913,Clay,Rabi,Coconut,Borewell,7.23,2.22,1.09,186,57,528,0.89,4.5,1.66,1.97,2024-02-27,93.83,6.17,Prakash Allu
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-008928,2.88,AP-008928,Clay,Rabi,Sunflower,Borewell,6.8,0.49,1.29,304,6,119,1.15,6.0,1.83,1.59,2024-06-30,59.6,40.4,Kiran Chowdary
-Andhra Pradesh,Guntur,Tadikonda,LACHCHANNAGUDIPUDI,AND-GUN-008931,6.21,AP-008931,Clay,Kharif,Tobacco,Rainfed,5.83,2.68,0.39,277,35,525,1.04,11.4,1.6,0.57,2024-08-17,70.7,29.3,Ramesh Ghattamaneni
-Andhra Pradesh,Guntur,Pedanandipadu,ANNAVARAM,AND-GUN-008944,13.97,AP-008944,Sandy,Rabi,Banana,Rainfed,7.58,1.26,0.88,163,39,118,1.11,13.93,0.24,1.12,2025-12-02,96.57,3.43,Ramakrishna Rao
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-008950,8.87,AP-008950,Clay,Rabi,Horse Gram,Canal,8.5,1.91,1.06,203,64,287,0.45,11.5,1.34,1.87,2024-07-30,79.57,20.43,Gopi Allu
-Andhra Pradesh,Guntur,Pedakakani,ANUMARLAPUDI,AND-GUN-008960,12.87,AP-008960,Silty Loam,Kharif,Tomato,Canal,7.27,0.86,0.43,391,20,516,1.76,10.58,0.36,0.84,2024-10-22,92.9,7.1,Sai Akkineni
-Andhra Pradesh,Guntur,Medikonduru,KORRAPADU,AND-GUN-008975,6.73,AP-008975,Loamy,Zaid,Green Gram (Moong),Drip,6.47,1.63,1.36,367,45,323,1.09,14.61,0.34,2.25,2024-08-07,72.43,27.57,Mahesh Akkineni
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-008982,9.91,AP-008982,Clay,Kharif,Tomato,Drip,6.37,0.67,1.28,262,39,591,1.36,10.61,1.47,1.8,2025-08-06,83.03,16.97,Gopi Goud
-Andhra Pradesh,Guntur,Kollipara,DANTALURU,AND-GUN-008988,14.17,AP-008988,Sandy Loam,Zaid,Sweet Orange,Drip,8.53,1.29,0.9,130,23,180,2.24,3.46,1.43,1.11,2025-08-18,97.23,2.77,Appa Rao Chowdary
-Andhra Pradesh,Guntur,Vatticherukuru,KOVELAMUDI,AND-GUN-009011,4.66,AP-009011,Clay,Zaid,Paddy (Rice),Canal,7.84,2.5,0.9,263,49,177,2.2,12.37,1.03,1.25,2025-02-02,65.53,34.47,Siva Naidu
-Andhra Pradesh,Guntur,Phirangipuram,Nudurupadu,AND-GUN-009049,14.32,AP-009049,Silty Loam,Zaid,Black Gram (Urad),Borewell,5.56,0.68,0.97,268,67,301,0.84,4.44,0.24,0.95,2024-04-05,97.73,2.27,Saraswathi Daggubati
-Andhra Pradesh,Guntur,Thullur,Vaddamanu,AND-GUN-009064,6.19,AP-009064,Silty Loam,Kharif,Black Gram (Urad),Canal,7.3,1.05,0.91,402,78,83,2.9,6.82,0.36,2.19,2024-03-31,70.63,29.37,Saraswathi Kambhampati
-Andhra Pradesh,Guntur,Thullur,NELAPADU,AND-GUN-009101,8.86,AP-009101,Clay,Zaid,Onion,Borewell,5.76,2.05,1.29,351,13,388,0.69,9.05,1.58,2.3,2024-01-10,79.53,20.47,Saraswathi Daggubati
-Andhra Pradesh,Guntur,Pedakakani,KOLAKALARU,AND-GUN-009105,2.46,AP-009105,Clay,Zaid,Bajra (Pearl Millet),Drip,6.91,1.96,0.23,199,24,397,2.49,10.63,1.11,0.51,2024-09-29,58.2,41.8,Ramu Nandamuri
-Andhra Pradesh,Guntur,Tadikonda,MOTADAKA,AND-GUN-009117,9.24,AP-009117,Sandy Loam,Rabi,Groundnut,Borewell,7.62,2.01,0.59,408,29,361,0.38,3.41,1.97,2.31,2024-05-13,80.8,19.2,Appa Rao Nimmagadda
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-009120,13.0,AP-009120,Sandy Loam,Rabi,Sunflower,Borewell,8.73,2.99,0.66,335,66,191,1.33,4.98,1.49,0.52,2024-05-17,93.33,6.67,Murali Nimmagadda
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-009142,3.38,AP-009142,Clay Loam,Rabi,Tobacco,Borewell,8.34,1.54,0.68,312,28,190,2.91,7.54,0.92,2.49,2024-04-24,61.27,38.73,Krishna Ghattamaneni
-Andhra Pradesh,Guntur,Chebrolu,SUDDAPALLE,AND-GUN-009184,10.3,AP-009184,Clay Loam,Zaid,Jowar (Sorghum),Drip,5.24,0.22,0.35,351,20,112,3.19,13.31,0.17,2.1,2024-08-27,84.33,15.67,Sai Akkineni
-Andhra Pradesh,Guntur,Prathipadu,INDULAPALEM,AND-GUN-009260,2.38,AP-009260,Clay Loam,Rabi,Sugarcane,Rainfed,5.53,1.9,1.18,154,57,440,0.94,2.8,1.17,1.67,2024-08-19,57.93,42.07,Mahesh Daggubati
-Andhra Pradesh,Guntur,Tadepalle,UNDAVALLI,AND-GUN-009264,9.68,AP-009264,Sandy Loam,Rabi,Sesame (Til),Drip,8.48,0.74,0.33,119,65,372,0.21,2.36,0.54,2.5,2024-04-21,82.27,17.73,Srinivas Goud
-Andhra Pradesh,Guntur,Ponnur,AREMANDA,AND-GUN-009267,4.8,AP-009267,Sandy,Zaid,Red Gram (Pigeon Pea),Drip,7.23,1.44,1.26,325,70,342,2.98,3.56,1.25,2.36,2024-12-22,66.0,34.0,Srinivas Allu
-Andhra Pradesh,Guntur,Tadepalle,CHIRRAVURU,AND-GUN-009308,11.11,AP-009308,Sandy Loam,Zaid,Paddy (Rice),Canal,5.65,0.9,0.93,143,20,187,2.83,2.8,1.69,0.17,2024-02-20,87.03,12.97,Murali Bandi
-Andhra Pradesh,Guntur,Mangalagiri,NIDAMARRU,AND-GUN-009325,3.14,AP-009325,Loamy,Zaid,Ragi (Finger Millet),Rainfed,5.04,2.34,0.38,206,64,557,1.85,6.4,0.66,1.57,2025-08-21,60.47,39.53,Babu Kaza
-Andhra Pradesh,Guntur,Tadepalle,KALNUKODA,AND-GUN-009336,3.56,AP-009336,Clay,Zaid,Green Gram (Moong),Borewell,6.61,1.34,0.47,390,50,307,0.31,10.08,1.24,1.88,2025-12-15,61.87,38.13,Prakash Golla
-Andhra Pradesh,Guntur,Pedanandipadu,PEDDA NANDIPADU,AND-GUN-009342,8.35,AP-009342,Sandy Loam,Zaid,Green Gram (Moong),Drip,6.79,0.95,0.51,426,62,123,0.45,10.45,1.92,0.54,2024-02-04,77.83,22.17,Venkata Naidu
-Andhra Pradesh,Guntur,Guntur,ZONNALAGADDA,AND-GUN-009442,2.01,AP-009442,Clay Loam,Kharif,Oil Palm,Drip,7.55,1.07,0.85,271,64,497,0.48,6.73,1.94,0.44,2024-08-14,56.7,43.3,Gopi Pothineni
-Andhra Pradesh,Guntur,Guntur,ANKIREDDYPALEM,AND-GUN-009460,5.45,AP-009460,Sandy,Kharif,Red Gram (Pigeon Pea),Sprinkler,8.23,0.17,1.08,235,72,563,3.31,7.66,1.06,0.87,2025-03-09,68.17,31.83,Kiran Yarlagadda
-Andhra Pradesh,Guntur,Phirangipuram,SIRANGIPURAM,AND-GUN-009461,10.41,AP-009461,Sandy Loam,Rabi,Turmeric,Sprinkler,5.01,1.42,0.91,243,15,185,1.59,3.45,0.2,1.25,2025-04-17,84.7,15.3,Parvathi Ghattamaneni
-Andhra Pradesh,Guntur,Vatticherukuru,MUTLURU,AND-GUN-009464,7.56,AP-009464,Sandy,Rabi,Red Gram (Pigeon Pea),Canal,7.19,2.98,0.84,348,58,149,0.24,3.69,0.92,1.66,2025-02-12,75.2,24.8,Ramakrishna Golla
-Andhra Pradesh,Guntur,Ponnur,KONDAMUDI,AND-GUN-009493,5.55,AP-009493,Loamy,Zaid,Red Gram (Pigeon Pea),Rainfed,7.42,1.95,0.83,424,16,136,0.28,8.54,1.27,2.16,2025-11-03,68.5,31.5,Suresh Bandi
-Andhra Pradesh,Guntur,Duggirala,CHIRUVURU,AND-GUN-009507,1.78,AP-009507,Silty Loam,Zaid,Black Gram (Urad),Rainfed,7.59,2.5,0.81,328,16,414,3.48,3.32,1.51,1.66,2024-03-11,55.93,44.07,Krishna Bandi
-Andhra Pradesh,Guntur,Pedanandipadu,ANNAVARAM,AND-GUN-009529,14.84,AP-009529,Clay Loam,Zaid,Tomato,Canal,6.57,2.34,0.55,330,26,110,1.49,9.85,1.64,0.87,2024-05-28,99.47,0.53,Subba Rao Nimmagadda
-Andhra Pradesh,Guntur,Chebrolu,NARAKODURU,AND-GUN-009543,5.55,AP-009543,Clay Loam,Zaid,Sunflower,Rainfed,7.31,1.73,1.33,236,53,105,2.28,6.57,0.29,2.47,2024-08-21,68.5,31.5,Siva Nimmagadda
-Andhra Pradesh,Guntur,Tadepalle,GUNDIMEDA,AND-GUN-009547,2.61,AP-009547,Sandy Loam,Zaid,Sugarcane,Sprinkler,7.61,1.17,0.89,291,46,158,2.0,12.08,1.11,1.27,2024-11-21,58.7,41.3,Gopi Naidu
-Andhra Pradesh,Guntur,Thullur,VELGAPUDI,AND-GUN-009548,0.98,AP-009548,Sandy Loam,Kharif,Maize,Sprinkler,7.39,0.34,0.47,379,49,386,3.0,10.46,1.98,2.2,2024-10-05,53.27,46.73,Ramakrishna Konidela
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-009549,7.32,AP-009549,Clay,Rabi,Bengal Gram (Chickpea),Rainfed,8.07,2.0,0.55,347,47,584,3.48,7.38,1.54,1.17,2025-07-10,74.4,25.6,Narasimha Pothineni
-Andhra Pradesh,Guntur,Tenali,TENALI,AND-GUN-009572,1.98,AP-009572,Clay,Kharif,Horse Gram,Sprinkler,5.61,1.5,0.8,222,32,568,2.07,3.9,1.62,2.37,2024-05-21,56.6,43.4,Gopi Daggubati
-Andhra Pradesh,Guntur,Mangalagiri,KURAGALLU,AND-GUN-009603,2.98,AP-009603,Sandy Loam,Rabi,Ragi (Finger Millet),Canal,6.18,1.95,1.4,122,6,437,0.75,3.42,1.35,0.83,2025-12-06,59.93,40.07,Subba Rao Yarlagadda
-Andhra Pradesh,Guntur,Guntur,PEDA PALAKALURU,AND-GUN-009606,11.72,AP-009606,Clay Loam,Zaid,Oil Palm,Drip,8.15,0.96,0.86,435,66,314,2.79,3.6,1.74,0.96,2025-02-12,89.07,10.93,Narasimha Konidela
-Andhra Pradesh,Guntur,Pedakakani,SANGAMJAGARIAMUDI,AND-GUN-009640,0.81,AP-009640,Sandy Loam,Rabi,Chilli,Canal,6.21,1.59,0.49,379,54,304,1.99,6.74,1.49,1.02,2025-03-20,52.7,47.3,Babu Goud
-Andhra Pradesh,Guntur,Guntur,CHINA PALAKALURU,AND-GUN-009649,9.05,AP-009649,Silty Loam,Rabi,Banana,Rainfed,8.57,1.5,0.55,291,65,407,1.22,7.53,1.91,0.22,2024-08-03,80.17,19.83,Satyanarayana Vemula
-Andhra Pradesh,Guntur,Tadikonda,LAM,AND-GUN-009706,3.0,AP-009706,Clay,Zaid,Cotton,Drip,8.34,0.55,1.16,173,43,447,1.95,10.75,1.89,2.17,2025-02-04,60.0,40.0,Srinivas Kodali
-Andhra Pradesh,Guntur,Kakumanu,PANDRAPADU,AND-GUN-009716,7.73,AP-009716,Sandy,Zaid,Coconut,Borewell,6.32,2.62,0.94,204,65,172,1.48,7.44,1.73,1.42,2024-08-06,75.77,24.23,Ravi Chowdary
-Andhra Pradesh,Guntur,Prathipadu,VANGIPURAM,AND-GUN-009746,10.48,AP-009746,Sandy Loam,Zaid,Sugarcane,Drip,5.46,2.39,0.48,303,19,467,2.44,6.09,0.57,1.13,2025-09-23,84.93,15.07,Babu Ghattamaneni
-Andhra Pradesh,Guntur,Mangalagiri,KURAGALLU,AND-GUN-009747,11.99,AP-009747,Clay,Zaid,Mango,Borewell,8.46,0.92,1.28,127,23,274,2.73,2.11,0.56,0.66,2024-09-17,89.97,10.03,Rambabu Uppalapati
-Andhra Pradesh,Guntur,Ponnur,DOPPALAPUDI,AND-GUN-009765,13.33,AP-009765,Clay,Rabi,Black Gram (Urad),Sprinkler,7.13,1.01,0.21,396,65,148,3.27,8.28,0.52,1.65,2024-11-17,94.43,5.57,Anand Naidu
-Andhra Pradesh,Guntur,Vatticherukuru,ANANTAVARAPPADU,AND-GUN-009798,9.86,AP-009798,Clay Loam,Rabi,Tomato,Sprinkler,7.12,2.87,1.13,219,38,175,0.33,13.51,1.17,2.35,2024-12-03,82.87,17.13,Prasad Uppalapati
-Andhra Pradesh,Guntur,Vatticherukuru,KAREMPUDIPADU,AND-GUN-009801,11.88,AP-009801,Sandy,Zaid,Bajra (Pearl Millet),Sprinkler,5.66,0.25,0.97,209,32,536,2.85,11.61,1.13,1.64,2024-08-01,89.6,10.4,Mahesh Reddy
-Andhra Pradesh,Guntur,Kollipara,SIRIPURAM,AND-GUN-009824,3.38,AP-009824,Loamy,Rabi,Bengal Gram (Chickpea),Borewell,6.8,1.52,0.37,413,68,541,0.99,2.66,1.76,1.3,2025-03-30,61.27,38.73,Kiran Akkineni
-Andhra Pradesh,Guntur,Prathipadu,NADIMPALEM,AND-GUN-009964,8.47,AP-009964,Sandy,Rabi,Chilli,Canal,8.52,2.12,1.06,371,14,139,3.18,10.68,0.96,1.2,2024-12-11,78.23,21.77,Krishna Rao
-Andhra Pradesh,Guntur,Ponnur,KONDAMUDI,AND-GUN-009967,10.87,AP-009967,Sandy,Kharif,Turmeric,Borewell,5.47,0.18,0.76,250,53,92,0.84,11.46,0.48,1.42,2024-05-15,86.23,13.77,Ramesh Kaza
-Andhra Pradesh,Guntur,Prathipadu,ENAMADALA,AND-GUN-009976,3.2,AP-009976,Clay,Zaid,Tomato,Rainfed,8.79,0.29,0.98,410,13,118,2.04,8.62,0.14,1.06,2024-03-05,60.67,39.33,Narasimha Pothineni
-Andhra Pradesh,Guntur,Ponnur,DANDAMUDI,AND-GUN-009984,13.69,AP-009984,Sandy,Zaid,Onion,Canal,5.64,2.3,0.76,350,64,598,0.6,3.6,1.82,0.32,2025-12-29,95.63,4.37,Ramu Reddy
+Andhra Pradesh,NTR,Tiruvuru,Erramadu,AND-NTR-000006,2.76,AP-000006,Sandy,Kharif,Onion,Sprinkler,7.95,0.76,0.24,261,56,354,0.42,13.87,1.18,1.82,2025-07-24,59.2,40.8,Satyanarayana Bandi
+Andhra Pradesh,NTR,Tiruvuru,Anjaneyapuram,AND-NTR-000022,2.52,AP-000022,Sandy Loam,Zaid,Red Gram (Pigeon Pea),Canal,6.67,1.68,0.59,434,72,88,2.4,9.21,1.87,0.35,2024-03-11,58.4,41.6,Ramesh Rao
+Andhra Pradesh,NTR,Ibrahimpatnam,Jupudi,AND-NTR-000042,7.68,AP-000042,Clay,Zaid,Onion,Rainfed,8.64,0.22,0.24,226,30,100,2.25,5.1,1.0,0.37,2024-12-24,75.6,24.4,Suresh Raju
+Andhra Pradesh,NTR,Tiruvuru,Anjaneyapuram,AND-NTR-000069,1.58,AP-000069,Sandy Loam,Kharif,Sweet Orange,Borewell,7.59,0.62,0.43,412,53,326,1.84,9.58,0.54,1.63,2024-05-29,55.27,44.73,Kiran Bandi
+Andhra Pradesh,NTR,Veerullapadu,Thimmapuram,AND-NTR-000096,7.66,AP-000096,Clay Loam,Kharif,Bengal Gram (Chickpea),Canal,5.75,1.85,1.19,435,14,261,3.34,10.16,0.98,1.45,2024-05-31,75.53,24.47,Srinu Reddy
+Andhra Pradesh,NTR,A.Konduru,A.Konduru,AND-NTR-000119,13.44,AP-000119,Loamy,Rabi,Sesame (Til),Borewell,6.38,2.85,0.24,178,62,459,1.43,11.92,1.19,1.37,2024-03-09,94.8,5.2,Venkata Varma
+Andhra Pradesh,NTR,Penuganchiprolu,Lingagudem,AND-NTR-000130,7.91,AP-000130,Loamy,Kharif,Sweet Orange,Drip,7.74,0.65,0.41,363,64,590,3.1,8.47,0.27,1.04,2025-03-04,76.37,23.63,Babu Yarlagadda
+Andhra Pradesh,NTR,Gampalagudem,Peda Komira,AND-NTR-000131,6.55,AP-000131,Sandy Loam,Rabi,Sesame (Til),Borewell,5.18,0.92,0.98,434,65,372,1.97,13.01,0.92,2.22,2025-04-13,71.83,28.17,Ramu Chowdary
+Andhra Pradesh,NTR,Gampalagudem,Meduru,AND-NTR-000144,4.86,AP-000144,Clay,Kharif,Tomato,Drip,8.23,0.21,1.4,313,27,117,3.49,7.16,1.04,2.35,2025-08-10,66.2,33.8,Narasimha Reddy
+Andhra Pradesh,NTR,Veerullapadu,Thimmapuram,AND-NTR-000170,9.07,AP-000170,Sandy,Kharif,Jowar (Sorghum),Rainfed,7.48,2.59,1.19,147,56,468,1.44,8.19,1.31,1.79,2025-12-14,80.23,19.77,Prasad Kaza
+Andhra Pradesh,NTR,Ibrahimpatnam,KILESHWARAPURAM,AND-NTR-000207,1.97,AP-000207,Silty Loam,Kharif,Jowar (Sorghum),Canal,5.94,1.84,1.14,245,8,388,0.88,9.89,0.46,1.04,2024-05-23,56.57,43.43,Babu Mekapati
+Andhra Pradesh,NTR,Gampalagudem,Ummadidevarapalle,AND-NTR-000218,11.32,AP-000218,Loamy,Kharif,Sweet Orange,Rainfed,8.69,2.99,1.21,379,36,234,0.22,7.33,0.54,0.93,2025-09-29,87.73,12.27,Lakshmi Mekapati
+Andhra Pradesh,NTR,Gampalagudem,Peda Komira,AND-NTR-000228,6.2,AP-000228,Loamy,Rabi,Paddy (Rice),Drip,8.76,2.37,0.67,378,67,432,3.21,8.53,0.84,0.53,2025-06-22,70.67,29.33,Prasad Nimmagadda
+Andhra Pradesh,NTR,Reddigudem,Naguluru,AND-NTR-000238,0.85,AP-000238,Sandy,Rabi,Jowar (Sorghum),Canal,8.04,0.2,0.23,233,18,155,1.33,13.54,0.41,0.28,2025-12-04,52.83,47.17,Lakshmi Chowdary
+Andhra Pradesh,NTR,Penuganchiprolu,Lingagudem,AND-NTR-000264,8.02,AP-000264,Silty Loam,Rabi,Horse Gram,Rainfed,5.49,1.21,0.97,185,13,126,1.18,5.78,1.48,1.53,2024-09-11,76.73,23.27,Sai Daggubati
+Andhra Pradesh,NTR,Veerullapadu,Thimmapuram,AND-NTR-000279,10.68,AP-000279,Clay Loam,Rabi,Banana,Drip,7.92,1.84,1.13,286,62,196,0.52,10.57,0.1,0.95,2024-02-25,85.6,14.4,Babu Nimmagadda
+Andhra Pradesh,NTR,A.Konduru,Kambampadu,AND-NTR-000289,4.65,AP-000289,Clay Loam,Kharif,Turmeric,Sprinkler,7.46,2.29,0.91,408,30,278,1.17,4.31,1.4,0.55,2025-03-29,65.5,34.5,Sai Kodali
+Andhra Pradesh,NTR,Vijayawada (Urban),Unknown,AND-NTR-000325,14.35,AP-000325,Loamy,Kharif,Sugarcane,Canal,8.53,1.77,0.54,308,69,189,2.04,8.54,0.75,0.38,2024-10-10,97.83,2.17,Ravi Dasari
+Andhra Pradesh,NTR,Tiruvuru,Vavilala,AND-NTR-000356,9.82,AP-000356,Silty Loam,Rabi,Jowar (Sorghum),Drip,7.5,1.66,0.7,368,68,237,2.22,6.19,1.32,0.37,2025-09-27,82.73,17.27,Subba Rao Dasari
+Andhra Pradesh,NTR,Vatsavai,Rebbavaram,AND-NTR-000409,13.63,AP-000409,Sandy Loam,Rabi,Tobacco,Sprinkler,6.46,1.09,1.26,402,60,525,2.07,6.45,1.42,0.52,2025-09-27,95.43,4.57,Ramesh Yarlagadda
+Andhra Pradesh,NTR,Chandarlapadu,Katrenipalle,AND-NTR-000442,14.81,AP-000442,Sandy Loam,Kharif,Turmeric,Drip,5.14,0.62,0.85,145,43,436,1.58,9.25,0.46,2.47,2025-02-25,99.37,0.63,Rambabu Bandi
+Andhra Pradesh,NTR,Vijayawada (Rural),Rayanapadu,AND-NTR-000588,2.37,AP-000588,Loamy,Zaid,Green Gram (Moong),Drip,6.5,0.99,1.36,392,25,463,1.04,3.1,1.53,0.81,2024-07-31,57.9,42.1,Srinu Bandi
+Andhra Pradesh,NTR,Vatsavai,Hasanabada,AND-NTR-000590,2.7,AP-000590,Loamy,Rabi,Jowar (Sorghum),Sprinkler,6.36,0.34,1.3,362,74,160,2.79,14.05,0.29,0.27,2025-03-28,59.0,41.0,Ramu Golla
+Andhra Pradesh,NTR,Veerullapadu,Gudem Madhavaram,AND-NTR-000593,3.14,AP-000593,Clay Loam,Kharif,Tomato,Canal,5.8,0.78,0.96,382,64,552,1.32,3.12,1.71,1.13,2025-02-11,60.47,39.53,Prasad Dasari
+Andhra Pradesh,NTR,Kanchikacherla,Keesara,AND-NTR-000608,5.78,AP-000608,Silty Loam,Zaid,Black Gram (Urad),Canal,5.35,1.32,1.49,272,29,144,0.93,13.47,1.61,2.09,2024-07-25,69.27,30.73,Prakash Akkineni
+Andhra Pradesh,NTR,Gampalagudem,Ummadidevarapalle,AND-NTR-000639,4.4,AP-000639,Sandy Loam,Zaid,Sugarcane,Canal,5.56,0.92,1.17,117,45,396,1.86,10.95,0.62,2.13,2024-10-30,64.67,35.33,Appa Rao Kothapalli
+Andhra Pradesh,NTR,Gampalagudem,Konijerla,AND-NTR-000647,9.11,AP-000647,Loamy,Kharif,Sweet Orange,Canal,8.75,1.49,1.1,148,80,265,1.47,15.0,1.44,0.82,2025-06-05,80.37,19.63,Babu Allu
+Andhra Pradesh,NTR,Reddigudem,Rangapuram,AND-NTR-000651,1.76,AP-000651,Silty Loam,Kharif,Mango,Rainfed,8.44,0.95,0.89,171,78,582,2.49,8.79,1.97,0.95,2024-01-01,55.87,44.13,Nageswara Rao Daggubati
+Andhra Pradesh,NTR,Gampalagudem,Kanumuru,AND-NTR-000676,14.74,AP-000676,Sandy,Zaid,Black Gram (Urad),Canal,7.22,0.35,0.34,422,20,122,2.14,13.86,1.34,0.56,2025-01-15,99.13,0.87,Venkata Rao
+Andhra Pradesh,NTR,Vijayawada (Urban),Unknown,AND-NTR-000697,4.69,AP-000697,Sandy,Zaid,Ragi (Finger Millet),Drip,5.45,2.12,0.39,113,59,460,0.38,3.38,1.21,1.24,2024-08-03,65.63,34.37,Venkata Kothapalli
+Andhra Pradesh,NTR,Tiruvuru,Erramadu,AND-NTR-000737,6.19,AP-000737,Clay,Kharif,Chilli,Canal,6.41,0.52,0.61,104,45,91,2.57,4.78,1.18,0.87,2025-01-01,70.63,29.37,Suresh Nandamuri
+Andhra Pradesh,NTR,Ibrahimpatnam,Tummalapalem,AND-NTR-000751,2.2,AP-000751,Sandy Loam,Zaid,Maize,Drip,7.19,0.79,0.89,241,33,494,1.49,3.32,1.49,2.21,2024-04-23,57.33,42.67,Kiran Golla
+Andhra Pradesh,NTR,Vijayawada (Urban),Unknown,AND-NTR-000753,9.6,AP-000753,Clay,Rabi,Chilli,Borewell,5.26,0.64,1.37,172,6,565,1.61,2.27,1.95,2.22,2025-12-05,82.0,18.0,Prakash Uppalapati
+Andhra Pradesh,NTR,Reddigudem,Narukullapadu,AND-NTR-000757,9.49,AP-000757,Loamy,Rabi,Sesame (Til),Rainfed,6.89,0.81,1.16,320,51,291,2.66,4.52,1.91,1.63,2025-02-24,81.63,18.37,Lakshmi Chowdary
+Andhra Pradesh,NTR,Reddigudem,Mutchinapalle,AND-NTR-000771,2.1,AP-000771,Clay Loam,Rabi,Tomato,Canal,7.66,0.68,0.82,248,17,584,1.41,5.58,0.83,2.02,2025-11-04,57.0,43.0,Mahesh Goud
+Andhra Pradesh,NTR,Veerullapadu,Dodda Devarapadu,AND-NTR-000776,2.67,AP-000776,Sandy Loam,Kharif,Bajra (Pearl Millet),Sprinkler,6.9,2.07,0.62,218,35,187,3.17,4.26,1.8,1.91,2024-06-11,58.9,41.1,Venkatesh Kothapalli
+Andhra Pradesh,NTR,Vissannapet,Tata Kuntla,AND-NTR-000861,11.75,AP-000861,Loamy,Rabi,Sunflower,Canal,5.49,2.31,0.37,267,41,514,2.17,8.94,0.76,1.71,2025-12-24,89.17,10.83,Saraswathi Nandamuri
+Andhra Pradesh,NTR,Kanchikacherla,Gottumukkala,AND-NTR-000877,10.88,AP-000877,Clay Loam,Zaid,Ragi (Finger Millet),Canal,6.44,2.85,0.36,302,32,296,3.47,9.42,0.44,0.48,2025-05-17,86.27,13.73,Sai Vemula
+Andhra Pradesh,NTR,Vijayawada (Rural),Paidurupadu,AND-NTR-000893,12.54,AP-000893,Silty Loam,Kharif,Sugarcane,Canal,5.67,2.94,0.55,242,16,274,2.62,13.93,1.82,0.42,2024-09-07,91.8,8.2,Suresh Mekapati
+Andhra Pradesh,NTR,Vatsavai,Machinenipalem,AND-NTR-000897,4.75,AP-000897,Silty Loam,Zaid,Chilli,Canal,7.13,1.0,0.77,193,67,86,1.25,14.67,0.99,0.49,2025-06-28,65.83,34.17,Saraswathi Kaza
+Andhra Pradesh,NTR,Vatsavai,Talluru,AND-NTR-000911,9.06,AP-000911,Sandy,Rabi,Ragi (Finger Millet),Borewell,5.98,0.75,1.08,267,73,548,2.36,4.6,1.66,2.32,2024-01-09,80.2,19.8,Rambabu Nimmagadda
+Andhra Pradesh,NTR,G.Konduru,Bhimavarappadu,AND-NTR-000917,4.77,AP-000917,Clay Loam,Rabi,Oil Palm,Rainfed,7.45,1.23,0.81,240,46,126,0.66,5.24,1.17,0.41,2024-11-03,65.9,34.1,Narasimha Bandi
+Andhra Pradesh,NTR,Chandarlapadu,Vibhareetapadu,AND-NTR-000921,13.09,AP-000921,Loamy,Zaid,Jowar (Sorghum),Sprinkler,5.43,1.48,1.48,374,61,217,3.03,12.52,0.1,1.24,2024-12-23,93.63,6.37,Babu Mekapati
+Andhra Pradesh,NTR,Chandarlapadu,Punnavalli,AND-NTR-000933,14.77,AP-000933,Sandy,Zaid,Sunflower,Drip,5.47,2.24,1.43,177,31,534,0.67,5.58,0.72,1.63,2024-03-13,99.23,0.77,Lakshmi Dasari
+Andhra Pradesh,NTR,Vissannapet,Vemireddipalle,AND-NTR-000936,4.45,AP-000936,Sandy Loam,Rabi,Turmeric,Sprinkler,8.66,1.32,1.03,243,40,337,2.31,6.27,1.37,0.7,2025-01-06,64.83,35.17,Prasad Kambhampati
+Andhra Pradesh,NTR,Nandigama,Kanchela,AND-NTR-000949,13.17,AP-000949,Sandy,Zaid,Ragi (Finger Millet),Canal,5.37,2.76,1.48,343,73,401,0.55,12.74,0.53,0.94,2025-12-20,93.9,6.1,Appa Rao Nandamuri
+Andhra Pradesh,NTR,Ibrahimpatnam,Guntupalle (CT),AND-NTR-000966,5.66,AP-000966,Sandy,Kharif,Red Gram (Pigeon Pea),Drip,8.75,2.5,0.68,305,10,239,0.67,5.2,1.37,2.22,2024-01-05,68.87,31.13,Kiran Goud
+Andhra Pradesh,NTR,Tiruvuru,Ramannapalem,AND-NTR-000971,10.12,AP-000971,Clay Loam,Rabi,Sesame (Til),Borewell,6.66,0.51,0.98,121,69,273,2.74,11.42,0.18,0.13,2024-03-10,83.73,16.27,Anand Kaza
+Andhra Pradesh,NTR,Chandarlapadu,Pokkunuru,AND-NTR-001014,1.07,AP-001014,Sandy Loam,Kharif,Sesame (Til),Drip,8.69,1.08,0.74,135,68,490,2.0,8.82,1.32,1.05,2025-12-31,53.57,46.43,Prakash Dasari
+Andhra Pradesh,NTR,Vijayawada (Rural),Jakkampudi (OG),AND-NTR-001021,10.61,AP-001021,Sandy Loam,Kharif,Black Gram (Urad),Borewell,6.94,1.0,0.48,192,47,291,1.85,11.36,1.47,1.2,2025-10-03,85.37,14.63,Venkata Goud
+Andhra Pradesh,NTR,Gampalagudem,Gullapudi,AND-NTR-001093,9.31,AP-001093,Clay,Zaid,Cotton,Drip,6.56,2.8,1.07,443,75,389,3.29,4.73,1.0,0.18,2025-08-16,81.03,18.97,Srinu Bandi
+Andhra Pradesh,NTR,Veerullapadu,Narasimharaopalem,AND-NTR-001102,14.55,AP-001102,Sandy Loam,Kharif,Tomato,Canal,6.25,1.68,0.46,450,59,161,1.28,5.19,1.01,0.34,2024-04-28,98.5,1.5,Anand Kodali
+Andhra Pradesh,NTR,Gampalagudem,Lingala,AND-NTR-001118,13.22,AP-001118,Clay,Zaid,Turmeric,Drip,6.6,1.98,0.85,158,56,275,2.66,10.99,1.2,2.05,2024-10-02,94.07,5.93,Venkatesh Daggubati
+Andhra Pradesh,NTR,Reddigudem,Rudravaram,AND-NTR-001206,11.67,AP-001206,Clay Loam,Rabi,Horse Gram,Canal,7.39,0.45,1.08,362,78,156,3.26,3.47,1.01,1.26,2024-09-24,88.9,11.1,Appa Rao Daggubati
+Andhra Pradesh,NTR,Chandarlapadu,Kasarabada,AND-NTR-001235,9.95,AP-001235,Sandy,Kharif,Tomato,Canal,7.77,0.21,0.94,320,53,425,0.89,2.17,0.44,1.66,2025-03-24,83.17,16.83,Nageswara Rao Mekapati
+Andhra Pradesh,NTR,Kanchikacherla,Vemulapalle,AND-NTR-001252,7.48,AP-001252,Clay,Kharif,Banana,Rainfed,5.26,2.17,1.18,423,39,83,1.24,10.68,1.44,0.86,2025-08-22,74.93,25.07,Venkata Varma
+Andhra Pradesh,NTR,Jaggayyapeta,RF,AND-NTR-001258,7.63,AP-001258,Loamy,Kharif,Turmeric,Canal,7.85,1.76,0.97,399,62,230,3.16,3.09,0.94,0.15,2024-03-26,75.43,24.57,Ramakrishna Allu
+Andhra Pradesh,NTR,Jaggayyapeta,Kowthavari Agraharam,AND-NTR-001321,4.08,AP-001321,Clay Loam,Zaid,Jowar (Sorghum),Sprinkler,6.78,0.96,1.46,284,61,342,1.93,13.46,0.56,2.19,2025-02-16,63.6,36.4,Lakshmi Kothapalli
+Andhra Pradesh,NTR,Nandigama,Konduru,AND-NTR-001335,14.63,AP-001335,Silty Loam,Zaid,Bengal Gram (Chickpea),Sprinkler,7.64,0.46,1.36,211,29,375,1.21,11.09,1.97,2.17,2025-12-13,98.77,1.23,Saraswathi Bandi
+Andhra Pradesh,NTR,Gampalagudem,Arlapadu,AND-NTR-001352,8.89,AP-001352,Loamy,Rabi,Jowar (Sorghum),Canal,7.6,1.99,1.49,145,58,155,1.75,6.92,1.26,2.17,2025-07-04,79.63,20.37,Ravi Kothapalli
+Andhra Pradesh,NTR,Vatsavai,Dabbakupalle,AND-NTR-001367,10.88,AP-001367,Clay Loam,Kharif,Sugarcane,Drip,5.86,2.89,1.08,109,8,204,1.84,8.9,0.78,0.5,2025-02-26,86.27,13.73,Ravi Golla
+Andhra Pradesh,NTR,Chandarlapadu,Konayapalem,AND-NTR-001400,10.75,AP-001400,Silty Loam,Rabi,Groundnut,Canal,6.9,0.47,1.14,211,78,356,0.53,4.05,1.94,2.49,2024-05-29,85.83,14.17,Parvathi Mekapati
+Andhra Pradesh,NTR,Penuganchiprolu,Subbayagudem,AND-NTR-001418,2.27,AP-001418,Sandy Loam,Rabi,Oil Palm,Borewell,5.71,1.76,1.42,195,17,213,0.48,14.73,0.33,1.2,2024-05-30,57.57,42.43,Venkatesh Kambhampati
+Andhra Pradesh,NTR,Jaggayyapeta,Gowravaram,AND-NTR-001428,14.3,AP-001428,Loamy,Kharif,Sugarcane,Sprinkler,7.54,2.46,1.04,188,42,264,0.34,6.9,0.74,0.72,2025-02-15,97.67,2.33,Ravi Uppalapati
+Andhra Pradesh,NTR,Kanchikacherla,Gandepalle,AND-NTR-001505,6.01,AP-001505,Silty Loam,Rabi,Horse Gram,Borewell,8.26,2.8,0.37,284,23,175,2.34,2.2,0.75,0.62,2024-05-28,70.03,29.97,Babu Daggubati
+Andhra Pradesh,NTR,Nandigama,Ambarupeta,AND-NTR-001573,11.18,AP-001573,Sandy Loam,Zaid,Maize,Canal,6.13,2.34,1.26,130,21,520,2.57,7.88,1.33,2.08,2025-01-31,87.27,12.73,Nageswara Rao Rao
+Andhra Pradesh,NTR,A.Konduru,Cheemalapadu,AND-NTR-001603,3.79,AP-001603,Silty Loam,Kharif,Bengal Gram (Chickpea),Sprinkler,7.93,0.33,0.85,212,39,433,1.61,6.36,0.47,2.08,2025-07-27,62.63,37.37,Prakash Dasari
+Andhra Pradesh,NTR,Reddigudem,Rangapuram,AND-NTR-001669,2.19,AP-001669,Silty Loam,Rabi,Cotton,Borewell,8.19,1.0,0.75,329,6,383,1.68,10.32,1.54,2.26,2024-01-13,57.3,42.7,Siva Yarlagadda
+Andhra Pradesh,NTR,Kanchikacherla,Seri Amaravaram,AND-NTR-001678,6.34,AP-001678,Sandy Loam,Rabi,Red Gram (Pigeon Pea),Rainfed,5.85,1.65,0.64,172,10,219,0.99,4.37,1.19,0.7,2025-04-29,71.13,28.87,Appa Rao Varma
+Andhra Pradesh,NTR,Vissannapet,Tata Kuntla,AND-NTR-001690,11.59,AP-001690,Sandy,Rabi,Paddy (Rice),Canal,7.66,0.63,0.79,183,22,277,2.89,14.64,1.44,0.83,2024-12-13,88.63,11.37,Ramakrishna Chowdary
+Andhra Pradesh,NTR,Vatsavai,Gopinenipalem,AND-NTR-001711,2.7,AP-001711,Sandy,Rabi,Tomato,Drip,5.55,2.0,0.35,419,69,107,3.44,13.49,0.53,1.73,2024-06-05,59.0,41.0,Krishna Goud
+Andhra Pradesh,NTR,A.Konduru,Cheemalapadu,AND-NTR-001742,11.14,AP-001742,Sandy,Zaid,Sesame (Til),Rainfed,6.05,2.22,1.1,291,66,379,2.11,4.57,0.78,0.37,2024-09-03,87.13,12.87,Ramu Golla
+Andhra Pradesh,NTR,A.Konduru,Madhavaram (West),AND-NTR-001777,10.48,AP-001777,Clay,Kharif,Bajra (Pearl Millet),Sprinkler,6.32,2.64,0.3,221,15,423,0.92,2.67,1.23,1.14,2024-06-22,84.93,15.07,Lakshmi Daggubati
+Andhra Pradesh,NTR,Vijayawada (Urban),Unknown,AND-NTR-001780,12.69,AP-001780,Loamy,Kharif,Sesame (Til),Rainfed,5.4,2.97,1.11,274,60,542,1.35,10.62,0.86,0.98,2025-09-04,92.3,7.7,Gopi Pothineni
+Andhra Pradesh,NTR,Reddigudem,Kunaparajuparva,AND-NTR-001797,10.89,AP-001797,Sandy,Kharif,Bengal Gram (Chickpea),Borewell,5.66,0.97,0.21,116,40,161,1.7,3.64,0.31,0.89,2024-07-07,86.3,13.7,Narasimha Daggubati
+Andhra Pradesh,NTR,Jaggayyapeta,Balusupadu,AND-NTR-001803,5.62,AP-001803,Clay,Rabi,Mango,Borewell,5.17,1.64,1.42,283,5,269,0.7,7.43,1.38,0.22,2024-05-04,68.73,31.27,Siva Kambhampati
+Andhra Pradesh,NTR,Vijayawada (Urban),VIJAYAWADA,AND-NTR-001804,4.8,AP-001804,Clay,Rabi,Black Gram (Urad),Rainfed,6.42,0.75,0.99,143,12,82,0.39,2.28,1.45,1.66,2025-08-13,66.0,34.0,Suresh Golla
+Andhra Pradesh,NTR,Tiruvuru,Akkapalem,AND-NTR-001810,1.93,AP-001810,Loamy,Rabi,Bajra (Pearl Millet),Borewell,6.49,1.92,1.08,326,8,475,2.28,8.21,0.91,0.9,2024-05-15,56.43,43.57,Suresh Vemula
+Andhra Pradesh,NTR,Veerullapadu,Chennaraopalem,AND-NTR-001882,13.16,AP-001882,Sandy,Rabi,Banana,Drip,7.72,1.12,0.58,141,38,521,3.42,12.38,1.67,1.6,2025-05-22,93.87,6.13,Suresh Ghattamaneni
+Andhra Pradesh,NTR,G.Konduru,Telladevarapadu,AND-NTR-001883,9.73,AP-001883,Clay Loam,Rabi,Jowar (Sorghum),Canal,6.81,2.72,0.6,283,45,305,2.47,11.08,1.86,1.1,2025-08-21,82.43,17.57,Suresh Kodali
+Andhra Pradesh,NTR,Ibrahimpatnam,Kethanakonda,AND-NTR-001886,7.19,AP-001886,Loamy,Zaid,Cotton,Rainfed,5.91,2.39,0.51,416,48,155,1.64,8.42,0.21,0.91,2025-08-07,73.97,26.03,Anand Nandamuri
+Andhra Pradesh,NTR,Penuganchiprolu,Muchintala @ Bodapadu,AND-NTR-001912,13.21,AP-001912,Sandy,Zaid,Maize,Sprinkler,8.45,0.24,1.17,174,79,176,0.47,7.87,0.34,0.48,2025-09-04,94.03,5.97,Narasimha Uppalapati
+Andhra Pradesh,NTR,Nandigama,Kurugantivari Khandrika,AND-NTR-001948,2.64,AP-001948,Loamy,Rabi,Turmeric,Sprinkler,8.8,1.34,0.42,292,43,153,2.28,11.89,0.57,1.65,2025-11-29,58.8,41.2,Ramu Allu
+Andhra Pradesh,NTR,G.Konduru,Bhimavarappadu,AND-NTR-001949,5.26,AP-001949,Loamy,Rabi,Cotton,Drip,8.27,2.62,1.07,200,46,439,0.93,11.36,0.26,1.95,2025-08-09,67.53,32.47,Saraswathi Nandamuri
+Andhra Pradesh,NTR,G.Konduru,Koduru,AND-NTR-002001,4.29,AP-002001,Sandy,Rabi,Green Gram (Moong),Canal,6.42,2.66,0.72,348,18,434,1.28,5.54,1.77,0.93,2024-12-07,64.3,35.7,Murali Allu
+Andhra Pradesh,NTR,Jaggayyapeta,Pochampalle,AND-NTR-002014,2.52,AP-002014,Sandy,Zaid,Sesame (Til),Rainfed,8.67,1.11,0.22,445,79,432,1.8,9.77,1.68,0.97,2024-06-04,58.4,41.6,Sai Dasari
+Andhra Pradesh,NTR,Mylavaram,Jangalapalle,AND-NTR-002017,5.54,AP-002017,Sandy,Kharif,Banana,Sprinkler,6.33,1.03,0.64,121,71,301,1.85,5.68,1.46,1.07,2025-12-11,68.47,31.53,Krishna Bandi
+Andhra Pradesh,NTR,Nandigama,Rudravaram,AND-NTR-002023,14.08,AP-002023,Loamy,Zaid,Turmeric,Drip,7.93,1.75,0.77,132,39,102,0.85,11.98,1.95,1.7,2025-11-19,96.93,3.07,Ramakrishna Vemula
+Andhra Pradesh,NTR,Mylavaram,Chandragudem,AND-NTR-002040,4.14,AP-002040,Clay,Kharif,Sesame (Til),Canal,7.07,2.29,1.28,198,15,84,1.55,7.83,1.78,0.88,2025-09-09,63.8,36.2,Srinu Konidela
+Andhra Pradesh,NTR,Chandarlapadu,Veladi,AND-NTR-002131,2.85,AP-002131,Loamy,Kharif,Maize,Sprinkler,6.18,2.11,0.96,192,54,493,3.43,4.79,0.83,0.37,2025-01-03,59.5,40.5,Sai Goud
+Andhra Pradesh,NTR,Veerullapadu,Narasimharaopalem,AND-NTR-002140,12.94,AP-002140,Sandy Loam,Zaid,Chilli,Sprinkler,7.81,1.58,1.05,198,72,390,2.4,6.88,1.19,0.22,2024-03-30,93.13,6.87,Siva Mekapati
+Andhra Pradesh,NTR,Reddigudem,Naguluru,AND-NTR-002148,5.69,AP-002148,Loamy,Rabi,Bengal Gram (Chickpea),Rainfed,5.09,2.15,0.23,387,68,570,0.48,6.34,1.43,1.53,2024-08-15,68.97,31.03,Gopi Reddy
+Andhra Pradesh,NTR,Vissannapet,Narasapuram,AND-NTR-002255,13.25,AP-002255,Loamy,Kharif,Paddy (Rice),Drip,7.19,0.36,1.24,145,75,119,1.39,12.8,0.41,1.25,2025-03-22,94.17,5.83,Rambabu Akkineni
+Andhra Pradesh,NTR,A.Konduru,Repudi,AND-NTR-002286,4.51,AP-002286,Clay Loam,Kharif,Bajra (Pearl Millet),Canal,8.1,2.16,0.92,183,59,365,3.2,8.69,1.02,0.32,2024-07-07,65.03,34.97,Ramakrishna Chowdary
+Andhra Pradesh,NTR,Chandarlapadu,Eturu,AND-NTR-002324,4.99,AP-002324,Loamy,Zaid,Cotton,Rainfed,6.65,1.77,0.59,352,32,319,1.98,11.99,1.78,1.89,2025-05-17,66.63,33.37,Murali Daggubati
+Andhra Pradesh,NTR,Ibrahimpatnam,Ibrahimpatnam (CT),AND-NTR-002356,2.25,AP-002356,Sandy,Zaid,Ragi (Finger Millet),Canal,5.92,0.47,1.13,163,5,167,3.11,13.98,1.2,2.3,2025-09-30,57.5,42.5,Parvathi Kothapalli
+Andhra Pradesh,NTR,Penuganchiprolu,Muchintala @ Bodapadu,AND-NTR-002407,5.79,AP-002407,Clay,Kharif,Onion,Rainfed,6.33,0.72,1.41,268,41,87,3.06,13.41,1.28,1.25,2024-01-11,69.3,30.7,Kiran Kodali
+Andhra Pradesh,NTR,Vijayawada (Urban),Unknown,AND-NTR-002490,5.94,AP-002490,Clay Loam,Kharif,Green Gram (Moong),Rainfed,6.05,1.21,0.28,419,48,345,1.76,2.64,1.36,1.1,2025-03-31,69.8,30.2,Venkata Kodali
+Andhra Pradesh,NTR,Jaggayyapeta,Ravirala,AND-NTR-002509,12.78,AP-002509,Clay Loam,Kharif,Coconut,Sprinkler,7.29,1.78,0.29,141,59,271,2.43,10.46,0.71,0.85,2025-10-28,92.6,7.4,Prakash Ghattamaneni
+Andhra Pradesh,NTR,Penuganchiprolu,Penuganchiprolu,AND-NTR-002520,10.98,AP-002520,Sandy,Kharif,Horse Gram,Borewell,7.08,1.18,0.32,119,10,212,0.42,3.99,0.24,0.71,2024-01-20,86.6,13.4,Siva Pothineni
+Andhra Pradesh,NTR,Penuganchiprolu,Thotacherla,AND-NTR-002551,5.56,AP-002551,Sandy,Kharif,Cotton,Canal,6.07,0.25,0.77,297,77,218,1.49,9.1,0.34,1.88,2025-08-24,68.53,31.47,Appa Rao Yarlagadda
+Andhra Pradesh,NTR,Tiruvuru,Rajupeta,AND-NTR-002566,4.78,AP-002566,Sandy,Kharif,Green Gram (Moong),Borewell,5.4,0.48,0.82,198,40,167,2.65,8.72,0.2,2.45,2024-08-02,65.93,34.07,Mahesh Akkineni
+Andhra Pradesh,NTR,Mylavaram,T.Gannavaram,AND-NTR-002586,9.56,AP-002586,Loamy,Zaid,Sugarcane,Rainfed,6.66,2.64,1.38,344,67,388,2.95,11.61,0.58,1.0,2025-01-25,81.87,18.13,Sai Konidela
+Andhra Pradesh,NTR,Chandarlapadu,Thotaravulapadu,AND-NTR-002597,4.44,AP-002597,Clay Loam,Zaid,Bajra (Pearl Millet),Sprinkler,8.5,2.42,0.86,442,7,490,1.37,8.52,0.71,1.36,2024-09-01,64.8,35.2,Kiran Konidela
+Andhra Pradesh,NTR,Vijayawada (Urban),PAYIKAPURAM,AND-NTR-002607,1.18,AP-002607,Sandy,Rabi,Jowar (Sorghum),Rainfed,8.63,0.14,0.27,353,45,400,3.32,9.74,1.1,0.78,2024-11-26,53.93,46.07,Ravi Uppalapati
+Andhra Pradesh,NTR,Gampalagudem,Narikampadu,AND-NTR-002636,10.16,AP-002636,Clay,Rabi,Bengal Gram (Chickpea),Drip,5.18,1.73,0.9,435,35,183,2.0,9.08,0.33,1.49,2024-03-29,83.87,16.13,Nageswara Rao Naidu
+Andhra Pradesh,NTR,Ibrahimpatnam,Jupudi,AND-NTR-002665,9.31,AP-002665,Clay Loam,Kharif,Sunflower,Drip,7.4,0.26,0.34,317,29,331,1.09,2.77,0.6,2.21,2024-08-19,81.03,18.97,Parvathi Golla
+Andhra Pradesh,NTR,Vissannapet,Krishnaraopalem,AND-NTR-002746,11.83,AP-002746,Silty Loam,Zaid,Ragi (Finger Millet),Drip,5.94,1.67,0.78,314,64,478,3.01,2.47,1.3,2.1,2025-11-30,89.43,10.57,Bhavani Nimmagadda
+Andhra Pradesh,NTR,Ibrahimpatnam,Kachavaram,AND-NTR-002783,14.73,AP-002783,Silty Loam,Zaid,Sunflower,Drip,6.35,0.71,0.96,236,24,444,2.63,2.25,0.53,0.16,2025-11-26,99.1,0.9,Narasimha Uppalapati
+Andhra Pradesh,NTR,Mylavaram,Mylavaram,AND-NTR-002815,8.69,AP-002815,Silty Loam,Kharif,Ragi (Finger Millet),Canal,8.01,2.05,1.26,321,54,529,1.64,14.61,0.64,0.11,2025-04-27,78.97,21.03,Prasad Allu
+Andhra Pradesh,NTR,Chandarlapadu,Medipalem,AND-NTR-002865,6.83,AP-002865,Loamy,Kharif,Sweet Orange,Sprinkler,6.5,2.6,1.39,270,55,385,1.04,9.54,1.55,1.5,2025-11-17,72.77,27.23,Kiran Kambhampati
+Andhra Pradesh,NTR,Mylavaram,Velvadam,AND-NTR-002871,13.46,AP-002871,Clay,Kharif,Turmeric,Borewell,8.14,0.72,0.37,360,78,279,1.75,5.4,0.14,0.25,2025-08-10,94.87,5.13,Gopi Rao
+Andhra Pradesh,NTR,Kanchikacherla,Vemulapalle,AND-NTR-002880,3.2,AP-002880,Loamy,Rabi,Sugarcane,Sprinkler,6.05,1.76,1.47,201,66,231,0.72,13.25,1.42,2.31,2024-08-12,60.67,39.33,Nageswara Rao Nandamuri
+Andhra Pradesh,NTR,Veerullapadu,Nandaluru,AND-NTR-002889,12.26,AP-002889,Sandy Loam,Rabi,Red Gram (Pigeon Pea),Drip,6.1,0.46,1.06,340,18,217,0.82,5.05,1.88,2.28,2025-08-08,90.87,9.13,Lakshmi Nandamuri
+Andhra Pradesh,NTR,A.Konduru,Madhavaram (West),AND-NTR-002950,14.03,AP-002950,Loamy,Rabi,Ragi (Finger Millet),Canal,7.68,2.44,1.46,292,66,180,0.38,7.38,1.51,0.15,2024-04-22,96.77,3.23,Satyanarayana Dasari
+Andhra Pradesh,NTR,Vatsavai,Gopinenipalem,AND-NTR-002979,10.7,AP-002979,Sandy Loam,Zaid,Maize,Canal,5.41,1.48,0.44,446,10,262,3.07,7.27,1.2,2.39,2024-03-16,85.67,14.33,Appa Rao Bandi
+Andhra Pradesh,NTR,Vijayawada (Urban),Vijayawada (M Corp. + OG),AND-NTR-003034,1.97,AP-003034,Clay,Rabi,Red Gram (Pigeon Pea),Rainfed,6.6,1.37,1.4,249,55,307,2.84,6.13,0.25,0.6,2025-12-05,56.57,43.43,Murali Raju
+Andhra Pradesh,NTR,Nandigama,Lingalapadu,AND-NTR-003037,6.76,AP-003037,Silty Loam,Rabi,Bajra (Pearl Millet),Borewell,7.68,2.13,1.5,327,32,544,0.9,12.84,1.01,1.62,2025-05-26,72.53,27.47,Siva Kodali
+Andhra Pradesh,NTR,Reddigudem,Naguluru,AND-NTR-003040,8.02,AP-003040,Sandy,Zaid,Tomato,Sprinkler,5.16,0.9,0.81,132,76,111,3.48,2.42,0.68,0.23,2024-10-04,76.73,23.27,Prakash Kambhampati
+Andhra Pradesh,NTR,G.Konduru,KUNTA MUKKALA,AND-NTR-003061,4.81,AP-003061,Loamy,Kharif,Sweet Orange,Sprinkler,5.88,0.18,0.21,320,12,310,2.52,6.07,1.34,1.09,2024-10-21,66.03,33.97,Siva Chowdary
+Andhra Pradesh,NTR,Chandarlapadu,Chintalapadu,AND-NTR-003089,8.95,AP-003089,Silty Loam,Rabi,Sesame (Til),Drip,7.47,1.89,0.73,169,9,396,2.92,13.98,0.94,0.76,2025-04-05,79.83,20.17,Bhavani Dasari
+Andhra Pradesh,NTR,Chandarlapadu,Konayapalem,AND-NTR-003130,12.66,AP-003130,Clay,Rabi,Onion,Rainfed,5.31,2.96,0.71,290,48,544,1.45,5.95,0.8,2.13,2024-10-03,92.2,7.8,Ramesh Akkineni
+Andhra Pradesh,NTR,Vissannapet,Kalagara,AND-NTR-003132,12.43,AP-003132,Silty Loam,Zaid,Coconut,Sprinkler,7.98,2.68,0.75,195,20,398,2.52,10.27,1.74,2.11,2024-06-04,91.43,8.57,Ramakrishna Kaza
+Andhra Pradesh,NTR,Nandigama,Kanchela,AND-NTR-003137,11.27,AP-003137,Clay,Zaid,Chilli,Rainfed,7.85,1.67,0.6,340,62,600,3.19,3.99,1.58,1.19,2025-06-07,87.57,12.43,Parvathi Kodali
+Andhra Pradesh,NTR,Gampalagudem,Narikampadu,AND-NTR-003161,6.94,AP-003161,Sandy,Rabi,Banana,Borewell,8.55,1.7,1.5,190,24,308,3.45,13.3,0.84,2.09,2024-12-06,73.13,26.87,Gopi Mekapati
+Andhra Pradesh,NTR,Vijayawada (Urban),Unknown,AND-NTR-003171,10.0,AP-003171,Clay Loam,Rabi,Turmeric,Rainfed,5.91,2.34,1.48,391,67,417,3.36,6.89,1.46,0.73,2024-11-07,83.33,16.67,Krishna Rao
+Andhra Pradesh,NTR,G.Konduru,Chegireddipadu,AND-NTR-003189,12.51,AP-003189,Loamy,Rabi,Sunflower,Drip,7.86,0.36,0.58,173,65,197,2.46,9.57,0.93,0.81,2024-12-13,91.7,8.3,Ravi Dasari
+Andhra Pradesh,NTR,Mylavaram,Pondugula,AND-NTR-003198,13.21,AP-003198,Clay,Zaid,Sweet Orange,Rainfed,5.59,1.46,0.22,397,79,254,1.9,3.56,0.37,0.93,2024-11-09,94.03,5.97,Venkata Akkineni
+Andhra Pradesh,NTR,Penuganchiprolu,Anigandlapadu,AND-NTR-003219,10.92,AP-003219,Loamy,Kharif,Jowar (Sorghum),Canal,8.47,1.47,0.88,306,6,238,1.89,6.03,1.99,1.23,2024-09-01,86.4,13.6,Nageswara Rao Kothapalli
+Andhra Pradesh,NTR,Chandarlapadu,Thurlapadu,AND-NTR-003248,6.47,AP-003248,Sandy Loam,Rabi,Sunflower,Rainfed,6.85,2.32,0.88,359,79,480,2.19,2.11,1.56,1.34,2024-05-03,71.57,28.43,Suresh Kothapalli
+Andhra Pradesh,NTR,Gampalagudem,Vinagadapa,AND-NTR-003296,1.47,AP-003296,Clay Loam,Zaid,Jowar (Sorghum),Rainfed,6.27,2.8,0.83,434,62,197,0.44,7.88,0.11,1.05,2025-03-15,54.9,45.1,Ramakrishna Pothineni
+Andhra Pradesh,NTR,Mylavaram,Tholukodu,AND-NTR-003312,10.02,AP-003312,Loamy,Kharif,Sugarcane,Rainfed,6.66,1.54,1.2,200,49,373,1.98,10.28,1.76,0.41,2025-11-13,83.4,16.6,Venkata Kaza
+Andhra Pradesh,NTR,Nandigama,Damuluru,AND-NTR-003376,11.78,AP-003376,Sandy,Zaid,Green Gram (Moong),Drip,8.44,2.12,0.65,243,58,240,2.49,9.98,0.46,1.64,2025-08-03,89.27,10.73,Venkatesh Naidu
+Andhra Pradesh,NTR,Vijayawada (Urban),Unknown,AND-NTR-003404,5.24,AP-003404,Silty Loam,Kharif,Onion,Sprinkler,5.37,1.13,0.95,128,76,264,2.42,12.29,0.83,2.09,2025-12-12,67.47,32.53,Narasimha Vemula
+Andhra Pradesh,NTR,Vatsavai,Vatsavai,AND-NTR-003449,9.1,AP-003449,Clay Loam,Rabi,Tomato,Rainfed,6.88,0.28,0.23,427,32,157,2.08,12.97,0.86,1.1,2024-03-28,80.33,19.67,Satyanarayana Daggubati
+Andhra Pradesh,NTR,Tiruvuru,Akkapalem,AND-NTR-003471,0.78,AP-003471,Loamy,Kharif,Sesame (Til),Rainfed,8.67,2.26,1.41,446,76,97,3.05,5.91,1.23,0.2,2025-01-02,52.6,47.4,Sai Chowdary
+Andhra Pradesh,NTR,Tiruvuru,Rolupadi,AND-NTR-003492,9.3,AP-003492,Sandy,Rabi,Maize,Drip,8.36,0.91,0.28,108,6,198,0.57,2.86,0.91,2.1,2025-01-16,81.0,19.0,Srinivas Bandi
+Andhra Pradesh,NTR,Tiruvuru,Akkapalem,AND-NTR-003537,4.22,AP-003537,Sandy,Zaid,Maize,Borewell,7.95,1.24,1.32,196,28,533,1.04,3.26,1.44,1.05,2024-12-22,64.07,35.93,Prasad Reddy
+Andhra Pradesh,NTR,Ibrahimpatnam,Elaprolu,AND-NTR-003543,2.63,AP-003543,Silty Loam,Rabi,Paddy (Rice),Canal,7.8,0.67,1.08,179,42,186,3.01,4.02,0.48,1.29,2024-10-23,58.77,41.23,Nageswara Rao Uppalapati
+Andhra Pradesh,NTR,Reddigudem,Maddulaparva,AND-NTR-003548,7.53,AP-003548,Loamy,Kharif,Sesame (Til),Drip,5.99,1.92,1.11,233,32,328,3.29,10.24,1.9,0.5,2025-01-24,75.1,24.9,Parvathi Daggubati
+Andhra Pradesh,NTR,Vijayawada (Rural),Vemavaram,AND-NTR-003553,8.92,AP-003553,Clay Loam,Rabi,Jowar (Sorghum),Rainfed,5.48,2.13,0.83,313,52,325,2.86,4.26,0.96,1.37,2025-12-11,79.73,20.27,Srinu Ghattamaneni
+Andhra Pradesh,NTR,Kanchikacherla,Munnaluru,AND-NTR-003601,2.55,AP-003601,Loamy,Kharif,Bajra (Pearl Millet),Sprinkler,5.3,2.69,0.75,207,59,106,2.06,9.93,0.28,2.19,2025-04-13,58.5,41.5,Ramesh Kothapalli
+Andhra Pradesh,NTR,Veerullapadu,Jujjuru,AND-NTR-003642,13.67,AP-003642,Silty Loam,Kharif,Sugarcane,Rainfed,8.69,2.47,0.32,379,39,454,1.86,13.26,0.53,0.21,2025-10-20,95.57,4.43,Subba Rao Kothapalli
+Andhra Pradesh,NTR,Chandarlapadu,Kodavatikallu,AND-NTR-003650,14.99,AP-003650,Silty Loam,Zaid,Sesame (Til),Borewell,5.7,0.37,1.2,427,45,366,2.88,5.32,0.28,0.15,2024-12-17,99.97,0.03,Srinivas Reddy
+Andhra Pradesh,NTR,Reddigudem,Patha Naguluru,AND-NTR-003693,11.74,AP-003693,Clay Loam,Kharif,Green Gram (Moong),Borewell,8.52,2.22,0.21,443,21,434,2.64,14.25,1.23,2.17,2024-08-08,89.13,10.87,Nageswara Rao Yarlagadda
+Andhra Pradesh,NTR,Kanchikacherla,Gottumukkala,AND-NTR-003697,14.44,AP-003697,Sandy Loam,Rabi,Coconut,Canal,5.82,2.7,1.07,448,79,165,3.21,13.88,1.59,0.77,2024-03-11,98.13,1.87,Prakash Kaza
+Andhra Pradesh,NTR,Nandigama,Konduru,AND-NTR-003703,5.1,AP-003703,Loamy,Kharif,Chilli,Sprinkler,6.4,0.45,0.62,187,23,171,1.61,6.6,0.28,1.77,2025-02-22,67.0,33.0,Narasimha Bandi
+Andhra Pradesh,NTR,Kanchikacherla,Munnaluru,AND-NTR-003718,1.64,AP-003718,Clay,Zaid,Black Gram (Urad),Canal,5.77,1.27,1.13,259,80,505,2.99,14.5,0.94,1.17,2024-05-04,55.47,44.53,Srinivas Dasari
+Andhra Pradesh,NTR,Tiruvuru,KOMMIREDDIPALLI,AND-NTR-003724,3.19,AP-003724,Clay,Rabi,Sugarcane,Rainfed,8.25,1.51,0.53,148,9,337,0.87,8.1,0.33,1.95,2025-09-13,60.63,39.37,Gopi Goud
+Andhra Pradesh,NTR,Vissannapet,Krishnaraopalem,AND-NTR-003750,13.33,AP-003750,Silty Loam,Zaid,Onion,Sprinkler,7.17,2.01,0.75,190,23,339,1.82,7.57,0.48,1.43,2025-03-30,94.43,5.57,Saraswathi Chowdary
+Andhra Pradesh,NTR,Kanchikacherla,Pendyala,AND-NTR-003773,5.49,AP-003773,Clay,Zaid,Jowar (Sorghum),Rainfed,6.05,0.48,0.77,365,79,486,0.65,9.49,1.88,0.12,2025-09-07,68.3,31.7,Lakshmi Pothineni
+Andhra Pradesh,NTR,Nandigama,Magallu,AND-NTR-003784,12.48,AP-003784,Clay Loam,Rabi,Sesame (Til),Rainfed,8.72,0.82,0.89,106,31,396,1.47,12.4,1.5,0.53,2025-07-04,91.6,8.4,Siva Kothapalli
+Andhra Pradesh,NTR,Nandigama,Rudravaram,AND-NTR-003795,0.97,AP-003795,Clay Loam,Zaid,Tomato,Canal,5.42,2.31,0.3,308,76,244,3.11,6.5,1.14,1.7,2024-06-28,53.23,46.77,Venkata Vemula
+Andhra Pradesh,NTR,Chandarlapadu,Kodavatikallu,AND-NTR-003860,12.59,AP-003860,Sandy Loam,Zaid,Sesame (Til),Sprinkler,7.43,2.51,1.11,149,22,237,3.44,2.46,0.39,0.57,2024-05-22,91.97,8.03,Subba Rao Kodali
+Andhra Pradesh,NTR,A.Konduru,Koduru,AND-NTR-003861,12.31,AP-003861,Silty Loam,Rabi,Banana,Drip,5.57,0.75,0.9,445,50,149,0.55,3.56,0.56,1.93,2024-07-28,91.03,8.97,Krishna Kothapalli
+Andhra Pradesh,NTR,Veerullapadu,Jayanthi,AND-NTR-003926,0.87,AP-003926,Loamy,Zaid,Sweet Orange,Rainfed,8.08,2.98,1.01,227,50,90,1.93,7.07,1.08,1.91,2025-10-11,52.9,47.1,Babu Kaza
+Andhra Pradesh,NTR,Mylavaram,Velvadam,AND-NTR-003992,3.56,AP-003992,Sandy Loam,Kharif,Sesame (Til),Canal,7.23,1.3,1.48,254,16,437,2.36,7.28,0.14,0.57,2024-07-06,61.87,38.13,Venkata Nandamuri
+Andhra Pradesh,NTR,Reddigudem,Rangapuram,AND-NTR-003993,11.41,AP-003993,Sandy,Kharif,Turmeric,Borewell,6.17,1.26,0.22,328,42,348,0.89,4.33,1.63,2.13,2024-07-23,88.03,11.97,Bhavani Chowdary
+Andhra Pradesh,NTR,Kanchikacherla,Pendyala,AND-NTR-004025,10.26,AP-004025,Clay,Kharif,Sesame (Til),Canal,7.37,0.43,1.41,191,30,352,0.24,6.4,1.3,0.99,2024-07-12,84.2,15.8,Ramesh Nandamuri
+Andhra Pradesh,NTR,Penuganchiprolu,Sanagapadu,AND-NTR-004122,8.12,AP-004122,Clay Loam,Zaid,Banana,Rainfed,6.82,2.92,1.21,260,7,280,2.24,4.52,1.58,0.65,2024-08-07,77.07,22.93,Lakshmi Akkineni
+Andhra Pradesh,NTR,Vijayawada (Urban),Unknown,AND-NTR-004192,13.16,AP-004192,Sandy Loam,Kharif,Sugarcane,Sprinkler,8.35,1.4,0.49,190,37,131,1.16,5.19,0.83,2.42,2025-12-18,93.87,6.13,Bhavani Nimmagadda
+Andhra Pradesh,NTR,Vijayawada (Rural),Jakkampudi (OG),AND-NTR-004230,3.25,AP-004230,Clay,Zaid,Banana,Drip,7.56,0.88,1.26,279,39,159,2.11,9.58,1.73,1.51,2024-12-17,60.83,39.17,Saraswathi Kothapalli
+Andhra Pradesh,NTR,Veerullapadu,Vellanki,AND-NTR-004252,1.4,AP-004252,Sandy,Rabi,Green Gram (Moong),Sprinkler,8.49,2.27,1.17,201,56,151,1.19,14.25,0.64,1.72,2024-08-11,54.67,45.33,Ramesh Nandamuri
+Andhra Pradesh,NTR,G.Konduru,Haveli Mutyalampadu,AND-NTR-004285,8.51,AP-004285,Silty Loam,Kharif,Banana,Canal,5.4,2.09,0.21,410,16,151,0.58,5.9,1.03,1.0,2024-01-22,78.37,21.63,Srinivas Pothineni
+Andhra Pradesh,NTR,Tiruvuru,CHAUTAPALLI,AND-NTR-004305,12.51,AP-004305,Sandy,Kharif,Bajra (Pearl Millet),Borewell,7.67,1.96,1.04,329,49,363,2.88,5.88,1.02,1.87,2025-03-25,91.7,8.3,Krishna Nandamuri
+Andhra Pradesh,NTR,Reddigudem,Rudravaram,AND-NTR-004307,7.41,AP-004307,Loamy,Zaid,Chilli,Sprinkler,8.44,2.28,0.49,119,64,257,0.89,4.81,1.57,1.85,2024-10-06,74.7,25.3,Prasad Mekapati
+Andhra Pradesh,NTR,Ibrahimpatnam,Jupudi,AND-NTR-004314,13.19,AP-004314,Clay,Zaid,Sweet Orange,Sprinkler,5.19,0.29,0.61,176,74,214,0.21,14.81,1.32,1.53,2025-06-06,93.97,6.03,Murali Dasari
+Andhra Pradesh,NTR,Vijayawada (Urban),Unknown,AND-NTR-004382,1.53,AP-004382,Sandy Loam,Kharif,Ragi (Finger Millet),Borewell,6.63,2.83,0.91,237,48,485,1.63,14.58,0.22,1.94,2024-02-23,55.1,44.9,Lakshmi Pothineni
+Andhra Pradesh,NTR,Nandigama,Kanchela,AND-NTR-004406,10.42,AP-004406,Loamy,Zaid,Sweet Orange,Borewell,8.56,1.9,0.21,445,80,574,2.87,3.07,1.55,0.42,2024-03-30,84.73,15.27,Prakash Akkineni
+Andhra Pradesh,NTR,Nandigama,Nandigama,AND-NTR-004409,6.04,AP-004409,Clay,Rabi,Ragi (Finger Millet),Canal,7.96,0.2,1.45,287,79,142,2.75,4.08,0.53,0.29,2025-09-07,70.13,29.87,Parvathi Nimmagadda
+Andhra Pradesh,NTR,Penuganchiprolu,Konakanchi,AND-NTR-004441,13.18,AP-004441,Silty Loam,Rabi,Onion,Rainfed,8.63,2.56,1.08,130,57,420,3.32,2.42,1.93,1.89,2024-04-20,93.93,6.07,Prasad Kodali
+Andhra Pradesh,NTR,Penuganchiprolu,Lingagudem,AND-NTR-004444,6.29,AP-004444,Sandy,Kharif,Tomato,Sprinkler,7.99,1.54,0.95,168,18,200,3.02,4.27,1.12,0.27,2024-07-07,70.97,29.03,Venkata Allu
+Andhra Pradesh,NTR,Reddigudem,Maddulaparva,AND-NTR-004461,6.34,AP-004461,Clay,Zaid,Mango,Sprinkler,6.12,2.29,1.15,318,38,201,3.26,5.88,1.5,0.97,2024-10-20,71.13,28.87,Satyanarayana Raju
+Andhra Pradesh,NTR,Gampalagudem,CHINTALA NARAVA,AND-NTR-004563,13.26,AP-004563,Silty Loam,Zaid,Bajra (Pearl Millet),Rainfed,7.97,2.92,1.41,422,61,418,0.47,12.32,1.99,1.74,2024-01-08,94.2,5.8,Ramesh Mekapati
+Andhra Pradesh,NTR,Gampalagudem,Kanumuru,AND-NTR-004588,2.4,AP-004588,Loamy,Rabi,Ragi (Finger Millet),Drip,6.33,1.46,0.32,132,77,419,0.45,13.45,0.11,0.75,2024-11-19,58.0,42.0,Prasad Allu
+Andhra Pradesh,NTR,Gampalagudem,Arlapadu,AND-NTR-004641,14.21,AP-004641,Clay Loam,Zaid,Mango,Canal,6.35,2.26,0.23,174,55,207,2.93,2.63,0.73,1.35,2025-12-13,97.37,2.63,Gopi Yarlagadda
+Andhra Pradesh,NTR,Vijayawada (Urban),Unknown,AND-NTR-004658,8.46,AP-004658,Silty Loam,Kharif,Chilli,Rainfed,6.72,2.93,1.46,189,41,277,2.43,10.57,0.21,0.39,2024-06-01,78.2,21.8,Mahesh Raju
+Andhra Pradesh,NTR,Tiruvuru,Mustikuntla,AND-NTR-004660,10.95,AP-004660,Clay,Zaid,Groundnut,Sprinkler,8.2,0.42,1.42,106,67,220,0.48,13.12,1.61,1.73,2024-12-10,86.5,13.5,Bhavani Rao
+Andhra Pradesh,NTR,Vatsavai,Kanneveedu,AND-NTR-004675,6.41,AP-004675,Sandy Loam,Zaid,Red Gram (Pigeon Pea),Borewell,6.18,1.93,0.79,122,63,282,0.25,9.23,1.75,1.32,2024-07-25,71.37,28.63,Siva Varma
+Andhra Pradesh,NTR,Tiruvuru,Mallela,AND-NTR-004680,9.65,AP-004680,Sandy Loam,Zaid,Horse Gram,Canal,8.11,0.16,1.03,313,63,597,1.88,4.56,0.32,2.46,2025-01-02,82.17,17.83,Ramu Varma
+Andhra Pradesh,NTR,Mylavaram,Ganapavaram,AND-NTR-004715,7.94,AP-004715,Silty Loam,Rabi,Jowar (Sorghum),Rainfed,7.94,0.6,1.36,265,67,397,2.24,12.66,0.52,1.38,2024-07-18,76.47,23.53,Narasimha Mekapati
+Andhra Pradesh,NTR,Vijayawada (Rural),Gollapudi (OG),AND-NTR-004760,14.84,AP-004760,Silty Loam,Zaid,Bajra (Pearl Millet),Borewell,5.96,1.58,0.85,217,8,230,2.53,8.51,2.0,2.49,2024-04-06,99.47,0.53,Krishna Goud
+Andhra Pradesh,NTR,Jaggayyapeta,Jaggaiahpet (M),AND-NTR-004860,13.37,AP-004860,Loamy,Kharif,Bajra (Pearl Millet),Drip,6.64,2.32,0.23,418,67,231,2.66,12.93,1.29,2.38,2024-05-28,94.57,5.43,Venkatesh Chowdary
+Andhra Pradesh,NTR,Vijayawada (Rural),Jakkampudi (OG),AND-NTR-004867,5.66,AP-004867,Sandy Loam,Zaid,Tobacco,Canal,5.76,0.57,1.29,436,45,572,1.43,5.4,0.56,0.6,2025-01-27,68.87,31.13,Kiran Mekapati
+Andhra Pradesh,NTR,Penuganchiprolu,Mundlapadu,AND-NTR-004869,9.15,AP-004869,Loamy,Kharif,Mango,Drip,6.63,0.72,1.48,172,21,313,2.92,13.81,0.35,1.1,2024-08-01,80.5,19.5,Prasad Mekapati
+Andhra Pradesh,NTR,Vijayawada (Urban),Unknown,AND-NTR-004906,2.84,AP-004906,Clay,Kharif,Red Gram (Pigeon Pea),Rainfed,8.44,0.9,1.29,139,21,294,1.97,11.05,1.85,0.75,2024-11-13,59.47,40.53,Ramakrishna Nimmagadda
+Andhra Pradesh,NTR,Kanchikacherla,Seri Amaravaram,AND-NTR-004912,8.53,AP-004912,Sandy Loam,Rabi,Sweet Orange,Rainfed,8.53,0.85,0.47,147,59,176,2.96,9.02,1.22,0.37,2024-11-21,78.43,21.57,Appa Rao Pothineni
+Andhra Pradesh,NTR,Ibrahimpatnam,Damuluru,AND-NTR-004981,14.67,AP-004981,Silty Loam,Rabi,Green Gram (Moong),Borewell,5.1,1.46,0.24,216,5,246,1.11,8.29,1.01,1.69,2024-02-26,98.9,1.1,Murali Raju
+Andhra Pradesh,NTR,Ibrahimpatnam,Damuluru,AND-NTR-004989,11.1,AP-004989,Loamy,Zaid,Sweet Orange,Borewell,8.07,0.53,1.09,242,14,173,1.76,3.54,0.77,0.56,2025-10-01,87.0,13.0,Subba Rao Kambhampati
+Andhra Pradesh,NTR,A.Konduru,A.Konduru,AND-NTR-004990,11.66,AP-004990,Sandy Loam,Rabi,Tobacco,Sprinkler,8.02,2.84,1.22,153,48,215,0.54,11.03,1.73,2.31,2025-05-17,88.87,11.13,Mahesh Yarlagadda
+Andhra Pradesh,NTR,Gampalagudem,Gullapudi,AND-NTR-005057,6.85,AP-005057,Silty Loam,Rabi,Coconut,Rainfed,5.41,2.14,1.14,327,29,474,1.52,2.67,1.94,1.65,2025-01-14,72.83,27.17,Parvathi Golla
+Andhra Pradesh,NTR,Penuganchiprolu,Sanagapadu,AND-NTR-005071,8.52,AP-005071,Sandy Loam,Zaid,Sugarcane,Drip,6.63,0.13,0.55,155,80,180,2.63,9.73,0.99,1.99,2024-04-26,78.4,21.6,Appa Rao Akkineni
+Andhra Pradesh,NTR,Mylavaram,T.Gannavaram,AND-NTR-005083,12.64,AP-005083,Sandy,Rabi,Red Gram (Pigeon Pea),Borewell,5.62,2.16,1.01,156,6,557,1.21,6.56,1.88,1.07,2024-11-06,92.13,7.87,Siva Reddy
+Andhra Pradesh,NTR,A.Konduru,Gollamandala,AND-NTR-005142,2.33,AP-005142,Clay,Kharif,Black Gram (Urad),Drip,6.64,2.11,0.51,274,37,128,0.47,9.32,1.49,0.61,2024-07-04,57.77,42.23,Murali Yarlagadda
+Andhra Pradesh,NTR,G.Konduru,Kavuluru,AND-NTR-005151,4.99,AP-005151,Sandy Loam,Zaid,Turmeric,Sprinkler,5.32,2.06,0.49,395,47,309,2.97,14.16,1.42,2.05,2024-10-25,66.63,33.37,Suresh Goud
+Andhra Pradesh,NTR,Penuganchiprolu,Anigandlapadu,AND-NTR-005185,11.4,AP-005185,Loamy,Rabi,Cotton,Borewell,5.35,1.27,0.3,231,78,307,2.31,9.93,0.76,0.49,2025-11-26,88.0,12.0,Siva Goud
+Andhra Pradesh,NTR,Gampalagudem,Dundiralapadu,AND-NTR-005189,14.1,AP-005189,Sandy Loam,Rabi,Tomato,Borewell,7.16,2.29,0.79,188,52,386,0.35,8.41,1.5,1.39,2025-02-24,97.0,3.0,Saraswathi Kambhampati
+Andhra Pradesh,NTR,Veerullapadu,Gokarajupalle,AND-NTR-005207,12.13,AP-005207,Loamy,Kharif,Sunflower,Rainfed,6.24,1.57,1.18,233,6,453,2.46,3.25,1.44,0.54,2025-01-03,90.43,9.57,Lakshmi Nandamuri
+Andhra Pradesh,NTR,Ibrahimpatnam,Kondapalle (CT),AND-NTR-005224,5.64,AP-005224,Sandy,Rabi,Horse Gram,Borewell,8.37,1.4,0.65,329,55,526,2.76,13.97,0.57,2.16,2024-03-06,68.8,31.2,Nageswara Rao Kambhampati
+Andhra Pradesh,NTR,Vatsavai,Dechupalem,AND-NTR-005292,3.17,AP-005292,Clay,Zaid,Maize,Drip,8.76,1.21,0.33,345,70,125,1.13,11.89,1.12,0.31,2024-07-29,60.57,39.43,Srinivas Rao
+Andhra Pradesh,NTR,Gampalagudem,Meduru,AND-NTR-005297,7.28,AP-005297,Clay Loam,Kharif,Tomato,Rainfed,5.59,2.34,0.39,207,75,249,0.8,6.86,0.97,0.88,2024-02-06,74.27,25.73,Ramakrishna Raju
+Andhra Pradesh,NTR,G.Konduru,Chevuturu,AND-NTR-005366,14.86,AP-005366,Sandy,Rabi,Banana,Rainfed,8.76,2.27,0.61,188,58,417,3.12,8.42,0.89,2.38,2024-12-28,99.53,0.47,Appa Rao Kambhampati
+Andhra Pradesh,NTR,Ibrahimpatnam,Kotikalapudi,AND-NTR-005367,9.36,AP-005367,Silty Loam,Zaid,Sesame (Til),Borewell,5.65,2.53,0.32,338,74,297,3.2,3.15,0.39,2.39,2025-03-31,81.2,18.8,Gopi Ghattamaneni
+Andhra Pradesh,NTR,Veerullapadu,Jayanthi,AND-NTR-005374,11.84,AP-005374,Sandy Loam,Rabi,Red Gram (Pigeon Pea),Drip,5.91,2.61,1.02,448,52,523,0.98,9.26,1.94,1.67,2024-07-17,89.47,10.53,Suresh Rao
+Andhra Pradesh,NTR,Vijayawada (Urban),Unknown,AND-NTR-005380,3.96,AP-005380,Sandy,Rabi,Mango,Canal,8.71,1.62,0.79,275,24,357,3.12,4.1,0.32,0.8,2025-04-30,63.2,36.8,Srinivas Rao
+Andhra Pradesh,NTR,Vijayawada (Rural),R F,AND-NTR-005384,0.63,AP-005384,Sandy,Zaid,Maize,Borewell,7.6,1.84,0.51,216,71,496,2.62,13.95,1.8,1.64,2024-12-03,52.1,47.9,Ramesh Mekapati
+Andhra Pradesh,NTR,Reddigudem,Patha Naguluru,AND-NTR-005394,8.96,AP-005394,Sandy Loam,Zaid,Bajra (Pearl Millet),Rainfed,7.38,0.12,0.63,239,27,115,2.75,2.03,1.29,1.81,2025-01-21,79.87,20.13,Ramakrishna Rao
+Andhra Pradesh,NTR,G.Konduru,Venkatapuram,AND-NTR-005407,14.52,AP-005407,Clay Loam,Rabi,Tomato,Rainfed,8.69,0.81,0.48,320,30,375,2.1,4.8,0.71,1.72,2024-04-01,98.4,1.6,Prasad Nimmagadda
+Andhra Pradesh,NTR,Vissannapet,Vissannapet,AND-NTR-005430,10.88,AP-005430,Clay Loam,Kharif,Ragi (Finger Millet),Drip,5.7,2.14,0.72,118,16,544,3.18,5.72,0.85,2.4,2025-04-08,86.27,13.73,Rambabu Kodali
+Andhra Pradesh,NTR,Kanchikacherla,Bathinapadu,AND-NTR-005441,7.17,AP-005441,Clay Loam,Zaid,Tobacco,Rainfed,7.74,0.85,0.47,320,47,488,0.32,3.79,1.0,0.85,2024-11-08,73.9,26.1,Venkatesh Vemula
+Andhra Pradesh,NTR,Chandarlapadu,Muppalla,AND-NTR-005457,5.82,AP-005457,Loamy,Rabi,Cotton,Drip,5.53,0.8,1.18,264,22,591,1.11,14.2,0.15,1.47,2025-06-27,69.4,30.6,Srinu Golla
+Andhra Pradesh,NTR,Kanchikacherla,Seri Amaravaram,AND-NTR-005477,5.28,AP-005477,Silty Loam,Rabi,Bengal Gram (Chickpea),Borewell,5.32,0.64,0.48,308,43,496,2.49,10.41,1.13,0.22,2024-12-19,67.6,32.4,Saraswathi Reddy
+Andhra Pradesh,NTR,Gampalagudem,SOBBALA,AND-NTR-005483,6.97,AP-005483,Sandy,Rabi,Onion,Borewell,5.4,0.24,1.07,341,9,537,2.27,2.32,1.82,1.75,2025-07-02,73.23,26.77,Saraswathi Kambhampati
+Andhra Pradesh,NTR,G.Konduru,Duggiralapadu,AND-NTR-005484,11.04,AP-005484,Clay Loam,Zaid,Oil Palm,Drip,8.07,1.43,0.45,144,51,238,1.78,11.84,0.39,0.3,2025-01-10,86.8,13.2,Saraswathi Chowdary
+Andhra Pradesh,NTR,Reddigudem,Anneraopeta,AND-NTR-005518,11.63,AP-005518,Clay,Zaid,Ragi (Finger Millet),Rainfed,8.74,0.27,1.36,416,53,216,1.06,2.97,1.64,1.63,2024-12-15,88.77,11.23,Gopi Dasari
+Andhra Pradesh,NTR,Veerullapadu,Jagannadhapuram,AND-NTR-005542,9.92,AP-005542,Loamy,Zaid,Paddy (Rice),Drip,7.02,1.42,1.37,384,25,404,1.93,13.25,0.45,1.33,2025-11-14,83.07,16.93,Prasad Golla
+Andhra Pradesh,NTR,Veerullapadu,Pallampalle,AND-NTR-005563,4.32,AP-005563,Clay,Zaid,Groundnut,Borewell,7.98,0.18,1.27,234,36,431,2.07,3.98,0.9,0.39,2024-03-05,64.4,35.6,Saraswathi Golla
+Andhra Pradesh,NTR,Penuganchiprolu,Nawabpeta,AND-NTR-005577,9.93,AP-005577,Clay,Zaid,Cotton,Borewell,7.21,0.56,1.28,212,31,592,1.44,10.76,0.6,1.31,2025-12-10,83.1,16.9,Srinivas Kaza
+Andhra Pradesh,NTR,Gampalagudem,Vinagadapa,AND-NTR-005578,14.75,AP-005578,Sandy Loam,Kharif,Oil Palm,Canal,6.43,1.62,1.17,357,41,155,0.55,10.32,1.7,1.27,2024-06-22,99.17,0.83,Mahesh Konidela
+Andhra Pradesh,NTR,Nandigama,Adiviravulapadu,AND-NTR-005602,5.08,AP-005602,Sandy,Zaid,Cotton,Drip,6.67,0.24,1.26,103,38,84,1.94,4.24,1.02,2.41,2025-08-21,66.93,33.07,Siva Raju
+Andhra Pradesh,NTR,Vissannapet,Vemireddipalle,AND-NTR-005611,1.62,AP-005611,Clay Loam,Zaid,Turmeric,Rainfed,6.54,2.96,0.82,134,10,448,3.42,12.58,0.43,1.74,2025-11-29,55.4,44.6,Anand Nandamuri
+Andhra Pradesh,NTR,Vijayawada (Rural),Gollapudi (OG),AND-NTR-005636,1.33,AP-005636,Clay Loam,Kharif,Black Gram (Urad),Canal,8.75,1.35,1.01,244,61,378,2.29,13.82,1.62,0.12,2024-06-12,54.43,45.57,Appa Rao Golla
+Andhra Pradesh,NTR,Nandigama,Munagacherla,AND-NTR-005654,5.61,AP-005654,Sandy,Rabi,Bengal Gram (Chickpea),Borewell,6.97,2.31,0.89,190,62,130,1.49,14.22,1.95,2.12,2025-09-29,68.7,31.3,Sai Pothineni
+Andhra Pradesh,NTR,Mylavaram,Kanimerla,AND-NTR-005696,4.99,AP-005696,Sandy,Zaid,Banana,Borewell,5.5,0.66,0.56,238,35,101,2.49,8.17,0.69,1.26,2024-03-23,66.63,33.37,Suresh Naidu
+Andhra Pradesh,NTR,Gampalagudem,Tunikipadu,AND-NTR-005715,10.31,AP-005715,Sandy Loam,Rabi,Jowar (Sorghum),Sprinkler,5.45,1.51,1.16,397,42,478,1.44,7.07,1.95,0.72,2024-04-02,84.37,15.63,Prakash Golla
+Andhra Pradesh,NTR,Gampalagudem,SOBBALA,AND-NTR-005724,2.55,AP-005724,Sandy Loam,Zaid,Turmeric,Sprinkler,8.71,1.21,0.53,359,58,456,1.55,11.53,0.16,0.5,2025-08-12,58.5,41.5,Srinivas Golla
+Andhra Pradesh,NTR,Reddigudem,Kunaparajuparva,AND-NTR-005743,12.57,AP-005743,Clay,Rabi,Maize,Canal,8.53,0.45,0.24,248,50,555,1.37,3.35,0.16,0.5,2024-06-01,91.9,8.1,Bhavani Mekapati
+Andhra Pradesh,NTR,Vijayawada (Urban),Unknown,AND-NTR-005744,14.88,AP-005744,Sandy,Rabi,Jowar (Sorghum),Canal,6.43,2.91,0.85,142,7,427,0.27,12.03,1.55,2.38,2025-05-26,99.6,0.4,Bhavani Uppalapati
+Andhra Pradesh,NTR,Vissannapet,Putrela,AND-NTR-005763,14.14,AP-005763,Silty Loam,Rabi,Banana,Drip,6.56,0.97,0.73,313,72,494,1.79,14.56,0.62,1.33,2024-09-04,97.13,2.87,Ramesh Bandi
+Andhra Pradesh,NTR,Veerullapadu,Tatigummi,AND-NTR-005768,1.48,AP-005768,Sandy Loam,Zaid,Banana,Drip,7.2,0.51,0.6,133,44,342,2.64,10.01,1.98,1.47,2025-02-14,54.93,45.07,Mahesh Akkineni
+Andhra Pradesh,NTR,Veerullapadu,Jammavaram,AND-NTR-005933,4.1,AP-005933,Silty Loam,Kharif,Red Gram (Pigeon Pea),Drip,5.68,0.52,1.03,103,22,200,3.04,6.55,0.39,0.75,2025-07-29,63.67,36.33,Subba Rao Daggubati
+Andhra Pradesh,NTR,Ibrahimpatnam,Kachavaram,AND-NTR-005969,14.08,AP-005969,Sandy Loam,Rabi,Bajra (Pearl Millet),Sprinkler,6.99,0.22,1.21,278,68,470,2.32,5.74,0.49,0.51,2025-03-04,96.93,3.07,Subba Rao Nandamuri
+Andhra Pradesh,NTR,A.Konduru,Cheemalapadu,AND-NTR-005978,2.67,AP-005978,Sandy Loam,Kharif,Sugarcane,Drip,6.0,0.98,0.9,281,57,264,3.35,6.64,1.0,1.18,2024-07-21,58.9,41.1,Lakshmi Kodali
+Andhra Pradesh,NTR,Vijayawada (Urban),Vijayawada (M Corp. + OG),AND-NTR-005984,1.15,AP-005984,Loamy,Rabi,Banana,Canal,7.43,0.89,1.35,242,12,427,0.54,10.61,0.95,0.78,2024-06-05,53.83,46.17,Saraswathi Pothineni
+Andhra Pradesh,NTR,Mylavaram,Pondugula,AND-NTR-006001,9.9,AP-006001,Loamy,Rabi,Sugarcane,Rainfed,7.65,0.55,1.39,228,18,339,0.69,4.8,1.96,1.57,2024-11-13,83.0,17.0,Ravi Dasari
+Andhra Pradesh,NTR,Vijayawada (Urban),Unknown,AND-NTR-006008,1.56,AP-006008,Clay,Kharif,Horse Gram,Rainfed,8.14,0.5,0.26,134,29,272,2.36,4.66,1.9,0.46,2024-01-02,55.2,44.8,Appa Rao Chowdary
+Andhra Pradesh,NTR,Gampalagudem,Tunikipadu,AND-NTR-006054,6.22,AP-006054,Clay,Kharif,Turmeric,Drip,5.59,3.0,1.27,203,59,106,0.61,4.43,1.33,1.37,2024-04-19,70.73,29.27,Ravi Uppalapati
+Andhra Pradesh,NTR,A.Konduru,Repudi,AND-NTR-006068,5.34,AP-006068,Clay,Rabi,Black Gram (Urad),Canal,5.79,2.7,0.28,105,43,475,0.75,2.66,1.02,1.55,2025-05-06,67.8,32.2,Gopi Kaza
+Andhra Pradesh,NTR,G.Konduru,Bhimavarappadu,AND-NTR-006099,3.37,AP-006099,Silty Loam,Kharif,Onion,Canal,7.51,2.81,0.43,411,17,519,2.58,8.23,1.51,1.21,2025-05-09,61.23,38.77,Sai Mekapati
+Andhra Pradesh,NTR,Mylavaram,Keerthirayanigudem,AND-NTR-006146,2.94,AP-006146,Loamy,Zaid,Turmeric,Drip,8.39,1.99,1.38,442,18,123,1.71,7.65,0.55,2.25,2025-01-26,59.8,40.2,Ramu Akkineni
+Andhra Pradesh,NTR,Mylavaram,Morusumilli,AND-NTR-006149,9.56,AP-006149,Loamy,Kharif,Turmeric,Sprinkler,6.43,2.1,0.74,163,21,478,1.59,2.36,1.22,1.31,2025-06-09,81.87,18.13,Appa Rao Rao
+Andhra Pradesh,NTR,Vijayawada (Urban),Unknown,AND-NTR-006159,2.47,AP-006159,Sandy Loam,Rabi,Bengal Gram (Chickpea),Sprinkler,5.09,2.15,1.16,368,76,262,1.22,10.67,1.61,0.42,2025-03-12,58.23,41.77,Prasad Yarlagadda
+Andhra Pradesh,NTR,Jaggayyapeta,Jaggaiahpet (M),AND-NTR-006250,1.75,AP-006250,Silty Loam,Zaid,Sweet Orange,Rainfed,8.07,0.42,1.21,422,50,579,0.94,2.13,0.78,0.55,2025-10-23,55.83,44.17,Kiran Bandi
+Andhra Pradesh,NTR,A.Konduru,Repudi,AND-NTR-006374,13.73,AP-006374,Loamy,Kharif,Banana,Sprinkler,6.05,0.46,1.31,108,73,573,0.4,5.38,0.12,1.08,2025-06-17,95.77,4.23,Siva Pothineni
+Andhra Pradesh,NTR,A.Konduru,Gollamandala,AND-NTR-006410,14.14,AP-006410,Silty Loam,Zaid,Red Gram (Pigeon Pea),Drip,6.31,1.22,1.2,328,42,185,3.17,3.1,0.3,2.27,2025-07-30,97.13,2.87,Ramakrishna Bandi
+Andhra Pradesh,NTR,Chandarlapadu,Kodavatikallu,AND-NTR-006411,1.19,AP-006411,Sandy,Zaid,Bajra (Pearl Millet),Drip,5.41,1.47,0.77,441,68,521,3.08,4.29,1.3,0.51,2024-04-21,53.97,46.03,Ravi Pothineni
+Andhra Pradesh,NTR,A.Konduru,Koduru,AND-NTR-006483,9.53,AP-006483,Sandy,Rabi,Sweet Orange,Canal,5.8,0.21,0.48,385,53,186,1.62,4.01,0.38,1.97,2025-07-18,81.77,18.23,Prakash Naidu
+Andhra Pradesh,NTR,G.Konduru,Vellaturu,AND-NTR-006510,10.41,AP-006510,Sandy Loam,Rabi,Tobacco,Borewell,5.8,1.72,1.22,314,66,419,1.97,14.79,1.34,1.53,2025-09-25,84.7,15.3,Subba Rao Goud
+Andhra Pradesh,NTR,Penuganchiprolu,Muchintala @ Bodapadu,AND-NTR-006517,12.76,AP-006517,Loamy,Zaid,Black Gram (Urad),Borewell,6.75,0.15,0.33,210,70,242,2.59,11.34,1.64,1.07,2025-02-13,92.53,7.47,Saraswathi Vemula
+Andhra Pradesh,NTR,Kanchikacherla,Kanchikacherla,AND-NTR-006544,4.39,AP-006544,Silty Loam,Rabi,Coconut,Canal,7.17,0.64,1.38,344,76,118,1.78,3.75,0.62,0.36,2024-10-25,64.63,35.37,Suresh Kodali
+Andhra Pradesh,NTR,Vijayawada (Rural),R F,AND-NTR-006552,8.07,AP-006552,Sandy,Zaid,Horse Gram,Drip,7.17,1.08,0.72,393,14,585,0.32,9.14,0.13,2.22,2024-05-17,76.9,23.1,Siva Dasari
+Andhra Pradesh,NTR,Reddigudem,Kunaparajuparva,AND-NTR-006585,10.2,AP-006585,Loamy,Rabi,Banana,Canal,5.73,0.42,0.88,257,28,96,2.44,2.7,1.14,1.68,2025-10-30,84.0,16.0,Siva Allu
+Andhra Pradesh,NTR,Kanchikacherla,Kanchikacherla,AND-NTR-006628,10.55,AP-006628,Silty Loam,Zaid,Horse Gram,Borewell,7.1,2.51,1.25,369,17,131,3.38,12.26,0.35,2.35,2024-12-10,85.17,14.83,Kiran Nandamuri
+Andhra Pradesh,NTR,Kanchikacherla,Paritala,AND-NTR-006635,9.77,AP-006635,Clay Loam,Rabi,Tomato,Drip,7.57,1.73,0.7,143,6,280,1.42,5.71,1.86,2.12,2025-01-29,82.57,17.43,Siva Varma
+Andhra Pradesh,NTR,Penuganchiprolu,Lingagudem,AND-NTR-006658,5.15,AP-006658,Loamy,Rabi,Maize,Canal,6.8,0.68,0.83,140,48,128,1.48,5.15,1.1,1.97,2024-01-01,67.17,32.83,Narasimha Kaza
+Andhra Pradesh,NTR,Vijayawada (Urban),VIJAYAWADA,AND-NTR-006661,8.8,AP-006661,Sandy Loam,Zaid,Tobacco,Canal,6.21,1.4,0.53,250,52,245,1.36,10.39,1.78,0.51,2024-07-17,79.33,20.67,Sai Golla
+Andhra Pradesh,NTR,Penuganchiprolu,Nawabpeta,AND-NTR-006676,12.95,AP-006676,Sandy,Rabi,Banana,Borewell,7.09,2.91,1.02,286,51,505,1.87,14.6,0.46,1.46,2025-12-27,93.17,6.83,Saraswathi Kothapalli
+Andhra Pradesh,NTR,Mylavaram,Chandrala,AND-NTR-006714,12.44,AP-006714,Sandy Loam,Kharif,Mango,Rainfed,6.09,0.29,1.18,201,72,346,1.23,3.15,1.93,2.23,2025-03-02,91.47,8.53,Satyanarayana Kambhampati
+Andhra Pradesh,NTR,Gampalagudem,Meduru,AND-NTR-006717,1.8,AP-006717,Sandy Loam,Zaid,Maize,Borewell,8.49,1.46,1.2,108,60,379,0.64,11.0,0.39,2.2,2025-03-15,56.0,44.0,Ravi Nandamuri
+Andhra Pradesh,NTR,A.Konduru,Repudi,AND-NTR-006720,4.72,AP-006720,Clay,Zaid,Chilli,Canal,5.32,1.84,1.16,431,37,251,0.83,7.18,0.33,2.03,2024-01-05,65.73,34.27,Bhavani Rao
+Andhra Pradesh,NTR,Ibrahimpatnam,Kotikalapudi,AND-NTR-006733,14.04,AP-006733,Sandy,Kharif,Tobacco,Canal,7.71,2.64,0.36,179,25,576,3.11,3.53,0.29,0.43,2024-06-13,96.8,3.2,Prakash Vemula
+Andhra Pradesh,NTR,Vijayawada (Urban),Unknown,AND-NTR-006734,5.5,AP-006734,Clay Loam,Rabi,Sugarcane,Drip,5.9,2.0,1.15,207,34,271,1.42,10.84,0.24,2.09,2025-10-15,68.33,31.67,Babu Dasari
+Andhra Pradesh,NTR,Vijayawada (Rural),Gollapudi (OG),AND-NTR-006788,12.17,AP-006788,Clay Loam,Kharif,Banana,Drip,7.59,0.93,1.06,118,70,469,2.65,8.21,1.77,2.47,2024-03-30,90.57,9.43,Krishna Nandamuri
+Andhra Pradesh,NTR,Chandarlapadu,Kasarabada,AND-NTR-006794,5.1,AP-006794,Loamy,Rabi,Ragi (Finger Millet),Canal,7.03,2.88,0.68,152,38,526,1.93,7.94,1.75,0.94,2025-09-29,67.0,33.0,Ramu Mekapati
+Andhra Pradesh,NTR,Ibrahimpatnam,RF,AND-NTR-006845,13.69,AP-006845,Loamy,Zaid,Tomato,Borewell,5.5,1.25,0.36,406,78,427,1.91,8.73,1.93,0.49,2025-11-18,95.63,4.37,Gopi Bandi
+Andhra Pradesh,NTR,Vijayawada (Urban),Vijayawada (M Corp. + OG),AND-NTR-006857,9.61,AP-006857,Silty Loam,Zaid,Black Gram (Urad),Borewell,6.49,2.83,0.61,307,75,404,2.53,10.65,1.39,1.4,2025-12-19,82.03,17.97,Narasimha Varma
+Andhra Pradesh,NTR,A.Konduru,A.Konduru,AND-NTR-006895,7.63,AP-006895,Sandy,Kharif,Tomato,Canal,6.5,2.02,0.88,246,61,478,0.57,4.15,0.16,1.74,2024-09-20,75.43,24.57,Srinu Rao
+Andhra Pradesh,NTR,Tiruvuru,Patha Tiruvuru,AND-NTR-006964,9.81,AP-006964,Silty Loam,Rabi,Sunflower,Sprinkler,5.3,1.59,1.31,232,11,570,2.48,9.95,1.4,1.93,2025-03-29,82.7,17.3,Prakash Kothapalli
+Andhra Pradesh,NTR,G.Konduru,Kadimpothavaram,AND-NTR-006979,11.68,AP-006979,Sandy Loam,Kharif,Sunflower,Canal,6.11,1.07,1.07,159,74,522,1.27,8.8,0.26,1.88,2025-09-08,88.93,11.07,Venkatesh Rao
+Andhra Pradesh,NTR,Mylavaram,Keerthirayanigudem,AND-NTR-006996,8.91,AP-006996,Sandy Loam,Kharif,Sugarcane,Rainfed,7.18,2.43,0.21,196,30,179,1.51,7.88,1.57,2.25,2024-05-19,79.7,20.3,Nageswara Rao Naidu
+Andhra Pradesh,NTR,Reddigudem,Maddulaparva,AND-NTR-007034,9.01,AP-007034,Sandy,Rabi,Horse Gram,Drip,5.72,1.12,1.45,169,20,324,2.28,13.84,1.32,0.29,2025-11-12,80.03,19.97,Mahesh Reddy
+Andhra Pradesh,NTR,Gampalagudem,Arlapadu,AND-NTR-007053,13.98,AP-007053,Clay,Rabi,Sunflower,Borewell,7.15,2.23,0.6,181,26,309,0.51,12.45,0.43,2.25,2024-07-25,96.6,3.4,Bhavani Konidela
+Andhra Pradesh,NTR,Veerullapadu,Gudem Madhavaram,AND-NTR-007060,13.71,AP-007060,Sandy Loam,Zaid,Jowar (Sorghum),Drip,5.64,0.17,0.36,242,38,365,0.63,13.58,1.14,1.0,2024-07-31,95.7,4.3,Ravi Mekapati
+Andhra Pradesh,NTR,Reddigudem,Narukullapadu,AND-NTR-007065,2.4,AP-007065,Silty Loam,Zaid,Ragi (Finger Millet),Canal,8.14,1.41,1.43,214,58,231,2.93,3.77,1.82,1.36,2024-04-14,58.0,42.0,Parvathi Goud
+Andhra Pradesh,NTR,Vatsavai,Dabbakupalle,AND-NTR-007076,3.15,AP-007076,Loamy,Kharif,Maize,Canal,7.69,1.29,0.54,241,35,237,2.04,8.51,0.73,1.56,2025-12-02,60.5,39.5,Suresh Vemula
+Andhra Pradesh,NTR,Vatsavai,Vatsavai,AND-NTR-007110,6.53,AP-007110,Sandy,Zaid,Mango,Canal,6.6,2.09,1.09,290,45,532,2.93,14.81,1.87,1.28,2025-05-28,71.77,28.23,Ravi Nandamuri
+Andhra Pradesh,NTR,Penuganchiprolu,Gummadidurru,AND-NTR-007134,2.85,AP-007134,Sandy Loam,Rabi,Sunflower,Rainfed,5.47,0.36,0.73,222,37,244,0.91,14.75,0.31,1.48,2024-03-29,59.5,40.5,Srinivas Golla
+Andhra Pradesh,NTR,A.Konduru,Gollamandala,AND-NTR-007165,10.81,AP-007165,Clay,Zaid,Sesame (Til),Sprinkler,5.3,1.13,0.43,280,80,222,0.93,3.03,1.27,0.78,2024-06-01,86.03,13.97,Appa Rao Uppalapati
+Andhra Pradesh,NTR,Mylavaram,Dasullapalem,AND-NTR-007180,7.77,AP-007180,Clay Loam,Rabi,Sugarcane,Sprinkler,7.21,1.56,0.82,114,69,345,1.79,13.68,1.18,1.18,2025-10-15,75.9,24.1,Gopi Kambhampati
+Andhra Pradesh,NTR,A.Konduru,Koduru,AND-NTR-007192,7.55,AP-007192,Silty Loam,Kharif,Groundnut,Canal,5.84,0.81,0.78,217,29,548,2.18,8.9,1.95,0.92,2024-11-07,75.17,24.83,Babu Kaza
+Andhra Pradesh,NTR,Kanchikacherla,Bathinapadu,AND-NTR-007207,4.17,AP-007207,Sandy Loam,Zaid,Ragi (Finger Millet),Sprinkler,5.56,0.21,0.23,202,37,258,0.22,11.03,1.95,2.01,2025-05-17,63.9,36.1,Parvathi Yarlagadda
+Andhra Pradesh,NTR,Jaggayyapeta,RF,AND-NTR-007218,10.86,AP-007218,Sandy,Kharif,Onion,Canal,5.8,1.66,1.13,237,73,81,1.68,12.32,1.23,2.06,2024-11-09,86.2,13.8,Satyanarayana Kodali
+Andhra Pradesh,NTR,Vatsavai,Dabbakupalle,AND-NTR-007284,9.53,AP-007284,Loamy,Zaid,Jowar (Sorghum),Drip,7.33,0.65,1.46,445,37,107,3.19,5.97,1.45,1.84,2024-12-05,81.77,18.23,Srinivas Chowdary
+Andhra Pradesh,NTR,Kanchikacherla,Bathinapadu,AND-NTR-007291,10.97,AP-007291,Silty Loam,Zaid,Green Gram (Moong),Drip,6.42,0.33,1.12,184,60,553,2.03,12.93,1.72,1.54,2025-08-17,86.57,13.43,Subba Rao Golla
+Andhra Pradesh,NTR,Mylavaram,Jangalapalle,AND-NTR-007349,10.75,AP-007349,Sandy,Kharif,Green Gram (Moong),Sprinkler,5.77,2.43,0.76,264,77,127,3.34,7.98,0.93,1.12,2025-08-23,85.83,14.17,Ramesh Dasari
+Andhra Pradesh,NTR,Veerullapadu,Vairidhari Annavaram,AND-NTR-007368,8.9,AP-007368,Clay,Rabi,Ragi (Finger Millet),Borewell,8.8,1.77,1.4,448,48,417,1.78,2.03,1.1,1.71,2025-03-02,79.67,20.33,Nageswara Rao Allu
+Andhra Pradesh,NTR,Reddigudem,Patha Naguluru,AND-NTR-007381,6.75,AP-007381,Loamy,Kharif,Turmeric,Drip,7.74,0.59,0.91,262,31,365,0.58,7.71,0.33,1.09,2025-11-05,72.5,27.5,Mahesh Goud
+Andhra Pradesh,NTR,Reddigudem,Reddigudem,AND-NTR-007390,6.65,AP-007390,Sandy,Rabi,Black Gram (Urad),Rainfed,5.33,0.4,0.34,121,49,556,1.95,11.36,1.72,1.89,2024-09-28,72.17,27.83,Anand Golla
+Andhra Pradesh,NTR,Gampalagudem,Dundiralapadu,AND-NTR-007408,14.57,AP-007408,Loamy,Rabi,Paddy (Rice),Drip,8.07,1.14,1.48,218,58,403,2.68,13.82,0.11,1.78,2025-05-13,98.57,1.43,Prasad Kothapalli
+Andhra Pradesh,NTR,Vijayawada (Rural),Gollapudi (OG),AND-NTR-007416,8.38,AP-007416,Sandy,Rabi,Paddy (Rice),Sprinkler,7.68,2.96,0.26,302,80,231,2.14,14.57,0.37,1.63,2025-11-01,77.93,22.07,Ravi Kaza
+Andhra Pradesh,NTR,Vijayawada (Rural),Kotturu,AND-NTR-007422,10.51,AP-007422,Clay,Kharif,Sunflower,Rainfed,8.22,0.2,1.21,286,77,364,1.14,4.04,1.64,2.1,2025-11-23,85.03,14.97,Gopi Vemula
+Andhra Pradesh,NTR,Mylavaram,Ganapavaram,AND-NTR-007464,5.84,AP-007464,Silty Loam,Kharif,Oil Palm,Canal,8.73,1.42,0.7,412,50,125,0.26,9.29,0.43,0.67,2024-01-19,69.47,30.53,Prasad Pothineni
+Andhra Pradesh,NTR,Vatsavai,Chittela,AND-NTR-007478,0.69,AP-007478,Sandy,Rabi,Coconut,Rainfed,7.11,1.4,0.54,187,20,252,0.97,12.44,1.71,2.04,2025-12-27,52.3,47.7,Krishna Raju
+Andhra Pradesh,NTR,Mylavaram,Vedurubeedem,AND-NTR-007488,14.44,AP-007488,Loamy,Zaid,Tobacco,Rainfed,8.23,2.05,0.92,371,15,128,2.46,7.71,1.19,0.15,2024-08-13,98.13,1.87,Appa Rao Pothineni
+Andhra Pradesh,NTR,Vatsavai,China Modugapalle,AND-NTR-007515,9.34,AP-007515,Clay,Zaid,Black Gram (Urad),Drip,8.41,1.93,0.91,127,69,513,0.88,11.55,1.43,1.53,2024-02-11,81.13,18.87,Srinivas Reddy
+Andhra Pradesh,NTR,Ibrahimpatnam,Zami Navi Pothavaram,AND-NTR-007599,14.96,AP-007599,Loamy,Rabi,Oil Palm,Borewell,6.56,2.69,1.35,251,63,96,2.02,5.53,1.96,0.19,2025-04-28,99.87,0.13,Subba Rao Kothapalli
+Andhra Pradesh,NTR,Gampalagudem,Meduru,AND-NTR-007621,12.98,AP-007621,Sandy,Zaid,Ragi (Finger Millet),Sprinkler,6.7,1.1,0.6,113,71,256,3.44,5.54,0.62,1.99,2025-12-08,93.27,6.73,Prakash Reddy
+Andhra Pradesh,NTR,Vijayawada (Urban),Unknown,AND-NTR-007622,8.71,AP-007622,Clay,Rabi,Sweet Orange,Rainfed,6.93,1.41,0.24,231,51,393,1.61,12.6,1.04,0.69,2024-04-16,79.03,20.97,Prasad Nimmagadda
+Andhra Pradesh,NTR,Veerullapadu,Jammavaram,AND-NTR-007649,5.13,AP-007649,Silty Loam,Zaid,Jowar (Sorghum),Drip,8.11,2.15,0.41,192,46,499,2.69,8.72,1.44,1.06,2024-09-25,67.1,32.9,Rambabu Mekapati
+Andhra Pradesh,NTR,G.Konduru,Ganginenipalem,AND-NTR-007671,11.66,AP-007671,Clay Loam,Rabi,Jowar (Sorghum),Canal,7.6,0.28,0.38,243,62,539,2.86,9.49,1.1,2.4,2024-12-04,88.87,11.13,Siva Yarlagadda
+Andhra Pradesh,NTR,G.Konduru,Sunnampadu,AND-NTR-007680,1.27,AP-007680,Sandy Loam,Rabi,Sunflower,Sprinkler,8.11,0.42,0.74,390,49,458,1.25,7.13,1.18,0.14,2024-05-03,54.23,45.77,Ramesh Kaza
+Andhra Pradesh,NTR,Kanchikacherla,Vemulapalle,AND-NTR-007727,1.89,AP-007727,Loamy,Zaid,Onion,Sprinkler,5.56,0.74,1.3,219,31,158,0.51,3.89,1.64,0.7,2025-10-18,56.3,43.7,Nageswara Rao Yarlagadda
+Andhra Pradesh,NTR,Vatsavai,Kakaravai,AND-NTR-007775,5.35,AP-007775,Silty Loam,Rabi,Tobacco,Rainfed,8.76,0.36,0.49,263,56,412,1.97,12.81,0.16,1.34,2024-02-02,67.83,32.17,Murali Rao
+Andhra Pradesh,NTR,Nandigama,Konathamatmakuru,AND-NTR-007855,7.69,AP-007855,Sandy Loam,Kharif,Black Gram (Urad),Canal,5.82,2.33,1.25,357,30,281,3.49,10.94,1.37,1.94,2024-04-05,75.63,24.37,Suresh Reddy
+Andhra Pradesh,NTR,Veerullapadu,Tatigummi,AND-NTR-007878,6.11,AP-007878,Clay,Rabi,Sunflower,Drip,6.95,0.88,0.99,306,22,446,0.48,4.41,1.09,2.27,2025-04-11,70.37,29.63,Kiran Dasari
+Andhra Pradesh,NTR,Reddigudem,Anneraopeta,AND-NTR-007900,13.33,AP-007900,Clay,Kharif,Paddy (Rice),Borewell,6.02,2.64,0.24,205,43,393,1.81,5.33,0.93,1.56,2025-06-22,94.43,5.57,Subba Rao Reddy
+Andhra Pradesh,NTR,Vijayawada (Urban),VIJAYAWADA,AND-NTR-007905,1.14,AP-007905,Sandy Loam,Rabi,Paddy (Rice),Borewell,5.82,0.95,1.35,173,12,182,2.73,8.39,1.57,1.43,2025-03-05,53.8,46.2,Prakash Kodali
+Andhra Pradesh,NTR,Vijayawada (Urban),Unknown,AND-NTR-007936,2.27,AP-007936,Loamy,Rabi,Mango,Canal,7.44,2.94,0.68,184,39,308,0.35,6.77,1.91,1.31,2025-03-27,57.57,42.43,Krishna Vemula
+Andhra Pradesh,NTR,Vijayawada (Rural),Jakkampudi (OG),AND-NTR-007946,2.54,AP-007946,Loamy,Rabi,Jowar (Sorghum),Rainfed,6.02,2.7,0.74,109,59,128,3.31,12.16,0.6,2.27,2025-04-17,58.47,41.53,Krishna Kothapalli
+Andhra Pradesh,NTR,G.Konduru,Pinapaka,AND-NTR-007951,14.28,AP-007951,Sandy Loam,Zaid,Sweet Orange,Sprinkler,5.39,1.11,0.86,224,25,284,2.78,4.96,0.72,0.29,2025-10-25,97.6,2.4,Narasimha Daggubati
+Andhra Pradesh,NTR,Kanchikacherla,Gottumukkala,AND-NTR-008012,7.0,AP-008012,Silty Loam,Kharif,Chilli,Drip,8.45,1.34,0.63,272,20,94,3.33,3.24,0.92,1.45,2024-11-21,73.33,26.67,Subba Rao Allu
+Andhra Pradesh,NTR,Gampalagudem,Meduru,AND-NTR-008029,8.1,AP-008029,Clay Loam,Rabi,Ragi (Finger Millet),Canal,6.27,3.0,0.85,279,16,302,1.92,14.87,1.46,2.09,2024-11-12,77.0,23.0,Narasimha Vemula
+Andhra Pradesh,NTR,Veerullapadu,Chavatapalle,AND-NTR-008085,10.4,AP-008085,Clay Loam,Zaid,Horse Gram,Sprinkler,5.27,2.28,1.35,216,35,563,1.64,7.52,1.17,1.79,2025-07-12,84.67,15.33,Parvathi Golla
+Andhra Pradesh,NTR,Jaggayyapeta,Malkapuram,AND-NTR-008123,2.21,AP-008123,Clay,Kharif,Bajra (Pearl Millet),Sprinkler,5.92,0.24,0.93,121,52,184,0.29,14.91,0.94,1.53,2025-08-22,57.37,42.63,Kiran Kodali
+Andhra Pradesh,NTR,Jaggayyapeta,Ravikampadu,AND-NTR-008136,1.42,AP-008136,Sandy Loam,Zaid,Banana,Rainfed,6.69,0.33,1.41,193,51,322,2.88,11.77,0.5,1.71,2025-05-25,54.73,45.27,Nageswara Rao Akkineni
+Andhra Pradesh,NTR,Reddigudem,Patha Naguluru,AND-NTR-008138,14.48,AP-008138,Clay,Zaid,Ragi (Finger Millet),Sprinkler,6.12,1.87,0.95,211,7,457,2.7,14.0,1.71,1.16,2025-07-17,98.27,1.73,Lakshmi Pothineni
+Andhra Pradesh,NTR,Mylavaram,Vedurubeedem,AND-NTR-008157,10.82,AP-008157,Clay,Kharif,Sugarcane,Borewell,8.78,2.64,1.5,240,36,189,0.31,8.61,1.6,0.46,2024-06-11,86.07,13.93,Rambabu Chowdary
+Andhra Pradesh,NTR,Reddigudem,Kudapa,AND-NTR-008160,11.86,AP-008160,Sandy Loam,Kharif,Ragi (Finger Millet),Borewell,6.96,1.06,0.67,188,56,269,1.73,6.38,1.16,2.01,2024-10-20,89.53,10.47,Lakshmi Vemula
+Andhra Pradesh,NTR,Tiruvuru,Vamakuntla,AND-NTR-008176,4.68,AP-008176,Sandy Loam,Zaid,Red Gram (Pigeon Pea),Rainfed,5.37,1.8,0.33,213,12,192,3.29,9.93,0.2,1.27,2024-11-14,65.6,34.4,Murali Varma
+Andhra Pradesh,NTR,Tiruvuru,Laxmipuram,AND-NTR-008186,2.66,AP-008186,Sandy,Kharif,Paddy (Rice),Drip,5.07,2.66,0.82,390,30,402,2.49,2.41,1.37,1.17,2024-02-04,58.87,41.13,Sai Mekapati
+Andhra Pradesh,NTR,Mylavaram,T.Gannavaram,AND-NTR-008193,5.36,AP-008193,Sandy,Kharif,Coconut,Canal,5.9,2.91,0.64,158,15,339,0.54,10.42,1.81,0.36,2025-02-04,67.87,32.13,Saraswathi Kambhampati
+Andhra Pradesh,NTR,Tiruvuru,Ramannapalem,AND-NTR-008226,8.49,AP-008226,Silty Loam,Rabi,Sweet Orange,Rainfed,6.74,2.13,0.54,313,26,552,2.63,9.17,1.13,1.21,2025-09-02,78.3,21.7,Appa Rao Varma
+Andhra Pradesh,NTR,Vijayawada (Rural),Kotturu,AND-NTR-008228,2.32,AP-008228,Sandy,Zaid,Paddy (Rice),Canal,5.35,1.99,1.5,318,51,529,0.79,13.11,0.9,2.08,2025-02-14,57.73,42.27,Satyanarayana Daggubati
+Andhra Pradesh,NTR,Reddigudem,Kunaparajuparva,AND-NTR-008240,2.71,AP-008240,Sandy,Kharif,Green Gram (Moong),Drip,6.84,0.14,1.4,237,53,92,2.13,13.53,0.55,1.1,2024-08-20,59.03,40.97,Ramu Goud
+Andhra Pradesh,NTR,Nandigama,Munagacherla,AND-NTR-008255,6.49,AP-008255,Silty Loam,Kharif,Oil Palm,Rainfed,7.29,2.88,0.48,380,29,346,3.01,4.59,1.01,2.46,2025-11-10,71.63,28.37,Anand Raju
+Andhra Pradesh,NTR,Jaggayyapeta,Takkellapadu,AND-NTR-008266,0.7,AP-008266,Sandy,Kharif,Sugarcane,Sprinkler,7.18,2.42,0.58,304,79,92,3.26,12.3,0.6,1.42,2024-07-04,52.33,47.67,Sai Nandamuri
+Andhra Pradesh,NTR,Mylavaram,Vedurubeedem,AND-NTR-008276,11.26,AP-008276,Clay Loam,Kharif,Tomato,Sprinkler,7.67,0.91,1.12,391,52,486,2.88,8.23,1.49,1.12,2024-10-23,87.53,12.47,Siva Golla
+Andhra Pradesh,NTR,G.Konduru,Ganginenipalem,AND-NTR-008325,1.44,AP-008325,Silty Loam,Kharif,Bajra (Pearl Millet),Sprinkler,5.52,0.67,0.34,140,19,295,1.62,10.41,1.19,1.45,2025-05-30,54.8,45.2,Narasimha Naidu
+Andhra Pradesh,NTR,Ibrahimpatnam,Guntupalle (CT),AND-NTR-008330,7.24,AP-008330,Clay,Rabi,Onion,Drip,6.87,1.31,0.51,130,63,205,2.41,7.13,0.47,1.31,2025-11-29,74.13,25.87,Babu Ghattamaneni
+Andhra Pradesh,NTR,Vijayawada (Urban),Unknown,AND-NTR-008343,3.11,AP-008343,Sandy,Rabi,Bengal Gram (Chickpea),Canal,7.97,1.65,1.34,237,16,495,2.69,7.57,0.78,0.21,2025-02-11,60.37,39.63,Srinivas Reddy
+Andhra Pradesh,NTR,G.Konduru,Munagapadu,AND-NTR-008359,1.25,AP-008359,Sandy Loam,Zaid,Tomato,Rainfed,7.46,2.96,0.64,257,45,256,3.28,3.38,0.62,1.93,2025-01-28,54.17,45.83,Anand Chowdary
+Andhra Pradesh,NTR,Veerullapadu,Nandaluru,AND-NTR-008371,2.77,AP-008371,Sandy Loam,Rabi,Red Gram (Pigeon Pea),Drip,8.11,2.21,1.01,240,21,367,3.29,11.74,0.44,1.63,2024-03-25,59.23,40.77,Satyanarayana Chowdary
+Andhra Pradesh,NTR,Tiruvuru,Mallela,AND-NTR-008373,6.25,AP-008373,Sandy,Zaid,Oil Palm,Rainfed,5.25,2.84,0.84,310,42,302,1.19,8.1,0.97,2.38,2024-04-23,70.83,29.17,Saraswathi Kothapalli
+Andhra Pradesh,NTR,G.Konduru,Chegireddipadu,AND-NTR-008376,6.13,AP-008376,Loamy,Kharif,Black Gram (Urad),Drip,6.51,1.0,0.58,114,14,161,1.02,3.73,0.57,2.11,2024-12-31,70.43,29.57,Bhavani Kodali
+Andhra Pradesh,NTR,Tiruvuru,Nadim Tiruvuru (CT),AND-NTR-008388,5.33,AP-008388,Clay,Kharif,Chilli,Borewell,6.8,0.56,0.48,373,31,250,3.34,2.7,1.18,0.39,2024-07-16,67.77,32.23,Lakshmi Ghattamaneni
+Andhra Pradesh,NTR,Ibrahimpatnam,Jupudi,AND-NTR-008392,1.8,AP-008392,Clay Loam,Kharif,Jowar (Sorghum),Drip,8.67,0.32,0.78,362,78,348,1.46,4.23,1.77,0.15,2025-02-27,56.0,44.0,Satyanarayana Kaza
+Andhra Pradesh,NTR,Kanchikacherla,Seri Amaravaram,AND-NTR-008401,7.74,AP-008401,Loamy,Kharif,Cotton,Drip,7.97,0.33,0.76,266,9,134,1.32,12.57,0.12,0.91,2024-11-19,75.8,24.2,Prakash Kothapalli
+Andhra Pradesh,NTR,G.Konduru,Chevuturu,AND-NTR-008491,12.25,AP-008491,Sandy Loam,Rabi,Sugarcane,Borewell,8.6,0.59,0.32,394,39,485,2.14,13.59,1.0,1.42,2025-07-01,90.83,9.17,Venkata Allu
+Andhra Pradesh,NTR,A.Konduru,Koduru,AND-NTR-008497,14.92,AP-008497,Silty Loam,Zaid,Tomato,Sprinkler,6.91,0.52,0.47,309,32,128,3.35,3.28,1.19,0.7,2024-05-06,99.73,0.27,Siva Rao
+Andhra Pradesh,NTR,Kanchikacherla,Pendyala,AND-NTR-008499,2.97,AP-008499,Sandy,Zaid,Horse Gram,Sprinkler,6.19,1.02,1.31,253,60,226,2.19,9.13,0.73,2.29,2025-03-04,59.9,40.1,Venkatesh Akkineni
+Andhra Pradesh,NTR,Vissannapet,Korlamanda,AND-NTR-008558,9.11,AP-008558,Loamy,Rabi,Green Gram (Moong),Rainfed,7.05,1.53,0.87,338,28,534,2.28,5.71,1.04,2.36,2024-10-09,80.37,19.63,Siva Rao
+Andhra Pradesh,NTR,Nandigama,Damuluru,AND-NTR-008582,11.64,AP-008582,Loamy,Zaid,Sunflower,Canal,8.15,1.43,0.6,223,78,93,1.29,6.06,1.29,0.93,2025-03-03,88.8,11.2,Nageswara Rao Nandamuri
+Andhra Pradesh,NTR,Tiruvuru,Chittela,AND-NTR-008590,10.23,AP-008590,Clay,Zaid,Groundnut,Borewell,7.78,1.64,0.94,294,57,235,0.57,2.4,1.85,0.4,2024-12-14,84.1,15.9,Srinivas Golla
+Andhra Pradesh,NTR,Gampalagudem,Tunikipadu,AND-NTR-008604,2.74,AP-008604,Clay,Rabi,Sweet Orange,Canal,7.19,0.39,1.31,118,57,446,0.93,14.99,0.27,1.21,2025-02-20,59.13,40.87,Narasimha Naidu
+Andhra Pradesh,NTR,Chandarlapadu,Vibhareetapadu,AND-NTR-008608,4.12,AP-008608,Sandy,Zaid,Paddy (Rice),Rainfed,7.33,0.38,0.49,148,73,555,1.31,6.29,0.12,0.48,2024-07-27,63.73,36.27,Rambabu Naidu
+Andhra Pradesh,NTR,Gampalagudem,Tunikipadu,AND-NTR-008617,14.4,AP-008617,Clay,Kharif,Bengal Gram (Chickpea),Canal,5.39,0.41,1.03,323,48,105,1.52,3.93,0.95,2.48,2024-09-23,98.0,2.0,Mahesh Konidela
+Andhra Pradesh,NTR,Nandigama,Lingalapadu,AND-NTR-008620,2.84,AP-008620,Sandy Loam,Zaid,Banana,Drip,5.67,1.07,1.35,429,19,397,0.46,7.43,1.41,2.35,2024-04-12,59.47,40.53,Appa Rao Allu
+Andhra Pradesh,NTR,Vijayawada (Rural),R F,AND-NTR-008692,10.05,AP-008692,Loamy,Zaid,Tobacco,Sprinkler,5.42,2.64,0.99,277,15,382,0.45,13.84,0.63,2.44,2024-11-06,83.5,16.5,Gopi Dasari
+Andhra Pradesh,NTR,Veerullapadu,Tatigummi,AND-NTR-008728,3.61,AP-008728,Sandy Loam,Zaid,Sugarcane,Borewell,7.52,2.41,0.69,204,12,274,2.27,5.02,1.72,2.21,2024-08-02,62.03,37.97,Murali Konidela
+Andhra Pradesh,NTR,Vijayawada (Rural),Vemavaram,AND-NTR-008731,3.05,AP-008731,Silty Loam,Kharif,Banana,Drip,7.16,2.67,0.35,345,38,411,2.25,11.44,0.33,0.97,2025-03-07,60.17,39.83,Babu Ghattamaneni
+Andhra Pradesh,NTR,Vissannapet,Putrela,AND-NTR-008754,3.02,AP-008754,Loamy,Kharif,Ragi (Finger Millet),Sprinkler,6.81,0.16,0.26,122,73,528,0.61,2.88,1.35,1.09,2024-08-25,60.07,39.93,Ravi Raju
+Andhra Pradesh,NTR,Vissannapet,Putrela,AND-NTR-008783,4.98,AP-008783,Clay,Rabi,Maize,Sprinkler,7.96,0.67,0.64,241,37,287,1.82,12.99,0.75,2.08,2025-05-20,66.6,33.4,Suresh Daggubati
+Andhra Pradesh,NTR,A.Konduru,Koduru,AND-NTR-008793,2.54,AP-008793,Clay,Zaid,Sweet Orange,Canal,6.15,2.26,0.94,392,20,266,1.62,3.12,1.88,0.45,2024-01-10,58.47,41.53,Ravi Nimmagadda
+Andhra Pradesh,NTR,Gampalagudem,Rajavaram,AND-NTR-008815,9.99,AP-008815,Sandy,Kharif,Black Gram (Urad),Borewell,5.87,2.33,0.8,289,72,348,2.27,2.61,0.25,1.38,2025-07-18,83.3,16.7,Krishna Konidela
+Andhra Pradesh,NTR,Ibrahimpatnam,Gudurupadu,AND-NTR-008835,14.18,AP-008835,Clay Loam,Zaid,Chilli,Drip,6.71,2.29,0.72,422,27,256,1.76,14.96,0.23,1.96,2024-10-09,97.27,2.73,Bhavani Chowdary
+Andhra Pradesh,NTR,Vijayawada (Rural),Tadepalle,AND-NTR-008842,12.88,AP-008842,Sandy Loam,Rabi,Sugarcane,Rainfed,5.25,1.64,1.39,141,55,359,0.32,8.34,1.65,0.82,2025-11-06,92.93,7.07,Lakshmi Goud
+Andhra Pradesh,NTR,Kanchikacherla,Chevitikallu,AND-NTR-008844,13.21,AP-008844,Clay Loam,Kharif,Oil Palm,Rainfed,8.33,1.99,0.25,281,13,504,2.67,13.87,1.7,2.41,2024-04-18,94.03,5.97,Sai Chowdary
+Andhra Pradesh,NTR,Kanchikacherla,Kunikinapadu,AND-NTR-008858,1.44,AP-008858,Silty Loam,Rabi,Green Gram (Moong),Sprinkler,6.19,0.88,0.47,386,49,392,2.42,11.07,1.17,0.69,2025-03-16,54.8,45.2,Ramu Kaza
+Andhra Pradesh,NTR,Vatsavai,Mangollu,AND-NTR-008880,3.61,AP-008880,Loamy,Rabi,Horse Gram,Sprinkler,6.47,0.24,0.75,317,41,160,2.23,3.03,1.01,1.02,2025-11-05,62.03,37.97,Ravi Nimmagadda
+Andhra Pradesh,NTR,Penuganchiprolu,Mundlapadu,AND-NTR-008913,13.15,AP-008913,Clay,Rabi,Coconut,Borewell,7.23,2.22,1.09,186,57,528,0.89,4.5,1.66,1.97,2024-02-27,93.83,6.17,Prakash Allu
+Andhra Pradesh,NTR,Reddigudem,Reddigudem,AND-NTR-008928,2.88,AP-008928,Clay,Rabi,Sunflower,Borewell,6.8,0.49,1.29,304,6,119,1.15,6.0,1.83,1.59,2024-06-30,59.6,40.4,Kiran Chowdary
+Andhra Pradesh,NTR,G.Konduru,Narasayagudem,AND-NTR-008931,6.21,AP-008931,Clay,Kharif,Tobacco,Rainfed,5.83,2.68,0.39,277,35,525,1.04,11.4,1.6,0.57,2024-08-17,70.7,29.3,Ramesh Ghattamaneni
+Andhra Pradesh,NTR,Ibrahimpatnam,Zami Machavaram,AND-NTR-008944,13.97,AP-008944,Sandy,Rabi,Banana,Rainfed,7.58,1.26,0.88,163,39,118,1.11,13.93,0.24,1.12,2025-12-02,96.57,3.43,Ramakrishna Rao
+Andhra Pradesh,NTR,Mylavaram,Chandragudem,AND-NTR-008950,8.87,AP-008950,Clay,Rabi,Horse Gram,Canal,8.5,1.91,1.06,203,64,287,0.45,11.5,1.34,1.87,2024-07-30,79.57,20.43,Gopi Allu
+Andhra Pradesh,NTR,Tiruvuru,Mustikuntla,AND-NTR-008960,12.87,AP-008960,Silty Loam,Kharif,Tomato,Canal,7.27,0.86,0.43,391,20,516,1.76,10.58,0.36,0.84,2024-10-22,92.9,7.1,Sai Akkineni
+Andhra Pradesh,NTR,A.Konduru,Kambampadu,AND-NTR-008975,6.73,AP-008975,Loamy,Zaid,Green Gram (Moong),Drip,6.47,1.63,1.36,367,45,323,1.09,14.61,0.34,2.25,2024-08-07,72.43,27.57,Mahesh Akkineni
+Andhra Pradesh,NTR,Penuganchiprolu,Subbayagudem,AND-NTR-008982,9.91,AP-008982,Clay,Kharif,Tomato,Drip,6.37,0.67,1.28,262,39,591,1.36,10.61,1.47,1.8,2025-08-06,83.03,16.97,Gopi Goud
+Andhra Pradesh,NTR,Vissannapet,Kondaparva,AND-NTR-008988,14.17,AP-008988,Sandy Loam,Zaid,Sweet Orange,Drip,8.53,1.29,0.9,130,23,180,2.24,3.46,1.43,1.11,2025-08-18,97.23,2.77,Appa Rao Chowdary
+Andhra Pradesh,NTR,A.Konduru,Madhavaram (East),AND-NTR-009011,4.66,AP-009011,Clay,Zaid,Paddy (Rice),Canal,7.84,2.5,0.9,263,49,177,2.2,12.37,1.03,1.25,2025-02-02,65.53,34.47,Siva Naidu
+Andhra Pradesh,NTR,Kanchikacherla,Chevitikallu,AND-NTR-009049,14.32,AP-009049,Silty Loam,Zaid,Black Gram (Urad),Borewell,5.56,0.68,0.97,268,67,301,0.84,4.44,0.24,0.95,2024-04-05,97.73,2.27,Saraswathi Daggubati
+Andhra Pradesh,NTR,Vijayawada (Rural),Jakkampudi (OG),AND-NTR-009064,6.19,AP-009064,Silty Loam,Kharif,Black Gram (Urad),Canal,7.3,1.05,0.91,402,78,83,2.9,6.82,0.36,2.19,2024-03-31,70.63,29.37,Saraswathi Kambhampati
+Andhra Pradesh,NTR,Vijayawada (Urban),VIJAYAWADA,AND-NTR-009101,8.86,AP-009101,Clay,Zaid,Onion,Borewell,5.76,2.05,1.29,351,13,388,0.69,9.05,1.58,2.3,2024-01-10,79.53,20.47,Saraswathi Daggubati
+Andhra Pradesh,NTR,Veerullapadu,Ramapuram,AND-NTR-009105,2.46,AP-009105,Clay,Zaid,Bajra (Pearl Millet),Drip,6.91,1.96,0.23,199,24,397,2.49,10.63,1.11,0.51,2024-09-29,58.2,41.8,Ramu Nandamuri
+Andhra Pradesh,NTR,Veerullapadu,Gokarajupalle,AND-NTR-009117,9.24,AP-009117,Sandy Loam,Rabi,Groundnut,Borewell,7.62,2.01,0.59,408,29,361,0.38,3.41,1.97,2.31,2024-05-13,80.8,19.2,Appa Rao Nimmagadda
+Andhra Pradesh,NTR,Nandigama,Ithavaram,AND-NTR-009120,13.0,AP-009120,Sandy Loam,Rabi,Sunflower,Borewell,8.73,2.99,0.66,335,66,191,1.33,4.98,1.49,0.52,2024-05-17,93.33,6.67,Murali Nimmagadda
+Andhra Pradesh,NTR,A.Konduru,A.Konduru,AND-NTR-009142,3.38,AP-009142,Clay Loam,Rabi,Tobacco,Borewell,8.34,1.54,0.68,312,28,190,2.91,7.54,0.92,2.49,2024-04-24,61.27,38.73,Krishna Ghattamaneni
+Andhra Pradesh,NTR,Gampalagudem,Narikampadu,AND-NTR-009184,10.3,AP-009184,Clay Loam,Zaid,Jowar (Sorghum),Drip,5.24,0.22,0.35,351,20,112,3.19,13.31,0.17,2.1,2024-08-27,84.33,15.67,Sai Akkineni
+Andhra Pradesh,NTR,Vijayawada (Urban),VIJAYAWADA,AND-NTR-009260,2.38,AP-009260,Clay Loam,Rabi,Sugarcane,Rainfed,5.53,1.9,1.18,154,57,440,0.94,2.8,1.17,1.67,2024-08-19,57.93,42.07,Mahesh Daggubati
+Andhra Pradesh,NTR,Reddigudem,Naguluru,AND-NTR-009264,9.68,AP-009264,Sandy Loam,Rabi,Sesame (Til),Drip,8.48,0.74,0.33,119,65,372,0.21,2.36,0.54,2.5,2024-04-21,82.27,17.73,Srinivas Goud
+Andhra Pradesh,NTR,Tiruvuru,Ganugapadu,AND-NTR-009267,4.8,AP-009267,Sandy,Zaid,Red Gram (Pigeon Pea),Drip,7.23,1.44,1.26,325,70,342,2.98,3.56,1.25,2.36,2024-12-22,66.0,34.0,Srinivas Allu
+Andhra Pradesh,NTR,Nandigama,Kanchela,AND-NTR-009308,11.11,AP-009308,Sandy Loam,Zaid,Paddy (Rice),Canal,5.65,0.9,0.93,143,20,187,2.83,2.8,1.69,0.17,2024-02-20,87.03,12.97,Murali Bandi
+Andhra Pradesh,NTR,Chandarlapadu,Katrenipalle,AND-NTR-009325,3.14,AP-009325,Loamy,Zaid,Ragi (Finger Millet),Rainfed,5.04,2.34,0.38,206,64,557,1.85,6.4,0.66,1.57,2025-08-21,60.47,39.53,Babu Kaza
+Andhra Pradesh,NTR,Gampalagudem,Arlapadu,AND-NTR-009336,3.56,AP-009336,Clay,Zaid,Green Gram (Moong),Borewell,6.61,1.34,0.47,390,50,307,0.31,10.08,1.24,1.88,2025-12-15,61.87,38.13,Prakash Golla
+Andhra Pradesh,NTR,A.Konduru,Polisettipadu,AND-NTR-009342,8.35,AP-009342,Sandy Loam,Zaid,Green Gram (Moong),Drip,6.79,0.95,0.51,426,62,123,0.45,10.45,1.92,0.54,2024-02-04,77.83,22.17,Venkata Naidu
+Andhra Pradesh,NTR,G.Konduru,Pinapaka,AND-NTR-009442,2.01,AP-009442,Clay Loam,Kharif,Oil Palm,Drip,7.55,1.07,0.85,271,64,497,0.48,6.73,1.94,0.44,2024-08-14,56.7,43.3,Gopi Pothineni
+Andhra Pradesh,NTR,Gampalagudem,Ummadidevarapalle,AND-NTR-009460,5.45,AP-009460,Sandy,Kharif,Red Gram (Pigeon Pea),Sprinkler,8.23,0.17,1.08,235,72,563,3.31,7.66,1.06,0.87,2025-03-09,68.17,31.83,Kiran Yarlagadda
+Andhra Pradesh,NTR,Penuganchiprolu,Konakanchi,AND-NTR-009461,10.41,AP-009461,Sandy Loam,Rabi,Turmeric,Sprinkler,5.01,1.42,0.91,243,15,185,1.59,3.45,0.2,1.25,2025-04-17,84.7,15.3,Parvathi Ghattamaneni
+Andhra Pradesh,NTR,Veerullapadu,Dodda Devarapadu,AND-NTR-009464,7.56,AP-009464,Sandy,Rabi,Red Gram (Pigeon Pea),Canal,7.19,2.98,0.84,348,58,149,0.24,3.69,0.92,1.66,2025-02-12,75.2,24.8,Ramakrishna Golla
+Andhra Pradesh,NTR,Vissannapet,Korlamanda,AND-NTR-009493,5.55,AP-009493,Loamy,Zaid,Red Gram (Pigeon Pea),Rainfed,7.42,1.95,0.83,424,16,136,0.28,8.54,1.27,2.16,2025-11-03,68.5,31.5,Suresh Bandi
+Andhra Pradesh,NTR,Vijayawada (Urban),Unknown,AND-NTR-009507,1.78,AP-009507,Silty Loam,Zaid,Black Gram (Urad),Rainfed,7.59,2.5,0.81,328,16,414,3.48,3.32,1.51,1.66,2024-03-11,55.93,44.07,Krishna Bandi
+Andhra Pradesh,NTR,A.Konduru,Madhavaram (West),AND-NTR-009529,14.84,AP-009529,Clay Loam,Zaid,Tomato,Canal,6.57,2.34,0.55,330,26,110,1.49,9.85,1.64,0.87,2024-05-28,99.47,0.53,Subba Rao Nimmagadda
+Andhra Pradesh,NTR,Reddigudem,Mutchinapalle,AND-NTR-009543,5.55,AP-009543,Clay Loam,Zaid,Sunflower,Rainfed,7.31,1.73,1.33,236,53,105,2.28,6.57,0.29,2.47,2024-08-21,68.5,31.5,Siva Nimmagadda
+Andhra Pradesh,NTR,Vijayawada (Urban),Vijayawada (M Corp. + OG),AND-NTR-009547,2.61,AP-009547,Sandy Loam,Zaid,Sugarcane,Sprinkler,7.61,1.17,0.89,291,46,158,2.0,12.08,1.11,1.27,2024-11-21,58.7,41.3,Gopi Naidu
+Andhra Pradesh,NTR,Penuganchiprolu,Subbayagudem,AND-NTR-009548,0.98,AP-009548,Sandy Loam,Kharif,Maize,Sprinkler,7.39,0.34,0.47,379,49,386,3.0,10.46,1.98,2.2,2024-10-05,53.27,46.73,Ramakrishna Konidela
+Andhra Pradesh,NTR,Chandarlapadu,Chandarlapadu,AND-NTR-009549,7.32,AP-009549,Clay,Rabi,Bengal Gram (Chickpea),Rainfed,8.07,2.0,0.55,347,47,584,3.48,7.38,1.54,1.17,2025-07-10,74.4,25.6,Narasimha Pothineni
+Andhra Pradesh,NTR,Reddigudem,Kudapa,AND-NTR-009572,1.98,AP-009572,Clay,Kharif,Horse Gram,Sprinkler,5.61,1.5,0.8,222,32,568,2.07,3.9,1.62,2.37,2024-05-21,56.6,43.4,Gopi Daggubati
+Andhra Pradesh,NTR,Tiruvuru,Ganugapadu,AND-NTR-009603,2.98,AP-009603,Sandy Loam,Rabi,Ragi (Finger Millet),Canal,6.18,1.95,1.4,122,6,437,0.75,3.42,1.35,0.83,2025-12-06,59.93,40.07,Subba Rao Yarlagadda
+Andhra Pradesh,NTR,Vatsavai,Gopinenipalem,AND-NTR-009606,11.72,AP-009606,Clay Loam,Zaid,Oil Palm,Drip,8.15,0.96,0.86,435,66,314,2.79,3.6,1.74,0.96,2025-02-12,89.07,10.93,Narasimha Konidela
+Andhra Pradesh,NTR,Reddigudem,Kunaparajuparva,AND-NTR-009640,0.81,AP-009640,Sandy Loam,Rabi,Chilli,Canal,6.21,1.59,0.49,379,54,304,1.99,6.74,1.49,1.02,2025-03-20,52.7,47.3,Babu Goud
+Andhra Pradesh,NTR,Vijayawada (Urban),Unknown,AND-NTR-009649,9.05,AP-009649,Silty Loam,Rabi,Banana,Rainfed,8.57,1.5,0.55,291,65,407,1.22,7.53,1.91,0.22,2024-08-03,80.17,19.83,Satyanarayana Vemula
+Andhra Pradesh,NTR,Vijayawada (Urban),Unknown,AND-NTR-009706,3.0,AP-009706,Clay,Zaid,Cotton,Drip,8.34,0.55,1.16,173,43,447,1.95,10.75,1.89,2.17,2025-02-04,60.0,40.0,Srinivas Kodali
+Andhra Pradesh,NTR,Kanchikacherla,Keesara,AND-NTR-009716,7.73,AP-009716,Sandy,Zaid,Coconut,Borewell,6.32,2.62,0.94,204,65,172,1.48,7.44,1.73,1.42,2024-08-06,75.77,24.23,Ravi Chowdary
+Andhra Pradesh,NTR,Mylavaram,Morusumilli,AND-NTR-009746,10.48,AP-009746,Sandy Loam,Zaid,Sugarcane,Drip,5.46,2.39,0.48,303,19,467,2.44,6.09,0.57,1.13,2025-09-23,84.93,15.07,Babu Ghattamaneni
+Andhra Pradesh,NTR,Vijayawada (Urban),Unknown,AND-NTR-009747,11.99,AP-009747,Clay,Zaid,Mango,Borewell,8.46,0.92,1.28,127,23,274,2.73,2.11,0.56,0.66,2024-09-17,89.97,10.03,Rambabu Uppalapati
+Andhra Pradesh,NTR,Vijayawada (Urban),Vijayawada (M Corp. + OG),AND-NTR-009765,13.33,AP-009765,Clay,Rabi,Black Gram (Urad),Sprinkler,7.13,1.01,0.21,396,65,148,3.27,8.28,0.52,1.65,2024-11-17,94.43,5.57,Anand Naidu
+Andhra Pradesh,NTR,Nandigama,Satyavaram,AND-NTR-009798,9.86,AP-009798,Clay Loam,Rabi,Tomato,Sprinkler,7.12,2.87,1.13,219,38,175,0.33,13.51,1.17,2.35,2024-12-03,82.87,17.13,Prasad Uppalapati
+Andhra Pradesh,NTR,Chandarlapadu,Kasarabada,AND-NTR-009801,11.88,AP-009801,Sandy,Zaid,Bajra (Pearl Millet),Sprinkler,5.66,0.25,0.97,209,32,536,2.85,11.61,1.13,1.64,2024-08-01,89.6,10.4,Mahesh Reddy
+Andhra Pradesh,NTR,Vijayawada (Urban),Unknown,AND-NTR-009824,3.38,AP-009824,Loamy,Rabi,Bengal Gram (Chickpea),Borewell,6.8,1.52,0.37,413,68,541,0.99,2.66,1.76,1.3,2025-03-30,61.27,38.73,Kiran Akkineni
+Andhra Pradesh,NTR,Kanchikacherla,Keesara,AND-NTR-009964,8.47,AP-009964,Sandy,Rabi,Chilli,Canal,8.52,2.12,1.06,371,14,139,3.18,10.68,0.96,1.2,2024-12-11,78.23,21.77,Krishna Rao
+Andhra Pradesh,NTR,Vissannapet,Vemireddipalle,AND-NTR-009967,10.87,AP-009967,Sandy,Kharif,Turmeric,Borewell,5.47,0.18,0.76,250,53,92,0.84,11.46,0.48,1.42,2024-05-15,86.23,13.77,Ramesh Kaza
+Andhra Pradesh,NTR,Mylavaram,Kanimerla,AND-NTR-009976,3.2,AP-009976,Clay,Zaid,Tomato,Rainfed,8.79,0.29,0.98,410,13,118,2.04,8.62,0.14,1.06,2024-03-05,60.67,39.33,Narasimha Pothineni
+Andhra Pradesh,NTR,Penuganchiprolu,Thotacherla,AND-NTR-009984,13.69,AP-009984,Sandy,Zaid,Onion,Canal,5.64,2.3,0.76,350,64,598,0.6,3.6,1.82,0.32,2025-12-29,95.63,4.37,Ramu Reddy

@@ -37,7 +37,7 @@ export interface District {
 }
 
 export const DISTRICTS: District[] = [
-  { id: "GNT", name: "Guntur", x: 0.46, y: 0.52, dominantSoil: "Black Soil" },
+  { id: "NTR", name: "NTR", x: 0.46, y: 0.52, dominantSoil: "Black Soil" },
   { id: "KRI", name: "Krishna", x: 0.55, y: 0.42, dominantSoil: "Alluvial Soil" },
   { id: "PKM", name: "Prakasam", x: 0.42, y: 0.66, dominantSoil: "Red Soil" },
   { id: "EG", name: "East Godavari", x: 0.7, y: 0.34, dominantSoil: "Alluvial Soil" },
@@ -57,7 +57,7 @@ export const DISTRICTS: District[] = [
 }));
 
 export const MANDALS: Record<string, string[]> = {
-  Guntur: ["Tenali", "Tadikonda", "Mangalagiri", "Pedakakani", "Prathipadu"],
+  NTR: ["Vijayawada Rural", "Ibrahimpatnam", "Kanchikacherla", "Mylavaram", "Nandigama"],
   Krishna: ["Vijayawada Rural", "Gudivada", "Machilipatnam", "Nuzvid", "Avanigadda"],
   Prakasam: ["Ongole", "Markapur", "Kandukur", "Chirala", "Giddalur"],
   "East Godavari": ["Kakinada Rural", "Amalapuram", "Rajamahendravaram", "Peddapuram", "Mandapeta"],
@@ -237,7 +237,7 @@ export const HEALTH_COMPONENTS = [
 
 export const ANNOUNCEMENTS = [
   { tag: "Scheme", date: "05 Jun 2026", title: "Rythu Bharosa soil-card subsidy extended to Kharif 2026", level: "info" as const },
-  { tag: "Advisory", date: "03 Jun 2026", title: "Zinc deficiency advisory issued for 14 Guntur mandals", level: "warning" as const },
+  { tag: "Advisory", date: "03 Jun 2026", title: "Zinc deficiency advisory issued for 14 NTR mandals", level: "warning" as const },
   { tag: "Alert", date: "01 Jun 2026", title: "Groundwater stress critical in Anantapur — restrict paddy", level: "critical" as const },
   { tag: "Update", date: "28 May 2026", title: "Sentinel-2 nutrient model v4.2 deployed statewide", level: "info" as const },
 ];
@@ -246,7 +246,7 @@ export const HOTSPOTS = [
   { district: "Anantapur", nutrient: "Zinc", severity: "Critical" as Severity, parcels: 8420 },
   { district: "Kurnool", nutrient: "Organic Carbon", severity: "Severe" as Severity, parcels: 6190 },
   { district: "Prakasam", nutrient: "Phosphorus", severity: "Severe" as Severity, parcels: 5230 },
-  { district: "Guntur", nutrient: "Boron", severity: "Moderate" as Severity, parcels: 3870 },
+  { district: "NTR", nutrient: "Boron", severity: "Moderate" as Severity, parcels: 3870 },
 ];
 
 export const ADVISORIES = [

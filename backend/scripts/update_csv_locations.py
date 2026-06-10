@@ -28,7 +28,7 @@ async def update_csv():
             hierarchy[d_norm][m] = []
         hierarchy[d_norm][m].append(v)
         
-    csv_path = '../src/data/AP_Soil_Health_Card_Dataset_With_Area_Health.csv'
+    csv_path = '../src/data/AP_Soil_Health_Card_Dataset_With_Area_Health_Updated.csv'
     
     with open(csv_path, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
@@ -59,6 +59,9 @@ async def update_csv():
         
         row['Mandal'] = mandal
         row['Village'] = village
+        row['District'] = 'NTR'
+        if 'GUN' in row['Parcel_ID']:
+            row['Parcel_ID'] = row['Parcel_ID'].replace('-GUN-', '-NTR-')
         updated_count += 1
     out_path = '../src/data/AP_Soil_Health_Card_Dataset_With_Area_Health_Updated.csv'
     with open(out_path, 'w', encoding='utf-8', newline='') as f:

@@ -19,7 +19,7 @@ export const Route = createFileRoute("/_app/deficiency-analytics")({
       insights: [
         "Anantapur leads zinc-critical hotspots with 8,420 parcels.",
         "Phosphorus severity rising in Prakasam red-soil belt.",
-        "Boron moderate deficiency clustered around Guntur black-soil zones.",
+        "Boron moderate deficiency clustered around NTR black-soil zones.",
       ],
       showMap: true, mapMetric: "deficiencyRate",
       mapComponent: <NutrientMap metricKey="deficiencyRate" invert={true} height={380} />

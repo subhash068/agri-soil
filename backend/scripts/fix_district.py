@@ -4,15 +4,15 @@ from database import engine
 
 async def fix_district_boundary():
     async with engine.begin() as conn:
-        # Update Guntur district geometry to be the union of its mandals
+        # Update NTR district geometry to be the union of its mandals
         query = """
         UPDATE district_boundaries
         SET geometry = (
             SELECT ST_Union(geometry)
             FROM mandal_boundaries
-            WHERE district_name = 'Guntur'
+            WHERE district_name = 'NTR'
         )
-        WHERE name = 'Guntur';
+        WHERE name = 'NTR';
         """
         await conn.execute(text(query))
         
@@ -21,8 +21,8 @@ async def fix_district_boundary():
         names = res.scalars().all()
         print(f"Districts left: {names}")
         
-        # We only want Guntur, so delete any other
-        await conn.execute(text("DELETE FROM district_boundaries WHERE name != 'Guntur'"))
+        # We only want NTR, so delete any other
+        await conn.execute(text("DELETE FROM district_boundaries WHERE name != 'NTR'"))
         
         print("Fixed district boundary geometry to match mandals.")
 

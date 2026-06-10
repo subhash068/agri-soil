@@ -66,7 +66,7 @@ export function ParcelMap({
         p: selectedParcel.analytics.Phosphorus,
         k: selectedParcel.analytics.Potassium,
         ph: selectedParcel.analytics.pH,
-        temperature: 28, // generic default for Guntur
+        temperature: 28, // generic default for NTR
         humidity: 80,
         rainfall: 105
       };
@@ -187,7 +187,8 @@ export function ParcelMap({
     if (geoJsonRef.current && districtGeoData && Object.keys(metricsData).length > 0) {
       geoJsonRef.current.eachLayer((layer: any) => {
         const name = layer.feature.properties.NAME;
-        const normalizedName = name === "Ananthapuram" ? "Anantapur" : name;
+        let normalizedName = name === "Ananthapuram" ? "Anantapur" : name;
+        if (normalizedName === "NTR District") normalizedName = "NTR";
         const d = metricsData[normalizedName];
 
         if (d && d[metricKey] !== undefined) {
@@ -217,7 +218,7 @@ export function ParcelMap({
     if (selectedVillage && selectedVillage !== "All Villages" && villageGeoData) {
       const feature = villageGeoData.features?.find((f: any) => {
         const props = f.properties;
-        const name = props.vilnam_soi || props.vilname11 || props.village_name || props.VILLAGE || props.NAME;
+        const name = props.vilname11 || props.vilnam_soi || props.village_name || props.VILLAGE || props.NAME;
         return name === selectedVillage;
       });
       if (feature) {
@@ -245,7 +246,9 @@ export function ParcelMap({
     if (selected && selected !== "All Districts" && districtGeoData) {
       const feature = districtGeoData.features?.find((f: any) => {
         const name = f.properties.NAME;
-        return (name === "Ananthapuram" ? "Anantapur" : name) === selected;
+        let nName = name === "Ananthapuram" ? "Anantapur" : name;
+        if (nName === "NTR District") nName = "NTR";
+        return nName === selected;
       });
       if (feature) {
         const bounds = L.geoJSON(feature).getBounds();
@@ -297,7 +300,8 @@ export function ParcelMap({
 
   const onEachDistrictFeature = (feature: any, layer: any) => {
     const name = feature.properties.NAME;
-    const normalizedName = name === "Ananthapuram" ? "Anantapur" : name;
+    let normalizedName = name === "Ananthapuram" ? "Anantapur" : name;
+    if (normalizedName === "NTR District") normalizedName = "NTR";
     const d = metricsData[normalizedName];
 
     if (d && d[metricKey] !== undefined) {
@@ -411,7 +415,7 @@ export function ParcelMap({
 
   const onEachVillageFeature = (feature: any, layer: any) => {
     const props = feature.properties;
-    const name = props.vilnam_soi || props.vilname11 || props.village_name || props.VILLAGE || props.NAME || "Unknown Village";
+    const name = props.vilname11 || props.vilnam_soi || props.village_name || props.VILLAGE || props.NAME || "Unknown Village";
     
     layer.setStyle({
       fillColor: "#0ea5e9",

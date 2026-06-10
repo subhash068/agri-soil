@@ -109,7 +109,8 @@ export function APMap({
     if (geoJsonRef.current && districtGeoData && Object.keys(metricsData).length > 0) {
       geoJsonRef.current.eachLayer((layer: any) => {
         const name = layer.feature.properties.NAME;
-        const normalizedName = name === "Ananthapuram" ? "Anantapur" : name;
+        let normalizedName = name === "Ananthapuram" ? "Anantapur" : name;
+        if (normalizedName === "NTR District") normalizedName = "NTR";
         const d = metricsData[normalizedName];
 
         if (d && d[metricKey] !== undefined) {
@@ -137,7 +138,8 @@ export function APMap({
 
   const onEachDistrictFeature = (feature: any, layer: any) => {
     const name = feature.properties.NAME;
-    const normalizedName = name === "Ananthapuram" ? "Anantapur" : name;
+    let normalizedName = name === "Ananthapuram" ? "Anantapur" : name;
+    if (normalizedName === "NTR District") normalizedName = "NTR";
     const d = metricsData[normalizedName];
 
     if (d && d[metricKey] !== undefined) {

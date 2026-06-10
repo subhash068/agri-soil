@@ -43,7 +43,7 @@ async def get_districts(db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(models.Parcel.district).distinct())
     districts = result.scalars().all()
     if not districts:
-        return ["West Godavari", "East Godavari", "Krishna", "Guntur", "Prakasam"]
+        return ["West Godavari", "East Godavari", "Krishna", "NTR", "Prakasam"]
     return [d for d in districts if d]
 
 @app.get("/mandals", response_model=List[str])
@@ -374,7 +374,7 @@ async def get_village_boundaries(district: Optional[str] = None, mandal: Optiona
     features = []
     seen_villages = set()
     for row in result.all():
-        vil_name = row.properties.get('vilnam_soi') or row.properties.get('vilname11') or row.properties.get('village_name') or row.properties.get('VILLAGE') or row.properties.get('NAME')
+        vil_name = row.properties.get('vilname11') or row.properties.get('vilnam_soi') or row.properties.get('village_name') or row.properties.get('VILLAGE') or row.properties.get('NAME')
         if vil_name in seen_villages and vil_name is not None and vil_name.strip() != "":
             continue
         if vil_name and vil_name.strip() != "":
