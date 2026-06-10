@@ -7,7 +7,7 @@ import "leaflet/dist/leaflet.css";
 import { X } from "lucide-react";
 
 // Interactive Leaflet map of Andhra Pradesh coastal districts using actual boundaries from PostgreSQL.
-export function APMap({
+export function ParcelMap({
   metricKey = "soilHealth",
   invert = false,
   height = 420,

@@ -41,38 +41,6 @@ export function TopNavbar({ onMenu }: { onMenu: () => void }) {
       </div>
 
       <div className="ml-auto flex items-center gap-1.5">
-        {/* District selector */}
-        <DropdownMenu>
-          <DropdownMenuTrigger className="hidden items-center gap-1.5 rounded-md border border-input px-2.5 py-1.5 text-xs font-medium hover:bg-muted sm:flex">
-            <MapPin className="h-3.5 w-3.5 text-primary" />
-            {district}
-            <ChevronDown className="h-3 w-3 opacity-60" />
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>District</DropdownMenuLabel>
-            {DISTRICTS.map((d) => (
-              <DropdownMenuItem key={d.id} onClick={() => setDistrict(d.name)}>
-                {d.name}
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
-
-        {/* Mandal selector */}
-        <DropdownMenu>
-          <DropdownMenuTrigger className="hidden items-center gap-1.5 rounded-md border border-input px-2.5 py-1.5 text-xs font-medium hover:bg-muted lg:flex">
-            {mandal}
-            <ChevronDown className="h-3 w-3 opacity-60" />
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Mandal</DropdownMenuLabel>
-            {mandals.map((m) => (
-              <DropdownMenuItem key={m} onClick={() => setMandal(m)}>
-                {m}
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
 
         <Link
           to="/ai-copilot"

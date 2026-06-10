@@ -1,10 +1,11 @@
 import { PageHeader, Pill } from "@/components/ui-kit/PageHeader";
 import { Kpi } from "@/components/ui-kit/Kpi";
 import { Panel } from "@/components/ui-kit/Panel";
-import { APMap } from "@/components/maps/APMap";
+import React, { Suspense } from "react";
 import { AreaTrend, Bars } from "@/components/charts/Charts";
 import { deficiencyTrend, fertilizerDemand } from "@/lib/mock-data";
 import { Activity, BarChart3, Sparkles, type LucideIcon } from "lucide-react";
+import { ClientOnly } from "@/components/ClientOnly";
 
 export interface ModuleSpec {
   title: string;
@@ -15,6 +16,7 @@ export interface ModuleSpec {
   insights: string[];
   showMap?: boolean;
   mapMetric?: "soilHealth" | "deficiencyRate" | "adoption" | "groundwaterStress" | "yieldGain";
+  mapComponent?: React.ReactNode;
   chart?: "area" | "bars";
 }
 
@@ -70,13 +72,11 @@ export function ModulePage({ spec }: { spec: ModuleSpec }) {
         </Panel>
       </div>
 
-      {spec.showMap && (
+      {spec.showMap && spec.mapComponent && (
         <Panel title="Geospatial Layer" subtitle="District-level distribution" action={<BarChart3 className="h-4 w-4 text-muted-foreground" />}>
-          <APMap
-            metricKey={spec.mapMetric ?? "soilHealth"}
-            invert={spec.mapMetric === "deficiencyRate" || spec.mapMetric === "groundwaterStress"}
-            height={380}
-          />
+          <ClientOnly fallback={<div style={{ height: 380, background: "#0a0a0a" }} className="w-full rounded-lg" />}>
+            {spec.mapComponent}
+          </ClientOnly>
         </Panel>
       )}
     </div>

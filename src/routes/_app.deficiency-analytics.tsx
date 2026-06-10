@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ModulePage } from "@/components/ModulePage";
 import { AlertTriangle } from "lucide-react";
+import React from "react";
+const NutrientMap = React.lazy(() => import("@/components/maps/NutrientMap").then(m => ({ default: m.NutrientMap })));
+
 export const Route = createFileRoute("/_app/deficiency-analytics")({
   head: () => ({ meta: [{ title: "Deficiency Severity Analytics — AgriSoil AI" }] }),
   component: () => (
@@ -19,6 +22,7 @@ export const Route = createFileRoute("/_app/deficiency-analytics")({
         "Boron moderate deficiency clustered around Guntur black-soil zones.",
       ],
       showMap: true, mapMetric: "deficiencyRate",
+      mapComponent: <NutrientMap metricKey="deficiencyRate" invert={true} height={380} />
     }} />
   ),
 });

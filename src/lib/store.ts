@@ -24,13 +24,17 @@ interface AppState {
   role: Role;
   district: string;
   mandal: string;
+  village: string;
   lang: Lang;
   theme: "light" | "dark";
+  searchedParcel: any | null;
   setRole: (r: Role) => void;
   setDistrict: (d: string) => void;
   setMandal: (m: string) => void;
+  setVillage: (v: string) => void;
   setLang: (l: Lang) => void;
   toggleTheme: () => void;
+  setSearchedParcel: (parcel: any | null) => void;
 }
 
 export const useAppStore = create<AppState>()(
@@ -39,11 +43,15 @@ export const useAppStore = create<AppState>()(
       role: "State Admin",
       district: "Guntur",
       mandal: "All Mandals",
+      village: "All Villages",
       lang: "en",
       theme: "light",
+      searchedParcel: null,
       setRole: (role) => set({ role }),
-      setDistrict: (district) => set({ district, mandal: "All Mandals" }),
-      setMandal: (mandal) => set({ mandal }),
+      setDistrict: (district) => set({ district, mandal: "All Mandals", village: "All Villages" }),
+      setMandal: (mandal) => set({ mandal, village: "All Villages" }),
+      setVillage: (village) => set({ village }),
+      setSearchedParcel: (searchedParcel) => set({ searchedParcel }),
       setLang: (lang) => set({ lang }),
       toggleTheme: () =>
         set((s) => {

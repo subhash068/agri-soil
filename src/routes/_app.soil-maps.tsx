@@ -1,34 +1,84 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { PageHeader, Pill } from "@/components/ui-kit/PageHeader";
 import { Panel } from "@/components/ui-kit/Panel";
-import { APMap } from "@/components/maps/APMap";
+import React, { Suspense } from "react";
+const ClientAPMap = React.lazy(() => import("@/components/maps/SoilHealthMap").then(m => ({ default: m.SoilHealthMap })));
 import { MAP_LAYERS } from "@/lib/mock-data";
 import { Map, Search, Layers as LayersIcon, Clock } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useAppStore } from "@/lib/store";
+import { ClientOnly } from "@/components/ClientOnly";
 
 export const Route = createFileRoute("/_app/soil-maps")({
   head: () => ({ meta: [{ title: "Soil Intelligence Maps — AgriSoil AI" }] }),
   component: SoilMaps,
 });
 
-const metricByLayer: Record<string, "soilHealth" | "deficiencyRate" | "groundwaterStress" | "yieldGain"> = {
-  Nitrogen: "deficiencyRate",
-  Phosphorus: "deficiencyRate",
-  Potassium: "deficiencyRate",
-  Groundwater: "groundwaterStress",
-  "Crop Coverage": "yieldGain",
-  "Fertilizer Demand": "deficiencyRate",
-};
-
-const boundaries = ["Parcel", "Village", "Mandal", "District"];
-
 function SoilMaps() {
   const [active, setActive] = useState("pH");
   const [year, setYear] = useState(2026);
   const [bnd, setBnd] = useState("District");
-  const metric = metricByLayer[active] ?? "soilHealth";
-  const invert = metric === "deficiencyRate" || metric === "groundwaterStress";
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchError, setSearchError] = useState("");
+  
+  const filterDistrict = useAppStore((s) => s.district);
+  const filterMandal = useAppStore((s) => s.mandal);
+  const filterVillage = useAppStore((s) => s.village);
+  const setDistrictStore = useAppStore((s) => s.setDistrict);
+  const setMandalStore = useAppStore((s) => s.setMandal);
+  const setVillageStore = useAppStore((s) => s.setVillage);
+
+  const handleParcelSearch = async (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter" && searchQuery.trim()) {
+      setSearchError("");
+      useAppStore.getState().setSearchedParcel(null);
+      try {
+        const res = await fetch(`http://localhost:8000/parcel/${encodeURIComponent(searchQuery.trim())}`);
+        if (!res.ok) throw new Error("Parcel not found");
+        const parcel = await res.json();
+        
+        useAppStore.getState().setSearchedParcel(parcel);
+        
+        // Auto-fill the selectors to zoom the map
+        setDistrictStore(parcel.district || "");
+        // Use timeout to ensure state settles before the next selector updates (React 18 batches but just to be safe with cascading dropdowns)
+        setTimeout(() => setMandalStore(parcel.mandal || "All Mandals"), 50);
+        setTimeout(() => setVillageStore(parcel.village || "All Villages"), 100);
+      } catch (err) {
+        setSearchError("Parcel not found in DB");
+      }
+    }
+  };
+
+  const { data: districts = [] } = useQuery({
+    queryKey: ["districts"],
+    queryFn: () => fetch("http://localhost:8000/districts").then(res => res.json()),
+  });
+
+  const { data: mandals = [] } = useQuery({
+    queryKey: ["mandals", filterDistrict],
+    queryFn: () => fetch(`http://localhost:8000/mandals?district=${filterDistrict}`).then(res => res.json()),
+    enabled: !!filterDistrict && filterDistrict !== "All Districts",
+  });
+
+  const { data: villages = [] } = useQuery({
+    queryKey: ["villages", filterDistrict, filterMandal],
+    queryFn: () => fetch(`http://localhost:8000/villages?district=${filterDistrict}&mandal=${filterMandal}`).then(res => res.json()),
+    enabled: !!filterDistrict && filterDistrict !== "All Districts" && !!filterMandal && filterMandal !== "All Mandals",
+  });
+
+  const handleDistrictChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setDistrictStore(e.target.value === "All" ? "" : e.target.value);
+  };
+
+  const handleMandalChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setMandalStore(e.target.value === "All" ? "All Mandals" : e.target.value);
+  };
+
+  const metric = active;
+  const invert = ["Nitrogen", "Phosphorus", "Potassium", "Soil Unhealthy %", "EC"].includes(active);
 
   return (
     <div className="space-y-6">
@@ -36,7 +86,42 @@ function SoilMaps() {
         icon={<Map className="h-5 w-5" />}
         title="Soil Intelligence Maps"
         description="GIS monitoring system · heatmaps, choropleths & historical analysis across 7 districts"
-        actions={<Pill tone="info">Sentinel-2 · APSAC</Pill>}
+        actions={
+          <div className="flex items-center gap-3">
+            <select 
+              value={filterDistrict || "All"} 
+              onChange={handleDistrictChange}
+              className="h-8 rounded-md border border-input bg-background px-2 text-xs font-medium outline-none focus:ring-2 focus:ring-ring/40"
+            >
+              <option value="All">All Districts</option>
+              {districts.map((d: string) => <option key={d} value={d}>{d}</option>)}
+            </select>
+            
+            {!!filterDistrict && (
+              <select 
+                value={filterMandal || "All"} 
+                onChange={handleMandalChange}
+                className="h-8 rounded-md border border-input bg-background px-2 text-xs font-medium outline-none focus:ring-2 focus:ring-ring/40"
+              >
+                <option value="All">All Mandals</option>
+                {mandals.map((m: string) => <option key={m} value={m}>{m}</option>)}
+              </select>
+            )}
+
+            {!!filterMandal && filterMandal !== "All Mandals" && (
+              <select 
+                value={filterVillage} 
+                onChange={(e) => setVillageStore(e.target.value === "All Villages" ? "All Villages" : e.target.value)}
+                className="h-8 rounded-md border border-input bg-background px-2 text-xs font-medium outline-none focus:ring-2 focus:ring-ring/40"
+              >
+                <option value="All Villages">All Villages</option>
+                {villages.map((v: string) => <option key={v} value={v}>{v}</option>)}
+              </select>
+            )}
+
+            <Pill tone="info">Sentinel-2 · APSAC</Pill>
+          </div>
+        }
       />
 
       <div className="grid gap-5 lg:grid-cols-[280px_1fr]">
@@ -68,42 +153,31 @@ function SoilMaps() {
             ))}
           </Panel>
 
-          <Panel title="Boundaries" bodyClassName="p-4">
-            <div className="flex flex-wrap gap-1.5">
-              {boundaries.map((b) => (
-                <button
-                  key={b}
-                  onClick={() => setBnd(b)}
-                  className={cn(
-                    "rounded-md border px-2.5 py-1 text-xs font-medium",
-                    bnd === b ? "border-primary bg-primary/10 text-primary" : "border-input hover:bg-muted",
-                  )}
-                >
-                  {b}
-                </button>
-              ))}
-            </div>
-          </Panel>
+
+
+
 
           <Panel title="Parcel Search" bodyClassName="p-4">
             <div className="relative">
               <Search className="absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <input
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={handleParcelSearch}
                 placeholder="Survey no / parcel ID"
                 className="h-9 w-full rounded-md border border-input bg-background pl-8 pr-2 text-sm outline-none focus:ring-2 focus:ring-ring/40"
               />
+              {searchError && <p className="text-xs text-destructive mt-1.5 absolute -bottom-5">{searchError}</p>}
             </div>
           </Panel>
         </div>
 
         {/* Map */}
         <div className="space-y-4">
-          <Panel
-            title={`${active} — ${bnd} Layer`}
-            subtitle="Choropleth intelligence layer"
-            action={<Pill tone="muted">{year}</Pill>}
-          >
-            <APMap metricKey={metric} invert={invert} height={460} />
+          <Panel bodyClassName="p-0 border-0">
+            <ClientOnly fallback={<div style={{ height: 460, background: "#0a0a0a" }} className="w-full rounded-lg" />}>
+              <ClientAPMap metricKey={metric} invert={invert} height={460} />
+            </ClientOnly>
           </Panel>
 
           <Panel title="Historical Time Slider" bodyClassName="p-5">

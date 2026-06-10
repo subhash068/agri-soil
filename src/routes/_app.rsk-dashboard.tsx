@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ModulePage } from "@/components/ModulePage";
 import { Building2 } from "lucide-react";
+import React from "react";
+const SoilHealthMap = React.lazy(() => import("@/components/maps/SoilHealthMap").then(m => ({ default: m.SoilHealthMap })));
+
 export const Route = createFileRoute("/_app/rsk-dashboard")({
   head: () => ({ meta: [{ title: "RSK Dashboard — AgriSoil AI" }] }),
   component: () => (
@@ -19,6 +22,7 @@ export const Route = createFileRoute("/_app/rsk-dashboard")({
         "Adoption in your RSK is 6.4% above mandal average.",
       ],
       showMap: true, mapMetric: "adoption",
+      mapComponent: <SoilHealthMap metricKey="adoption" height={380} />
     }} />
   ),
 });

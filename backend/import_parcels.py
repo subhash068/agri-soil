@@ -59,7 +59,7 @@ async def import_parcels():
             
             params_list.append({
                 "id": r['Parcel_ID'],
-                "farmer": f"FARMER-{r['Parcel_ID'][-6:]}",
+                "farmer": r.get('Farmer_Name', f"FARMER-{r['Parcel_ID'][-6:]}"),
                 "village": r['Village'],
                 "mandal": r['Mandal'],
                 "district": r['District'],
@@ -68,8 +68,8 @@ async def import_parcels():
                 "health": health_val,
                 "risk": risk,
                 "confidence": round(random.uniform(85.0, 99.0), 1),
-                "lat": round(15.9 + random.uniform(-2, 2), 4),
-                "lng": round(79.7 + random.uniform(-2, 2), 4),
+                "lat": round(random.uniform(15.98, 16.59), 4),
+                "lng": round(random.uniform(80.12, 80.80), 4),
                 "ndvi": round(random.uniform(0.3, 0.8), 2),
                 "evi": round(random.uniform(0.2, 0.6), 2),
                 "ndre": round(random.uniform(0.2, 0.5), 2),

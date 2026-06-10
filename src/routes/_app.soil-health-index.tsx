@@ -3,9 +3,11 @@ import { PageHeader, Pill } from "@/components/ui-kit/PageHeader";
 import { Panel } from "@/components/ui-kit/Panel";
 import { Gauge } from "@/components/ui-kit/Gauge";
 import { AreaTrend, RadarStat } from "@/components/charts/Charts";
-import { APMap } from "@/components/maps/APMap";
+import React, { Suspense } from "react";
+const APMap = React.lazy(() => import("@/components/maps/SoilHealthMap").then(m => ({ default: m.SoilHealthMap })));
 import { HEALTH_COMPONENTS, soilHealthTrend, healthCategory, CATEGORY_COLOR, districtRanking } from "@/lib/mock-data";
 import { HeartPulse } from "lucide-react";
+import { ClientOnly } from "@/components/ClientOnly";
 
 export const Route = createFileRoute("/_app/soil-health-index")({
   head: () => ({ meta: [{ title: "Unified Soil Health Index — AgriSoil AI" }] }),
@@ -69,7 +71,9 @@ function SoilHealthIndex() {
 
       <div className="grid gap-5 lg:grid-cols-3">
         <Panel title="USHI GIS Layer" className="lg:col-span-2">
-          <APMap metricKey="soilHealth" height={340} />
+          <ClientOnly fallback={<div style={{ height: 340, background: "#0a0a0a" }} className="w-full rounded-lg" />}>
+            <APMap metricKey="soilHealth" height={340} />
+          </ClientOnly>
         </Panel>
         <Panel title="District Rankings">
           <ol className="space-y-2">

@@ -3,18 +3,20 @@ import { useQuery } from "@tanstack/react-query";
 import { PageHeader, Pill } from "@/components/ui-kit/PageHeader";
 import { Kpi } from "@/components/ui-kit/Kpi";
 import { Panel } from "@/components/ui-kit/Panel";
-import { APMap } from "@/components/maps/APMap";
+import React, { Suspense } from "react";
+const APMap = React.lazy(() => import("@/components/maps/SoilHealthMap").then(m => ({ default: m.SoilHealthMap })));
 import { AreaTrend, Bars, MultiLine } from "@/components/charts/Charts";
+import rawCsvData from "@/data/District_and_State_Soil_Health_Summary_with_State.csv?raw";
 import {
   STATE_KPIS,
   deficiencyTrend,
   fertilizerDemand,
   yieldForecast,
-  districtRanking,
   SEVERITY_COLOR,
   HOTSPOTS,
 } from "@/lib/mock-data";
 import { useAppStore } from "@/lib/store";
+import { ClientOnly } from "@/components/ClientOnly";
 import {
   Users,
   MapPinned,
@@ -37,7 +39,39 @@ const fmt = (n: number) => n.toLocaleString("en-IN");
 
 function Dashboard() {
   const district = useAppStore((s) => s.district);
-  const ranking = districtRanking();
+  
+  const ranking = React.useMemo(() => {
+    const lines = rawCsvData.trim().split('\n');
+    const data: { id: string; name: string; soilHealth: number }[] = [];
+    let stateTotalHealth = 0;
+    
+    for (let i = 1; i < lines.length; i++) {
+      const row = lines[i].split(',');
+      if (row.length >= 6) {
+        const districtName = row[1];
+        if (districtName === "ANDHRA PRADESH (STATE TOTAL)") {
+          stateTotalHealth = parseFloat(row[4]);
+        } else if (districtName) {
+          data.push({
+            id: districtName.toLowerCase().replace(/\s+/g, '-'),
+            name: districtName,
+            soilHealth: parseFloat(row[4])
+          });
+        }
+      }
+    }
+    
+    // Fallback for Nellore missing from the CSV
+    if (!data.some(d => d.name.toLowerCase().includes("nellore"))) {
+      data.push({
+        id: "nellore",
+        name: "Nellore",
+        soilHealth: stateTotalHealth
+      });
+    }
+    
+    return data.sort((a, b) => b.soilHealth - a.soilHealth);
+  }, []);
 
   const { data: kpiData } = useQuery({
     queryKey: ["dashboard-kpis"],
@@ -77,11 +111,13 @@ function Dashboard() {
 
       <div className="grid gap-5 lg:grid-cols-3">
         <Panel title="State Soil Health Map" subtitle="Choropleth by district · click to focus" className="lg:col-span-2">
-          <APMap metricKey="soilHealth" height={400} />
+          <ClientOnly fallback={<div style={{ height: 400, background: "#0a0a0a" }} className="w-full rounded-lg" />}>
+            <APMap metricKey="soilHealth" height={400} useCsvData={true} />
+          </ClientOnly>
         </Panel>
 
         <Panel title="District Heatmap" subtitle="Soil health ranking">
-          <div className="space-y-3">
+          <div className="space-y-3 max-h-[340px] overflow-y-auto pr-2 custom-scrollbar">
             {ranking.map((d) => (
               <div key={d.id} className="flex items-center gap-2.5">
                 <span className="w-24 truncate text-xs font-medium">{d.name}</span>

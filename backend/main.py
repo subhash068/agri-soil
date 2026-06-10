@@ -34,6 +34,22 @@ async def get_districts(db: AsyncSession = Depends(get_db)):
         return ["West Godavari", "East Godavari", "Krishna", "Guntur", "Prakasam"]
     return [d for d in districts if d]
 
+@app.get("/mandals", response_model=List[str])
+async def get_mandals(district: str, db: AsyncSession = Depends(get_db)):
+    result = await db.execute(select(models.Parcel.mandal).where(models.Parcel.district == district).distinct())
+    mandals = result.scalars().all()
+    return [m for m in mandals if m]
+
+@app.get("/villages", response_model=List[str])
+async def get_villages(district: str, mandal: str, db: AsyncSession = Depends(get_db)):
+    result = await db.execute(
+        select(models.Parcel.village)
+        .where(models.Parcel.district == district, models.Parcel.mandal == mandal)
+        .distinct()
+    )
+    villages = result.scalars().all()
+    return [v for v in villages if v]
+
 @app.get("/alerts", response_model=List[schemas.AlertOut])
 async def get_alerts(db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(models.Alert))
@@ -207,6 +223,26 @@ async def get_nearest_support_centers(district: Optional[str] = None, mandal: Op
         query={"district": district, "mandal": mandal}
     )
 
+@app.get("/parcel/{parcel_id}")
+async def get_parcel_by_id(parcel_id: str, db: AsyncSession = Depends(get_db)):
+    stmt = select(models.Parcel).where(models.Parcel.id == parcel_id)
+    result = await db.execute(stmt)
+    parcel = result.scalar_one_or_none()
+    if not parcel:
+        raise HTTPException(status_code=404, detail="Parcel not found")
+        
+    return {
+        "id": parcel.id,
+        "farmer": parcel.farmer,
+        "crop": parcel.crop,
+        "district": parcel.district,
+        "mandal": parcel.mandal,
+        "village": parcel.village,
+        "lat": parcel.lat,
+        "lng": parcel.lng,
+        "health": parcel.health
+    }
+
 @app.get("/boundaries/districts")
 async def get_district_boundaries(db: AsyncSession = Depends(get_db)):
     from sqlalchemy import text
@@ -224,14 +260,28 @@ async def get_district_boundaries(db: AsyncSession = Depends(get_db)):
 async def get_mandal_boundaries(district: Optional[str] = None, db: AsyncSession = Depends(get_db)):
     from sqlalchemy import text
     if district:
-        stmt = text("SELECT properties, ST_AsGeoJSON(geometry) as geom FROM mandal_boundaries WHERE district_name ILIKE :d")
-        result = await db.execute(stmt, {"d": district})
+        # Use spatial join to ensure mandals fall within the correct district boundary
+        stmt = text("""
+            SELECT m.properties, ST_AsGeoJSON(m.geometry) as geom 
+            FROM mandal_boundaries m
+            JOIN district_boundaries d ON ST_Intersects(ST_Centroid(m.geometry), d.geometry)
+            WHERE d.properties->>'NAME' ILIKE :d
+        """)
+        result = await db.execute(stmt, {"d": f"%{district}%"})
     else:
         stmt = text("SELECT properties, ST_AsGeoJSON(geometry) as geom FROM mandal_boundaries")
         result = await db.execute(stmt)
         
     features = []
+    # To avoid duplicates if boundaries overlap slightly
+    seen_mandals = set()
     for row in result.all():
+        mandal_name = row.properties.get('sdtname') or row.properties.get('NAME_3') or row.properties.get('SUB_DIST') or row.properties.get('Mandal')
+        if mandal_name in seen_mandals and mandal_name is not None:
+            continue
+        if mandal_name:
+            seen_mandals.add(mandal_name)
+            
         features.append({
             "type": "Feature",
             "properties": row.properties,
@@ -242,21 +292,100 @@ async def get_mandal_boundaries(district: Optional[str] = None, db: AsyncSession
 @app.get("/boundaries/villages")
 async def get_village_boundaries(district: Optional[str] = None, mandal: Optional[str] = None, db: AsyncSession = Depends(get_db)):
     from sqlalchemy import text
-    query = "SELECT properties, ST_AsGeoJSON(geometry) as geom FROM village_boundaries WHERE 1=1"
+    query = "SELECT v.properties, ST_AsGeoJSON(v.geometry) as geom FROM village_boundaries v "
     params = {}
+    
     if district:
-        query += " AND district_name ILIKE :d"
-        params["d"] = district
-    if mandal:
-        query += " AND mandal_name ILIKE :m"
-        params["m"] = mandal
-        
+        query += " JOIN district_boundaries d ON ST_Intersects(ST_Centroid(v.geometry), d.geometry) WHERE d.properties->>'NAME' ILIKE :d "
+        params["d"] = f"%{district}%"
+        if mandal:
+            query += " AND v.mandal_name ILIKE :m "
+            params["m"] = f"%{mandal}%"
+    else:
+        query += " WHERE 1=1 "
+        if mandal:
+            query += " AND v.mandal_name ILIKE :m "
+            params["m"] = f"%{mandal}%"
+            
     result = await db.execute(text(query), params)
+    
     features = []
+    seen_villages = set()
     for row in result.all():
+        vil_name = row.properties.get('vilnam_soi') or row.properties.get('vilname11') or row.properties.get('village_name') or row.properties.get('VILLAGE') or row.properties.get('NAME')
+        if vil_name in seen_villages and vil_name is not None and vil_name.strip() != "":
+            continue
+        if vil_name and vil_name.strip() != "":
+            seen_villages.add(vil_name)
+            
         features.append({
             "type": "Feature",
             "properties": row.properties,
             "geometry": json.loads(row.geom)
         })
     return {"type": "FeatureCollection", "features": features}
+@app.get("/map/metrics")
+async def get_map_metrics(
+    level: Optional[str] = "district",
+    district: Optional[str] = None,
+    mandal: Optional[str] = None,
+    db: AsyncSession = Depends(get_db)
+):
+    from sqlalchemy import func, cast, Float
+    
+    if level == "village":
+        group_col = models.Parcel.village
+    elif level == "mandal":
+        group_col = models.Parcel.mandal
+    else:
+        group_col = models.Parcel.district
+        
+    stmt = select(
+        group_col,
+        func.avg(models.Parcel.health).label("soilHealth"),
+        func.avg(cast(func.json_extract_path_text(models.Parcel.analytics, 'pH'), Float)).label("pH"),
+        func.avg(cast(func.json_extract_path_text(models.Parcel.analytics, 'EC'), Float)).label("EC"),
+        func.avg(cast(func.json_extract_path_text(models.Parcel.analytics, 'Organic_Carbon'), Float)).label("Organic Carbon"),
+        func.avg(cast(func.json_extract_path_text(models.Parcel.analytics, 'Nitrogen'), Float)).label("Nitrogen"),
+        func.avg(cast(func.json_extract_path_text(models.Parcel.analytics, 'Phosphorus'), Float)).label("Phosphorus"),
+        func.avg(cast(func.json_extract_path_text(models.Parcel.analytics, 'Potassium'), Float)).label("Potassium"),
+        func.avg(cast(func.json_extract_path_text(models.Parcel.analytics, 'Iron'), Float)).label("Iron"),
+        func.avg(cast(func.json_extract_path_text(models.Parcel.analytics, 'Zinc'), Float)).label("Zinc"),
+        func.avg(cast(func.json_extract_path_text(models.Parcel.analytics, 'Copper'), Float)).label("Copper"),
+        func.avg(cast(func.json_extract_path_text(models.Parcel.analytics, 'Boron'), Float)).label("Boron"),
+        func.count(models.Parcel.id).label("totalParcels")
+    )
+    
+    if district:
+        stmt = stmt.where(models.Parcel.district.ilike(f"%{district}%"))
+    if mandal:
+        stmt = stmt.where(models.Parcel.mandal.ilike(f"%{mandal}%"))
+        
+    stmt = stmt.group_by(group_col)
+
+    result = await db.execute(stmt)
+    
+    output = {}
+    for row in result.all():
+        name = row[0]
+        if not name: continue
+        
+        health = float(row.soilHealth) if row.soilHealth is not None else 0.0
+        
+        output[name] = {
+            "Total Parcels": int(row.totalParcels) if getattr(row, 'totalParcels', None) is not None else 0,
+            "soilHealth": health,
+            "Soil Healthy %": health,
+            "Soil Unhealthy %": max(0.0, 100.0 - health),
+            "pH": float(row.pH) if row.pH is not None else 0.0,
+            "EC": float(row.EC) if row.EC is not None else 0.0,
+            "Organic Carbon": float(row[4]) if row[4] is not None else 0.0,
+            "Nitrogen": float(row.Nitrogen) if row.Nitrogen is not None else 0.0,
+            "Phosphorus": float(row.Phosphorus) if row.Phosphorus is not None else 0.0,
+            "Potassium": float(row.Potassium) if row.Potassium is not None else 0.0,
+            "Iron": float(row.Iron) if row.Iron is not None else 0.0,
+            "Zinc": float(row.Zinc) if row.Zinc is not None else 0.0,
+            "Copper": float(row.Copper) if row.Copper is not None else 0.0,
+            "Boron": float(row.Boron) if row.Boron is not None else 0.0,
+        }
+    return output

@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ModulePage } from "@/components/ModulePage";
 import { MapPinned } from "lucide-react";
+import React from "react";
+const SoilHealthMap = React.lazy(() => import("@/components/maps/SoilHealthMap").then(m => ({ default: m.SoilHealthMap })));
+
 export const Route = createFileRoute("/_app/district-intelligence")({
   head: () => ({ meta: [{ title: "District Intelligence — AgriSoil AI" }] }),
   component: () => (
@@ -19,6 +22,7 @@ export const Route = createFileRoute("/_app/district-intelligence")({
         "Adoption gap between top and bottom districts narrowed to 32 pts.",
       ],
       showMap: true, mapMetric: "soilHealth",
+      mapComponent: <SoilHealthMap metricKey="soilHealth" height={380} />
     }} />
   ),
 });

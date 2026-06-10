@@ -136,7 +136,7 @@ export const MAP_LAYERS = [
   { group: "Primary", layers: ["pH", "EC", "Organic Carbon"] },
   { group: "Macronutrients", layers: ["Nitrogen", "Phosphorus", "Potassium"] },
   { group: "Micronutrients", layers: ["Iron", "Zinc", "Copper", "Boron"] },
-  { group: "Additional", layers: ["Groundwater", "Soil Moisture", "Weather", "Crop Coverage", "Fertilizer Demand"] },
+  { group: "Overall Health", layers: ["Soil Healthy %", "Soil Unhealthy %"] },
 ];
 
 // ---------- Soil types ----------

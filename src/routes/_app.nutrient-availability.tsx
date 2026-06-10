@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ModulePage } from "@/components/ModulePage";
 import { FlaskConical } from "lucide-react";
+import React from "react";
+const NutrientMap = React.lazy(() => import("@/components/maps/NutrientMap").then(m => ({ default: m.NutrientMap })));
+
 export const Route = createFileRoute("/_app/nutrient-availability")({
   head: () => ({ meta: [{ title: "Nutrient Availability Engine — AgriSoil AI" }] }),
   component: () => (
@@ -19,6 +22,7 @@ export const Route = createFileRoute("/_app/nutrient-availability")({
         "Apply zinc as foliar spray to bypass soil fixation in alkaline parcels.",
       ],
       showMap: true, mapMetric: "deficiencyRate",
+      mapComponent: <NutrientMap metricKey="deficiencyRate" invert={true} height={380} />
     }} />
   ),
 });

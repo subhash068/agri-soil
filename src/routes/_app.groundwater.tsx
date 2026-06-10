@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ModulePage } from "@/components/ModulePage";
 import { Droplets } from "lucide-react";
+import React from "react";
+const SoilHealthMap = React.lazy(() => import("@/components/maps/SoilHealthMap").then(m => ({ default: m.SoilHealthMap })));
+
 export const Route = createFileRoute("/_app/groundwater")({
   head: () => ({ meta: [{ title: "Groundwater Intelligence — AgriSoil AI" }] }),
   component: () => (
@@ -19,6 +22,7 @@ export const Route = createFileRoute("/_app/groundwater")({
         "Promote micro-irrigation in high borewell-density mandals.",
       ],
       showMap: true, mapMetric: "groundwaterStress",
+      mapComponent: <SoilHealthMap metricKey="groundwaterStress" invert={true} height={380} />
     }} />
   ),
 });

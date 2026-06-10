@@ -1,9 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader, Pill } from "@/components/ui-kit/PageHeader";
 import { Panel } from "@/components/ui-kit/Panel";
-import { APMap } from "@/components/maps/APMap";
+import React, { Suspense } from "react";
+const APMap = React.lazy(() => import("@/components/maps/CropMap").then(m => ({ default: m.CropMap })));
 import { CROPS } from "@/lib/mock-data";
 import { Target } from "lucide-react";
+import { ClientOnly } from "@/components/ClientOnly";
 
 export const Route = createFileRoute("/_app/crop-suitability")({
   head: () => ({ meta: [{ title: "Crop Suitability Engine — AgriSoil AI" }] }),
@@ -30,7 +32,11 @@ function CropSuitability() {
             </Panel>
           ))}
         </div>
-        <Panel title="Suitability Map"><APMap metricKey="yieldGain" height={360} /></Panel>
+        <Panel title="Suitability Map">
+          <ClientOnly fallback={<div style={{ height: 360, background: "#0a0a0a" }} className="w-full rounded-lg" />}>
+            <APMap metricKey="yieldGain" height={360} />
+          </ClientOnly>
+        </Panel>
       </div>
     </div>
   );
