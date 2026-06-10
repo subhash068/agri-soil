@@ -39,10 +39,12 @@ export function AreaTrend({
   data,
   keys,
   height = 260,
+  yUnit,
 }: {
   data: Record<string, unknown>[];
   keys: { key: string; color: string }[];
   height?: number;
+  yUnit?: string;
 }) {
   return (
     <ResponsiveContainer width="100%" height={height}>
@@ -58,7 +60,7 @@ export function AreaTrend({
         <CartesianGrid strokeDasharray="3 3" stroke={GRID} vertical={false} />
         <XAxis dataKey="month" tick={AXIS} axisLine={false} tickLine={false} />
         <YAxis tick={AXIS} axisLine={false} tickLine={false} />
-        <Tooltip {...tooltipStyle} />
+        <Tooltip {...tooltipStyle} formatter={yUnit ? (value: any) => `${value} ${yUnit}` : undefined} />
         {keys.length > 1 && <Legend wrapperStyle={{ fontSize: 11 }} />}
         {keys.map((k) => (
           <Area
@@ -109,6 +111,7 @@ export function Bars({
   height = 260,
   stacked = false,
   horizontal = false,
+  yUnit,
 }: {
   data: Record<string, unknown>[];
   xKey: string;
@@ -116,6 +119,7 @@ export function Bars({
   height?: number;
   stacked?: boolean;
   horizontal?: boolean;
+  yUnit?: string;
 }) {
   return (
     <ResponsiveContainer width="100%" height={height}>
@@ -136,7 +140,7 @@ export function Bars({
             <YAxis tick={AXIS} axisLine={false} tickLine={false} />
           </>
         )}
-        <Tooltip {...tooltipStyle} cursor={{ fill: "var(--color-muted)", opacity: 0.4 }} />
+        <Tooltip {...tooltipStyle} cursor={{ fill: "var(--color-muted)", opacity: 0.4 }} formatter={yUnit ? (value: any) => `${value} ${yUnit}` : undefined} />
         {keys.length > 1 && <Legend wrapperStyle={{ fontSize: 11 }} />}
         {keys.map((k) => (
           <Bar

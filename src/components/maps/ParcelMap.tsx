@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { DISTRICTS } from "@/lib/mock-data";
 import { useAppStore } from "@/lib/store";
 import { MapContainer, TileLayer, GeoJSON, CircleMarker, Popup } from "react-leaflet";
-import type L from "leaflet";
+import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { X } from "lucide-react";
 
@@ -35,6 +35,7 @@ export function ParcelMap({
   const setDistrict = useAppStore((s) => s.setDistrict);
   const selectedMandal = useAppStore((s) => s.mandal);
   const setMandal = useAppStore((s) => s.setMandal);
+  const selectedVillage = useAppStore((s) => s.village);
 
   useEffect(() => {
     setMounted(true);
@@ -82,13 +83,16 @@ export function ParcelMap({
       if (selectedMandal && selectedMandal !== "All Mandals") {
         url += `&mandal=${encodeURIComponent(selectedMandal)}`;
       }
+      if (selectedVillage && selectedVillage !== "All Villages") {
+        url += `&village=${encodeURIComponent(selectedVillage)}`;
+      }
       fetch(url)
         .then((res) => res.json())
         .then((data) => setParcelsData(data));
     } else {
       setParcelsData([]);
     }
-  }, [selected, selectedMandal, showParcels]);
+  }, [selected, selectedMandal, selectedVillage, showParcels]);
 
   // Extract all values for the current metric to determine min/max for color scale
   const values = Object.values(metricsData).map((d) => d[metricKey] as number).filter(v => v !== undefined);
@@ -130,6 +134,88 @@ export function ParcelMap({
       });
     }
   }, [selected, metricKey, districtGeoData, metricsData]);
+
+  // Automated Zoom effect when store selections change
+  useEffect(() => {
+    if (!mapRef.current) return;
+    
+    // 1. Zoom to Village
+    if (selectedVillage && selectedVillage !== "All Villages" && villageGeoData) {
+      const feature = villageGeoData.features?.find((f: any) => {
+        const props = f.properties;
+        const name = props.vilnam_soi || props.vilname11 || props.village_name || props.VILLAGE || props.NAME;
+        return name === selectedVillage;
+      });
+      if (feature) {
+        const bounds = L.geoJSON(feature).getBounds();
+        if (bounds.isValid()) mapRef.current.fitBounds(bounds, { padding: [10, 10], maxZoom: 14 });
+      }
+      return;
+    }
+    
+    // 2. Zoom to Mandal
+    if (selectedMandal && selectedMandal !== "All Mandals" && mandalGeoData) {
+      const feature = mandalGeoData.features?.find((f: any) => {
+        const props = f.properties;
+        const name = props.sdtname || props.NAME_3 || props.SUB_DIST || props.Mandal;
+        return name === selectedMandal;
+      });
+      if (feature) {
+        const bounds = L.geoJSON(feature).getBounds();
+        if (bounds.isValid()) mapRef.current.fitBounds(bounds, { padding: [10, 10], maxZoom: 12 });
+      }
+      return;
+    }
+    
+    // 3. Zoom to District
+    if (selected && selected !== "All Districts" && districtGeoData) {
+      const feature = districtGeoData.features?.find((f: any) => {
+        const name = f.properties.NAME;
+        return (name === "Ananthapuram" ? "Anantapur" : name) === selected;
+      });
+      if (feature) {
+        const bounds = L.geoJSON(feature).getBounds();
+        if (bounds.isValid()) mapRef.current.fitBounds(bounds, { padding: [20, 20], maxZoom: 8 });
+      }
+      return;
+    }
+    
+    // 4. Reset Zoom (State-wide)
+    if (!selected || selected === "All Districts") {
+      mapRef.current.setView([15.9129, 79.74], 6.5);
+    }
+  }, [selected, selectedMandal, selectedVillage, districtGeoData, mandalGeoData, villageGeoData]);
+
+  let targetLevel = "district";
+  let targetName = selected;
+  if (selectedVillage && selectedVillage !== "All Villages") {
+    targetLevel = "village";
+    targetName = selectedVillage;
+  } else if (selectedMandal && selectedMandal !== "All Mandals") {
+    targetLevel = "mandal";
+    targetName = selectedMandal;
+  }
+
+  const [targetMetrics, setTargetMetrics] = useState<any>(null);
+
+  useEffect(() => {
+    if (!targetName || targetName === "All Districts") {
+      setTargetMetrics(null);
+      return;
+    }
+    
+    let url = `http://localhost:8000/map/metrics?level=${targetLevel}`;
+    if (selected && selected !== "All Districts") url += `&district=${encodeURIComponent(selected === "Anantapur" ? "Ananthapuram" : selected)}`;
+    if (selectedMandal && selectedMandal !== "All Mandals") url += `&mandal=${encodeURIComponent(selectedMandal)}`;
+    
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        const key = Object.keys(data).find(k => k.toLowerCase() === targetName.toLowerCase()) || targetName;
+        setTargetMetrics(data[key]);
+      })
+      .catch(err => console.error(err));
+  }, [targetLevel, targetName, selected, selectedMandal]);
 
   if (!mounted) {
     return <div className="relative w-full overflow-hidden rounded-lg border border-border" style={{ height, background: "#0a0a0a" }} />;
@@ -202,7 +288,7 @@ export function ParcelMap({
   const onEachMandalFeature = (feature: any, layer: any) => {
     // Determine property keys dynamically based on what the GeoJSON uses
     const props = feature.properties;
-    const name = props.SUB_DIST || props.NAME_3 || props.sdtname || props.Mandal || "Unknown Mandal";
+    const name = props.sdtname || props.NAME_3 || props.SUB_DIST || props.Mandal || "Unknown Mandal";
     
     // For Mandals, we assign a white dash border to stand out against satellite imagery
     layer.setStyle({
@@ -251,7 +337,7 @@ export function ParcelMap({
 
   const onEachVillageFeature = (feature: any, layer: any) => {
     const props = feature.properties;
-    const name = props.vilname11 || props.vilnam_soi || props.village_name || props.VILLAGE || props.NAME || "Unknown Village";
+    const name = props.vilnam_soi || props.vilname11 || props.village_name || props.VILLAGE || props.NAME || "Unknown Village";
     
     layer.setStyle({
       fillColor: "#0ea5e9",
@@ -345,6 +431,7 @@ export function ParcelMap({
             key={parcel.id}
             center={[parcel.lat, parcel.lng]}
             radius={5}
+            pane="markerPane"
             pathOptions={{
               color: "#ffffff",
               weight: 1,
@@ -353,12 +440,12 @@ export function ParcelMap({
             }}
           >
             <Popup className="custom-popup">
-              <div className="bg-card text-foreground rounded shadow-md text-xs p-1">
-                <p className="font-bold text-sm border-b border-border/50 pb-1 mb-1">{parcel.id}</p>
-                <p><span className="text-muted-foreground font-semibold">Farmer:</span> {parcel.farmer}</p>
-                <p><span className="text-muted-foreground font-semibold">Crop:</span> {parcel.crop}</p>
-                <p><span className="text-muted-foreground font-semibold">Area:</span> {parcel.acreage} Acres</p>
-                <p><span className="text-muted-foreground font-semibold">Health:</span> {parcel.health}% ({parcel.risk})</p>
+              <div className="flex flex-col gap-1.5 p-3 pr-8 text-xs">
+                <div className="font-bold text-sm border-b border-border/50 pb-2 mb-1">{parcel.id}</div>
+                <div><span className="text-muted-foreground font-medium">Farmer:</span> {parcel.farmer}</div>
+                <div><span className="text-muted-foreground font-medium">Crop:</span> {parcel.crop}</div>
+                <div><span className="text-muted-foreground font-medium">Area:</span> {parcel.acreage} Acres</div>
+                <div><span className="text-muted-foreground font-medium">Health:</span> {parcel.health}% ({parcel.risk})</div>
               </div>
             </Popup>
           </CircleMarker>
@@ -378,18 +465,24 @@ export function ParcelMap({
         </span>
       </div>
 
-      {/* District Detail Sidebar Popup */}
-      {selected && metricsData[selected] && (
+      {/* Detail Sidebar Popup */}
+      {targetName && targetName !== "All Districts" && targetMetrics && (
         <div className="absolute right-0 top-0 z-[500] h-full w-64 bg-card/95 backdrop-blur-md border-l border-border shadow-xl flex flex-col animate-in slide-in-from-right-8 duration-300">
           <div className="flex items-center justify-between p-3 border-b border-border bg-muted/30">
             <div>
-              <h3 className="font-bold text-sm text-foreground">{selected}</h3>
-              <p className="text-[10px] text-muted-foreground uppercase tracking-wider font-semibold">District Profile</p>
+              <h3 className="font-bold text-sm text-foreground">{targetName}</h3>
+              <p className="text-[10px] text-muted-foreground uppercase tracking-wider font-semibold">{targetLevel} Profile</p>
             </div>
             <button 
               onClick={() => {
-                useAppStore.getState().setDistrict("");
-                if (mapRef.current) mapRef.current.setView([15.9129, 79.74], 6.5);
+                if (targetLevel === "village") {
+                  useAppStore.getState().setVillage("All Villages");
+                } else if (targetLevel === "mandal") {
+                  useAppStore.getState().setMandal("All Mandals");
+                } else {
+                  useAppStore.getState().setDistrict("");
+                  if (mapRef.current) mapRef.current.setView([15.9129, 79.74], 6.5);
+                }
               }}
               className="p-1.5 hover:bg-destructive/10 hover:text-destructive rounded-md transition-colors"
             >
@@ -397,7 +490,7 @@ export function ParcelMap({
             </button>
           </div>
           <div className="flex-1 overflow-y-auto p-3 space-y-2.5 text-xs custom-scrollbar">
-            {Object.entries(metricsData[selected]).map(([key, val]) => (
+            {Object.entries(targetMetrics).map(([key, val]) => (
               <div key={key} className="flex justify-between items-center border-b border-border/40 pb-2">
                 <span className="text-muted-foreground font-medium">{key}</span>
                 <span className="font-bold text-foreground bg-background px-1.5 py-0.5 rounded border border-border/50">

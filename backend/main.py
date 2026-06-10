@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Depends, UploadFile, File, Form, Query
+from fastapi import FastAPI, Depends, UploadFile, File, Form, Query, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
@@ -20,8 +20,20 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+crop_model = None
+
 @app.on_event("startup")
 async def startup():
+    global crop_model
+    try:
+        import joblib
+        import os
+        model_path = os.path.join(os.path.dirname(__file__), "crop_model.pkl")
+        if os.path.exists(model_path):
+            crop_model = joblib.load(model_path)
+    except Exception as e:
+        print("Could not load crop model:", e)
+        
     async with engine.begin() as conn:
         # Create all tables; ideally use alembic for migrations
         await conn.run_sync(Base.metadata.create_all)
@@ -101,6 +113,7 @@ async def get_kpis(db: AsyncSession = Depends(get_db)):
 async def get_parcels(
     district: Optional[str] = None,
     mandal: Optional[str] = None,
+    village: Optional[str] = None,
     db: AsyncSession = Depends(get_db)
 ):
     stmt = select(models.Parcel)
@@ -108,6 +121,8 @@ async def get_parcels(
         stmt = stmt.where(models.Parcel.district == district)
     if mandal:
         stmt = stmt.where(models.Parcel.mandal == mandal)
+    if village:
+        stmt = stmt.where(models.Parcel.village == village)
         
     result = await db.execute(stmt)
     parcels = result.scalars().all()
@@ -353,6 +368,7 @@ async def get_map_metrics(
         func.avg(cast(func.json_extract_path_text(models.Parcel.analytics, 'Zinc'), Float)).label("Zinc"),
         func.avg(cast(func.json_extract_path_text(models.Parcel.analytics, 'Copper'), Float)).label("Copper"),
         func.avg(cast(func.json_extract_path_text(models.Parcel.analytics, 'Boron'), Float)).label("Boron"),
+        func.mode().within_group(func.json_extract_path_text(models.Parcel.analytics, 'Soil_Type')).label("Soil_Type"),
         func.count(models.Parcel.id).label("totalParcels")
     )
     
@@ -374,8 +390,9 @@ async def get_map_metrics(
         
         output[name] = {
             "Total Parcels": int(row.totalParcels) if getattr(row, 'totalParcels', None) is not None else 0,
-            "soilHealth": health,
+            "Soil_Type": getattr(row, 'Soil_Type', "Unknown") or "Unknown",
             "Soil Healthy %": health,
+            "soilHealth": health,
             "Soil Unhealthy %": max(0.0, 100.0 - health),
             "pH": float(row.pH) if row.pH is not None else 0.0,
             "EC": float(row.EC) if row.EC is not None else 0.0,
@@ -386,6 +403,21 @@ async def get_map_metrics(
             "Iron": float(row.Iron) if row.Iron is not None else 0.0,
             "Zinc": float(row.Zinc) if row.Zinc is not None else 0.0,
             "Copper": float(row.Copper) if row.Copper is not None else 0.0,
-            "Boron": float(row.Boron) if row.Boron is not None else 0.0,
+            "Boron": float(row.Boron) if row.Boron is not None else 0.0
         }
     return output
+
+@app.post("/recommend/crop", response_model=schemas.CropRecoResponse)
+async def recommend_crop(req: schemas.CropRecoRequest):
+    if crop_model is None:
+        raise HTTPException(status_code=503, detail="Crop recommendation model is not loaded")
+    import numpy as np
+    features = np.array([[req.n, req.p, req.k, req.temperature, req.humidity, req.ph, req.rainfall]])
+    pred = crop_model.predict(features)
+    proba = crop_model.predict_proba(features)
+    conf = np.max(proba) * 100
+    
+    return schemas.CropRecoResponse(
+        recommended_crop=pred[0],
+        confidence=round(conf, 2)
+    )

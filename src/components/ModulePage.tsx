@@ -17,7 +17,12 @@ export interface ModuleSpec {
   showMap?: boolean;
   mapMetric?: "soilHealth" | "deficiencyRate" | "adoption" | "groundwaterStress" | "yieldGain";
   mapComponent?: React.ReactNode;
+  mapAction?: React.ReactNode;
   chart?: "area" | "bars";
+  chartTitle?: string;
+  chartSubtitle?: string;
+  chartData?: any[];
+  yUnit?: string;
 }
 
 export function ModulePage({ spec }: { spec: ModuleSpec }) {
@@ -36,26 +41,36 @@ export function ModulePage({ spec }: { spec: ModuleSpec }) {
         ))}
       </div>
 
+      {spec.showMap && spec.mapComponent && (
+        <Panel title="Geospatial Layer" subtitle="District-level distribution" action={spec.mapAction || <BarChart3 className="h-4 w-4 text-muted-foreground" />}>
+          <ClientOnly fallback={<div style={{ height: 380, background: "#0a0a0a" }} className="w-full rounded-lg" />}>
+            {spec.mapComponent}
+          </ClientOnly>
+        </Panel>
+      )}
+
       <div className="grid gap-5 lg:grid-cols-3">
-        <Panel title="Intelligence Overview" subtitle="Trend analytics" className="lg:col-span-2">
+        <Panel title={spec.chartTitle || "Intelligence Overview"} subtitle={spec.chartSubtitle || `Trend analytics${spec.yUnit ? ` (${spec.yUnit})` : ''}`} className="lg:col-span-2">
           {spec.chart === "bars" ? (
             <Bars
-              data={fertilizerDemand}
+              data={spec.chartData || fertilizerDemand}
               xKey="month"
               keys={[
                 { key: "Urea", color: "var(--color-chart-1)" },
                 { key: "DAP", color: "var(--color-chart-2)" },
                 { key: "Micronutrients", color: "var(--color-chart-4)" },
               ]}
+              yUnit={spec.yUnit}
             />
           ) : (
             <AreaTrend
-              data={deficiencyTrend}
+              data={spec.chartData || deficiencyTrend}
               keys={[
                 { key: "Nitrogen", color: "var(--color-chart-1)" },
                 { key: "Phosphorus", color: "var(--color-chart-2)" },
                 { key: "Zinc", color: "var(--color-chart-4)" },
               ]}
+              yUnit={spec.yUnit}
             />
           )}
         </Panel>
@@ -71,14 +86,6 @@ export function ModulePage({ spec }: { spec: ModuleSpec }) {
           </ul>
         </Panel>
       </div>
-
-      {spec.showMap && spec.mapComponent && (
-        <Panel title="Geospatial Layer" subtitle="District-level distribution" action={<BarChart3 className="h-4 w-4 text-muted-foreground" />}>
-          <ClientOnly fallback={<div style={{ height: 380, background: "#0a0a0a" }} className="w-full rounded-lg" />}>
-            {spec.mapComponent}
-          </ClientOnly>
-        </Panel>
-      )}
     </div>
   );
 }

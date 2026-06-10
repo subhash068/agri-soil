@@ -76,9 +76,9 @@ class ParcelOut(BaseModel):
     ndvi: float
     evi: float
     ndre: float
-    analytics: Analytics
-    outline: List[Tuple[float, float]]
-    geometry: Optional[Geometry] = None
+    analytics: Dict[str, Any]
+    outline: Optional[List[Tuple[float, float]]] = None
+    geometry: Optional[Any] = None
 
 class SupportCenter(BaseModel):
     id: str
@@ -196,3 +196,16 @@ class DiseaseDetectionResponse(BaseModel):
     mismatch_reason: Optional[str] = None
     crop_hint: Optional[str] = None
     fertilizer_recommendation: Optional[FertilizerRecoResponse] = None
+
+class CropRecoRequest(BaseModel):
+    n: float
+    p: float
+    k: float
+    temperature: float
+    humidity: float
+    ph: float
+    rainfall: float
+
+class CropRecoResponse(BaseModel):
+    recommended_crop: str
+    confidence: float
