@@ -1,10 +1,37 @@
 import React, { useState, useEffect, useRef } from "react";
 import { DISTRICTS } from "@/lib/mock-data";
+import { useQuery } from "@tanstack/react-query";
 import { useAppStore } from "@/lib/store";
-import { MapContainer, TileLayer, GeoJSON, CircleMarker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, GeoJSON, CircleMarker, Popup, Polygon } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { X } from "lucide-react";
+
+// Helper to mathematically generate a scale-accurate polygon bounding a point based on acreage
+const generatePlotPolygon = (lat: number, lng: number, acreage: number, seedStr: string): [number, number][] => {
+  // 1 acre = ~4046.86 square meters
+  const areaSqMeters = acreage * 4046.86;
+  const sideMeters = Math.sqrt(areaSqMeters);
+  
+  // 1 degree lat is roughly 111,320 meters
+  const latOffset = (sideMeters / 2) / 111320;
+  // 1 degree lng scales with cos(lat)
+  const lngOffset = (sideMeters / 2) / (111320 * Math.cos(lat * (Math.PI / 180)));
+  
+  // Create a deterministic aspect ratio to make plots look like real varying fields
+  const seed = seedStr.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  const aspect = 0.5 + ((seed % 100) / 100); // Between 0.5 and 1.5
+  
+  const hLat = latOffset * aspect;
+  const hLng = lngOffset / aspect;
+  
+  return [
+    [lat - hLat, lng - hLng],
+    [lat + hLat, lng - hLng],
+    [lat + hLat, lng + hLng],
+    [lat - hLat, lng + hLng]
+  ];
+};
 
 // Interactive Leaflet map of Andhra Pradesh coastal districts using actual boundaries from PostgreSQL.
 export function ParcelMap({
@@ -26,6 +53,53 @@ export function ParcelMap({
   const [villageGeoData, setVillageGeoData] = useState<any>(null);
   const [metricsData, setMetricsData] = useState<Record<string, any>>({});
   const [parcelsData, setParcelsData] = useState<any[]>([]);
+  const [selectedParcel, setSelectedParcel] = useState<any>(null);
+
+  // Fetch AI Crop Prediction based on selected parcel's soil chemistry
+  const { data: cropPrediction, isLoading: isPredicting } = useQuery({
+    queryKey: ["parcel-crop-prediction", selectedParcel?.id],
+    queryFn: () => {
+      if (!selectedParcel || !selectedParcel.analytics) return null;
+      
+      const payload = {
+        n: selectedParcel.analytics.Nitrogen,
+        p: selectedParcel.analytics.Phosphorus,
+        k: selectedParcel.analytics.Potassium,
+        ph: selectedParcel.analytics.pH,
+        temperature: 28, // generic default for Guntur
+        humidity: 80,
+        rainfall: 105
+      };
+      
+      return fetch("http://localhost:8000/recommend/crop", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      }).then(r => r.json());
+    },
+    enabled: !!selectedParcel,
+  });
+
+  // Fetch AI Fertilizer Recommendation based on current crop and soil health
+  const { data: fertPrediction, isLoading: isFertPredicting } = useQuery({
+    queryKey: ["parcel-fert-prediction", selectedParcel?.id],
+    queryFn: () => {
+      if (!selectedParcel || !selectedParcel.analytics) return null;
+      
+      const payload = {
+        crop: selectedParcel.crop,
+        soil_health: `N:${selectedParcel.analytics.Nitrogen}, P:${selectedParcel.analytics.Phosphorus}, K:${selectedParcel.analytics.Potassium}, pH:${selectedParcel.analytics.pH}`,
+        satellite_unified_health_index_pct: selectedParcel.health
+      };
+      
+      return fetch("http://localhost:8000/recommend/fertilizer", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      }).then(r => r.json());
+    },
+    enabled: !!selectedParcel,
+  });
   
   const geoJsonRef = useRef<L.GeoJSON>(null);
   const mandalGeoJsonRef = useRef<L.GeoJSON>(null);
@@ -425,30 +499,22 @@ export function ParcelMap({
           />
         )}
 
-        {/* Parcel Points */}
+        {/* Parcel Polygons */}
         {showParcels && parcelsData && parcelsData.map((parcel: any) => (
-          <CircleMarker
+          <Polygon
             key={parcel.id}
-            center={[parcel.lat, parcel.lng]}
-            radius={5}
+            positions={generatePlotPolygon(parcel.lat, parcel.lng, parcel.acreage, parcel.id)}
             pane="markerPane"
             pathOptions={{
-              color: "#ffffff",
-              weight: 1,
+              color: selectedParcel?.id === parcel.id ? "#FFD700" : "#ffffff",
+              weight: selectedParcel?.id === parcel.id ? 2 : 1,
               fillColor: colorFor(parcel.health),
-              fillOpacity: 0.8
+              fillOpacity: selectedParcel?.id === parcel.id ? 1 : 0.8
             }}
-          >
-            <Popup className="custom-popup">
-              <div className="flex flex-col gap-1.5 p-3 pr-8 text-xs">
-                <div className="font-bold text-sm border-b border-border/50 pb-2 mb-1">{parcel.id}</div>
-                <div><span className="text-muted-foreground font-medium">Farmer:</span> {parcel.farmer}</div>
-                <div><span className="text-muted-foreground font-medium">Crop:</span> {parcel.crop}</div>
-                <div><span className="text-muted-foreground font-medium">Area:</span> {parcel.acreage} Acres</div>
-                <div><span className="text-muted-foreground font-medium">Health:</span> {parcel.health}% ({parcel.risk})</div>
-              </div>
-            </Popup>
-          </CircleMarker>
+            eventHandlers={{
+              click: () => setSelectedParcel(parcel)
+            }}
+          />
         ))}
       </MapContainer>
       
@@ -498,6 +564,180 @@ export function ParcelMap({
                 </span>
               </div>
             ))}
+          </div>
+        </div>
+      )}
+      {/* Parcel Details Sidebar */}
+      {selectedParcel && (
+        <div className="absolute right-0 top-0 z-[510] h-full w-72 bg-card/95 backdrop-blur-md border-l border-border shadow-xl flex flex-col animate-in slide-in-from-right-8 duration-300">
+          <div className="flex items-center justify-between p-4 border-b border-border bg-muted/30">
+            <div>
+              <h3 className="font-bold text-lg text-foreground">{selectedParcel.id}</h3>
+              <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold">Parcel Profile</p>
+            </div>
+            <button 
+              onClick={() => setSelectedParcel(null)}
+              className="p-1.5 hover:bg-destructive/10 hover:text-destructive rounded-md transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+          
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-thin">
+            <div className="space-y-2">
+              <div className="flex justify-between items-center p-2 rounded-md bg-muted/40">
+                <span className="text-sm text-muted-foreground font-medium">Farmer</span>
+                <span className="text-sm font-semibold">{selectedParcel.farmer}</span>
+              </div>
+              <div className="flex justify-between items-center p-2 rounded-md bg-muted/40">
+                <span className="text-sm text-muted-foreground font-medium">Village</span>
+                <span className="text-sm font-semibold">{selectedParcel.village}</span>
+              </div>
+              <div className="flex justify-between items-center p-2 rounded-md bg-muted/40">
+                <span className="text-sm text-muted-foreground font-medium">Crop</span>
+                <span className="text-sm font-semibold">{selectedParcel.crop}</span>
+              </div>
+              <div className="flex justify-between items-center p-2 rounded-md bg-muted/40">
+                <span className="text-sm text-muted-foreground font-medium">Area</span>
+                <span className="text-sm font-semibold">{selectedParcel.acreage} Acres</span>
+              </div>
+              {selectedParcel.analytics?.Irrigation_Type && (
+                <div className="flex justify-between items-center p-2 rounded-md bg-muted/40">
+                  <span className="text-sm text-muted-foreground font-medium">Irrigation</span>
+                  <span className="text-sm font-semibold">{selectedParcel.analytics.Irrigation_Type}</span>
+                </div>
+              )}
+              <div className="flex justify-between items-center p-2 rounded-md bg-muted/40">
+                <span className="text-sm text-muted-foreground font-medium">Health Status</span>
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-sm" style={{ backgroundColor: colorFor(selectedParcel.health) }} />
+                  <span className="text-sm font-semibold">{selectedParcel.health}% ({selectedParcel.risk})</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="pt-4 border-t border-border/50">
+              <h4 className="text-sm font-bold text-foreground mb-3">Vegetation Indices</h4>
+              <div className="grid grid-cols-3 gap-2">
+                <div className="flex flex-col items-center p-2 rounded bg-muted/30 border border-border/50">
+                  <span className="text-xs text-muted-foreground font-medium mb-1">NDVI</span>
+                  <span className="font-semibold text-sm">{selectedParcel.ndvi?.toFixed(2) || 'N/A'}</span>
+                </div>
+                <div className="flex flex-col items-center p-2 rounded bg-muted/30 border border-border/50">
+                  <span className="text-xs text-muted-foreground font-medium mb-1">EVI</span>
+                  <span className="font-semibold text-sm">{selectedParcel.evi?.toFixed(2) || 'N/A'}</span>
+                </div>
+                <div className="flex flex-col items-center p-2 rounded bg-muted/30 border border-border/50">
+                  <span className="text-xs text-muted-foreground font-medium mb-1">NDRE</span>
+                  <span className="font-semibold text-sm">{selectedParcel.ndre?.toFixed(2) || 'N/A'}</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="pt-4 border-t border-border/50">
+              <h4 className="text-sm font-bold text-foreground mb-3">Soil Chemistry</h4>
+              {selectedParcel.analytics ? (
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="flex flex-col p-2.5 rounded bg-muted/20 border border-border/50">
+                    <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider mb-1">Nitrogen (N)</span>
+                    <span className="font-semibold text-sm">{selectedParcel.analytics.Nitrogen} <span className="text-xs font-normal text-muted-foreground">kg/ha</span></span>
+                  </div>
+                  <div className="flex flex-col p-2.5 rounded bg-muted/20 border border-border/50">
+                    <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider mb-1">Phosphorus (P)</span>
+                    <span className="font-semibold text-sm">{selectedParcel.analytics.Phosphorus} <span className="text-xs font-normal text-muted-foreground">kg/ha</span></span>
+                  </div>
+                  <div className="flex flex-col p-2.5 rounded bg-muted/20 border border-border/50">
+                    <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider mb-1">Potassium (K)</span>
+                    <span className="font-semibold text-sm">{selectedParcel.analytics.Potassium} <span className="text-xs font-normal text-muted-foreground">kg/ha</span></span>
+                  </div>
+                  <div className="flex flex-col p-2.5 rounded bg-muted/20 border border-border/50">
+                    <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider mb-1">pH Level</span>
+                    <span className="font-semibold text-sm">{selectedParcel.analytics.pH}</span>
+                  </div>
+                  <div className="flex flex-col p-2.5 rounded bg-muted/20 border border-border/50">
+                    <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider mb-1">Org. Carbon</span>
+                    <span className="font-semibold text-sm">{selectedParcel.analytics.Organic_Carbon}%</span>
+                  </div>
+                  <div className="flex flex-col p-2.5 rounded bg-muted/20 border border-border/50">
+                    <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider mb-1">Soil Type</span>
+                    <span className="font-semibold text-sm">{selectedParcel.analytics.Soil_Type}</span>
+                  </div>
+                </div>
+              ) : (
+                <p className="text-xs text-muted-foreground">Detailed soil chemistry not available.</p>
+              )}
+            </div>
+            
+            <div className="pt-4 border-t border-border/50">
+              <h4 className="text-sm font-bold text-foreground mb-3">AI Crop Prediction</h4>
+              {isPredicting ? (
+                <div className="p-4 rounded-md border border-border/50 bg-muted/20 flex items-center justify-center">
+                  <div className="w-5 h-5 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+                  <span className="ml-3 text-xs font-medium text-muted-foreground">Analyzing soil chemistry...</span>
+                </div>
+              ) : cropPrediction ? (
+                (() => {
+                  const conf = cropPrediction.confidence;
+                  const tone = conf >= 75 ? "success" : conf >= 40 ? "warning" : "destructive";
+                  
+                  const themeClasses = {
+                    success: { bg: "bg-success/10", border: "border-success/30", text: "text-success-foreground", badge: "bg-success/20" },
+                    warning: { bg: "bg-warning/10", border: "border-warning/30", text: "text-warning-foreground", badge: "bg-warning/20" },
+                    destructive: { bg: "bg-destructive/10", border: "border-destructive/30", text: "text-destructive-foreground", badge: "bg-destructive/20" }
+                  }[tone];
+
+                  return (
+                    <div className={`p-3 rounded-md border flex flex-col gap-2 ${themeClasses.border} ${themeClasses.bg}`}>
+                      <div className="flex items-center justify-between">
+                        <span className={`text-xs font-semibold uppercase tracking-wider ${themeClasses.text}`}>
+                          {conf < 40 ? "Low Confidence" : "Recommended Crop"}
+                        </span>
+                        <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${themeClasses.text} ${themeClasses.badge}`}>
+                          {conf}% Match
+                        </span>
+                      </div>
+                      <span className="text-lg font-black text-foreground capitalize">{cropPrediction.recommended_crop}</span>
+                      <p className="text-[10px] text-muted-foreground mt-1 leading-relaxed">
+                        Prediction based on field's exact Nitrogen ({selectedParcel.analytics.Nitrogen}), Phosphorus ({selectedParcel.analytics.Phosphorus}), Potassium ({selectedParcel.analytics.Potassium}), and pH ({selectedParcel.analytics.pH}) levels.
+                      </p>
+                    </div>
+                  );
+                })()
+              ) : (
+                <p className="text-xs text-muted-foreground">No prediction data available.</p>
+              )}
+            </div>
+
+            <div className="pt-4 border-t border-border/50 pb-6">
+              <h4 className="text-sm font-bold text-foreground mb-3">AI Fertilizer Prescription</h4>
+              {isFertPredicting ? (
+                <div className="p-4 rounded-md border border-border/50 bg-muted/20 flex items-center justify-center">
+                  <div className="w-5 h-5 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+                  <span className="ml-3 text-xs font-medium text-muted-foreground">Generating prescription...</span>
+                </div>
+              ) : fertPrediction ? (
+                <div className="p-3 rounded-md border border-primary/30 bg-primary/5 flex flex-col gap-2">
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-xs font-semibold text-primary uppercase tracking-wider">Current Crop: {selectedParcel.crop}</span>
+                    <span className="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full">{fertPrediction.confidence}% Conf.</span>
+                  </div>
+                  <div className="flex flex-col gap-1.5">
+                    <div className="flex justify-between items-baseline">
+                      <span className="text-sm font-bold text-foreground">Apply {fertPrediction.fertilizer_name}</span>
+                      <span className="text-xs font-semibold text-foreground bg-muted px-1.5 py-0.5 rounded">{fertPrediction.dosage_kg_per_acre} kg/acre</span>
+                    </div>
+                    <span className="text-xs text-muted-foreground mt-0.5">
+                      <strong>Method:</strong> {fertPrediction.application_method} during {fertPrediction.timing} stage.
+                    </span>
+                    <div className="mt-2 p-2 bg-background/50 border border-border/50 rounded text-[10px] leading-relaxed text-muted-foreground italic">
+                      "Because {fertPrediction.reason.toLowerCase()}."
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <p className="text-xs text-muted-foreground">No prescription available.</p>
+              )}
+            </div>
           </div>
         </div>
       )}

@@ -164,21 +164,68 @@ async def get_field_advisory(fieldId: str):
 
 @app.post("/recommend/fertilizer", response_model=schemas.FertilizerRecoResponse)
 async def recommend_fertilizer(req: schemas.FertilizerRecoRequest):
+    import re
+    n = p = k = ph = 0.0
+    if req.soil_health:
+        n_match = re.search(r'N:([\d.]+)', req.soil_health)
+        p_match = re.search(r'P:([\d.]+)', req.soil_health)
+        k_match = re.search(r'K:([\d.]+)', req.soil_health)
+        ph_match = re.search(r'pH:([\d.]+)', req.soil_health)
+        
+        n = float(n_match.group(1)) if n_match else 0
+        p = float(p_match.group(1)) if p_match else 0
+        k = float(k_match.group(1)) if k_match else 0
+        ph = float(ph_match.group(1)) if ph_match else 0
+
+    fertilizer_name = "NPK 19:19:19"
+    reason = "Maintenance application for standard crop growth."
+    dosage = 25
+    method = "Broadcast"
+
+    if n > 0 and n < 150:
+        fertilizer_name = "Urea"
+        reason = f"Nitrogen level ({n} kg/ha) is deficient for optimal growth."
+        dosage = 50
+    elif p > 0 and p < 30:
+        fertilizer_name = "DAP"
+        reason = f"Phosphorus level ({p} kg/ha) is deficient."
+        dosage = 35
+        method = "Basal application"
+    elif k > 0 and k < 150:
+        fertilizer_name = "MOP"
+        reason = f"Potassium level ({k} kg/ha) is deficient."
+        dosage = 40
+    elif ph > 8.0:
+        fertilizer_name = "Gypsum"
+        reason = f"High soil alkalinity detected (pH {ph}). Needs correction."
+        dosage = 100
+        method = "Soil incorporation"
+    elif ph > 0 and ph < 5.5:
+        fertilizer_name = "Agri Lime"
+        reason = f"High soil acidity detected (pH {ph}). Needs correction."
+        dosage = 150
+        method = "Soil incorporation"
+
+    conf = 90
+    if req.satellite_unified_health_index_pct:
+        conf = int(req.satellite_unified_health_index_pct) + 10
+        if conf > 98: conf = 98
+
     return schemas.FertilizerRecoResponse(
-        crop=req.crop or "Paddy",
-        fertilizer_name="Urea",
-        dosage_kg_per_acre=50,
-        dosage_kg_total=100,
+        crop=req.crop or "Unknown",
+        fertilizer_name=fertilizer_name,
+        dosage_kg_per_acre=dosage,
+        dosage_kg_total=dosage * 2,
         timing="Vegetative",
-        application_method="Broadcast",
-        cost_rs_per_acre=1200,
+        application_method=method,
+        cost_rs_per_acre=dosage * 20,
         expected_yield_gain_percent=15,
-        confidence=90,
-        reason="Nitrogen deficiency detected",
+        confidence=conf,
+        reason=reason,
         nutrient_deficiencies=[],
-        nitrogen_deficiency_probability=80,
-        phosphate_deficiency_probability=20,
-        potassium_deficiency_probability=10
+        nitrogen_deficiency_probability=80 if n < 150 else 10,
+        phosphate_deficiency_probability=80 if p < 30 else 10,
+        potassium_deficiency_probability=80 if k < 150 else 10
     )
 
 @app.post("/fusion/fuse", response_model=schemas.FusionResponseOut)

@@ -142,7 +142,7 @@ function ParcelIntelligence() {
       ],
       insights: dynamicInsights,
       showMap: true, mapMetric: "soilHealth",
-      mapComponent: <ParcelMap metricKey="soilHealth" showParcels={true} height={380} />,
+      mapComponent: <ParcelMap metricKey="soilHealth" showParcels={true} height={600} />,
       mapAction: <GeographicFilter />,
       chartTitle: `Intelligence Overview - ${targetName}`,
       chartSubtitle: `Trend analytics in ${targetName} (kg/ha)`,
