@@ -28,6 +28,10 @@ interface AppState {
   lang: Lang;
   theme: "light" | "dark";
   searchedParcel: any | null;
+  soilType: string;
+  cropType: string;
+  season: string;
+  irrigationSource: string;
   setRole: (r: Role) => void;
   setDistrict: (d: string) => void;
   setMandal: (m: string) => void;
@@ -35,6 +39,10 @@ interface AppState {
   setLang: (l: Lang) => void;
   toggleTheme: () => void;
   setSearchedParcel: (parcel: any | null) => void;
+  setSoilType: (t: string) => void;
+  setCropType: (c: string) => void;
+  setSeason: (s: string) => void;
+  setIrrigationSource: (i: string) => void;
 }
 
 export const useAppStore = create<AppState>()(
@@ -44,6 +52,10 @@ export const useAppStore = create<AppState>()(
       district: "NTR",
       mandal: "All Mandals",
       village: "All Villages",
+      soilType: "All Soil Types",
+      cropType: "All Crops",
+      season: "All Seasons",
+      irrigationSource: "All Sources",
       lang: "en",
       theme: "light",
       searchedParcel: null,
@@ -52,6 +64,10 @@ export const useAppStore = create<AppState>()(
       setMandal: (mandal) => set({ mandal, village: "All Villages" }),
       setVillage: (village) => set({ village }),
       setSearchedParcel: (searchedParcel) => set({ searchedParcel }),
+      setSoilType: (soilType) => set({ soilType }),
+      setCropType: (cropType) => set({ cropType }),
+      setSeason: (season) => set({ season }),
+      setIrrigationSource: (irrigationSource) => set({ irrigationSource }),
       setLang: (lang) => set({ lang }),
       toggleTheme: () =>
         set((s) => {

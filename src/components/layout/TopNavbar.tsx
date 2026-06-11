@@ -19,9 +19,10 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Link } from "@tanstack/react-router";
+import { Link, useRouter } from "@tanstack/react-router";
 
 export function TopNavbar({ onMenu }: { onMenu: () => void }) {
+  const router = useRouter();
   const { district, mandal, lang, theme, role, setDistrict, setMandal, setLang, toggleTheme, setRole } =
     useAppStore();
   const mandals = ["All Mandals", ...(MANDALS[district] ?? [])];
@@ -79,7 +80,33 @@ export function TopNavbar({ onMenu }: { onMenu: () => void }) {
           <DropdownMenuContent align="end" className="w-52">
             <DropdownMenuLabel>Switch role (demo)</DropdownMenuLabel>
             {ROLES.map((r) => (
-              <DropdownMenuItem key={r} onClick={() => setRole(r as Role)}>
+              <DropdownMenuItem
+                key={r}
+                onClick={() => {
+                  setRole(r as Role);
+                  
+                  // Map role to default dashboard
+                  let targetPath = "/dashboard";
+                  switch(r) {
+                    case "Farmer":
+                      targetPath = "/farmer-advisory";
+                      break;
+                    case "RSK Officer":
+                    case "Mandal Officer":
+                      targetPath = "/rsk-dashboard";
+                      break;
+                    case "District Officer":
+                      targetPath = "/district-intelligence";
+                      break;
+                    case "State Admin":
+                    case "APRTGS Monitoring":
+                      targetPath = "/dashboard";
+                      break;
+                  }
+                  
+                  router.navigate({ to: targetPath });
+                }}
+              >
                 {r}
               </DropdownMenuItem>
             ))}

@@ -35,7 +35,7 @@ function SoilTypePage() {
       if (district && district !== "All Districts") params.append("district", district);
       if (mandal && mandal !== "All Mandals") params.append("mandal", mandal);
       if (village && village !== "All Villages") params.append("village", village);
-      return fetch(`http://localhost:8000/soil-types?${params.toString()}`).then(r => r.json());
+      return fetch(`/api/soil-types?${params.toString()}`).then(r => r.json());
     },
   });
 
@@ -46,7 +46,7 @@ function SoilTypePage() {
       if (district && district !== "All Districts") params.append("district", district);
       if (mandal && mandal !== "All Mandals") params.append("mandal", mandal);
       if (village && village !== "All Villages") params.append("village", village);
-      return fetch(`http://localhost:8000/soil-types/analytics?${params.toString()}`).then(r => r.json());
+      return fetch(`/api/soil-types/analytics?${params.toString()}`).then(r => r.json());
     },
   });
 

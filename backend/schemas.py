@@ -13,10 +13,13 @@ class AlertCreateInput(BaseModel):
 class AlertOut(AlertCreateInput):
     id: str
 
-class Scheme(BaseModel):
+class SchemeCreateInput(BaseModel):
     title: str
     desc: str
     tag: str
+
+class SchemeOut(SchemeCreateInput):
+    id: str
 
 class FarmerRegisterInput(BaseModel):
     farmer_name: str
@@ -43,6 +46,21 @@ class DashboardKpiOut(BaseModel):
     satellite_coverage_percent: float
     ai_confidence_score_percent: float
     updated_at: str
+
+class LandingStatsOut(BaseModel):
+    farmers_covered: int
+    parcels_monitored: int
+    avg_soil_health: float
+    deficient_parcels: int
+    recommendations: int
+    farmer_savings_cr: float
+    yield_improvement_percent: float
+
+class HotspotOut(BaseModel):
+    district: str
+    nutrient: str
+    severity: str
+    parcels: int
 
 class Analytics(BaseModel):
     ndvi: float
@@ -209,6 +227,19 @@ class CropRecoRequest(BaseModel):
 class CropRecoResponse(BaseModel):
     recommended_crop: str
     confidence: float
+
+class CropSuitabilityOut(BaseModel):
+    name: str
+    suitability: float
+    season: str
+    n: float
+    p: float
+    k: float
+    stages: List[str]
+    water_requirement_mm: int
+    expected_yield_tons: float
+    ai_reasoning: str
+    implements: List[str]
 
 class SoilTypeOut(BaseModel):
     id: str

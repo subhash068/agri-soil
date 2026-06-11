@@ -1,0 +1,11 @@
+Rank,Nutrient,Deficiency_Level,Status
+1,Nitrogen,82.27%,Low
+2,Organic Carbon,49.62%,Low
+3,Zinc,48.43%,Deficient
+4,Boron,43.61%,Deficient
+5,Iron,42.36%,Deficient
+6,Sulfur,40.91%,Deficient
+7,Phosphorus,17.72%,Low
+8,Manganese,7.86%,Deficient
+9,Copper,3.54%,Deficient
+10,Potassium,2.19%,Low

@@ -39,12 +39,12 @@ export function APMap({
   useEffect(() => {
     setMounted(true);
     // Fetch District boundaries from PostgreSQL Backend
-    fetch("http://localhost:8000/boundaries/districts")
+    fetch("/api/boundaries/districts")
       .then((res) => res.json())
       .then((data) => setDistrictGeoData(data));
       
     // Fetch real analytics data
-    fetch("http://localhost:8000/map/metrics")
+    fetch("/api/map/metrics")
       .then((res) => res.json())
       .then((data) => setMetricsData(data));
   }, []);
@@ -54,7 +54,7 @@ export function APMap({
     if (selected && selected !== "All Districts") {
       // For the API we need to match the name. 
       const apiName = selected === "Anantapur" ? "Ananthapuram" : selected;
-      fetch(`http://localhost:8000/boundaries/mandals?district=${encodeURIComponent(apiName)}`)
+      fetch(`/api/boundaries/mandals?district=${encodeURIComponent(apiName)}`)
         .then((res) => res.json())
         .then((data) => setMandalGeoData(data));
     } else {
@@ -66,7 +66,7 @@ export function APMap({
   useEffect(() => {
     if (selected && selected !== "All Districts" && selectedMandal && selectedMandal !== "All Mandals") {
       const apiDistrict = selected === "Anantapur" ? "Ananthapuram" : selected;
-      fetch(`http://localhost:8000/boundaries/villages?district=${encodeURIComponent(apiDistrict)}&mandal=${encodeURIComponent(selectedMandal)}`)
+      fetch(`/api/boundaries/villages?district=${encodeURIComponent(apiDistrict)}&mandal=${encodeURIComponent(selectedMandal)}`)
         .then((res) => res.json())
         .then((data) => setVillageGeoData(data));
     } else {
@@ -78,7 +78,7 @@ export function APMap({
   useEffect(() => {
     if (showParcels && selected && selected !== "All Districts") {
       const apiDistrict = selected === "Anantapur" ? "Ananthapuram" : selected;
-      let url = `http://localhost:8000/parcels?district=${encodeURIComponent(apiDistrict)}`;
+      let url = `/api/parcels?district=${encodeURIComponent(apiDistrict)}`;
       if (selectedMandal && selectedMandal !== "All Mandals") {
         url += `&mandal=${encodeURIComponent(selectedMandal)}`;
       }

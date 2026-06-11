@@ -39,12 +39,12 @@ export function CropMap({
   useEffect(() => {
     setMounted(true);
     // Fetch District boundaries from PostgreSQL Backend
-    fetch("http://localhost:8000/boundaries/districts")
+    fetch("/api/boundaries/districts")
       .then((res) => res.json())
       .then((data) => setDistrictGeoData(data));
       
     // Fetch real analytics data
-    fetch("http://localhost:8000/map/metrics")
+    fetch("/api/map/metrics")
       .then((res) => res.json())
       .then((data) => setMetricsData(data));
   }, []);
@@ -54,7 +54,7 @@ export function CropMap({
     if (selected && selected !== "All Districts") {
       // For the API we need to match the name. 
       const apiName = selected === "Anantapur" ? "Ananthapuram" : selected;
-      fetch(`http://localhost:8000/boundaries/mandals?district=${encodeURIComponent(apiName)}`)
+      fetch(`/api/boundaries/mandals?district=${encodeURIComponent(apiName)}`)
         .then((res) => res.json())
         .then((data) => setMandalGeoData(data));
     } else {
@@ -66,7 +66,7 @@ export function CropMap({
   useEffect(() => {
     if (selected && selected !== "All Districts" && selectedMandal && selectedMandal !== "All Mandals") {
       const apiDistrict = selected === "Anantapur" ? "Ananthapuram" : selected;
-      fetch(`http://localhost:8000/boundaries/villages?district=${encodeURIComponent(apiDistrict)}&mandal=${encodeURIComponent(selectedMandal)}`)
+      fetch(`/api/boundaries/villages?district=${encodeURIComponent(apiDistrict)}&mandal=${encodeURIComponent(selectedMandal)}`)
         .then((res) => res.json())
         .then((data) => setVillageGeoData(data));
     } else {
@@ -78,7 +78,7 @@ export function CropMap({
   useEffect(() => {
     if (showParcels && selected && selected !== "All Districts") {
       const apiDistrict = selected === "Anantapur" ? "Ananthapuram" : selected;
-      let url = `http://localhost:8000/parcels?district=${encodeURIComponent(apiDistrict)}`;
+      let url = `/api/parcels?district=${encodeURIComponent(apiDistrict)}`;
       if (selectedMandal && selectedMandal !== "All Mandals") {
         url += `&mandal=${encodeURIComponent(selectedMandal)}`;
       }
@@ -380,36 +380,6 @@ export function CropMap({
         </span>
       </div>
 
-      {/* District Detail Sidebar Popup */}
-      {selected && metricsData[selected] && (
-        <div className="absolute right-0 top-0 z-[500] h-full w-64 bg-card/95 backdrop-blur-md border-l border-border shadow-xl flex flex-col animate-in slide-in-from-right-8 duration-300">
-          <div className="flex items-center justify-between p-3 border-b border-border bg-muted/30">
-            <div>
-              <h3 className="font-bold text-sm text-foreground">{selected}</h3>
-              <p className="text-[10px] text-muted-foreground uppercase tracking-wider font-semibold">District Profile</p>
-            </div>
-            <button 
-              onClick={() => {
-                useAppStore.getState().setDistrict("");
-                if (mapRef.current) mapRef.current.setView([15.9129, 79.74], 6.5);
-              }}
-              className="p-1.5 hover:bg-destructive/10 hover:text-destructive rounded-md transition-colors"
-            >
-              <X className="w-4 h-4" />
-            </button>
-          </div>
-          <div className="flex-1 overflow-y-auto p-3 space-y-2.5 text-xs custom-scrollbar">
-            {Object.entries(metricsData[selected]).filter(([key]) => !key.endsWith('_stats')).map(([key, val]) => (
-              <div key={key} className="flex justify-between items-center border-b border-border/40 pb-2">
-                <span className="text-muted-foreground font-medium">{key}</span>
-                <span className="font-bold text-foreground bg-background px-1.5 py-0.5 rounded border border-border/50">
-                  {typeof val === 'number' && !Number.isInteger(val) ? val.toFixed(2) : val as any}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
     </div>
   );
 }

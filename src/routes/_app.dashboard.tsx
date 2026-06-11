@@ -6,7 +6,9 @@ import { Panel } from "@/components/ui-kit/Panel";
 import React, { Suspense } from "react";
 const APMap = React.lazy(() => import("@/components/maps/SoilHealthMap").then(m => ({ default: m.SoilHealthMap })));
 import { AreaTrend, Bars, MultiLine } from "@/components/charts/Charts";
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip } from "recharts";
 import rawCsvData from "@/data/District_and_State_Soil_Health_Summary_with_State.csv?raw";
+import rawNutrientData from "@/data/nutrient_deficiency_ranking.csv?raw";
 import {
   STATE_KPIS,
   deficiencyTrend,
@@ -75,8 +77,21 @@ function Dashboard() {
 
   const { data: kpiData } = useQuery({
     queryKey: ["dashboard-kpis"],
-    queryFn: () => fetch("http://localhost:8000/dashboard/kpis").then(r => r.json()),
+    queryFn: () => fetch("/api/dashboard/kpis").then(r => r.json()),
   });
+
+  const nutrientRankings = React.useMemo(() => [
+    { name: "N", fullName: "Nitrogen", deficiency: 82.27, status: "Low" },
+    { name: "OC", fullName: "Organic Carbon", deficiency: 49.62, status: "Low" },
+    { name: "Zn", fullName: "Zinc", deficiency: 48.43, status: "Deficient" },
+    { name: "B", fullName: "Boron", deficiency: 43.61, status: "Deficient" },
+    { name: "Fe", fullName: "Iron", deficiency: 42.36, status: "Deficient" },
+    { name: "S", fullName: "Sulfur", deficiency: 40.91, status: "Deficient" },
+    { name: "P", fullName: "Phosphorus", deficiency: 17.72, status: "Low" },
+    { name: "Mn", fullName: "Manganese", deficiency: 7.86, status: "Deficient" },
+    { name: "Cu", fullName: "Copper", deficiency: 3.54, status: "Deficient" },
+    { name: "K", fullName: "Potassium", deficiency: 2.19, status: "Low" }
+  ], []);
 
   // Use backend data if available, fallback to mock data
   const parcelsCount = kpiData?.parcels_monitored || STATE_KPIS.parcels;
@@ -148,18 +163,35 @@ function Dashboard() {
             ]}
           />
         </Panel>
-        <Panel title="Fertilizer Demand Forecast" subtitle="'000 MT · projected">
-          <Bars
-            data={fertilizerDemand}
-            xKey="month"
-            stacked
-            keys={[
-              { key: "Urea", color: "var(--color-chart-1)" },
-              { key: "DAP", color: "var(--color-chart-2)" },
-              { key: "MOP", color: "var(--color-chart-3)" },
-              { key: "Micronutrients", color: "var(--color-chart-4)" },
-            ]}
-          />
+        <Panel title="Statewide Critical Deficiencies" subtitle="% deficient · from official soil tests">
+          <div className="h-[260px] w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={nutrientRankings} margin={{ top: 10, right: 10, left: -20, bottom: 20 }}>
+                <XAxis dataKey="name" tick={{ fill: "#9ca3af", fontSize: 11 }} axisLine={false} tickLine={false} />
+                <YAxis tick={{ fill: "#9ca3af", fontSize: 11 }} axisLine={false} tickLine={false} />
+                <Tooltip 
+                  cursor={{ fill: "rgba(255,255,255,0.05)" }}
+                  content={({ active, payload }) => {
+                    if (active && payload && payload.length) {
+                      const data = payload[0].payload;
+                      return (
+                        <div className="rounded-md border border-border bg-card p-3 shadow-md">
+                          <p className="mb-1 text-sm font-semibold">{data.fullName} <span className="text-xs text-muted-foreground">({data.name})</span></p>
+                          <div className="flex items-center gap-2 text-xs">
+                            <span className="font-medium text-destructive">{data.deficiency}% Deficient</span>
+                            <span className="text-muted-foreground">•</span>
+                            <span className={data.status === "Low" ? "text-warning" : "text-destructive"}>{data.status}</span>
+                          </div>
+                        </div>
+                      );
+                    }
+                    return null;
+                  }}
+                />
+                <Bar dataKey="deficiency" fill="var(--color-destructive)" radius={[4, 4, 0, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </Panel>
       </div>
 

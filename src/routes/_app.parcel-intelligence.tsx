@@ -18,7 +18,7 @@ function ParcelIntelligence() {
 
   const { data: kpiData } = useQuery({
     queryKey: ["dashboard-kpis"],
-    queryFn: () => fetch("http://localhost:8000/dashboard/kpis").then(r => r.json()),
+    queryFn: () => fetch("/api/dashboard/kpis").then(r => r.json()),
   });
 
   let level = "district";
@@ -35,7 +35,7 @@ function ParcelIntelligence() {
   const { data: metrics } = useQuery({
     queryKey: ["map-metrics", level, district, mandal, village],
     queryFn: () => {
-      let url = `http://localhost:8000/map/metrics?level=${level}`;
+      let url = `/api/map/metrics?level=${level}`;
       if (district && district !== "All Districts") url += `&district=${district}`;
       if (mandal && mandal !== "All Mandals") url += `&mandal=${mandal}`;
       return fetch(url).then(r => r.json());
@@ -65,7 +65,7 @@ function ParcelIntelligence() {
 
   const { data: cropReco } = useQuery({
     queryKey: ["crop-recommendation", distMetrics.Nitrogen, distMetrics.Phosphorus, distMetrics.Potassium, distMetrics.pH, profile.temp, profile.hum, profile.rain],
-    queryFn: () => fetch("http://localhost:8000/recommend/crop", {
+    queryFn: () => fetch("/api/recommend/crop", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

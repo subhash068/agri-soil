@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
+import { useQuery } from "@tanstack/react-query";
 import heroImg from "@/assets/hero-agri.jpg";
 import {
   STATE_KPIS,
@@ -8,6 +9,7 @@ import {
   ADVISORIES,
   districtRanking,
   SEVERITY_COLOR,
+  Severity,
 } from "@/lib/mock-data";
 import {
   Sprout,
@@ -44,14 +46,39 @@ export const Route = createFileRoute("/")({
 const fmt = (n: number) => n.toLocaleString("en-IN");
 
 function Home() {
+  const { data: stats } = useQuery({
+    queryKey: ["landing-stats"],
+    queryFn: () => fetch("/api/landing/stats").then(res => res.json()),
+  });
+
+  const { data: dynamicSchemes } = useQuery({
+    queryKey: ["schemes"],
+    queryFn: () => fetch("/api/schemes").then(res => res.json()),
+  });
+
+  const { data: dynamicHotspots } = useQuery({
+    queryKey: ["hotspots"],
+    queryFn: () => fetch("/api/landing/hotspots").then(res => res.json()),
+  });
+
+  // Combine dynamic backend data with some mock data so it doesn't look empty
+  const formattedDynamicSchemes = (dynamicSchemes || []).map((s: any) => ({
+    ...s,
+    level: s.tag === "ALERT" ? "critical" : s.tag === "ADVISORY" ? "warning" : "info",
+    date: new Date().toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" }),
+  }));
+  const schemesList = formattedDynamicSchemes.length > 0 ? formattedDynamicSchemes : ANNOUNCEMENTS;
+
+  const hotspotsList = dynamicHotspots && dynamicHotspots.length > 0 ? dynamicHotspots : HOTSPOTS;
+
   const kpis = [
-    { label: "Farmers Covered", value: fmt(STATE_KPIS.farmers), icon: Users },
-    { label: "Parcels Monitored", value: fmt(STATE_KPIS.parcels), icon: MapPinned },
-    { label: "Avg. Soil Health", value: `${STATE_KPIS.soilHealth}/100`, icon: HeartPulse },
-    { label: "Deficient Parcels", value: fmt(STATE_KPIS.deficientParcels), icon: AlertTriangle },
-    { label: "Recommendations", value: `${(STATE_KPIS.recommendations / 100000).toFixed(1)}L`, icon: Beaker },
-    { label: "Farmer Savings", value: `₹${STATE_KPIS.savings}Cr`, icon: IndianRupee },
-    { label: "Yield Improvement", value: `+${STATE_KPIS.yieldGain}%`, icon: TrendingUp },
+    { label: "Farmers Covered", value: fmt(stats?.farmers_covered || STATE_KPIS.farmers), icon: Users },
+    { label: "Parcels Monitored", value: fmt(stats?.parcels_monitored || STATE_KPIS.parcels), icon: MapPinned },
+    { label: "Avg. Soil Health", value: `${stats?.avg_soil_health || STATE_KPIS.soilHealth}/100`, icon: HeartPulse },
+    { label: "Deficient Parcels", value: fmt(stats?.deficient_parcels || STATE_KPIS.deficientParcels), icon: AlertTriangle },
+    { label: "Recommendations", value: stats?.recommendations ? `${(stats.recommendations / 100000).toFixed(1)}L` : `${(STATE_KPIS.recommendations / 100000).toFixed(1)}L`, icon: Beaker },
+    { label: "Farmer Savings", value: `₹${stats?.farmer_savings_cr || STATE_KPIS.savings}Cr`, icon: IndianRupee },
+    { label: "Yield Improvement", value: `+${stats?.yield_improvement_percent || STATE_KPIS.yieldGain}%`, icon: TrendingUp },
   ];
   const ranking = districtRanking();
 
@@ -115,7 +142,7 @@ function Home() {
       </section>
 
       {/* KPI strip */}
-      <section className="mx-auto -mt-10 max-w-7xl px-4">
+      <section className="relative z-10 mx-auto -mt-10 max-w-7xl px-4">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-7">
           {kpis.map((k, i) => (
             <motion.div
@@ -142,8 +169,8 @@ function Home() {
             <h2 className="text-sm font-semibold">Government Announcements & Advisories</h2>
           </div>
           <ul className="divide-y divide-border">
-            {ANNOUNCEMENTS.map((a) => (
-              <li key={a.title} className="flex items-start gap-3 px-5 py-3">
+            {schemesList.map((a: any) => (
+              <li key={a.id || a.title} className="flex items-start gap-3 px-5 py-3">
                 <span
                   className="mt-0.5 rounded px-2 py-0.5 text-[10px] font-bold uppercase"
                   style={{
@@ -164,6 +191,11 @@ function Home() {
                 </div>
               </li>
             ))}
+            {schemesList.length === 0 && (
+              <li className="px-5 py-6 text-center text-sm text-muted-foreground">
+                No active announcements right now.
+              </li>
+            )}
           </ul>
         </div>
 
@@ -174,13 +206,13 @@ function Home() {
             <h2 className="text-sm font-semibold">Nutrient Hotspots</h2>
           </div>
           <ul className="divide-y divide-border">
-            {HOTSPOTS.map((h) => (
+            {hotspotsList.map((h: any) => (
               <li key={h.district + h.nutrient} className="flex items-center justify-between px-5 py-3">
                 <div>
                   <p className="text-sm font-medium">{h.district}</p>
                   <p className="text-xs text-muted-foreground">{h.nutrient} · {fmt(h.parcels)} parcels</p>
                 </div>
-                <span className="rounded-full px-2 py-0.5 text-[10px] font-bold text-white" style={{ background: SEVERITY_COLOR[h.severity] }}>
+                <span className="rounded-full px-2 py-0.5 text-[10px] font-bold text-white" style={{ background: SEVERITY_COLOR[h.severity as Severity] }}>
                   {h.severity}
                 </span>
               </li>

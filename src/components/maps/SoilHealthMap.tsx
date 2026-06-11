@@ -108,7 +108,7 @@ export function SoilHealthMap({
   useEffect(() => {
     setMounted(true);
     // Fetch District boundaries from PostgreSQL Backend
-    fetch("http://localhost:8000/boundaries/districts")
+    fetch("/api/boundaries/districts")
       .then((res) => res.json())
       .then((data) => setDistrictGeoData(data));
 
@@ -149,7 +149,7 @@ export function SoilHealthMap({
       setMetricsData(parsedData);
     } else {
       // Fetch real analytics data
-      fetch("http://localhost:8000/map/metrics")
+      fetch("/api/map/metrics")
         .then((res) => res.json())
         .then((data) => setMetricsData(data));
     }
@@ -161,7 +161,7 @@ export function SoilHealthMap({
       // For the API we need to match the name. 
       const apiName = selected === "Anantapur" ? "Ananthapuram" : selected;
       setMandalGeoData(null);
-      fetch(`http://localhost:8000/boundaries/mandals?district=${encodeURIComponent(apiName)}`)
+      fetch(`/api/boundaries/mandals?district=${encodeURIComponent(apiName)}`)
         .then((res) => res.json())
         .then((data) => setMandalGeoData(data));
     } else {
@@ -174,13 +174,13 @@ export function SoilHealthMap({
     if (selected && selected !== "All Districts" && selectedMandal && selectedMandal !== "All Mandals") {
       const apiDistrict = selected === "Anantapur" ? "Ananthapuram" : selected;
       setVillageGeoData(null);
-      fetch(`http://localhost:8000/boundaries/villages?district=${encodeURIComponent(apiDistrict)}&mandal=${encodeURIComponent(selectedMandal)}`)
+      fetch(`/api/boundaries/villages?district=${encodeURIComponent(apiDistrict)}&mandal=${encodeURIComponent(selectedMandal)}`)
         .then((res) => res.json())
         .then((data) => setVillageGeoData(data));
 
       if (!useCsvData) {
         // Fetch ALL villages in the district to bypass Mandal-level mismatches between AP DB and GeoJSON boundaries
-        fetch(`http://localhost:8000/map/metrics?level=village&district=${encodeURIComponent(apiDistrict)}`)
+        fetch(`/api/map/metrics?level=village&district=${encodeURIComponent(apiDistrict)}`)
           .then((res) => res.json())
           .then((data) => setVillageMetricsData(data));
       }
@@ -282,7 +282,7 @@ export function SoilHealthMap({
   useEffect(() => {
     if (selected && selected !== "All Districts" && !useCsvData) {
       const apiDistrict = selected === "Anantapur" ? "Ananthapuram" : selected;
-      fetch(`http://localhost:8000/map/metrics?level=mandal&district=${encodeURIComponent(apiDistrict)}`)
+      fetch(`/api/map/metrics?level=mandal&district=${encodeURIComponent(apiDistrict)}`)
         .then((res) => res.json())
         .then((data) => setMandalMetricsData(data));
     } else {
@@ -294,7 +294,7 @@ export function SoilHealthMap({
   useEffect(() => {
     if (showParcels && selected && selected !== "All Districts") {
       const apiDistrict = selected === "Anantapur" ? "Ananthapuram" : selected;
-      let url = `http://localhost:8000/parcels?district=${encodeURIComponent(apiDistrict)}`;
+      let url = `/api/parcels?district=${encodeURIComponent(apiDistrict)}`;
       if (selectedMandal && selectedMandal !== "All Mandals") {
         url += `&mandal=${encodeURIComponent(selectedMandal)}`;
       }
@@ -370,6 +370,78 @@ export function SoilHealthMap({
       });
     }
   }, [selected, metricKey, districtGeoData, metricsData]);
+
+  // Update styles dynamically for Mandals
+  useEffect(() => {
+    if (mandalGeoJsonRef.current && mandalGeoData && Object.keys(mandalMetricsData).length > 0) {
+      mandalGeoJsonRef.current.eachLayer((layer: any) => {
+        const props = layer.feature.properties;
+        const name = props.SUB_DIST || props.NAME_3 || props.sdtname || props.Mandal || "Unknown Mandal";
+        const bestName = getBestMatch(name, Object.keys(mandalMetricsData)) || name;
+        const d = mandalMetricsData[bestName];
+        
+        if (d && d[metricKey] !== undefined) {
+          const v = d[metricKey] as number;
+          const isSel = bestName === selectedMandal;
+          const hasSel = !!selectedMandal && selectedMandal !== "All Mandals";
+          const opacity = isSel ? 0.1 : (hasSel ? 0.2 : 0.6);
+          const displayVal = Number.isInteger(v) ? v : v.toFixed(2);
+          
+          layer.setStyle({
+            fillColor: isSel ? "transparent" : colorFor(v),
+            fillOpacity: opacity,
+            color: isSel ? "#38bdf8" : "#ffffff",
+            weight: isSel ? 3 : 1.5,
+            dashArray: isSel ? "" : "4 4"
+          });
+          
+          layer.bindTooltip(
+            `<div class="bg-card text-foreground px-2 py-1 rounded shadow-md border border-border">
+              <span class="font-semibold text-sm">${bestName} Mandal</span><br />
+              <span class="text-xs text-muted-foreground">${metricKey}:</span> <span class="font-bold">${displayVal}${unit}</span>
+            </div>`,
+            { sticky: true, className: "!bg-transparent !border-none !p-0 !shadow-none" }
+          );
+        }
+      });
+    }
+  }, [selectedMandal, metricKey, mandalGeoData, mandalMetricsData]);
+
+  // Update styles dynamically for Villages
+  useEffect(() => {
+    if (villageGeoJsonRef.current && villageGeoData && Object.keys(villageMetricsData).length > 0) {
+      villageGeoJsonRef.current.eachLayer((layer: any) => {
+        const props = layer.feature.properties;
+        const name = props.vilname11 || props.vilnam_soi || props.village_name || props.VILLAGE || props.NAME || "Unknown Village";
+        const bestName = getBestMatch(name, Object.keys(villageMetricsData)) || name;
+        const d = villageMetricsData[bestName];
+        
+        if (d && d[metricKey] !== undefined) {
+          const v = d[metricKey] as number;
+          const isSel = bestName === selectedVillage;
+          const hasSel = !!selectedVillage && selectedVillage !== "All Villages";
+          const opacity = isSel ? 0.1 : (hasSel ? 0.2 : 0.6);
+          const displayVal = Number.isInteger(v) ? v : v.toFixed(2);
+          
+          layer.setStyle({
+            fillColor: isSel ? "transparent" : colorFor(v),
+            fillOpacity: opacity,
+            color: isSel ? "#38bdf8" : "#ffffff",
+            weight: isSel ? 3 : 1.5,
+            dashArray: isSel ? "" : "2 4"
+          });
+          
+          layer.bindTooltip(
+            `<div class="bg-card text-foreground px-2 py-1 rounded shadow-md border border-border">
+              <span class="font-semibold text-sm">${bestName} Village</span><br />
+              <span class="text-xs text-muted-foreground">${metricKey}:</span> <span class="font-bold">${displayVal}${unit}</span>
+            </div>`,
+            { sticky: true, className: "!bg-transparent !border-none !p-0 !shadow-none" }
+          );
+        }
+      });
+    }
+  }, [selectedVillage, metricKey, villageGeoData, villageMetricsData]);
 
   if (!mounted) {
     return <div className="relative w-full overflow-hidden rounded-lg border border-border" style={{ height, background: "#0a0a0a" }} />;
@@ -455,13 +527,19 @@ export function SoilHealthMap({
     const props = feature.properties;
     const name = props.SUB_DIST || props.NAME_3 || props.sdtname || props.Mandal || "Unknown Mandal";
 
-    // For Mandals, we assign a white dash border to stand out against satellite imagery
+    const bestName = getBestMatch(name, Object.keys(mandalMetricsData)) || name;
+    const d = mandalMetricsData[bestName];
+    const v = d && d[metricKey] !== undefined ? d[metricKey] : null;
+
+    const isSel = useAppStore.getState().mandal === name;
+    const hasSel = !!useAppStore.getState().mandal && useAppStore.getState().mandal !== "All Mandals";
+
     layer.setStyle({
-      fillColor: "#ffffff",
-      fillOpacity: 0.1,
-      color: "#ffffff",
-      weight: 1.5,
-      dashArray: "4 4"
+      fillColor: isSel ? "transparent" : (v !== null ? colorFor(v) : "transparent"),
+      fillOpacity: isSel ? 0.1 : (hasSel ? 0.2 : (v !== null ? 0.6 : 0.1)),
+      color: isSel ? "#38bdf8" : "#ffffff",
+      weight: isSel ? 3 : 1.5,
+      dashArray: isSel ? "" : "4 4"
     });
 
     layer.bindTooltip(
@@ -478,13 +556,20 @@ export function SoilHealthMap({
         const isSel = useAppStore.getState().mandal === name;
         if (isSel) return; // Don't obscure villages when hovering over selected mandal
         const l = e.target;
-        l.setStyle({ fillOpacity: 0.3, weight: 2.5 });
+        l.setStyle({ fillOpacity: 0.8, weight: 2.5 });
         l.bringToFront();
       },
       mouseout: (e: any) => {
         const isSel = useAppStore.getState().mandal === name;
+        const hasSel = !!useAppStore.getState().mandal && useAppStore.getState().mandal !== "All Mandals";
         const l = e.target;
-        l.setStyle({ fillOpacity: isSel ? 0.0 : 0.1, weight: 1.5 });
+        
+        l.setStyle({ 
+          fillColor: isSel ? "transparent" : (v !== null ? colorFor(v) : "transparent"),
+          fillOpacity: isSel ? 0.1 : (hasSel ? 0.2 : (v !== null ? 0.6 : 0.1)), 
+          color: isSel ? "#38bdf8" : "#ffffff",
+          weight: isSel ? 3 : 1.5 
+        });
         if (isSel) l.bringToBack();
       },
       click: (e: any) => {
@@ -504,12 +589,19 @@ export function SoilHealthMap({
     const props = feature.properties;
     const name = props.vilname11 || props.vilnam_soi || props.village_name || props.VILLAGE || props.NAME || "Unknown Village";
 
+    const bestName = getBestMatch(name, Object.keys(villageMetricsData)) || name;
+    const d = villageMetricsData[bestName];
+    const v = d && d[metricKey] !== undefined ? d[metricKey] : null;
+
+    const isSel = useAppStore.getState().village === name;
+    const hasSel = !!useAppStore.getState().village && useAppStore.getState().village !== "All Villages";
+
     layer.setStyle({
-      fillColor: "#0ea5e9",
-      fillOpacity: 0.15,
-      color: "#38bdf8",
-      weight: 1.5,
-      dashArray: "2 4"
+      fillColor: isSel ? "transparent" : (v !== null ? colorFor(v) : "transparent"),
+      fillOpacity: isSel ? 0.1 : (hasSel ? 0.2 : (v !== null ? 0.6 : 0.15)),
+      color: isSel ? "#38bdf8" : "#ffffff",
+      weight: isSel ? 3 : 1.5,
+      dashArray: isSel ? "" : "2 4"
     });
 
     layer.bindTooltip(
@@ -524,12 +616,20 @@ export function SoilHealthMap({
     layer.on({
       mouseover: (e: any) => {
         const l = e.target;
-        l.setStyle({ fillOpacity: 0.35, weight: 2.5 });
+        l.setStyle({ fillOpacity: 0.8, weight: 2.5 });
         l.bringToFront();
       },
       mouseout: (e: any) => {
         const l = e.target;
-        l.setStyle({ fillOpacity: 0.15, weight: 1.5 });
+        const isSel = useAppStore.getState().village === name;
+        const hasSel = !!useAppStore.getState().village && useAppStore.getState().village !== "All Villages";
+
+        l.setStyle({ 
+          fillColor: isSel ? "transparent" : (v !== null ? colorFor(v) : "transparent"),
+          fillOpacity: isSel ? 0.1 : (hasSel ? 0.2 : (v !== null ? 0.6 : 0.15)), 
+          color: isSel ? "#38bdf8" : "#ffffff",
+          weight: isSel ? 3 : 1.5 
+        });
       },
       click: (e: any) => {
         e.originalEvent.stopPropagation();
@@ -574,7 +674,7 @@ export function SoilHealthMap({
         {/* Mandal Boundaries Drill-Down */}
         {mandalGeoData && selected && (
           <GeoJSON
-            key={selected} // Re-mount when district changes
+            key={`mandal-${selected}-${metricKey}-${Object.keys(mandalMetricsData).length}`}
             ref={mandalGeoJsonRef}
             data={mandalGeoData}
             onEachFeature={onEachMandalFeature}
@@ -584,7 +684,7 @@ export function SoilHealthMap({
         {/* Village Boundaries Drill-Down */}
         {villageGeoData && selectedMandal && selectedMandal !== "All Mandals" && (
           <GeoJSON
-            key={`${selected}-${selectedMandal}`} // Re-mount when mandal changes
+            key={`village-${selected}-${selectedMandal}-${metricKey}-${Object.keys(villageMetricsData).length}`}
             ref={villageGeoJsonRef}
             data={villageGeoData}
             onEachFeature={onEachVillageFeature}

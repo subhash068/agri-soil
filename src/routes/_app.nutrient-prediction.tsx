@@ -26,7 +26,7 @@ function getSeverity(val: number, min: number, max: number): Severity {
 }
 
 function NutrientPrediction() {
-  const { district, mandal, village } = useAppStore();
+  const { district, mandal, village, soilType, setSoilType, cropType, setCropType, season, setSeason, irrigationSource, setIrrigationSource } = useAppStore();
 
   let level = "district";
   let targetName = district || "Statewide";
@@ -40,11 +40,15 @@ function NutrientPrediction() {
   }
 
   const { data: metrics, isLoading } = useQuery({
-    queryKey: ["map-metrics", level, district, mandal, village],
+    queryKey: ["map-metrics", level, district, mandal, village, soilType, cropType, season, irrigationSource],
     queryFn: () => {
-      let url = `http://localhost:8000/map/metrics?level=${level}`;
+      let url = `/api/map/metrics?level=${level}`;
       if (district && district !== "All Districts") url += `&district=${district}`;
       if (mandal && mandal !== "All Mandals") url += `&mandal=${mandal}`;
+      if (soilType && soilType !== "All Soil Types") url += `&soil_type=${encodeURIComponent(soilType)}`;
+      if (cropType && cropType !== "All Crops") url += `&crop_type=${encodeURIComponent(cropType)}`;
+      if (season && season !== "All Seasons") url += `&season=${encodeURIComponent(season)}`;
+      if (irrigationSource && irrigationSource !== "All Sources") url += `&irrigation=${encodeURIComponent(irrigationSource)}`;
       return fetch(url).then(r => r.json());
     }
   });
@@ -113,12 +117,62 @@ function NutrientPrediction() {
         icon={<Brain className="h-5 w-5" />}
         title="Nutrient Prediction Center"
         description={`AI predictions from Sentinel-2, Planet imagery, Soil Health Cards, APSAC maps, weather & groundwater · ${targetName}`}
-        actions={
-          <div className="flex items-center gap-4">
-            <GeographicFilter />
-          </div>
-        }
       />
+
+      <div className="flex justify-center">
+        <div className="flex flex-wrap items-center justify-center gap-3 bg-card/60 backdrop-blur-sm border border-border p-3 rounded-xl shadow-md w-full max-w-6xl">
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <select 
+              value={season} 
+              onChange={e => setSeason(e.target.value)}
+              className={`rounded px-1.5 py-0.5 outline-none focus:ring-1 focus:ring-primary transition-colors cursor-pointer text-[14px] ${season && season !== "All Seasons" ? "bg-primary/10 border border-primary/30 text-primary font-medium" : "bg-card text-foreground border border-border"}`}
+            >
+              <option value="All Seasons" className="bg-card text-foreground">All Seasons</option>
+              <option value="Kharif" className="bg-card text-foreground">Kharif</option>
+              <option value="Rabi" className="bg-card text-foreground">Rabi</option>
+              <option value="Zaid" className="bg-card text-foreground">Zaid</option>
+            </select>
+            <select 
+              value={irrigationSource} 
+              onChange={e => setIrrigationSource(e.target.value)}
+              className={`rounded px-1.5 py-0.5 outline-none focus:ring-1 focus:ring-primary transition-colors cursor-pointer text-[14px] ${irrigationSource && irrigationSource !== "All Sources" ? "bg-primary/10 border border-primary/30 text-primary font-medium" : "bg-card text-foreground border border-border"}`}
+            >
+              <option value="All Sources" className="bg-card text-foreground">All Sources</option>
+              <option value="Rainfed" className="bg-card text-foreground">Rainfed</option>
+              <option value="Canal Irrigated" className="bg-card text-foreground">Canal Irrigated</option>
+              <option value="Borewell" className="bg-card text-foreground">Borewell</option>
+            </select>
+            <select 
+              value={cropType} 
+              onChange={e => setCropType(e.target.value)}
+              className={`rounded px-1.5 py-0.5 outline-none focus:ring-1 focus:ring-primary transition-colors cursor-pointer text-[14px] ${cropType && cropType !== "All Crops" ? "bg-primary/10 border border-primary/30 text-primary font-medium" : "bg-card text-foreground border border-border"}`}
+            >
+              <option value="All Crops" className="bg-card text-foreground">All Crops</option>
+              <option value="Cotton" className="bg-card text-foreground">Cotton</option>
+              <option value="Paddy" className="bg-card text-foreground">Paddy</option>
+              <option value="Maize" className="bg-card text-foreground">Maize</option>
+              <option value="Chilli" className="bg-card text-foreground">Chilli</option>
+              <option value="Groundnut" className="bg-card text-foreground">Groundnut</option>
+            </select>
+            <select 
+              value={soilType} 
+              onChange={e => setSoilType(e.target.value)}
+              className={`rounded px-1.5 py-0.5 outline-none focus:ring-1 focus:ring-primary transition-colors cursor-pointer text-[14px] ${soilType && soilType !== "All Soil Types" ? "bg-primary/10 border border-primary/30 text-primary font-medium" : "bg-card text-foreground border border-border"}`}
+            >
+              <option value="All Soil Types" className="bg-card text-foreground">All Soil Types</option>
+              <option value="Red Soil" className="bg-card text-foreground">Red Soil</option>
+              <option value="Black Soil" className="bg-card text-foreground">Black Soil</option>
+              <option value="Alluvial Soil" className="bg-card text-foreground">Alluvial Soil</option>
+              <option value="Laterite Soil" className="bg-card text-foreground">Laterite Soil</option>
+              <option value="Coastal Sandy" className="bg-card text-foreground">Coastal Sandy</option>
+            </select>
+          </div>
+          
+          <div className="hidden md:block w-px h-6 bg-border mx-1" />
+          
+          <GeographicFilter />
+        </div>
+      </div>
       {isLoading ? (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {Array.from({ length: 10 }).map((_, i) => (

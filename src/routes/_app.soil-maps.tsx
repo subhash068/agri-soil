@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { PageHeader, Pill } from "@/components/ui-kit/PageHeader";
 import { Panel } from "@/components/ui-kit/Panel";
+import { GeographicFilter } from "@/components/GeographicFilter";
 import React, { Suspense } from "react";
 const ClientAPMap = React.lazy(() => import("@/components/maps/SoilHealthMap").then(m => ({ default: m.SoilHealthMap })));
 import { MAP_LAYERS } from "@/lib/mock-data";
@@ -35,7 +36,7 @@ function SoilMaps() {
       setSearchError("");
       useAppStore.getState().setSearchedParcel(null);
       try {
-        const res = await fetch(`http://localhost:8000/parcel/${encodeURIComponent(searchQuery.trim())}`);
+        const res = await fetch(`/api/parcel/${encodeURIComponent(searchQuery.trim())}`);
         if (!res.ok) throw new Error("Parcel not found");
         const parcel = await res.json();
         
@@ -52,31 +53,6 @@ function SoilMaps() {
     }
   };
 
-  const { data: districts = [] } = useQuery({
-    queryKey: ["districts"],
-    queryFn: () => fetch("http://localhost:8000/districts").then(res => res.json()),
-  });
-
-  const { data: mandals = [] } = useQuery({
-    queryKey: ["mandals", filterDistrict],
-    queryFn: () => fetch(`http://localhost:8000/mandals?district=${filterDistrict}`).then(res => res.json()),
-    enabled: !!filterDistrict && filterDistrict !== "All Districts",
-  });
-
-  const { data: villages = [] } = useQuery({
-    queryKey: ["villages", filterDistrict, filterMandal],
-    queryFn: () => fetch(`http://localhost:8000/villages?district=${filterDistrict}&mandal=${filterMandal}`).then(res => res.json()),
-    enabled: !!filterDistrict && filterDistrict !== "All Districts" && !!filterMandal && filterMandal !== "All Mandals",
-  });
-
-  const handleDistrictChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setDistrictStore(e.target.value === "All" ? "" : e.target.value);
-  };
-
-  const handleMandalChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setMandalStore(e.target.value === "All" ? "All Mandals" : e.target.value);
-  };
-
   const metric = active;
   const invert = ["Nitrogen", "Phosphorus", "Potassium", "Soil Unhealthy %", "EC"].includes(active);
 
@@ -88,37 +64,7 @@ function SoilMaps() {
         description="GIS monitoring system · heatmaps, choropleths & historical analysis across 7 districts"
         actions={
           <div className="flex items-center gap-3">
-            <select 
-              value={filterDistrict || "All"} 
-              onChange={handleDistrictChange}
-              className="h-8 rounded-md border border-input bg-background px-2 text-xs font-medium outline-none focus:ring-2 focus:ring-ring/40"
-            >
-              <option value="All">All Districts</option>
-              {districts.map((d: string) => <option key={d} value={d}>{d}</option>)}
-            </select>
-            
-            {!!filterDistrict && (
-              <select 
-                value={filterMandal || "All"} 
-                onChange={handleMandalChange}
-                className="h-8 rounded-md border border-input bg-background px-2 text-xs font-medium outline-none focus:ring-2 focus:ring-ring/40"
-              >
-                <option value="All">All Mandals</option>
-                {mandals.map((m: string) => <option key={m} value={m}>{m}</option>)}
-              </select>
-            )}
-
-            {!!filterMandal && filterMandal !== "All Mandals" && (
-              <select 
-                value={filterVillage} 
-                onChange={(e) => setVillageStore(e.target.value === "All Villages" ? "All Villages" : e.target.value)}
-                className="h-8 rounded-md border border-input bg-background px-2 text-xs font-medium outline-none focus:ring-2 focus:ring-ring/40"
-              >
-                <option value="All Villages">All Villages</option>
-                {villages.map((v: string) => <option key={v} value={v}>{v}</option>)}
-              </select>
-            )}
-
+            <GeographicFilter />
             <Pill tone="info">Sentinel-2 · APSAC</Pill>
           </div>
         }

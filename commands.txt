@@ -1,2 +1,10 @@
 cd backend
 uvicorn main:app --reload
+
+
+npx localtunnel --port 8080
+
+
+npx ngrok http 8080
+
+npx ngrok config add-authtoken 3Ez2zEanMakNQFkw128A2AF3ew7_31vG2tN8PLCvoQ94dWQaM

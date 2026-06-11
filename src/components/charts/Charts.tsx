@@ -146,7 +146,7 @@ export function Bars({
           </>
         ) : (
           <>
-            <XAxis dataKey={xKey} tick={AXIS} axisLine={false} tickLine={false} label={xAxisLabel ? { value: xAxisLabel, position: "insideBottom", offset: -12, fill: "#9ca3af", fontSize: 11 } : undefined} />
+            <XAxis dataKey={xKey} tick={AXIS} axisLine={false} tickLine={false} interval={0} label={xAxisLabel ? { value: xAxisLabel, position: "insideBottom", offset: -12, fill: "#9ca3af", fontSize: 11 } : undefined} />
             <YAxis tick={AXIS} axisLine={false} tickLine={false} label={yAxisLabel ? { value: yAxisLabel, angle: -90, position: "insideLeft", offset: 10, fill: "#9ca3af", fontSize: 11 } : undefined} />
           </>
         )}

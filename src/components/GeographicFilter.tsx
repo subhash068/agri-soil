@@ -7,32 +7,32 @@ export function GeographicFilter() {
 
   const { data: districts = [] } = useQuery({
     queryKey: ["districts"],
-    queryFn: () => fetch("http://localhost:8000/districts").then(res => res.json())
+    queryFn: () => fetch("/api/districts").then(res => res.json())
   });
 
   const { data: mandals = [] } = useQuery({
     queryKey: ["mandals", district],
-    queryFn: () => fetch(`http://localhost:8000/mandals?district=${district}`).then(res => res.json()),
+    queryFn: () => fetch(`/api/mandals?district=${district}`).then(res => res.json()),
     enabled: !!district && district !== "All Districts"
   });
 
   const { data: villages = [] } = useQuery({
     queryKey: ["villages", district, mandal],
-    queryFn: () => fetch(`http://localhost:8000/villages?district=${district}&mandal=${mandal}`).then(res => res.json()),
+    queryFn: () => fetch(`/api/villages?district=${district}&mandal=${mandal}`).then(res => res.json()),
     enabled: !!district && !!mandal && mandal !== "All Mandals"
   });
 
   return (
-    <div className="flex gap-2 text-xs">
+    <div className="flex gap-2 text-[14px]">
       <select 
         value={district || "All Districts"} 
         onChange={e => {
           setDistrict(e.target.value === "All Districts" ? "" : e.target.value);
         }}
-        className="bg-card text-foreground border border-border rounded px-2 py-1 outline-none focus:ring-1 focus:ring-primary min-w-[120px]"
+        className={`rounded px-1.5 py-0.5 outline-none focus:ring-1 focus:ring-primary transition-colors cursor-pointer ${district && district !== "All Districts" ? "bg-primary/10 border border-primary/30 text-primary font-medium" : "bg-card text-foreground border border-border"}`}
       >
-        <option value="All Districts">All Districts</option>
-        {districts.map((d: string) => <option key={d} value={d}>{d}</option>)}
+        <option value="All Districts" className="bg-card text-foreground">All Districts</option>
+        {districts.map((d: string) => <option key={d} value={d} className="bg-card text-foreground">{d}</option>)}
       </select>
 
       <select 
@@ -40,11 +40,11 @@ export function GeographicFilter() {
         onChange={e => {
           setMandal(e.target.value === "All Mandals" ? "" : e.target.value);
         }}
-        className="bg-card text-foreground border border-border rounded px-2 py-1 outline-none focus:ring-1 focus:ring-primary min-w-[120px]"
+        className={`rounded px-1.5 py-0.5 outline-none focus:ring-1 focus:ring-primary transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed ${mandal && mandal !== "All Mandals" ? "bg-primary/10 border border-primary/30 text-primary font-medium" : "bg-card text-foreground border border-border"}`}
         disabled={!district || district === "All Districts"}
       >
-        <option value="All Mandals">All Mandals</option>
-        {mandals.map((m: string) => <option key={m} value={m}>{m}</option>)}
+        <option value="All Mandals" className="bg-card text-foreground">All Mandals</option>
+        {mandals.map((m: string) => <option key={m} value={m} className="bg-card text-foreground">{m}</option>)}
       </select>
 
       <select 
@@ -52,11 +52,11 @@ export function GeographicFilter() {
         onChange={e => {
           setVillage(e.target.value === "All Villages" ? "" : e.target.value);
         }}
-        className="bg-card text-foreground border border-border rounded px-2 py-1 outline-none focus:ring-1 focus:ring-primary min-w-[120px]"
+        className={`rounded px-1.5 py-0.5 outline-none focus:ring-1 focus:ring-primary transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed ${village && village !== "All Villages" ? "bg-primary/10 border border-primary/30 text-primary font-medium" : "bg-card text-foreground border border-border"}`}
         disabled={!mandal || mandal === "All Mandals"}
       >
-        <option value="All Villages">All Villages</option>
-        {villages.map((v: string) => <option key={v} value={v}>{v}</option>)}
+        <option value="All Villages" className="bg-card text-foreground">All Villages</option>
+        {villages.map((v: string) => <option key={v} value={v} className="bg-card text-foreground">{v}</option>)}
       </select>
     </div>
   );

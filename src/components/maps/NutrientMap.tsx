@@ -25,6 +25,8 @@ export function NutrientMap({
   const [mandalGeoData, setMandalGeoData] = useState<any>(null);
   const [villageGeoData, setVillageGeoData] = useState<any>(null);
   const [metricsData, setMetricsData] = useState<Record<string, any>>({});
+  const [mandalMetricsData, setMandalMetricsData] = useState<Record<string, any>>({});
+  const [villageMetricsData, setVillageMetricsData] = useState<Record<string, any>>({});
   const [parcelsData, setParcelsData] = useState<any[]>([]);
   
   const geoJsonRef = useRef<L.GeoJSON>(null);
@@ -39,12 +41,12 @@ export function NutrientMap({
   useEffect(() => {
     setMounted(true);
     // Fetch District boundaries from PostgreSQL Backend
-    fetch("http://localhost:8000/boundaries/districts")
+    fetch("/api/boundaries/districts")
       .then((res) => res.json())
       .then((data) => setDistrictGeoData(data));
       
     // Fetch real analytics data
-    fetch("http://localhost:8000/map/metrics")
+    fetch("/api/map/metrics")
       .then((res) => res.json())
       .then((data) => setMetricsData(data));
   }, []);
@@ -54,11 +56,16 @@ export function NutrientMap({
     if (selected && selected !== "All Districts") {
       // For the API we need to match the name. 
       const apiName = selected === "Anantapur" ? "Ananthapuram" : selected;
-      fetch(`http://localhost:8000/boundaries/mandals?district=${encodeURIComponent(apiName)}`)
+      fetch(`/api/boundaries/mandals?district=${encodeURIComponent(apiName)}`)
         .then((res) => res.json())
         .then((data) => setMandalGeoData(data));
+        
+      fetch(`/api/map/metrics?level=mandal&district=${encodeURIComponent(apiName)}`)
+        .then((res) => res.json())
+        .then((data) => setMandalMetricsData(data));
     } else {
       setMandalGeoData(null);
+      setMandalMetricsData({});
     }
   }, [selected]);
 
@@ -66,11 +73,16 @@ export function NutrientMap({
   useEffect(() => {
     if (selected && selected !== "All Districts" && selectedMandal && selectedMandal !== "All Mandals") {
       const apiDistrict = selected === "Anantapur" ? "Ananthapuram" : selected;
-      fetch(`http://localhost:8000/boundaries/villages?district=${encodeURIComponent(apiDistrict)}&mandal=${encodeURIComponent(selectedMandal)}`)
+      fetch(`/api/boundaries/villages?district=${encodeURIComponent(apiDistrict)}&mandal=${encodeURIComponent(selectedMandal)}`)
         .then((res) => res.json())
         .then((data) => setVillageGeoData(data));
+        
+      fetch(`/api/map/metrics?level=village&district=${encodeURIComponent(apiDistrict)}&mandal=${encodeURIComponent(selectedMandal)}`)
+        .then((res) => res.json())
+        .then((data) => setVillageMetricsData(data));
     } else {
       setVillageGeoData(null);
+      setVillageMetricsData({});
     }
   }, [selected, selectedMandal]);
 
@@ -78,7 +90,7 @@ export function NutrientMap({
   useEffect(() => {
     if (showParcels && selected && selected !== "All Districts") {
       const apiDistrict = selected === "Anantapur" ? "Ananthapuram" : selected;
-      let url = `http://localhost:8000/parcels?district=${encodeURIComponent(apiDistrict)}`;
+      let url = `/api/parcels?district=${encodeURIComponent(apiDistrict)}`;
       if (selectedMandal && selectedMandal !== "All Mandals") {
         url += `&mandal=${encodeURIComponent(selectedMandal)}`;
       }
@@ -206,19 +218,26 @@ export function NutrientMap({
     const props = feature.properties;
     const name = props.SUB_DIST || props.NAME_3 || props.sdtname || props.Mandal || "Unknown Mandal";
     
-    // For Mandals, we assign a white dash border to stand out against satellite imagery
+    const d = mandalMetricsData[name];
+    let v: number | undefined = undefined;
+    if (d && d[metricKey] !== undefined) v = d[metricKey];
+
+    const isSel = useAppStore.getState().mandal === name;
+
     layer.setStyle({
-      fillColor: "#ffffff",
-      fillOpacity: 0.1,
-      color: "#ffffff",
-      weight: 1.5,
-      dashArray: "4 4"
+      fillColor: v !== undefined ? colorFor(v) : "#ffffff",
+      fillOpacity: v !== undefined ? (isSel ? 0.0 : 0.6) : 0.1,
+      color: isSel ? "#0ea5e9" : "#ffffff",
+      weight: isSel ? 2.5 : 1.5,
+      dashArray: isSel ? "" : "4 4"
     });
 
+    const displayVal = v !== undefined ? (Number.isInteger(v) ? v : v.toFixed(2)) : "No data";
     layer.bindTooltip(
       `
       <div class="bg-card text-foreground px-2 py-1 rounded shadow-md border border-border">
-        <span class="font-semibold text-sm">${name} Mandal</span>
+        <span class="font-semibold text-sm">${name} Mandal</span><br />
+        <span class="text-xs">Value: <span class="font-bold">${displayVal}${unit}</span></span>
       </div>
       `,
       { sticky: true, className: "!bg-transparent !border-none !p-0 !shadow-none" }
@@ -226,17 +245,19 @@ export function NutrientMap({
 
     layer.on({
       mouseover: (e: any) => {
-        const isSel = useAppStore.getState().mandal === name;
-        if (isSel) return; // Don't obscure villages when hovering over selected mandal
+        if (useAppStore.getState().mandal === name) return; // Don't obscure villages when hovering over selected mandal
         const l = e.target;
-        l.setStyle({ fillOpacity: 0.3, weight: 2.5 });
+        l.setStyle({ fillOpacity: v !== undefined ? 0.8 : 0.3, weight: 2.5 });
         l.bringToFront();
       },
       mouseout: (e: any) => {
-        const isSel = useAppStore.getState().mandal === name;
+        const isSelCurrent = useAppStore.getState().mandal === name;
         const l = e.target;
-        l.setStyle({ fillOpacity: isSel ? 0.0 : 0.1, weight: 1.5 });
-        if (isSel) l.bringToBack();
+        l.setStyle({ 
+          fillOpacity: isSelCurrent ? 0.0 : (v !== undefined ? 0.6 : 0.1), 
+          weight: isSelCurrent ? 2.5 : 1.5 
+        });
+        if (isSelCurrent) l.bringToBack();
       },
       click: (e: any) => {
         // Stop propagation so we don't accidentally trigger the district click
@@ -255,18 +276,26 @@ export function NutrientMap({
     const props = feature.properties;
     const name = props.vilname11 || props.vilnam_soi || props.village_name || props.VILLAGE || props.NAME || "Unknown Village";
     
+    const d = villageMetricsData[name];
+    let v: number | undefined = undefined;
+    if (d && d[metricKey] !== undefined) v = d[metricKey];
+
+    const isSel = useAppStore.getState().village === name;
+
     layer.setStyle({
-      fillColor: "#0ea5e9",
-      fillOpacity: 0.15,
-      color: "#38bdf8",
-      weight: 1.5,
-      dashArray: "2 4"
+      fillColor: v !== undefined ? colorFor(v) : "#0ea5e9",
+      fillOpacity: v !== undefined ? (isSel ? 0.0 : 0.7) : 0.15,
+      color: isSel ? "#0ea5e9" : "#ffffff",
+      weight: isSel ? 2.5 : 1.5,
+      dashArray: isSel ? "" : "2 4"
     });
 
+    const displayVal = v !== undefined ? (Number.isInteger(v) ? v : v.toFixed(2)) : "No data";
     layer.bindTooltip(
       `
       <div class="bg-card text-foreground px-2 py-1 rounded shadow-md border border-border">
-        <span class="font-semibold text-sm">${name} Village</span>
+        <span class="font-semibold text-sm">${name} Village</span><br />
+        <span class="text-xs">Value: <span class="font-bold">${displayVal}${unit}</span></span>
       </div>
       `,
       { sticky: true, className: "!bg-transparent !border-none !p-0 !shadow-none" }
@@ -275,12 +304,16 @@ export function NutrientMap({
     layer.on({
       mouseover: (e: any) => {
         const l = e.target;
-        l.setStyle({ fillOpacity: 0.35, weight: 2.5 });
+        l.setStyle({ fillOpacity: v !== undefined ? 0.9 : 0.35, weight: 2.5 });
         l.bringToFront();
       },
       mouseout: (e: any) => {
+        const isSelCurrent = useAppStore.getState().village === name;
         const l = e.target;
-        l.setStyle({ fillOpacity: 0.15, weight: 1.5 });
+        l.setStyle({ 
+          fillOpacity: isSelCurrent ? 0.0 : (v !== undefined ? 0.7 : 0.15), 
+          weight: isSelCurrent ? 2.5 : 1.5 
+        });
       },
       click: (e: any) => {
         e.originalEvent.stopPropagation();

@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AppRouteImport } from './routes/_app'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AppYieldSimulatorRouteImport } from './routes/_app.yield-simulator'
@@ -37,6 +38,11 @@ import { Route as AppCropIntelligenceRouteImport } from './routes/_app.crop-inte
 import { Route as AppAprtgsDashboardRouteImport } from './routes/_app.aprtgs-dashboard'
 import { Route as AppAiCopilotRouteImport } from './routes/_app.ai-copilot'
 
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AppRoute = AppRouteImport.update({
   id: '/_app',
   getParentRoute: () => rootRouteImport,
@@ -174,6 +180,7 @@ const AppAiCopilotRoute = AppAiCopilotRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/ai-copilot': typeof AppAiCopilotRoute
   '/aprtgs-dashboard': typeof AppAprtgsDashboardRoute
   '/crop-intelligence': typeof AppCropIntelligenceRoute
@@ -202,6 +209,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/ai-copilot': typeof AppAiCopilotRoute
   '/aprtgs-dashboard': typeof AppAprtgsDashboardRoute
   '/crop-intelligence': typeof AppCropIntelligenceRoute
@@ -232,6 +240,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_app': typeof AppRouteWithChildren
+  '/admin': typeof AdminRoute
   '/_app/ai-copilot': typeof AppAiCopilotRoute
   '/_app/aprtgs-dashboard': typeof AppAprtgsDashboardRoute
   '/_app/crop-intelligence': typeof AppCropIntelligenceRoute
@@ -262,6 +271,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/admin'
     | '/ai-copilot'
     | '/aprtgs-dashboard'
     | '/crop-intelligence'
@@ -290,6 +300,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/admin'
     | '/ai-copilot'
     | '/aprtgs-dashboard'
     | '/crop-intelligence'
@@ -319,6 +330,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/_app'
+    | '/admin'
     | '/_app/ai-copilot'
     | '/_app/aprtgs-dashboard'
     | '/_app/crop-intelligence'
@@ -349,10 +361,18 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AppRoute: typeof AppRouteWithChildren
+  AdminRoute: typeof AdminRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_app': {
       id: '/_app'
       path: ''
@@ -606,6 +626,7 @@ const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AppRoute: AppRouteWithChildren,
+  AdminRoute: AdminRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

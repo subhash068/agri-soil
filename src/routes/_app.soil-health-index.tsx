@@ -34,7 +34,7 @@ function SoilHealthIndex() {
   const { data: metrics } = useQuery({
     queryKey: ["map-metrics", level, district, mandal, village],
     queryFn: () => {
-      let url = `http://localhost:8000/map/metrics?level=${level}`;
+      let url = `/api/map/metrics?level=${level}`;
       if (district && district !== "All Districts") url += `&district=${district}`;
       if (mandal && mandal !== "All Mandals") url += `&mandal=${mandal}`;
       return fetch(url).then(r => r.json());

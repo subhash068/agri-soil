@@ -51,6 +51,7 @@ export function ParcelMap({
   const [districtGeoData, setDistrictGeoData] = useState<any>(null);
   const [mandalGeoData, setMandalGeoData] = useState<any>(null);
   const [villageGeoData, setVillageGeoData] = useState<any>(null);
+  const [villageMetricsData, setVillageMetricsData] = useState<Record<string, any>>({});
   const [metricsData, setMetricsData] = useState<Record<string, any>>({});
   const [parcelsData, setParcelsData] = useState<any[]>([]);
   const [selectedParcel, setSelectedParcel] = useState<any>(null);
@@ -71,7 +72,7 @@ export function ParcelMap({
         rainfall: 105
       };
       
-      return fetch("http://localhost:8000/recommend/crop", {
+      return fetch("/api/recommend/crop", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
@@ -92,7 +93,7 @@ export function ParcelMap({
         satellite_unified_health_index_pct: selectedParcel.health
       };
       
-      return fetch("http://localhost:8000/recommend/fertilizer", {
+      return fetch("/api/recommend/fertilizer", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
@@ -114,12 +115,12 @@ export function ParcelMap({
   useEffect(() => {
     setMounted(true);
     // Fetch District boundaries from PostgreSQL Backend
-    fetch("http://localhost:8000/boundaries/districts")
+    fetch("/api/boundaries/districts")
       .then((res) => res.json())
       .then((data) => setDistrictGeoData(data));
       
     // Fetch real analytics data
-    fetch("http://localhost:8000/map/metrics")
+    fetch("/api/map/metrics")
       .then((res) => res.json())
       .then((data) => setMetricsData(data));
   }, []);
@@ -129,7 +130,7 @@ export function ParcelMap({
     if (selected && selected !== "All Districts") {
       // For the API we need to match the name. 
       const apiName = selected === "Anantapur" ? "Ananthapuram" : selected;
-      fetch(`http://localhost:8000/boundaries/mandals?district=${encodeURIComponent(apiName)}`)
+      fetch(`/api/boundaries/mandals?district=${encodeURIComponent(apiName)}`)
         .then((res) => res.json())
         .then((data) => setMandalGeoData(data));
     } else {
@@ -141,11 +142,16 @@ export function ParcelMap({
   useEffect(() => {
     if (selected && selected !== "All Districts" && selectedMandal && selectedMandal !== "All Mandals") {
       const apiDistrict = selected === "Anantapur" ? "Ananthapuram" : selected;
-      fetch(`http://localhost:8000/boundaries/villages?district=${encodeURIComponent(apiDistrict)}&mandal=${encodeURIComponent(selectedMandal)}`)
+      fetch(`/api/boundaries/villages?district=${encodeURIComponent(apiDistrict)}&mandal=${encodeURIComponent(selectedMandal)}`)
         .then((res) => res.json())
         .then((data) => setVillageGeoData(data));
+      
+      fetch(`/api/map/metrics?level=village&district=${encodeURIComponent(apiDistrict)}&mandal=${encodeURIComponent(selectedMandal)}`)
+        .then((res) => res.json())
+        .then((data) => setVillageMetricsData(data));
     } else {
       setVillageGeoData(null);
+      setVillageMetricsData({});
     }
   }, [selected, selectedMandal]);
 
@@ -153,7 +159,7 @@ export function ParcelMap({
   useEffect(() => {
     if (showParcels && selected && selected !== "All Districts") {
       const apiDistrict = selected === "Anantapur" ? "Ananthapuram" : selected;
-      let url = `http://localhost:8000/parcels?district=${encodeURIComponent(apiDistrict)}`;
+      let url = `/api/parcels?district=${encodeURIComponent(apiDistrict)}`;
       if (selectedMandal && selectedMandal !== "All Mandals") {
         url += `&mandal=${encodeURIComponent(selectedMandal)}`;
       }
@@ -281,7 +287,7 @@ export function ParcelMap({
       return;
     }
     
-    let url = `http://localhost:8000/map/metrics?level=${targetLevel}`;
+    let url = `/api/map/metrics?level=${targetLevel}`;
     if (selected && selected !== "All Districts") url += `&district=${encodeURIComponent(selected === "Anantapur" ? "Ananthapuram" : selected)}`;
     if (selectedMandal && selectedMandal !== "All Mandals") url += `&mandal=${encodeURIComponent(selectedMandal)}`;
     
@@ -417,6 +423,15 @@ export function ParcelMap({
     const props = feature.properties;
     const name = props.vilname11 || props.vilnam_soi || props.village_name || props.VILLAGE || props.NAME || "Unknown Village";
     
+    // Dynamically retrieve the village's metrics from the state
+    const vNameKey = Object.keys(villageMetricsData).find(k => k.toLowerCase() === name.toLowerCase());
+    const vMetrics = vNameKey ? villageMetricsData[vNameKey] : null;
+    
+    const parcelsCount = vMetrics?.["Total Parcels"] || 0;
+    const avgHealth = vMetrics?.soilHealth ? vMetrics.soilHealth.toFixed(2) : "0.00";
+    const flagged = vMetrics?.["Soil Unhealthy %"] !== undefined ? Math.round((vMetrics["Soil Unhealthy %"] / 100) * parcelsCount) : 0;
+    const dominantSoil = vMetrics?.Soil_Type || "Unknown";
+
     layer.setStyle({
       fillColor: "#0ea5e9",
       fillOpacity: 0.15,
@@ -432,6 +447,30 @@ export function ParcelMap({
       </div>
       `,
       { sticky: true, className: "!bg-transparent !border-none !p-0 !shadow-none" }
+    );
+
+    layer.bindPopup(
+      `
+      <div class="bg-card text-foreground p-3 pr-6 pt-4 rounded-lg shadow-xl border border-border flex flex-col gap-2 min-w-[220px]">
+        <div class="flex justify-between items-center gap-4 border-b border-border/50 pb-1">
+          <span class="text-muted-foreground text-[10px] font-bold uppercase tracking-wider">Total Parcels</span>
+          <span class="font-bold text-sm text-foreground">${parcelsCount}</span>
+        </div>
+        <div class="flex justify-between items-center gap-4 border-b border-border/50 pb-1">
+          <span class="text-muted-foreground text-[10px] font-bold uppercase tracking-wider">Avg Soil Health (%)</span>
+          <span class="font-bold text-sm text-success">${avgHealth}%</span>
+        </div>
+        <div class="flex justify-between items-center gap-4 border-b border-border/50 pb-1">
+          <span class="text-muted-foreground text-[10px] font-bold uppercase tracking-wider">Parcels With Unhealthy Soil</span>
+          <span class="font-bold text-sm text-warning">${flagged}</span>
+        </div>
+        <div class="flex justify-between items-center gap-4">
+          <span class="text-muted-foreground text-[10px] font-bold uppercase tracking-wider">Dominant Soil Type</span>
+          <span class="font-bold text-sm text-info">${dominantSoil}</span>
+        </div>
+      </div>
+      `,
+      { className: "!bg-transparent !border-none !p-0 !shadow-none custom-popup" }
     );
 
     layer.on({
@@ -497,7 +536,7 @@ export function ParcelMap({
         {/* Village Boundaries Drill-Down */}
         {villageGeoData && selectedMandal && selectedMandal !== "All Mandals" && (
           <GeoJSON
-            key={`${selected}-${selectedMandal}`} // Re-mount when mandal changes
+            key={`${selected}-${selectedMandal}-${Object.keys(villageMetricsData).length}`} // Re-mount when mandal changes or metrics load
             data={villageGeoData}
             onEachFeature={onEachVillageFeature}
           />
