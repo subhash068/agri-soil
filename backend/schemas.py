@@ -209,3 +209,15 @@ class CropRecoRequest(BaseModel):
 class CropRecoResponse(BaseModel):
     recommended_crop: str
     confidence: float
+
+class SoilTypeOut(BaseModel):
+    id: str
+    name: str
+    water_holding_capacity: float
+    drainage: str
+    texture: str
+    retention_score: float
+    suitable_crops: List[str]
+    color: str
+    parcel_count: int = 0
+    share: float = 0.0

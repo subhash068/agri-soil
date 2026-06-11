@@ -116,7 +116,16 @@ async def get_parcels(
     village: Optional[str] = None,
     db: AsyncSession = Depends(get_db)
 ):
-    stmt = select(models.Parcel)
+    # Select only the serializable columns — exclude the PostGIS binary geometry column
+    cols = [
+        models.Parcel.id, models.Parcel.farmer, models.Parcel.village,
+        models.Parcel.district, models.Parcel.mandal, models.Parcel.crop,
+        models.Parcel.acreage, models.Parcel.health, models.Parcel.risk,
+        models.Parcel.confidence, models.Parcel.lat, models.Parcel.lng,
+        models.Parcel.ndvi, models.Parcel.evi, models.Parcel.ndre,
+        models.Parcel.analytics, models.Parcel.outline
+    ]
+    stmt = select(*cols)
     if district:
         stmt = stmt.where(models.Parcel.district == district)
     if mandal:
@@ -125,8 +134,8 @@ async def get_parcels(
         stmt = stmt.where(models.Parcel.village == village)
         
     result = await db.execute(stmt)
-    parcels = result.scalars().all()
-    return parcels
+    rows = result.all()
+    return [dict(row._mapping) for row in rows]
 
 @app.get("/weather", response_model=List[schemas.WeatherForecastPoint])
 async def get_weather():
@@ -406,15 +415,25 @@ async def get_map_metrics(
         group_col,
         func.avg(models.Parcel.health).label("soilHealth"),
         func.avg(cast(func.json_extract_path_text(models.Parcel.analytics, 'pH'), Float)).label("pH"),
+        func.stddev_pop(cast(func.json_extract_path_text(models.Parcel.analytics, 'pH'), Float)).label("pH_std"),
         func.avg(cast(func.json_extract_path_text(models.Parcel.analytics, 'EC'), Float)).label("EC"),
+        func.stddev_pop(cast(func.json_extract_path_text(models.Parcel.analytics, 'EC'), Float)).label("EC_std"),
         func.avg(cast(func.json_extract_path_text(models.Parcel.analytics, 'Organic_Carbon'), Float)).label("Organic Carbon"),
+        func.stddev_pop(cast(func.json_extract_path_text(models.Parcel.analytics, 'Organic_Carbon'), Float)).label("Organic_Carbon_std"),
         func.avg(cast(func.json_extract_path_text(models.Parcel.analytics, 'Nitrogen'), Float)).label("Nitrogen"),
+        func.stddev_pop(cast(func.json_extract_path_text(models.Parcel.analytics, 'Nitrogen'), Float)).label("Nitrogen_std"),
         func.avg(cast(func.json_extract_path_text(models.Parcel.analytics, 'Phosphorus'), Float)).label("Phosphorus"),
+        func.stddev_pop(cast(func.json_extract_path_text(models.Parcel.analytics, 'Phosphorus'), Float)).label("Phosphorus_std"),
         func.avg(cast(func.json_extract_path_text(models.Parcel.analytics, 'Potassium'), Float)).label("Potassium"),
+        func.stddev_pop(cast(func.json_extract_path_text(models.Parcel.analytics, 'Potassium'), Float)).label("Potassium_std"),
         func.avg(cast(func.json_extract_path_text(models.Parcel.analytics, 'Iron'), Float)).label("Iron"),
+        func.stddev_pop(cast(func.json_extract_path_text(models.Parcel.analytics, 'Iron'), Float)).label("Iron_std"),
         func.avg(cast(func.json_extract_path_text(models.Parcel.analytics, 'Zinc'), Float)).label("Zinc"),
+        func.stddev_pop(cast(func.json_extract_path_text(models.Parcel.analytics, 'Zinc'), Float)).label("Zinc_std"),
         func.avg(cast(func.json_extract_path_text(models.Parcel.analytics, 'Copper'), Float)).label("Copper"),
+        func.stddev_pop(cast(func.json_extract_path_text(models.Parcel.analytics, 'Copper'), Float)).label("Copper_std"),
         func.avg(cast(func.json_extract_path_text(models.Parcel.analytics, 'Boron'), Float)).label("Boron"),
+        func.stddev_pop(cast(func.json_extract_path_text(models.Parcel.analytics, 'Boron'), Float)).label("Boron_std"),
         func.mode().within_group(func.json_extract_path_text(models.Parcel.analytics, 'Soil_Type')).label("Soil_Type"),
         func.count(models.Parcel.id).label("totalParcels")
     )
@@ -435,24 +454,229 @@ async def get_map_metrics(
         
         health = float(row.soilHealth) if row.soilHealth is not None else 0.0
         
+        def safe_float(val, default=0.0):
+            return float(val) if val is not None else default
+            
+        def compute_stats(avg, std):
+            a = safe_float(avg)
+            s = safe_float(std, default=a * 0.1) # fallback to 10% std if none
+            conf = min(99, max(70, 100 - (s / a * 100))) if a > 0 else 80
+            return {
+                "value": a,
+                "low": a - s,
+                "high": a + s,
+                "confidence": int(conf)
+            }
+        
         output[name] = {
             "Total Parcels": int(row.totalParcels) if getattr(row, 'totalParcels', None) is not None else 0,
             "Soil_Type": getattr(row, 'Soil_Type', "Unknown") or "Unknown",
             "Soil Healthy %": health,
             "soilHealth": health,
             "Soil Unhealthy %": max(0.0, 100.0 - health),
-            "pH": float(row.pH) if row.pH is not None else 0.0,
-            "EC": float(row.EC) if row.EC is not None else 0.0,
-            "Organic Carbon": float(row[4]) if row[4] is not None else 0.0,
-            "Nitrogen": float(row.Nitrogen) if row.Nitrogen is not None else 0.0,
-            "Phosphorus": float(row.Phosphorus) if row.Phosphorus is not None else 0.0,
-            "Potassium": float(row.Potassium) if row.Potassium is not None else 0.0,
-            "Iron": float(row.Iron) if row.Iron is not None else 0.0,
-            "Zinc": float(row.Zinc) if row.Zinc is not None else 0.0,
-            "Copper": float(row.Copper) if row.Copper is not None else 0.0,
-            "Boron": float(row.Boron) if row.Boron is not None else 0.0
+            "pH": safe_float(row.pH),
+            "pH_stats": compute_stats(row.pH, row.pH_std),
+            "EC": safe_float(row.EC),
+            "EC_stats": compute_stats(row.EC, row.EC_std),
+            "Organic Carbon": safe_float(row[6]), # OC avg index due to label matching issue sometimes
+            "Organic Carbon_stats": compute_stats(row[6], row.Organic_Carbon_std),
+            "Nitrogen": safe_float(row.Nitrogen),
+            "Nitrogen_stats": compute_stats(row.Nitrogen, row.Nitrogen_std),
+            "Phosphorus": safe_float(row.Phosphorus),
+            "Phosphorus_stats": compute_stats(row.Phosphorus, row.Phosphorus_std),
+            "Potassium": safe_float(row.Potassium),
+            "Potassium_stats": compute_stats(row.Potassium, row.Potassium_std),
+            "Iron": safe_float(row.Iron),
+            "Iron_stats": compute_stats(row.Iron, row.Iron_std),
+            "Zinc": safe_float(row.Zinc),
+            "Zinc_stats": compute_stats(row.Zinc, row.Zinc_std),
+            "Copper": safe_float(row.Copper),
+            "Copper_stats": compute_stats(row.Copper, row.Copper_std),
+            "Boron": safe_float(row.Boron),
+            "Boron_stats": compute_stats(row.Boron, row.Boron_std)
         }
     return output
+
+@app.get("/soil-types", response_model=List[schemas.SoilTypeOut])
+async def get_soil_types(
+    district: Optional[str] = None,
+    mandal: Optional[str] = None,
+    village: Optional[str] = None,
+    db: AsyncSession = Depends(get_db)
+):
+    from sqlalchemy import text
+    
+    # 1. Get all soil types from reference table
+    result = await db.execute(select(models.SoilType))
+    soil_types = result.scalars().all()
+    
+    # 2. Get parcel counts per soil type from parcel analytics
+    count_query = "SELECT analytics->>'Soil_Type' as soil_type, COUNT(*) as cnt FROM parcels WHERE 1=1"
+    params = {}
+    if district:
+        count_query += " AND district ILIKE :d"
+        params["d"] = f"%{district}%"
+    if mandal:
+        count_query += " AND mandal ILIKE :m"
+        params["m"] = f"%{mandal}%"
+    if village:
+        count_query += " AND village ILIKE :v"
+        params["v"] = f"%{village}%"
+    count_query += " GROUP BY analytics->>'Soil_Type'"
+    
+    count_result = await db.execute(text(count_query), params)
+    parcel_counts = {row.soil_type: row.cnt for row in count_result.all() if row.soil_type}
+    
+    total_parcels = sum(parcel_counts.values()) or 1
+    
+    # 3. Merge reference data with live parcel counts
+    output = []
+    for st in soil_types:
+        count = parcel_counts.get(st.name, 0)
+        # Also try matching texture-based names (e.g. "Clay" matches "Clay" soil type)
+        if count == 0:
+            for pname, pcount in parcel_counts.items():
+                if pname and st.name and pname.lower() in st.name.lower():
+                    count = pcount
+                    break
+        
+        crops = st.suitable_crops if isinstance(st.suitable_crops, list) else json.loads(st.suitable_crops) if st.suitable_crops else []
+        
+        output.append(schemas.SoilTypeOut(
+            id=st.id,
+            name=st.name,
+            water_holding_capacity=st.water_holding_capacity or 0,
+            drainage=st.drainage or "Unknown",
+            texture=st.texture or "Unknown",
+            retention_score=st.retention_score or 0,
+            suitable_crops=crops,
+            color=st.color or "var(--color-chart-1)",
+            parcel_count=count,
+            share=round((count / total_parcels) * 100, 1) if count > 0 else 0
+        ))
+    
+    # Sort by share descending
+    output.sort(key=lambda x: x.share, reverse=True)
+    return output
+
+@app.get("/soil-types/analytics")
+async def get_soil_type_analytics(
+    district: Optional[str] = None,
+    mandal: Optional[str] = None,
+    village: Optional[str] = None,
+    db: AsyncSession = Depends(get_db)
+):
+    from sqlalchemy import text
+    
+    # 1. Average nutrient values per soil type
+    nutrient_query = """
+        SELECT 
+            analytics->>'Soil_Type' as soil_type,
+            COUNT(*) as parcel_count,
+            AVG(CAST(analytics->>'pH' AS FLOAT)) as avg_ph,
+            AVG(CAST(analytics->>'EC' AS FLOAT)) as avg_ec,
+            AVG(CAST(analytics->>'Organic_Carbon' AS FLOAT)) as avg_oc,
+            AVG(CAST(analytics->>'Nitrogen' AS FLOAT)) as avg_n,
+            AVG(CAST(analytics->>'Phosphorus' AS FLOAT)) as avg_p,
+            AVG(CAST(analytics->>'Potassium' AS FLOAT)) as avg_k,
+            AVG(CAST(analytics->>'Zinc' AS FLOAT)) as avg_zn,
+            AVG(CAST(analytics->>'Iron' AS FLOAT)) as avg_fe,
+            AVG(CAST(analytics->>'Copper' AS FLOAT)) as avg_cu,
+            AVG(CAST(analytics->>'Boron' AS FLOAT)) as avg_b,
+            AVG(health) as avg_health
+        FROM parcels WHERE 1=1
+    """
+    params = {}
+    if district:
+        nutrient_query += " AND district ILIKE :d"
+        params["d"] = f"%{district}%"
+    if mandal:
+        nutrient_query += " AND mandal ILIKE :m"
+        params["m"] = f"%{mandal}%"
+    if village:
+        nutrient_query += " AND village ILIKE :v"
+        params["v"] = f"%{village}%"
+    nutrient_query += " GROUP BY analytics->>'Soil_Type' ORDER BY parcel_count DESC"
+    
+    result = await db.execute(text(nutrient_query), params)
+    
+    nutrients = {}
+    for row in result.all():
+        if not row.soil_type:
+            continue
+        nutrients[row.soil_type] = {
+            "parcel_count": row.parcel_count,
+            "avg_ph": round(float(row.avg_ph or 0), 2),
+            "avg_ec": round(float(row.avg_ec or 0), 2),
+            "avg_oc": round(float(row.avg_oc or 0), 2),
+            "avg_n": round(float(row.avg_n or 0), 1),
+            "avg_p": round(float(row.avg_p or 0), 1),
+            "avg_k": round(float(row.avg_k or 0), 1),
+            "avg_zn": round(float(row.avg_zn or 0), 2),
+            "avg_fe": round(float(row.avg_fe or 0), 2),
+            "avg_fe": round(float(row.avg_fe or 0), 2),
+            "avg_cu": round(float(row.avg_cu or 0), 2),
+            "avg_b": round(float(row.avg_b or 0), 2),
+            "avg_health": round(float(row.avg_health or 0), 1),
+        }
+    
+    # 2. Irrigation type distribution per soil type
+    irrigation_query = """
+        SELECT 
+            analytics->>'Soil_Type' as soil_type,
+            analytics->>'Irrigation_Type' as irrigation,
+            COUNT(*) as cnt
+        FROM parcels WHERE 1=1
+    """
+    if district:
+        irrigation_query += " AND district ILIKE :d"
+    if mandal:
+        irrigation_query += " AND mandal ILIKE :m"
+    if village:
+        irrigation_query += " AND village ILIKE :v"
+    irrigation_query += " GROUP BY analytics->>'Soil_Type', analytics->>'Irrigation_Type' ORDER BY cnt DESC"
+    
+    irr_result = await db.execute(text(irrigation_query), params)
+    
+    irrigation = {}
+    for row in irr_result.all():
+        if not row.soil_type or not row.irrigation:
+            continue
+        if row.soil_type not in irrigation:
+            irrigation[row.soil_type] = {}
+        irrigation[row.soil_type][row.irrigation] = row.cnt
+    
+    # 3. Crop distribution per soil type
+    crop_query = """
+        SELECT 
+            analytics->>'Soil_Type' as soil_type,
+            crop,
+            COUNT(*) as cnt
+        FROM parcels WHERE 1=1
+    """
+    if district:
+        crop_query += " AND district ILIKE :d"
+    if mandal:
+        crop_query += " AND mandal ILIKE :m"
+    if village:
+        crop_query += " AND village ILIKE :v"
+    crop_query += " GROUP BY analytics->>'Soil_Type', crop ORDER BY cnt DESC"
+    
+    crop_result = await db.execute(text(crop_query), params)
+    
+    crops = {}
+    for row in crop_result.all():
+        if not row.soil_type or not row.crop:
+            continue
+        if row.soil_type not in crops:
+            crops[row.soil_type] = {}
+        crops[row.soil_type][row.crop] = row.cnt
+    
+    return {
+        "nutrients": nutrients,
+        "irrigation": irrigation,
+        "crops": crops,
+    }
 
 @app.post("/recommend/crop", response_model=schemas.CropRecoResponse)
 async def recommend_crop(req: schemas.CropRecoRequest):

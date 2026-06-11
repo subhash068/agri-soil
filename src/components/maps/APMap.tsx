@@ -399,7 +399,7 @@ export function APMap({
             </button>
           </div>
           <div className="flex-1 overflow-y-auto p-3 space-y-2.5 text-xs custom-scrollbar">
-            {Object.entries(metricsData[selected]).map(([key, val]) => (
+            {Object.entries(metricsData[selected]).filter(([key]) => !key.endsWith('_stats')).map(([key, val]) => (
               <div key={key} className="flex justify-between items-center border-b border-border/40 pb-2">
                 <span className="text-muted-foreground font-medium">{key}</span>
                 <span className="font-bold text-foreground bg-background px-1.5 py-0.5 rounded border border-border/50">

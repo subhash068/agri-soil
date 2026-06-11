@@ -81,7 +81,7 @@ export function SoilHealthMap({
   const [mandalMetricsData, setMandalMetricsData] = useState<Record<string, any>>({});
   const [villageMetricsData, setVillageMetricsData] = useState<Record<string, any>>({});
   const [parcelsData, setParcelsData] = useState<any[]>([]);
-  
+
   const geoJsonRef = useRef<L.GeoJSON>(null);
   const mandalGeoJsonRef = useRef<L.GeoJSON>(null);
   const villageGeoJsonRef = useRef<L.GeoJSON>(null);
@@ -111,7 +111,7 @@ export function SoilHealthMap({
     fetch("http://localhost:8000/boundaries/districts")
       .then((res) => res.json())
       .then((data) => setDistrictGeoData(data));
-      
+
     if (useCsvData) {
       // Parse CSV data instead of fetching from API
       const lines = rawCsvData.trim().split('\n');
@@ -131,7 +131,7 @@ export function SoilHealthMap({
               adoption: parseFloat(row[4]),
               deficiencyRate: parseFloat(row[5])
             };
-            
+
             if (districtName === "ANDHRA PRADESH (STATE TOTAL)") {
               stateTotalData = rowData;
             } else {
@@ -140,12 +140,12 @@ export function SoilHealthMap({
           }
         }
       }
-      
+
       // The CSV is missing Nellore data, so we fallback to the state average
       if (!parsedData["Nellore"] && stateTotalData) {
         parsedData["Nellore"] = { ...stateTotalData };
       }
-      
+
       setMetricsData(parsedData);
     } else {
       // Fetch real analytics data
@@ -177,7 +177,7 @@ export function SoilHealthMap({
       fetch(`http://localhost:8000/boundaries/villages?district=${encodeURIComponent(apiDistrict)}&mandal=${encodeURIComponent(selectedMandal)}`)
         .then((res) => res.json())
         .then((data) => setVillageGeoData(data));
-        
+
       if (!useCsvData) {
         // Fetch ALL villages in the district to bypass Mandal-level mismatches between AP DB and GeoJSON boundaries
         fetch(`http://localhost:8000/map/metrics?level=village&district=${encodeURIComponent(apiDistrict)}`)
@@ -215,12 +215,12 @@ export function SoilHealthMap({
     if (villageGeoJsonRef.current && selectedVillage && selectedVillage !== "All Villages") {
       let bestLayer: any = null;
       let minDistance = Infinity;
-      
+
       villageGeoJsonRef.current.eachLayer((layer: any) => {
         const props = layer.feature?.properties;
         if (!props) return;
         const name = props.vilname11 || props.vilnam_soi || props.village_name || props.VILLAGE || props.NAME || "Unknown Village";
-        
+
         let sanitizedSearch = sanitize(selectedVillage);
         if (ALIAS_MAP[sanitizedSearch]) sanitizedSearch = ALIAS_MAP[sanitizedSearch];
         let sanitizedName = sanitize(name);
@@ -232,7 +232,7 @@ export function SoilHealthMap({
           bestLayer = layer;
         }
       });
-      
+
       const maxAllowedDist = Math.max(4, Math.floor(sanitize(selectedVillage).length * 0.4));
       if (bestLayer && minDistance <= maxAllowedDist && mapRef.current) {
         setTimeout(() => {
@@ -247,19 +247,19 @@ export function SoilHealthMap({
     if (mandalGeoJsonRef.current && selectedMandal && selectedMandal !== "All Mandals" && (!selectedVillage || selectedVillage === "All Villages")) {
       let bestLayer: any = null;
       let minDistance = Infinity;
-      
+
       mandalGeoJsonRef.current.eachLayer((layer: any) => {
         const props = layer.feature?.properties;
         if (!props) return;
         const name = props.sdtname || props.NAME_3 || props.SUB_DIST || props.Mandal || props.mandal_name || props.mandal_nam || props.MANDAL || props.NAME || "Unknown Mandal";
-        
+
         const dist = levenshtein(sanitize(selectedMandal), sanitize(name));
         if (dist < minDistance) {
           minDistance = dist;
           bestLayer = layer;
         }
       });
-      
+
       const maxAllowedDist = Math.max(4, Math.floor(sanitize(selectedMandal).length * 0.4));
       if (bestLayer && minDistance <= maxAllowedDist && mapRef.current) {
         setTimeout(() => {
@@ -307,11 +307,11 @@ export function SoilHealthMap({
   }, [selected, selectedMandal, showParcels]);
 
   // Extract all values for the current metric to determine min/max for color scale
-  const activeLegendData = 
+  const activeLegendData =
     (selectedMandal && selectedMandal !== "All Mandals" && Object.keys(villageMetricsData).length > 0) ? villageMetricsData :
-    (selected && selected !== "All Districts" && Object.keys(mandalMetricsData).length > 0) ? mandalMetricsData : 
-    metricsData;
-    
+      (selected && selected !== "All Districts" && Object.keys(mandalMetricsData).length > 0) ? mandalMetricsData :
+        metricsData;
+
   const values = Object.values(activeLegendData).map((d: any) => d[metricKey] as number).filter(v => v !== undefined);
   let min = values.length > 0 ? Math.min(...values) : 0;
   let max = values.length > 0 ? Math.max(...values) : 100;
@@ -323,9 +323,9 @@ export function SoilHealthMap({
 
   const colorFor = (v: number) => {
     if (v === undefined || v === null) return "#333";
-    
+
     let t = max === min ? 0.5 : (v - min) / (max - min);
-    
+
     if (invert) t = 1 - t;
     if (t > 0.66) return "#16a34a"; // green
     if (t > 0.33) return "#d97706"; // amber
@@ -338,7 +338,7 @@ export function SoilHealthMap({
       geoJsonRef.current.eachLayer((layer: any) => {
         const props = layer.feature.properties;
         const name = props.NAME || props.district_name || props.NEW_DIST || props.dtname || props.District || "Unknown";
-        
+
         let normalizedName = name.replace(/ District/gi, "").replace(/ Dist\./gi, "").trim();
         if (normalizedName === "Ananthapuram") normalizedName = "Anantapur";
         if (normalizedName === "Sri Balaji") normalizedName = "Tirupati";
@@ -348,7 +348,7 @@ export function SoilHealthMap({
         if (normalizedName === "Sri Satyasai") normalizedName = "Sri Sathya Sai";
         if (normalizedName === "Manyam") normalizedName = "Parvathipuram Manyam";
         if (normalizedName.toLowerCase() === "sri potti sriramulu nellore") normalizedName = "Nellore";
-        
+
         const d = metricsData[normalizedName] || metricsData[name];
 
         if (d && d[metricKey] !== undefined) {
@@ -364,7 +364,7 @@ export function SoilHealthMap({
             dashArray: isSel ? "" : "3 3", // added subtle dash for unselected boundaries
           });
           if (!isSel && selected) {
-             layer.setStyle({ fillOpacity: 0.2 }); // Fade unselected instead of darkening
+            layer.setStyle({ fillOpacity: 0.2 }); // Fade unselected instead of darkening
           }
         }
       });
@@ -378,7 +378,7 @@ export function SoilHealthMap({
   const onEachDistrictFeature = (feature: any, layer: any) => {
     const props = feature.properties;
     const name = props.NAME || props.district_name || props.NEW_DIST || props.dtname || props.District || "Unknown";
-    
+
     let normalizedName = name.replace(/ District/gi, "").replace(/ Dist\./gi, "").trim();
     if (normalizedName === "Ananthapuram") normalizedName = "Anantapur";
     if (normalizedName === "Sri Balaji") normalizedName = "Tirupati";
@@ -388,7 +388,7 @@ export function SoilHealthMap({
     if (normalizedName === "Sri Satyasai") normalizedName = "Sri Sathya Sai";
     if (normalizedName === "Manyam") normalizedName = "Parvathipuram Manyam";
     if (normalizedName.toLowerCase() === "sri potti sriramulu nellore") normalizedName = "Nellore";
-    
+
     const d = metricsData[normalizedName] || metricsData[name];
 
     if (d && d[metricKey] !== undefined) {
@@ -454,7 +454,7 @@ export function SoilHealthMap({
     // Determine property keys dynamically based on what the GeoJSON uses
     const props = feature.properties;
     const name = props.SUB_DIST || props.NAME_3 || props.sdtname || props.Mandal || "Unknown Mandal";
-    
+
     // For Mandals, we assign a white dash border to stand out against satellite imagery
     layer.setStyle({
       fillColor: "#ffffff",
@@ -503,7 +503,7 @@ export function SoilHealthMap({
   const onEachVillageFeature = (feature: any, layer: any) => {
     const props = feature.properties;
     const name = props.vilname11 || props.vilnam_soi || props.village_name || props.VILLAGE || props.NAME || "Unknown Village";
-    
+
     layer.setStyle({
       fillColor: "#0ea5e9",
       fillOpacity: 0.15,
@@ -570,7 +570,7 @@ export function SoilHealthMap({
             onEachFeature={onEachDistrictFeature}
           />
         )}
-        
+
         {/* Mandal Boundaries Drill-Down */}
         {mandalGeoData && selected && (
           <GeoJSON
@@ -616,7 +616,7 @@ export function SoilHealthMap({
           </CircleMarker>
         ))}
         {/* Searched Parcel Target Pin */}
-        {searchedParcel && searchedParcel.lat && searchedParcel.lng && (
+        {showParcels && searchedParcel && searchedParcel.lat && searchedParcel.lng && (
           <Marker position={[searchedParcel.lat, searchedParcel.lng]} icon={targetIcon}>
             <Popup className="custom-popup">
               <div className="bg-card text-foreground rounded shadow-md text-xs p-1">
@@ -629,17 +629,17 @@ export function SoilHealthMap({
           </Marker>
         )}
       </MapContainer>
-      
+
       {/* Dynamic Color Legend */}
       <div className="absolute bottom-4 left-4 z-[400] flex flex-col gap-1.5 rounded-lg bg-card/90 px-3 py-2.5 text-xs backdrop-blur border border-border shadow-lg text-foreground w-56">
         <div className="flex justify-between font-bold text-sm">
           <span className="truncate pr-2">{metricKey}</span>
           <span className="text-[10px] text-muted-foreground self-end pb-0.5">{invert ? "Lower is Better" : "Higher is Better"}</span>
         </div>
-        <div 
-          className="h-3 w-full rounded shadow-inner" 
+        <div
+          className="h-3 w-full rounded shadow-inner"
           style={{
-            background: invert 
+            background: invert
               ? "linear-gradient(to right, hsl(120, 80%, 45%), hsl(60, 80%, 45%), hsl(0, 80%, 45%))"
               : "linear-gradient(to right, hsl(0, 80%, 45%), hsl(60, 80%, 45%), hsl(120, 80%, 45%))"
           }}
@@ -654,16 +654,16 @@ export function SoilHealthMap({
       {/* Detail Sidebar Popup */}
       {selected && (
         (() => {
-          const activeLevelName = 
-            (selectedVillage && selectedVillage !== "All Villages") ? selectedVillage : 
-            (selectedMandal && selectedMandal !== "All Mandals") ? selectedMandal : 
-            selected;
-            
-          const activeLevelType = 
-            (selectedVillage && selectedVillage !== "All Villages") ? "Village" : 
-            (selectedMandal && selectedMandal !== "All Mandals") ? "Mandal" : 
-            "District";
-            
+          const activeLevelName =
+            (selectedVillage && selectedVillage !== "All Villages") ? selectedVillage :
+              (selectedMandal && selectedMandal !== "All Mandals") ? selectedMandal :
+                selected;
+
+          const activeLevelType =
+            (selectedVillage && selectedVillage !== "All Villages") ? "Village" :
+              (selectedMandal && selectedMandal !== "All Mandals") ? "Mandal" :
+                "District";
+
           const fallbackMetrics = {
             "Total Parcels": 0,
             soilHealth: 0,
@@ -682,16 +682,16 @@ export function SoilHealthMap({
           };
 
           const sanitize = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '').replace(/th/g, 't').replace(/dh/g, 'd').replace(/ph/g, 'p');
-          
+
           const ALIAS_MAP: Record<string, string> = {
             'kantamrajukonduru': 'kotamarajukondru'
           };
 
-          const activeMetricsData = 
-            (selectedVillage && selectedVillage !== "All Villages") ? (villageMetricsData[selectedVillage] || fallbackMetrics) : 
-            (selectedMandal && selectedMandal !== "All Mandals") ? (mandalMetricsData[selectedMandal] || fallbackMetrics) : 
-            (metricsData[selected] || fallbackMetrics);
-            
+          const activeMetricsData =
+            (selectedVillage && selectedVillage !== "All Villages") ? (villageMetricsData[selectedVillage] || fallbackMetrics) :
+              (selectedMandal && selectedMandal !== "All Mandals") ? (mandalMetricsData[selectedMandal] || fallbackMetrics) :
+                (metricsData[selected] || fallbackMetrics);
+
           if (!activeMetricsData) return null;
 
           const exportCSV = () => {
@@ -716,7 +716,7 @@ export function SoilHealthMap({
                   <h3 className="font-bold text-sm text-foreground">{activeLevelName}</h3>
                   <p className="text-[10px] text-muted-foreground uppercase tracking-wider font-semibold">{activeLevelType} Profile</p>
                 </div>
-                <button 
+                <button
                   onClick={() => {
                     if (selectedVillage && selectedVillage !== "All Villages") {
                       setVillage("All Villages");
@@ -734,18 +734,18 @@ export function SoilHealthMap({
               </div>
               <div className="flex-1 overflow-y-auto p-3 space-y-2.5 text-xs custom-scrollbar">
                 {Object.entries(activeMetricsData)
-                  .filter(([key]) => !["soilHealth", "Avg Area (Acres)", "adoption", "deficiencyRate"].includes(key))
+                  .filter(([key]) => !["soilHealth", "Avg Area (Acres)", "adoption", "deficiencyRate"].includes(key) && !key.endsWith('_stats'))
                   .map(([key, val]) => (
-                  <div key={key} className="flex justify-between items-center border-b border-border/40 pb-2">
-                    <span className="text-muted-foreground font-medium">{key}</span>
-                    <span className="font-bold text-foreground bg-background px-1.5 py-0.5 rounded border border-border/50">
-                      {typeof val === 'number' && !Number.isInteger(val) ? val.toFixed(2) : val as any}
-                    </span>
-                  </div>
-                ))}
+                    <div key={key} className="flex justify-between items-center border-b border-border/40 pb-2">
+                      <span className="text-muted-foreground font-medium">{key}</span>
+                      <span className="font-bold text-foreground bg-background px-1.5 py-0.5 rounded border border-border/50">
+                        {typeof val === 'number' && !Number.isInteger(val) ? val.toFixed(2) : val as any}
+                      </span>
+                    </div>
+                  ))}
               </div>
               <div className="p-3 border-t border-border bg-muted/30">
-                <button 
+                <button
                   onClick={exportCSV}
                   className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground py-2 px-4 rounded-md text-xs font-semibold transition-colors shadow-sm"
                 >

@@ -21,18 +21,19 @@ import {
   Cell,
 } from "recharts";
 
-const AXIS = { stroke: "var(--color-muted-foreground)", fontSize: 11 };
+const AXIS = { fill: "#9ca3af", fontSize: 11 };
 const GRID = "var(--color-border)";
 
 const tooltipStyle = {
   contentStyle: {
-    background: "var(--color-popover)",
-    border: "1px solid var(--color-border)",
+    background: "hsl(155 30% 8%)",
+    border: "1px solid hsl(155 15% 20%)",
     borderRadius: 8,
     fontSize: 12,
-    color: "var(--color-popover-foreground)",
+    color: "#e8f5e9",
   },
-  labelStyle: { color: "var(--color-foreground)", fontWeight: 600 },
+  labelStyle: { color: "#ffffff", fontWeight: 600 },
+  itemStyle: { color: "#e8f5e9" },
 };
 
 export function AreaTrend({
@@ -112,6 +113,8 @@ export function Bars({
   stacked = false,
   horizontal = false,
   yUnit,
+  xAxisLabel,
+  yAxisLabel,
 }: {
   data: Record<string, unknown>[];
   xKey: string;
@@ -120,24 +123,31 @@ export function Bars({
   stacked?: boolean;
   horizontal?: boolean;
   yUnit?: string;
+  xAxisLabel?: string;
+  yAxisLabel?: string;
 }) {
   return (
     <ResponsiveContainer width="100%" height={height}>
       <BarChart
         data={data}
         layout={horizontal ? "vertical" : "horizontal"}
-        margin={{ top: 8, right: 8, left: horizontal ? 8 : -16, bottom: 0 }}
+        margin={{ 
+          top: 8, 
+          right: 8, 
+          left: horizontal ? 8 : (yAxisLabel ? 0 : -16), 
+          bottom: xAxisLabel ? 16 : 0 
+        }}
       >
         <CartesianGrid strokeDasharray="3 3" stroke={GRID} vertical={false} />
         {horizontal ? (
           <>
-            <XAxis type="number" tick={AXIS} axisLine={false} tickLine={false} />
-            <YAxis type="category" dataKey={xKey} tick={AXIS} axisLine={false} tickLine={false} width={92} />
+            <XAxis type="number" tick={AXIS} axisLine={false} tickLine={false} label={xAxisLabel ? { value: xAxisLabel, position: "insideBottom", offset: -10, fill: "#9ca3af", fontSize: 11 } : undefined} />
+            <YAxis type="category" dataKey={xKey} tick={AXIS} axisLine={false} tickLine={false} width={92} label={yAxisLabel ? { value: yAxisLabel, angle: -90, position: "insideLeft", fill: "#9ca3af", fontSize: 11 } : undefined} />
           </>
         ) : (
           <>
-            <XAxis dataKey={xKey} tick={AXIS} axisLine={false} tickLine={false} />
-            <YAxis tick={AXIS} axisLine={false} tickLine={false} />
+            <XAxis dataKey={xKey} tick={AXIS} axisLine={false} tickLine={false} label={xAxisLabel ? { value: xAxisLabel, position: "insideBottom", offset: -12, fill: "#9ca3af", fontSize: 11 } : undefined} />
+            <YAxis tick={AXIS} axisLine={false} tickLine={false} label={yAxisLabel ? { value: yAxisLabel, angle: -90, position: "insideLeft", offset: 10, fill: "#9ca3af", fontSize: 11 } : undefined} />
           </>
         )}
         <Tooltip {...tooltipStyle} cursor={{ fill: "var(--color-muted)", opacity: 0.4 }} formatter={yUnit ? (value: any) => `${value} ${yUnit}` : undefined} />
