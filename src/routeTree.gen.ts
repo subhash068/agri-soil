@@ -36,6 +36,7 @@ import { Route as AppDashboardRouteImport } from './routes/_app.dashboard'
 import { Route as AppCropSuitabilityRouteImport } from './routes/_app.crop-suitability'
 import { Route as AppCropIntelligenceRouteImport } from './routes/_app.crop-intelligence'
 import { Route as AppAprtgsDashboardRouteImport } from './routes/_app.aprtgs-dashboard'
+import { Route as AppAlertsHistoryRouteImport } from './routes/_app.alerts-history'
 import { Route as AppAiCopilotRouteImport } from './routes/_app.ai-copilot'
 
 const AdminRoute = AdminRouteImport.update({
@@ -172,6 +173,11 @@ const AppAprtgsDashboardRoute = AppAprtgsDashboardRouteImport.update({
   path: '/aprtgs-dashboard',
   getParentRoute: () => AppRoute,
 } as any)
+const AppAlertsHistoryRoute = AppAlertsHistoryRouteImport.update({
+  id: '/alerts-history',
+  path: '/alerts-history',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppAiCopilotRoute = AppAiCopilotRouteImport.update({
   id: '/ai-copilot',
   path: '/ai-copilot',
@@ -182,6 +188,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/ai-copilot': typeof AppAiCopilotRoute
+  '/alerts-history': typeof AppAlertsHistoryRoute
   '/aprtgs-dashboard': typeof AppAprtgsDashboardRoute
   '/crop-intelligence': typeof AppCropIntelligenceRoute
   '/crop-suitability': typeof AppCropSuitabilityRoute
@@ -211,6 +218,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/ai-copilot': typeof AppAiCopilotRoute
+  '/alerts-history': typeof AppAlertsHistoryRoute
   '/aprtgs-dashboard': typeof AppAprtgsDashboardRoute
   '/crop-intelligence': typeof AppCropIntelligenceRoute
   '/crop-suitability': typeof AppCropSuitabilityRoute
@@ -242,6 +250,7 @@ export interface FileRoutesById {
   '/_app': typeof AppRouteWithChildren
   '/admin': typeof AdminRoute
   '/_app/ai-copilot': typeof AppAiCopilotRoute
+  '/_app/alerts-history': typeof AppAlertsHistoryRoute
   '/_app/aprtgs-dashboard': typeof AppAprtgsDashboardRoute
   '/_app/crop-intelligence': typeof AppCropIntelligenceRoute
   '/_app/crop-suitability': typeof AppCropSuitabilityRoute
@@ -273,6 +282,7 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/ai-copilot'
+    | '/alerts-history'
     | '/aprtgs-dashboard'
     | '/crop-intelligence'
     | '/crop-suitability'
@@ -302,6 +312,7 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/ai-copilot'
+    | '/alerts-history'
     | '/aprtgs-dashboard'
     | '/crop-intelligence'
     | '/crop-suitability'
@@ -332,6 +343,7 @@ export interface FileRouteTypes {
     | '/_app'
     | '/admin'
     | '/_app/ai-copilot'
+    | '/_app/alerts-history'
     | '/_app/aprtgs-dashboard'
     | '/_app/crop-intelligence'
     | '/_app/crop-suitability'
@@ -555,6 +567,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAprtgsDashboardRouteImport
       parentRoute: typeof AppRoute
     }
+    '/_app/alerts-history': {
+      id: '/_app/alerts-history'
+      path: '/alerts-history'
+      fullPath: '/alerts-history'
+      preLoaderRoute: typeof AppAlertsHistoryRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/_app/ai-copilot': {
       id: '/_app/ai-copilot'
       path: '/ai-copilot'
@@ -567,6 +586,7 @@ declare module '@tanstack/react-router' {
 
 interface AppRouteChildren {
   AppAiCopilotRoute: typeof AppAiCopilotRoute
+  AppAlertsHistoryRoute: typeof AppAlertsHistoryRoute
   AppAprtgsDashboardRoute: typeof AppAprtgsDashboardRoute
   AppCropIntelligenceRoute: typeof AppCropIntelligenceRoute
   AppCropSuitabilityRoute: typeof AppCropSuitabilityRoute
@@ -595,6 +615,7 @@ interface AppRouteChildren {
 
 const AppRouteChildren: AppRouteChildren = {
   AppAiCopilotRoute: AppAiCopilotRoute,
+  AppAlertsHistoryRoute: AppAlertsHistoryRoute,
   AppAprtgsDashboardRoute: AppAprtgsDashboardRoute,
   AppCropIntelligenceRoute: AppCropIntelligenceRoute,
   AppCropSuitabilityRoute: AppCropSuitabilityRoute,

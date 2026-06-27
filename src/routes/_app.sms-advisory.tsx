@@ -122,18 +122,19 @@ function SmsAdvisory() {
     }
   };
 
-  const handleCreateCampaign = () => {
+  const handleCreateCampaign = async () => {
     if (!smsEn.trim() && !smsTe.trim()) return;
 
     setIsSending(true);
 
-    setTimeout(() => {
+    try {
       const audience = getEstimatedAudience();
       const newId = String(Number(campaigns[0]?.id || "100") + 1);
+      const campaignName = selectedTemplateId === "custom" ? "Custom Advisory Broadcast" : TEMPLATE_PRESETS.find(t => t.id === selectedTemplateId)?.name || "Advisory Campaign";
 
       const newCampaign = {
         id: newId,
-        name: selectedTemplateId === "custom" ? "Custom Advisory Broadcast" : TEMPLATE_PRESETS.find(t => t.id === selectedTemplateId)?.name || "Advisory Campaign",
+        name: campaignName,
         district: district === "All" ? "Andhra Pradesh" : district,
         crop: crop === "All" ? "All Crops" : crop,
         date: scheduleMode === "now" ? "Just now" : `Scheduled: ${new Date(scheduleTime).toLocaleString()}`,
@@ -145,16 +146,37 @@ function SmsAdvisory() {
         te: smsTe
       };
 
+      // Register the broadcast as a system alert
+      const payload = {
+        type: scheduleMode === "now" ? "Broadcast" : "Scheduled",
+        crop: crop === "All" ? "All Crops" : crop,
+        district: district === "All" ? "Statewide" : district,
+        severity: "Info",
+        time: new Date().toLocaleDateString(),
+        action: `SMS Campaign: ${campaignName} (Audience: ${audience.toLocaleString()})`
+      };
+      
+      await fetch("/api/alerts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
       setCampaigns([newCampaign, ...campaigns]);
       setSelectedCampaignId(newId);
-      setIsSending(false);
       setAlertMsg(scheduleMode === "now" ? "SMS Campaign broadcasted successfully!" : "SMS Campaign scheduled successfully!");
       
-      // Clear inputs
       setSmsEn("");
       setSmsTe("");
       setTimeout(() => setAlertMsg(""), 5000);
-    }, 1500);
+    } catch (err) {
+      console.error("Failed to log broadcast to database", err);
+      // Fallback
+      setAlertMsg(scheduleMode === "now" ? "SMS Campaign broadcasted successfully!" : "SMS Campaign scheduled successfully!");
+      setTimeout(() => setAlertMsg(""), 5000);
+    } finally {
+      setIsSending(false);
+    }
   };
 
   // Funnel conversions

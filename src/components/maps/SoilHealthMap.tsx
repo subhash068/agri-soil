@@ -178,17 +178,15 @@ export function SoilHealthMap({
         .then((res) => res.json())
         .then((data) => setVillageGeoData(data));
 
-      if (!useCsvData) {
-        // Fetch ALL villages in the district to bypass Mandal-level mismatches between AP DB and GeoJSON boundaries
-        fetch(`/api/map/metrics?level=village&district=${encodeURIComponent(apiDistrict)}`)
-          .then((res) => res.json())
-          .then((data) => setVillageMetricsData(data));
-      }
+      // Fetch ALL villages in the district to bypass Mandal-level mismatches between AP DB and GeoJSON boundaries
+      fetch(`/api/map/metrics?level=village&district=${encodeURIComponent(apiDistrict)}`)
+        .then((res) => res.json())
+        .then((data) => setVillageMetricsData(data));
     } else {
       setVillageGeoData(null);
       setVillageMetricsData({});
     }
-  }, [selected, selectedMandal, useCsvData]);
+  }, [selected, selectedMandal]);
 
   // Sync selected village name from GeoJSON to Database alias
   useEffect(() => {
@@ -280,7 +278,7 @@ export function SoilHealthMap({
 
   // Drill-down: Fetch Mandal metrics when a specific district is selected
   useEffect(() => {
-    if (selected && selected !== "All Districts" && !useCsvData) {
+    if (selected && selected !== "All Districts") {
       const apiDistrict = selected === "Anantapur" ? "Ananthapuram" : selected;
       fetch(`/api/map/metrics?level=mandal&district=${encodeURIComponent(apiDistrict)}`)
         .then((res) => res.json())
@@ -288,7 +286,7 @@ export function SoilHealthMap({
     } else {
       setMandalMetricsData({});
     }
-  }, [selected, useCsvData]);
+  }, [selected]);
 
   // Fetch Parcels to plot as points
   useEffect(() => {

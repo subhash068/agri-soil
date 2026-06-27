@@ -48,7 +48,7 @@ export function AreaTrend({
   yUnit?: string;
 }) {
   return (
-    <ResponsiveContainer width="100%" height={height}>
+    <ResponsiveContainer width="100%" height={height} minWidth={0}>
       <AreaChart data={data} margin={{ top: 8, right: 8, left: -16, bottom: 0 }}>
         <defs>
           {keys.map((k) => (
@@ -90,7 +90,7 @@ export function MultiLine({
   height?: number;
 }) {
   return (
-    <ResponsiveContainer width="100%" height={height}>
+    <ResponsiveContainer width="100%" height={height} minWidth={0}>
       <LineChart data={data} margin={{ top: 8, right: 8, left: -16, bottom: 0 }}>
         <CartesianGrid strokeDasharray="3 3" stroke={GRID} vertical={false} />
         <XAxis dataKey={xKey} tick={AXIS} axisLine={false} tickLine={false} />
@@ -127,7 +127,7 @@ export function Bars({
   yAxisLabel?: string;
 }) {
   return (
-    <ResponsiveContainer width="100%" height={height}>
+    <ResponsiveContainer width="100%" height={height} minWidth={0}>
       <BarChart
         data={data}
         layout={horizontal ? "vertical" : "horizontal"}
@@ -174,7 +174,7 @@ export function RadarStat({
   height?: number;
 }) {
   return (
-    <ResponsiveContainer width="100%" height={height}>
+    <ResponsiveContainer width="100%" height={height} minWidth={0}>
       <RadarChart data={data} outerRadius="72%">
         <PolarGrid stroke={GRID} />
         <PolarAngleAxis dataKey="name" tick={{ fill: "var(--color-muted-foreground)", fontSize: 10 }} />
@@ -194,9 +194,33 @@ export function Donut({
   height?: number;
 }) {
   return (
-    <ResponsiveContainer width="100%" height={height}>
+    <ResponsiveContainer width="100%" height={height} minWidth={0}>
       <PieChart>
-        <Pie data={data} dataKey="value" nameKey="name" innerRadius="58%" outerRadius="82%" paddingAngle={2}>
+        <Pie 
+          data={data} 
+          dataKey="value" 
+          nameKey="name" 
+          innerRadius="50%" 
+          outerRadius="70%" 
+          paddingAngle={2}
+          labelLine={{ strokeWidth: 1, strokeOpacity: 0.6 }}
+          label={(props: any) => {
+            const { x, y, name, percent, fill, cx } = props;
+            return (
+              <text
+                x={x}
+                y={y}
+                fill={fill}
+                textAnchor={x > cx ? 'start' : 'end'}
+                dominantBaseline="central"
+                fontSize={12}
+                fontWeight={500}
+              >
+                {`${name} ${(percent * 100).toFixed(0)}%`}
+              </text>
+            );
+          }}
+        >
           {data.map((d) => (
             <Cell key={d.name} fill={d.color} />
           ))}
